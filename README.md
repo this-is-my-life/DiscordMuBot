@@ -16,8 +16,6 @@ Official Discord μBot( Version 1.0 ) Github Repository.
 
 > ## [**Bot Developers' Discord Server!**](https://discord.gg/kEnspqB)
 
-<iframe src="https://ptb.discordapp.com/widget?id=458629337264947221&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
-
 ### Project Dir
 > PMH Studio
 >> Projects
