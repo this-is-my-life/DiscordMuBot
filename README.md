@@ -1,10 +1,10 @@
 PMH Studio
 =============
-Official Discord μBot( Version 1.0 ) Github Repository.
+Official Discord μBot( Version 1.1 ) Github Repository.
 --------------------------------------------------------------
 
 # 경고!
-> 이 Branch는 아직 Dev버전에 속하는 1.0버전입니다!
+> 이 Branch는 1.1버전... 즉, 구버전입니다!
 > 이 버전은 불안정할수있고 데이터 손실의 위험이 있을수 있습니다!
 > 더욱 안정적이고 공식적인 최신버전을 이용하시는것을 추천합니다!
 ------------------------------------------------------------------------------------------------------------------------
@@ -22,7 +22,7 @@ Official Discord μBot( Version 1.0 ) Github Repository.
 >>> Programs
 >>>> Discord bot
 >>>>> proj-μBot
->>>>>> [Branch: Version 1.0](https://github.com/PMHStudio/DiscordMuBot/branches)
+>>>>>> [Branch: Version 1.1](https://github.com/PMHStudio/DiscordMuBot/branches)
 
 ### Discord.js Included
 ### Node.js Included
