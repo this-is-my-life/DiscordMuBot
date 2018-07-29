@@ -60,20 +60,9 @@ typings/
 # next.js build output
 .next
 
-# Discord.Js---------
-
-# Clint ID, Token File
-data/settings.json
-
-# Server Info
-data/servers.json
-
-# Users Info
-data/players.json
-
 # Packages
 package.json
 package-lock.json
 
-# Discord.js action
-actions/
+# DiscordConfigFile
+BotToken.json
