@@ -54,9 +54,18 @@ mu.on('message', input => {
 		.addBlankField()
 		.addField("Bot Username & Tag", mu.user.tag)
 		.addField("Bot ID", mu.user.id)
-		.addField("Created At", mu.user.createdAt)
-		.addField("Last Message", mu.user.lastMessage);
+		.addField("Created At", mu.user.createdAt);
 		input.channel.send(eBotInfoEmb);
+
+		let eCreditEmb = new API.RichEmbed()
+		.setAuthor(`${mu.user.username.toString()} Credit!`)
+		.setTitle("- Made By PMH Studio / PMH & WSF")
+		.setURL("http://pmhstudio.co.nf")
+		.setColor("#E5748B")
+		.addField("PMH Studio / PMH", "```\n『 LIFE IS GAME 』\n- And, I am a FAIR Player\n\n『 인생은 게임이다 』\n- 그리고, 나는 그 게임의 '페어플레이어'이다\n```\n──────────────────────────\n\n- Leader of PMH Studio (PMH Studio의 리더)\n- Project Manager (프로젝트 메니저)\n- Main Programmer (메인 프로그래머)\n- Main Grapher & Designer (메인 그래퍼 & 디자이너)\n- Communicator (커뮤니케이터)")
+		.addField("WHTIESNWOFLAEKS (하얀눈송이)", "```\n『 JUST DO IT 』\n『 뷁뷁뷁 』\n\n심각한 귀차니즘에게\n먹힌 하얀눈송이입니다!!\n```\n──────────────────────────\n\n- Main Programmer (메인 프로그래머)\n- Main Web Publisher (메인 웹퍼블리셔)\n- Sub Grapher & Designer (보조 그래퍼 & 디자이너)")
+		.setFooter("Thanks For Using Our Bot", avat);
+		input.channel.send(eCreditEmb);
 	} else
 
 	if (i === '뮤봇' || i === '뮤정보' || i === '뮤' || i === '뮤봇정보') {
@@ -69,8 +78,7 @@ mu.on('message', input => {
 		.addBlankField()
 		.addField("유저 계정이름", mu.user.tag)
 		.addField("유저 고유 식별번호 (UID)", mu.user.id)
-		.addField("만들어진 날짜", mu.user.createdAt)
-		.addField("마지막으로 입력한 메세지", mu.user.lastMessage);
+		.addField("만들어진 날짜", mu.user.createdAt);
 		input.channel.send(kBotInfoEmb);
 
 		let kCreditEmb = new API.RichEmbed()
@@ -80,7 +88,7 @@ mu.on('message', input => {
 		.setColor("#E5748B")
 		.addField("PMH Studio / PMH", "```\n『 LIFE IS GAME 』\n- And, I am a FAIR Player\n\n『 인생은 게임이다 』\n- 그리고, 나는 그 게임의 '페어플레이어'이다\n```\n──────────────────────────\n\n- Leader of PMH Studio (PMH Studio의 리더)\n- Project Manager (프로젝트 메니저)\n- Main Programmer (메인 프로그래머)\n- Main Grapher & Designer (메인 그래퍼 & 디자이너)\n- Communicator (커뮤니케이터)")
 		.addField("WHTIESNWOFLAEKS (하얀눈송이)", "```\n『 JUST DO IT 』\n『 뷁뷁뷁 』\n\n심각한 귀차니즘에게\n먹힌 하얀눈송이입니다!!\n```\n──────────────────────────\n\n- Main Programmer (메인 프로그래머)\n- Main Web Publisher (메인 웹퍼블리셔)\n- Sub Grapher & Designer (보조 그래퍼 & 디자이너)")
-		.setFooter("Thanks For Using Our Bot", avat)
+		.setFooter("Thanks For Using Our Bot", avat);
 		input.channel.send(kCreditEmb);
 	} else
 
