@@ -13,10 +13,7 @@ const mu = new API.Client();
 
 // Start Up....................
 mu.on('ready', () => {
-	console.log(`| 안녕하신가!`);
-	console.log(`| 힘세고 강한 노드,`);
-	console.log(`| 만일 내게 물어보면 나는 뮤봇`);
-	console.log(`|`)
+	console.log(`| 안녕하신가!\n| 힘세고 강한 노드,\n| 만일 내게 물어보면 나는 뮤봇\n\n`);
 	mu.user.setActivity('Your All Messages', { type: 'WATCHING' });
 });
 
@@ -101,6 +98,7 @@ mu.on('message', input => {
 		.setTitle(`${input.guild.name.toString()} Infomation!`)
 		.setDescription(`to. ${input.author.toString()}`)
 		.setThumbnail(icon)
+		.setColor("#E5748B")
 		.addBlankField()
 		.addField("Server Name", input.guild.name)
 		.addField("Created On", input.guild.createdAt)
@@ -115,6 +113,7 @@ mu.on('message', input => {
 		.setTitle(`${input.guild.name.toString()} Infomation!`)
 		.setDescription(`to. ${input.author.toString()}`)
 		.setThumbnail(icon)
+		.setColor("#E5748B")
 		.addBlankField()
 		.addField("Server Name", input.guild.name)
 		.addField("Created On", input.guild.createdAt)
@@ -126,18 +125,20 @@ mu.on('message', input => {
 	// Report
 	if (i === "report" || i === ".r") {
 		let reportTo = input.guild.member(input.mentions.users.first() || input.guild.members.get(pars[0]));
-		if (!reportTo) return input.channel.send("User Not Found");
+		if (!reportTo) {
+			input.channel.send("User Not Found");
+			return input.delete().catch(O_o=>{}); }
 		let reportReason = pars.join(" ").slice(22);
 		let Ricon = input.guild.iconURL;
 		let eReportEmb = new API.RichEmbed()
 		.setTitle(`${input.guild.name.toString()} - REPORTed`)
 		.setDescription(`Reported at ${input.createdAt}`)
 		.setThumbnail(Ricon)
+		.setColor("#fb3030")
 		.addBlankField()
 		.addField("Report To", `${reportTo} (ID: ${reportTo.id})`)
 		.addField("Report By", `${input.author} (ID: ${input.author.id})`)
 		.addField("Reported Channel", input.channel)
-		.setDescription("\n")
 		.addField("Report Reason", reportReason);
 		input.delete().catch(O_o=>{});
 		input.channel.send(eReportEmb);
@@ -145,13 +146,16 @@ mu.on('message', input => {
 
 	if (i === "리폿") {
 		let reportTo = input.guild.member(input.mentions.users.first() || input.guild.members.get(pars[0]));
-		if (!reportTo) return input.channel.send("User Not Found");
+		if (!reportTo) {
+			input.channel.send("User Not Found");
+			return input.delete().catch(O_o=>{}); }
 		let reportReason = pars.join(" ").slice(22);
 		let Ricon = input.guild.iconURL;
 		let kReportEmb = new API.RichEmbed()
 		.setTitle(`${input.guild.name.toString()}에서 리포트 됨`)
 		.setDescription(`${input.createdAt}\n#리폿 @everyone`)
 		.setThumbnail(Ricon)
+		.setColor("#fb3030")
 		.addBlankField()
 		.addField("당사자", `${reportTo} (ID: ${reportTo.id})`)
 		.addField("신고자", `${input.author} (ID: ${input.author.id})`)
@@ -161,6 +165,54 @@ mu.on('message', input => {
 		if (!reportGo) return input.channel.send("'#리폿'을 찾을수 없다뮤!");
 		input.delete().catch(O_o=>{});
 		reportGo.send(kReportEmb);	
+	} else
+
+	// Kick
+	if (i === "kick" || i === ".k") {
+		let kickTo = input.guild.member(input.mentions.users.first() || input.guild.members.get(pars[0]));
+		if (!kickTo) { 
+			input.channel.send("User Not Found");
+			return input.delete().catch(O_o=>{}); }
+		let kickReason = pars.jaon(" ").slice(22);
+		if (!input.member.hasPermission("MANAGE_MESSAGES")) return input.channel.send(`Hey! Stop IT, <@${input.author.id}> !\nCan't find your PERMISSION: MANAGE MESSAGES`);
+		if (kickTo.hasPermission("MANAGE_MESSAGES")) return input.channel.send("That person can NOT be Kicked, <@${input.author.id}> !")
+		let Kicon = input.guild.iconURL;
+		let eKickEmb = new API.RichEmbed()
+		.setTitle(`${input.guild.name.toString()} - KICKed`)
+		.setColor("#fb3030")
+		.setDescription(`${input.createdAt}\n@everyone`)
+		.setThumbnail(Kicon)
+		.addBlankField()
+		.addField("Kick To", `${kickTo} (ID: ${kickTo.id})`)
+		.addField("Kick By", `${input.author} (ID: ${input.author.id})`)
+		.addField("Kicked Channel", input.channel)
+		.addField("Kick Reason", kickReason);
+		input.guild.member(kickTo).kick(kickReason);
+		input.channel.send(eKickEmb);
+	} else
+
+	// Ban
+	if (i === "ban" || i === ".b") {
+		let banTo = input.guild.member(input.mentions.users.first() || input.guild.members.get(pars[0]));
+		if (!banTo) { 
+			input.channel.send("User Not Found");
+			return input.delete().catch(O_o=>{}); }
+		let banReason = pars.jaon(" ").slice(22);
+		if (!input.member.hasPermission("MANAGE_MEMBERS")) return input.channel.send(`Hey! Stop IT, <@${input.author.id}> !\nCan't find your PERMISSION: MANAGE MEMBERS`);
+		if (banTo.hasPermission("MANAGE_MEMBERS")) return input.channel.send("That person can NOT be Banned, <@${input.author.id}> !")
+		let Bicon = input.guild.iconURL;
+		let eBanEmb = new API.RichEmbed()
+		.setTitle(`${input.guild.name.toString()} - BANned`)
+		.setColor("#fb3030")
+		.setDescription(`${input.createdAt}\n@everyone`)
+		.setThumbnail(Bicon)
+		.addBlankField()
+		.addField("Ban To", `${banTo} (ID: ${banTo.id})`)
+		.addField("Ban By", `${input.author} (ID: ${input.author.id})`)
+		.addField("Banned Channel", input.channel)
+		.addField("Ban Reason", banReason);
+		input.guild.member(banTo).ban(banReason);
+		input.channel.send(eBanEmb);
 	}
 
 // ............................
