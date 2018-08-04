@@ -146,10 +146,12 @@ mu.on('message', input => {
 
 	if (i === "리폿") {
 		let reportTo = input.guild.member(input.mentions.users.first() || input.guild.members.get(pars[0]));
-		if (!reportTo) {
+		if (!reportTo) { 
 			input.channel.send("User Not Found");
 			return input.delete().catch(O_o=>{}); }
 		let reportReason = pars.join(" ").slice(22);
+   		if (!input.member.hasPermission("MANAGE_MESSAGES")) return input.channel.send(`<@${input.author.id}> has NO PERMISSION: MANAGE_MESSAGES`);
+		if (reportTo.hasPermission("MANAGE_MESSAGES")) return input.channel.send("Error: Target has Same or High PERMISSION");
 		let Ricon = input.guild.iconURL;
 		let kReportEmb = new API.RichEmbed()
 		.setTitle(`${input.guild.name.toString()}에서 리포트 됨`)
@@ -169,13 +171,13 @@ mu.on('message', input => {
 
 	// Kick
 	if (i === "kick" || i === ".k") {
-		let kickTo = input.guild.member(input.mentions.users.first() || input.guild.members.get(pars[0]));
+		let kickTo = input.guild.member(input.mentions.users.first() || input.guild.members.get(args[0]));
 		if (!kickTo) { 
 			input.channel.send("User Not Found");
 			return input.delete().catch(O_o=>{}); }
-		let kickReason = pars.jaon(" ").slice(22);
-		if (!input.member.hasPermission("MANAGE_MESSAGES")) return input.channel.send(`Hey! Stop IT, <@${input.author.id}> !\nCan't find your PERMISSION: MANAGE MESSAGES`);
-		if (kickTo.hasPermission("MANAGE_MESSAGES")) return input.channel.send("That person can NOT be Kicked, <@${input.author.id}> !")
+		let kickReason = pars.join(" ").slice(22);
+   		if (!input.member.hasPermission("KICK_MEMBERS")) return input.channel.send(`<@${input.author.id}> has NO PERMISSION: KICK_MEMBERS`);
+		if (kickTo.hasPermission("KICK_MEMBERS")) return input.channel.send("Error: Target has Same or High PERMISSION");
 		let Kicon = input.guild.iconURL;
 		let eKickEmb = new API.RichEmbed()
 		.setTitle(`${input.guild.name.toString()} - KICKed`)
@@ -191,15 +193,38 @@ mu.on('message', input => {
 		input.channel.send(eKickEmb);
 	} else
 
+	if (i === "킥") {
+		let kickTo = input.guild.member(input.mentions.users.first() || input.guild.members.get(args[0]));
+		if (!kickTo) { 
+			input.channel.send("User Not Found");
+			return input.delete().catch(O_o=>{}); }
+		let kickReason = pars.join(" ").slice(22);
+   		if (!input.member.hasPermission("KICK_MEMBERS")) return input.channel.send(`지금 뭐할려고 했냐뮤! <@${input.author.id}>?\n도로 리폿을 먹을수도 있다뮤!`);
+		if (kickTo.hasPermission("KICK_MEMBERS")) return input.channel.send("뮤! 타겟의 권한이 같거나 더 높은 사람이다뮤우~!\n도로 리폿을 먹을수도 있다뮤!");
+		let Kicon = input.guild.iconURL;
+		let kKickEmb = new API.RichEmbed()
+		.setTitle(`${input.guild.name.toString()} - KICKed`)
+		.setColor("#fb3030")
+		.setDescription(`${input.createdAt}\n@everyone`)
+		.setThumbnail(Kicon)
+		.addBlankField()
+		.addField("Kick To", `${kickTo} (ID: ${kickTo.id})`)
+		.addField("Kick By", `${input.author} (ID: ${input.author.id})`)
+		.addField("Kicked Channel", input.channel)
+		.addField("Kick Reason", kickReason);
+		input.guild.member(kickTo).kick(kickReason);
+		input.channel.send(kKickEmb);
+	} else
+
 	// Ban
 	if (i === "ban" || i === ".b") {
 		let banTo = input.guild.member(input.mentions.users.first() || input.guild.members.get(pars[0]));
 		if (!banTo) { 
 			input.channel.send("User Not Found");
 			return input.delete().catch(O_o=>{}); }
-		let banReason = pars.jaon(" ").slice(22);
-		if (!input.member.hasPermission("MANAGE_MEMBERS")) return input.channel.send(`Hey! Stop IT, <@${input.author.id}> !\nCan't find your PERMISSION: MANAGE MEMBERS`);
-		if (banTo.hasPermission("MANAGE_MEMBERS")) return input.channel.send("That person can NOT be Banned, <@${input.author.id}> !")
+		let banReason = pars.join(" ").slice(22);
+   		if (!input.member.hasPermission("BAN_MEMBERS")) return input.channel.send(`<@${input.author.id}> has NO PERMISSION: BAN_MEMBERS`);
+		if (banTo.hasPermission("BAN_MEMBERS")) return input.channel.send("Error: Target has Same or High PERMISSION");
 		let Bicon = input.guild.iconURL;
 		let eBanEmb = new API.RichEmbed()
 		.setTitle(`${input.guild.name.toString()} - BANned`)
@@ -213,6 +238,44 @@ mu.on('message', input => {
 		.addField("Ban Reason", banReason);
 		input.guild.member(banTo).ban(banReason);
 		input.channel.send(eBanEmb);
+	} else
+
+	if (i === "강퇴") {
+		let banTo = input.guild.member(input.mentions.users.first() || input.guild.members.get(pars[0]));
+		if (!banTo) { 
+			input.channel.send("User Not Found");
+			return input.delete().catch(O_o=>{}); }
+		let banReason = pars.join(" ").slice(22);
+   		if (!input.member.hasPermission("BAN_MEMBERS")) return input.channel.send(`지금 뭐할려고 했냐뮤! <@${input.author.id}>?\n도로 리폿을 먹을수도 있다뮤!`);
+		if (banTo.hasPermission("BAN_MEMBERS")) return input.channel.send("뮤! 타겟의 권한이 같거나 더 높은 사람이다뮤우~!\n도로 리폿을 먹을수도 있다뮤!");
+		let Bicon = input.guild.iconURL;
+		let kBanEmb = new API.RichEmbed()
+		.setTitle(`${input.guild.name.toString()} - BANned`)
+		.setColor("#fb3030")
+		.setDescription(`${input.createdAt}\n@everyone`)
+		.setThumbnail(Bicon)
+		.addBlankField()
+		.addField("Ban To", `${banTo} (ID: ${banTo.id})`)
+		.addField("Ban By", `${input.author} (ID: ${input.author.id})`)
+		.addField("Banned Channel", input.channel)
+		.addField("Ban Reason", banReason);
+		input.guild.member(banTo).ban(banReason);
+		input.channel.send(kBanEmb);
+	}
+
+	// Embed Maker
+	if (i === "embed" || i === "emb" || i === ".e" || i === "임베드" || i === "임베") {
+		let embTo = input.guild.member(input.mentions.roles.first() || input.guild.roles.get(pars[0]));
+		if (embTo) {
+			input.channel.send("Roles Not Found");
+			return input.delete().catch(O_o=>{}); }
+		let embTitle = pars.join(" ").slice(2, 3);
+		let embDescription = pars.join(" ").slice(3, 22)
+		let emb = new API.RichEmbed()
+		.setTitle(`${embTitle}`)
+		.setColor("#E5748B")
+		.setDescription(`To. ${embTo}\n\n${embDescription}`);
+		input.channel.send(emb);
 	}
 
 // ............................
