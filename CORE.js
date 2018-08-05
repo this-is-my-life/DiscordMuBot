@@ -163,8 +163,8 @@ mu.on('message', input => {
 		.addField("신고자", `${input.author} (ID: ${input.author.id})`)
 		.addField("위치", input.channel)
 		.addField("킥 사유", `${reportReason}.`);
-		let reportGo = input.guild.channels.find(`name`, "리폿");
-		if (!reportGo) return input.channel.send("'#리폿'을 찾을수 없다뮤!");
+		let reportGo = input.guild.channels.find(`name`, "★-리폿-★");
+		if (!reportGo) return input.channel.send("'#★-리폿-★'을 찾을수 없다뮤!");
 		input.delete().catch(O_o=>{});
 		reportGo.send(kReportEmb);	
 	} else
@@ -213,7 +213,10 @@ mu.on('message', input => {
 		.addField("신청된 체널", input.channel)
 		.addField("사유", `${kickReason}.`);
 		input.guild.member(kickTo).kick(kickReason);
-		input.channel.send(kKickEmb);
+		let kickGo = input.guild.channels.find(`name`, "★-리폿-★");
+		if (!kickGo) return input.channel.send("'#★-리폿-★'을 찾을수 없다뮤!");
+		input.delete().catch(O_o=>{});
+		kick.send(kKickEmb);
 	} else
 
 	// Ban
@@ -260,7 +263,10 @@ mu.on('message', input => {
 		.addField("신청된 체널", input.channel)
 		.addField("강퇴 사유", `${banReason}.`);
 		input.guild.member(banTo).ban(banReason);
-		input.channel.send(kBanEmb);
+		let banGo = input.guild.channels.find(`name`, "★-리폿-★");
+		if (!banGo) return input.channel.send("'#★-리폿-★'을 찾을수 없다뮤!");
+		input.delete().catch(O_o=>{});
+		banGo.send(kBanEmb);
 	}
 
 // ............................
