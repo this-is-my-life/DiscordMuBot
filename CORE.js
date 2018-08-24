@@ -11,9 +11,11 @@ const API = require('discord.js');
 const private = require("./BotToken.json");
 const mu = new API.Client();
 
+mu.login(private.BotToken); // Login! Go, MuBot!
+
 // Start Up....................
 mu.on('ready', () => {
-	console.log(`| 안녕하신가!\n| 힘세고 강한 노드,\n| 만일 내게 물어보면 나는 뮤봇\n\n`);
+	console.log(`[nodemon] Started \`CORE.js\` \n\n${mu.user.username.toString()} (${mu.user.id})> 안녕하신가!\n${mu.user.username.toString()} (${mu.user.id})> 힘세고 강한 노드,\n${mu.user.username.toString()} (${mu.user.id})> 만일 내게 물어보면 나는 뮤봇!`);
 	mu.user.setActivity('Your All Messages', { type: 'WATCHING' });
 });
 
@@ -23,6 +25,10 @@ mu.on('message', input => {
 	let msgAr = input.content.split(" "); // Check Space
 	let i = msgAr[0]; // input Command
 	let pars = msgAr.slice(1); // input parameter
+
+	if (!input.guild) return; // ignore DM
+
+	console.log(`${input.author.username.toString()} (${input.author.id.toString()})> ${input.content.toString()}`); // input Loging
 
 // Commands....................
 	
@@ -120,6 +126,27 @@ mu.on('message', input => {
 		.addField("서버 가입일", input.member.joinedAt)
 		.addField("서버 맴버수", input.guild.memberCount);
 		input.channel.send(kChannelInfo);
+	} else
+
+	// My Info
+	if (i === "myinfo" || i == ".m") {
+		let avata = input.author.displayAvatarURL;
+		let eMyInfo = new API.RichEmbed()
+		.setTitle(`${input.author.username} Infomation!`)
+		.setDescription(`to. Someone!`)
+		.setThumbnail(avata)
+		.setColor(input.member.displayHexColor)
+		.addBlankField()
+		.addField("User Name", input.author.username)
+		.addField("User Display Name", input.member.displayName)
+		.addField("User Discriminator", input.author.discriminator)
+		.addField("User Tag", input.author.tag)
+		.addField("User ID", input.author.id)
+		.addField("User Status", input.author.presence.status)
+		.addField("User Playing...", input.author.presence.game)
+		.addField("User Avatar URL", input.author.displayAvatarURL)
+		.addField("User Created", input.author.createdAt)
+		input.channel.send(eMyInfo);
 	} else
 
 	// Report
@@ -272,5 +299,3 @@ mu.on('message', input => {
 // ............................
 
 });
-
-mu.login(private.BotToken);
