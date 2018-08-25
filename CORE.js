@@ -6,10 +6,13 @@
 	
 	* Requests Node.js & Discord.js
 */
-
+// API Require
 const API = require('discord.js');
 const private = require("./BotToken.json");
 const mu = new API.Client();
+
+// Voice Sound Resource........
+// ............................
 
 mu.login(private.BotToken); // Login! Go, MuBot!
 
@@ -237,7 +240,7 @@ mu.on('message', input => {
 		.addBlankField()
 		.addField("킥 대상", `${kickTo} (ID: ${kickTo.id})`)
 		.addField("킥 신청자", `${input.author} (ID: ${input.author.id})`)
-		.addField("신청된 체널", input.channel)
+		.addField("신청된 채널", input.channel)
 		.addField("사유", `${kickReason}.`);
 		input.guild.member(kickTo).kick(kickReason);
 		let kickGo = input.guild.channels.find(`name`, "★-리폿-★");
@@ -287,14 +290,87 @@ mu.on('message', input => {
 		.addBlankField()
 		.addField("강퇴 대상", `${banTo} (ID: ${banTo.id})`)
 		.addField("강퇴 신청자", `${input.author} (ID: ${input.author.id})`)
-		.addField("신청된 체널", input.channel)
+		.addField("신청된 채널", input.channel)
 		.addField("강퇴 사유", `${banReason}.`);
 		input.guild.member(banTo).ban(banReason);
 		let banGo = input.guild.channels.find(`name`, "★-리폿-★");
 		if (!banGo) return input.channel.send("'#★-리폿-★'을 찾을수 없다뮤!");
 		input.delete().catch(O_o=>{});
 		banGo.send(kBanEmb);
-	}
+	} else
+
+	// Summon Voice Channel
+	if (i === "summon" || i === "joinVoice" || i === ".j") {
+		// Discord.js Official Voice Source
+	    if (input.member.voiceChannel) {
+	      input.member.voiceChannel.join()
+	        .then(connection => { 
+	        	let Sicon = input.guild.iconURL;
+	        	let eSummonVoice = new API.RichEmbed()
+	        	.setThumbnail(Sicon)
+	        	.setColor(input.member.displayHexColor)
+	        	.addField(`Bam!`, `MuBot is ${input.member.voiceChannel}, ${input.author}~♪`);
+	        	input.channel.send(eSummonVoice);
+	        })
+	        .catch(console.log);
+	    } else {
+	    	let Seicon = input.guild.iconURL;
+	    	let eSummonVoiceFail = new API.RichEmbed()
+	    	.setThumbnail(Seicon)
+	    	.setColor(input.member.displayHexColor)
+	    	.addField("Wait!", "You need to join a voice channel first!");
+	    	input.channel.send(eSummonVoiceFail);
+    }} else
+
+    if (i === "소환!" || i === "따라와" || i === "여기야" || i == "보이스접속") {
+		// Discord.js Official Voice Source
+	    if (input.member.voiceChannel) {
+	      input.member.voiceChannel.join()
+	        .then(connection => { 
+	        	let kSicon = input.guild.iconURL;
+	        	let kSummonVoice = new API.RichEmbed()
+	        	.setThumbnail(kSicon)
+	        	.setColor(input.member.displayHexColor)
+	        	.addField(`짜잔~`, `불가능이란 없구요,\n 뮤봇은 ${input.author}를 따라 ${input.member.voiceChannel}에 있습니다...뮤♩`);
+	        	input.channel.send(kSummonVoice);
+	        })
+	    } else {
+	    	let Sekicon = input.guild.iconURL;
+	    	let kSummonVoiceFail = new API.RichEmbed()
+	    	.setThumbnail(Sekicon)
+	    	.setColor(input.member.displayHexColor)
+	    	.addField("어... 저기...", `${input.author}가 어디있는지 찾을수 없다뮤!!`);
+	    	input.channel.send(kSummonVoiceFail);
+    }} else
+
+    // Escape Voice Channel
+    if (i === "escapeVoice" || i === "esc" || i === "muesc" || i === ".l") {
+    	if (input.member.voiceChannel) {
+	    	input.member.voiceChannel.leave();
+	    	let eEscapeVoice = new API.RichEmbed()
+	    	.setColor(input.member.displayHexColor)
+	    	.addField("Press ESC key To Escape Voice Channel", "MuBot> ESC\nMuBot Prest ESC...");
+	    	input.channel.send(eEscapeVoice);
+    } else {
+    	let eEscapeVoiceFail = new API.RichEmbed()
+    	.setColor(input.member.displayHexColor)
+    	.addField("Hey! Wait!", "You need to join a voice channel first!");
+    	input.channel.send(eEscapeVoiceFail);
+    }} else
+
+    if (i === "보이스나가기" || i === "저리가" || i === "추방!" || i === "저기야") {
+    	if (input.member.voiceChannel) {
+	    	input.member.voiceChannel.leave();
+	    	let kEscapeVoice = new API.RichEmbed()
+	    	.setColor(input.member.displayHexColor)
+	    	.addField("ESC 버튼을 눌러 보이스 채널을 나가십시오", "뮤봇> ESC\n뮤봇님이 ESC버튼을 눌렀습니다... 뮤↗");
+	    	input.channel.send(kEscapeVoice);
+    } else {
+    	let kEscapeVoiceFail = new API.RichEmbed()
+    	.setColor(input.member.displayHexColor)
+    	.addField("어... 저기...", "뮤가 어디있는지 잘 몰라서 그런데 쫌 들어와서 알려주라뮤 ㅠㅠ");
+    	input.channel.send(kEscapeVoiceFail);
+    }}
 
 // ............................
 
