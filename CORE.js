@@ -14,7 +14,7 @@ const mu = new API.Client();
 // Voice Sound Resource........
 // ............................
 
-mu.login(private.BotToken); // Login! Go, MuBot!
+mu.login(private.BotToken); // Login! Go, μBot!
 
 // Start Up....................
 mu.on('ready', () => {
@@ -29,7 +29,12 @@ mu.on('message', input => {
 	let i = msgAr[0]; // input Command
 	let pars = msgAr.slice(1); // input parameter
 
-	if (!input.guild) return; // ignore DM
+	if (`${input.author.id}` === `${mu.user.id}`) return;
+	if (!input.guild) { // ignore DM
+		input.reply("**Oops!** μBot Can Run **ONLY** __**in SERVER**__ *(not DM)*!");
+		input.reply("**저런!** 뮤봇은 **__서버에서__만** 명령어 실행이 가능합니다! *(DM말구...)*")
+		return;
+		}
 
 	console.log(`${input.author.username.toString()} (${input.author.id.toString()})> ${input.content.toString()}`); // input Logging
 	// console.log(`input:${input}, msgAr: ${msgAr}\ni:${i}, pars:${pars}`) // Debug Logging
@@ -38,11 +43,13 @@ mu.on('message', input => {
 
 // Commands....................
 
+	if (i === 'tes') input.guild.systemChannel.send("Test");
+	else
+
 	// Ping & Pong
 	if (i === 'ping' || i === 'Ping' || i === '.p') {
 		let ePingEmb = new API.RichEmbed()
 		.setTitle(`Pong!`)
-		.setImage("http://mubotapi.dothome.co.kr/discordapi/images/PingCMDEmbImage.png")
 		.setColor("#ffff00")
 		.setDescription(`Here, ${input.author.toString()}...Mu! OㅅO [${Math.round(mu.ping)}ms]`);
 		input.delete().catch(O_o=>{});
@@ -55,7 +62,7 @@ mu.on('message', input => {
 	} else
 
 		// Bot Info & Credit
-	if (i === 'mubot' || i === 'muinfo' || i === 'mu' || i === '.i') {
+	if (i === 'mubot' || i === 'muinfo' || i === 'mu' || i === 'μ' || i === '.i') {
 		let avat = mu.user.displayAvatarURL;
 		let eBotInfoEmb = new API.RichEmbed()
 		.setTitle(`${mu.user.username.toString()} Infomation!`)
@@ -63,9 +70,15 @@ mu.on('message', input => {
 		.setThumbnail(avat)
 		.setColor("#ffff00")
 		.addBlankField()
-		.addField("Bot Username & Tag", mu.user.tag)
-		.addField("Bot ID", mu.user.id)
-		.addField("Created At", mu.user.createdAt);
+		.addField("μBot Username & Tag", mu.user.tag)
+		.addField("μBot ID", mu.user.id)
+		.addField("Total Users", mu.users.size)
+		.addField("Total Channels", mu.channels.size)
+		.addField("Total Servers", mu.guilds.size)
+		.addField("Created At", mu.user.createdAt)
+		.addField("Updated At", mu.readyAt)
+		.addField("Up Time", mu.uptime)
+		.addField("API Ping", mu.pings);
 		input.channel.send(eBotInfoEmb);
 
 		let eCreditEmb = new API.RichEmbed()
@@ -75,7 +88,7 @@ mu.on('message', input => {
 		.setColor("#E5748B")
 		.addField("PMH Studio / PMH", "```\n『 LIFE IS GAME 』\n- And, I am a FAIR Player\n\n『 인생은 게임이다 』\n- 그리고, 나는 그 게임의 '페어플레이어'이다\n```\n──────────────────────────\n\n- Leader of PMH Studio (PMH Studio의 리더)\n- Project Manager (프로젝트 메니저)\n- Main Programmer (메인 프로그래머)\n- Main Grapher & Designer (메인 그래퍼 & 디자이너)\n- Communicator (커뮤니케이터)")
 		.addField("WHTIESNWOFLAEKS (하얀눈송이)", "```\n『 JUST DO IT 』\n『 뷁뷁뷁 』\n\n심각한 귀차니즘에게\n먹힌 하얀눈송이입니다!!\n```\n──────────────────────────\n\n- Main Programmer (메인 프로그래머)\n- Main Web Publisher (메인 웹퍼블리셔)\n- Sub Grapher & Designer (보조 그래퍼 & 디자이너)")
-		.setFooter("Thanks For Using Our Bot", avat);
+		.setFooter("Thanks For Using Our μBot!", avat);
 		input.channel.send(eCreditEmb);
 	} else
 
@@ -89,7 +102,13 @@ mu.on('message', input => {
 		.addBlankField()
 		.addField("유저 계정이름", mu.user.tag)
 		.addField("유저 고유 식별번호 (UID)", mu.user.id)
-		.addField("만들어진 날짜", mu.user.createdAt);
+		.addField("총 사용자 수", mu.users.size)
+		.addField("총 사용 채널 수", mu.channels.size)
+		.addField("총 사용 서버 수", mu.guilds.size)
+		.addField("만들어진 날짜", mu.user.createdAt)
+		.addField("최근 업데이트", mu.readyAt)
+		.addField("사용 시간", mu.uptime)
+		.addField("API 핑", mu.pings);
 		input.channel.send(kBotInfoEmb);
 
 		let kCreditEmb = new API.RichEmbed()
@@ -99,7 +118,7 @@ mu.on('message', input => {
 		.setColor("#E5748B")
 		.addField("PMH Studio / PMH", "```\n『 LIFE IS GAME 』\n- And, I am a FAIR Player\n\n『 인생은 게임이다 』\n- 그리고, 나는 그 게임의 '페어플레이어'이다\n```\n──────────────────────────\n\n- Leader of PMH Studio (PMH Studio의 리더)\n- Project Manager (프로젝트 메니저)\n- Main Programmer (메인 프로그래머)\n- Main Grapher & Designer (메인 그래퍼 & 디자이너)\n- Communicator (커뮤니케이터)")
 		.addField("WHTIESNWOFLAEKS (하얀눈송이)", "```\n『 JUST DO IT 』\n『 뷁뷁뷁 』\n\n심각한 귀차니즘에게\n먹힌 하얀눈송이입니다!!\n```\n──────────────────────────\n\n- Main Programmer (메인 프로그래머)\n- Main Web Publisher (메인 웹퍼블리셔)\n- Sub Grapher & Designer (보조 그래퍼 & 디자이너)")
-		.setFooter("Thanks For Using Our Bot", avat);
+		.setFooter("Thanks For Using Our μBot!", avat);
 		input.channel.send(kCreditEmb);
 	} else
 
@@ -155,6 +174,26 @@ mu.on('message', input => {
 		input.channel.send(eMyInfo);
 	} else
 
+	if (i === "내정보" || i == "마이인포") {
+		let avata = input.author.displayAvatarURL;
+		let eMyInfo = new API.RichEmbed()
+		.setTitle(`${input.author.username}님의 정보다뮤유~!`)
+		.setDescription(`누군가는 보겠지뮤...`)
+		.setThumbnail(avata)
+		.setColor(input.member.displayHexColor)
+		.addBlankField()
+		.addField("유저 이름", input.author.username)
+		.addField("유저 별명", input.member.displayName)
+		.addField("유저 코드", input.author.discriminator)
+		.addField("유저 테그", input.author.tag)
+		.addField("유저 식별 아이디", input.author.id)
+		.addField("유저 상태", input.author.presence.status)
+		.addField("유저 플레이중...", input.author.presence.game)
+		.addField("유저 프로필 사진 URL", input.author.displayAvatarURL)
+		.addField("유저 회원가입 날짜", input.author.createdAt)
+		input.channel.send(eMyInfo);
+	} else
+
 	// Summon Voice Channel
 	if (i === "summon" || i === "joinVoice" || i === ".j") {
 		// Discord.js Official Voice Source
@@ -165,7 +204,7 @@ mu.on('message', input => {
 	        	let eSummonVoice = new API.RichEmbed()
 	        	.setThumbnail(Sicon)
 	        	.setColor(input.member.displayHexColor)
-	        	.addField(`Bam!`, `MuBot is ${input.member.voiceChannel}, ${input.author}~♪`);
+	        	.addField(`Bam!`, `μBot is ${input.member.voiceChannel}, ${input.author}~♪`);
 	        	input.channel.send(eSummonVoice);
 	        })
 	        .catch(console.log);
@@ -205,7 +244,7 @@ mu.on('message', input => {
 	    	input.member.voiceChannel.leave();
 	    	let eEscapeVoice = new API.RichEmbed()
 	    	.setColor(input.member.displayHexColor)
-	    	.addField("Press ESC key To Escape Voice Channel", "MuBot> ESC\nMuBot Prest ESC...");
+	    	.addField("Press ESC key To Escape Voice Channel", "μBot> ESC\nμBot Prest ESC...");
 	    	input.channel.send(eEscapeVoice);
     } else {
     	let eEscapeVoiceFail = new API.RichEmbed()
@@ -384,4 +423,20 @@ mu.on('message', input => {
 	}
 // ............................
 	}
+});
+
+// Server Join Message
+mu.on('guildMemberAdd', newMember => {
+	let jIcon = newMember.displayAvatarURL;
+	let dJoinMessage = new API.RichEmbed()
+	.setTitle(`환영한다뮤~★`)
+	.setThumbnail(jIcon)
+	.setAuthor(newMember, jIcon, newMember.displayAvatarURL)
+	.setDescription(`야생의 "${newMember}"님이\n"${newMember.gulid.name}"에 등장했다뮤!\n과연, 관리자 "${newMember.gulid.owner}"는\n${newMember}에게 무슨 역할을 줄까뮤유?`);
+	newMember.gulid.systemChannel.send(kJoinMessage);
+	let oJoinMessage = new API.RichEmbed()
+	.setTitle(`${newMember.gulid.name}에 관한 내용`)
+	.setThumbnail(jIcon)
+	.setDescription(`${newMember}님이 ${newMember.gulid.name}에 가입하셨습니다...`);
+	newMember.gulid.owner.send(oJoinMessage);
 });
