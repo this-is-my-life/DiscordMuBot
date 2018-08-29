@@ -37,6 +37,47 @@ if %st% == 1 goto run
 :maketoken
 cls
 mode 100
+node -v
+cls
+if %ERRORLEVEL% == 9009 {
+	echo  __     _     __  __     ______     ______     ______ 
+	echo /\ \^"-./ \   /\ \/\ \   /\  == \   /\  __ \   /\__  _\
+	echo \ \ \-./\ \  \ \ \_\ \  \ \  __^<   \ \ \/\ \  \/_/\ \/
+	echo  \ \_\ \ \_\  \ \_____\  \ \_____\  \ \_____\    \ \_\
+	echo   \/_/  \/_/   \/_____/   \/_____/   \/_____/     \/_/
+	echo ------------------------------------------------------------------------------------
+	echo.
+	echo    First Run
+	echo     - Make Mu will be RUN!
+	echo       - Node.js Installation...
+	echo.
+	echo     You Can Have node.js installation file in node.js Official Site.
+	echo     Visit: (Auto) https://nodejs.org/dist/v8.11.4/node-v8.11.4-x64.msi
+	echo.
+	start https://nodejs.org/dist/v8.11.4/node-v8.11.4-x64.msi
+	echo.
+	echo     When did you Finished Installation. Press ANY Key.
+	pause >nul
+	echo.
+	echo  __     _     __  __     ______     ______     ______ 
+	echo /\ \^"-./ \   /\ \/\ \   /\  == \   /\  __ \   /\__  _\
+	echo \ \ \-./\ \  \ \ \_\ \  \ \  __^<   \ \ \/\ \  \/_/\ \/
+	echo  \ \_\ \ \_\  \ \_____\  \ \_____\  \ \_____\    \ \_\
+	echo   \/_/  \/_/   \/_____/   \/_____/   \/_____/     \/_/
+	echo ------------------------------------------------------------------------------------
+	echo.
+	echo    First Run
+	echo     - Make Mu will be RUN!
+	echo       - Discord.js Installation...
+	echo.
+	echo    Press ANY Key To Start Install Discord.js...
+	pause <nul
+	npm i discord.js
+	npm i ffmpeg-binaries
+	npm i opusscript
+	npm i node-opus
+} 
+cls
 echo  __     _     __  __     ______     ______     ______ 
 echo /\ \^"-./ \   /\ \/\ \   /\  == \   /\  __ \   /\__  _\
 echo \ \ \-./\ \  \ \ \_\ \  \ \  __^<   \ \ \/\ \  \/_/\ \/
@@ -58,7 +99,6 @@ echo ^{ >BotToken.json
 echo 	^"BotToken^" : ^"%token%^">>BotToken.json
 echo ^} >>BotToken.json
 echo.
-pause
 cls
 echo  __     _     __  __     ______     ______     ______ 
 echo /\ \^"-./ \   /\ \/\ \   /\  == \   /\  __ \   /\__  _\
@@ -90,7 +130,7 @@ cls
 mode 100
 chcp 949>nul
 echo.
-echo  MuBot Runtime Ver.4 Dev.1 EK.ver
+echo  MuBot Runtime Ver.4 Dev.1 EK.ver (Command Customize File Path: CORE.js)
 echo ------------------------------------------------------------------------------------
 echo.
 echo  [I] If you wanna Restart this, Press ctrl+C Twice.
