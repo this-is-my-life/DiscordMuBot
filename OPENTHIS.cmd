@@ -71,11 +71,13 @@ if %ERRORLEVEL% == 9009 {
 	echo       - Discord.js Installation...
 	echo.
 	echo    Press ANY Key To Start Install Discord.js...
-	pause <nul
-	npm i discord.js
-	npm i ffmpeg-binaries
-	npm i opusscript
-	npm i node-opus
+	pause >nul
+	start cmd /c npm i discord.js
+	start cmd /c npm i ffmpeg-binaries
+	start cmd /c npm i opusscript
+	start cmd /c npm i node-opus
+	echo     When did you Finished Installation. Press ANY Key.
+	pause >nul
 } 
 cls
 echo  __     _     __  __     ______     ______     ______ 
