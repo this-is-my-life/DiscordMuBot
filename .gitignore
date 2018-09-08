@@ -34,6 +34,8 @@ build/Release
 
 # Dependency directories
 node_modules/
+# But,
+!node_modules/text-to-mp3/
 jspm_packages/
 
 # TypeScript v1 declaration files
@@ -61,7 +63,6 @@ typings/
 .next
 
 # Packages
-package.json
 package-lock.json
 
 # DiscordConfigFile

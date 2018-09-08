@@ -6,15 +6,18 @@
 	
 	* Requests Node.js & Discord.js
 */
+
 // API Require
-const API = require('discord.js');
-const private = require("./BotToken.json");
-const mu = new API.Client();
+const API = require('discord.js'); // Main API
 
-// Voice Sound Resource........
-// ............................
+// TTS Require
+const TTS = require("text-to-mp3");
 
-mu.login(private.BotToken); // Login! Go, μBot!
+// Login Require
+const token = process.env.token; // Set Bot Token
+const mu = new API.Client(); // Take a Bot From Main API
+
+mu.login(token); // Login! Go, μBot!
 
 // Start Up....................
 mu.on('ready', () => {
@@ -57,8 +60,12 @@ mu.on('message', input => {
 	} else
 
 	if (i === '핑' || i === '핑크') {
-		input.channel.send(`${input.author.toString()}뮤! OㅅO [${Math.round(mu.ping)}ms]`);
+		let kPingEmb = new API.RichEmbed()
+		.setTitle(`Pong!`)
+		.setColor("#ffff00")
+		.setDescription(`${input.author.toString()}뮤! OㅅO [${Math.round(mu.ping)}ms]`);
 		input.delete().catch(O_o=>{});
+		input.channel.send(kPingEmb);
 	} else
 
 		// Bot Info & Credit
@@ -420,23 +427,53 @@ mu.on('message', input => {
 		if (!banGo) return input.channel.send("'#★-리폿-★'을 찾을수 없다뮤!");
 		input.delete().catch(O_o=>{});
 		banGo.send(kBanEmb);
+	} else 
+
+	// TTS(Text to Speech) Speaker
+	if (i === "musay" || i === "muvoice" || i === "say" || i === ".v") {
+		let sayWhat = pars.join(" ").slice(0);
+		if (input.member.voiceChannel) {
+			TTS.saveMP3(sayWhat, `${input.id}.mp3`, function(err, absoluteFilePath){
+				setTimeout(function() {
+				input.member.voiceChannel.join()
+				.then(connection => {
+					const dispatcher = connection.playFile(`${absoluteFilePath}`);
+	    		dispatcher.on('end', () => {
+	    			setTimeout(function() {
+	    				input.member.voiceChannel.leave();
+	    			}, 3000);
+	    		})
+				})
+			}, 3000);
+			});
+	    	let eSayVoice = new API.RichEmbed()
+	    	.setColor(input.member.displayHexColor)
+	    	.addField(`Mu said ${sayWhat}!`, `to ${input.author}`);
+	    	input.channel.send(eSayVoice);
+    	} else {
+    		let eSayVoiceFail = new API.RichEmbed()
+    		.setColor(input.member.displayHexColor)
+    		.addField("Hey! Wait!", "You need to join a voice channel first!");
+    		input.channel.send(eSayVoiceFail);
+    	}
+	} else
+
+	// Talk with Mu!
+	if (i.toUpperCase() === "TWM" || i.toUpperCase() === "MU" || i.toUpperCase() === "MU!" || i === "뮤" || i === "뮤!" || i === ".t") {
+		let talk = pars.join(" ").slice(0);
+		let say;
+		if (talk.toUpperCase() === "HI" || talk.toUpperCase() === "HELLO" || talk.toUpperCase() === "HALO") {
+			say = `Hello! Mu! [${Math.round(mu.ping)}ms]`;
+		} else
+
+		if (talk === "안녕" || talk === "안녕!" || talk === "반가워" || talk === "반가워!") {
+			say = `${talk}, 뮤봇이다뮤우~!`;
+		} else {
+			say = `잘 몰라서 검색해 봤다뮤~☆\nhttps://www.google.com/search?q=${talk}`;
+		}
+		input.channel.send(talk);
 	}
+
 // ............................
 	}
-});
-
-// Server Join Message
-mu.on('guildMemberAdd', newMember => {
-	let jIcon = newMember.displayAvatarURL;
-	let dJoinMessage = new API.RichEmbed()
-	.setTitle(`환영한다뮤~★`)
-	.setThumbnail(jIcon)
-	.setAuthor(newMember, jIcon, newMember.displayAvatarURL)
-	.setDescription(`야생의 "${newMember}"님이\n"${newMember.gulid.name}"에 등장했다뮤!\n과연, 관리자 "${newMember.gulid.owner}"는\n${newMember}에게 무슨 역할을 줄까뮤유?`);
-	newMember.gulid.systemChannel.send(kJoinMessage);
-	let oJoinMessage = new API.RichEmbed()
-	.setTitle(`${newMember.gulid.name}에 관한 내용`)
-	.setThumbnail(jIcon)
-	.setDescription(`${newMember}님이 ${newMember.gulid.name}에 가입하셨습니다...`);
-	newMember.gulid.owner.send(oJoinMessage);
 });
