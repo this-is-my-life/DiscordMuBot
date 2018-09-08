@@ -471,7 +471,8 @@ mu.on('message', input => {
 		} else {
 			say = `잘 몰라서 검색해 봤다뮤~☆\nhttps://www.google.com/search?q=${talk}`;
 		}
-		input.channel.send(talk);
+		console.log(say);
+		input.channel.send(say);
 	}
 
 // ............................
