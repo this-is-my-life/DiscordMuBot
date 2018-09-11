@@ -476,5 +476,10 @@ mu.on('message', input => {
 	}
 
 // ............................
+    if (message.content.indexOf("<@"+mu.user.id) === 0 || message.content.indexOf("<@!"+mu.user.id) === 0) { // 맨션당했을때
+        message.channel.send(`뮤유~?`);
+        return;
+    }
+
 	}
 });
