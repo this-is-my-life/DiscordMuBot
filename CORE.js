@@ -476,8 +476,8 @@ mu.on('message', input => {
 	}
 
 // ............................
-    if (message.content.indexOf("<@"+mu.user.id+">") === 0 || message.content.indexOf("<@!"+mu.user.id+">") === 0) { // 맨션당했을때
-        message.channel.send(`뮤유~?`);
+    if (input.content.indexOf("<@"+mu.user.id+">") === 0 || input.content.indexOf("<@!"+mu.user.id+">") === 0) { // 맨션당했을때
+        input.channel.send(`뮤유~?`);
         return;
     }
 
