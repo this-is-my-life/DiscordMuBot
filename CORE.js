@@ -459,10 +459,10 @@ mu.on('message', input => {
 	} else
 
 	// Talk with Mu!
-	if (i.toUpperCase() === "TWM" || i.toUpperCase() === "MU" || i.toUpperCase() === "MU!" || i === "뮤" || i === "뮤!" || i === ".t") {
+	if (i === "TWM" || i === "MU" || i === "MU!" || i === "뮤" || i === "뮤!" || i === ".t") {
 		let talk = pars.join(" ").slice(0);
 		let say;
-		if (talk.toUpperCase() === "HI" || talk.toUpperCase() === "HELLO" || talk.toUpperCase() === "HALO") {
+		if (talk === "HI" || talk === "HELLO" || talk === "HALO") {
 			say = `Hello! Mu! [${Math.round(mu.ping)}ms]`;
 		} else
 
@@ -476,10 +476,12 @@ mu.on('message', input => {
 	}
 
 // ............................
-    if (i === `<@${mu.user.id}>` || i === `<@!${mu.user.id}>`) { // 맨션당했을때
+
+	}
+
+	if (i === `<@${mu.user.id}>` || i === `<@!${mu.user.id}>`) { // 맨션당했을때
         input.channel.send(`뮤유~?`);
         return;
     }
-
-	}
+    
 });
