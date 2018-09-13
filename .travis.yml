@@ -3,7 +3,7 @@ node_js:
   - "8"
 install: true
 before_install:
-  - npm i discord.js -g
-  - npm i text-to-mp3 -g
-  - npm i ffmpeg-binaries -g
-  - npm i opusscript -g
+  - npm i discord.js
+  - npm i text-to-mp3
+  - npm i ffmpeg-binaries
+  - npm i opusscript
