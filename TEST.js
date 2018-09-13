@@ -17,6 +17,4 @@ const TTS = require("text-to-mp3");
 const token = process.env.token; // Set Bot Token
 const mu = new API.Client(); // Take a Bot From Main API
 
-mu.login(token); // Login! Go, μBot!
-
 return console.log("Test Completed! Code: 0");
