@@ -1,2 +1,7 @@
 language: node_js
-sudo: enabled
+install: true
+before_install:
+  - sudo npm i discord.js -g
+  - sudo npm i text-to-mp3 -g
+  - sudo npm i ffmpeg-binaries -g
+  - sudo npm i opusscript -g
