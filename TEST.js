@@ -19,6 +19,4 @@ const mu = new API.Client(); // Take a Bot From Main API
 
 mu.login(token); // Login! Go, μBot!
 
-mu.on('ready', () => {
-	console.log("Test Completed!")
-});
+return console.log("Test Completed! Code: 0")
