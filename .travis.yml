@@ -1,7 +1,7 @@
 language: node_js
 install: true
 before_install:
-  - sudo npm i discord.js -g
-  - sudo npm i text-to-mp3 -g
-  - sudo npm i ffmpeg-binaries -g
-  - sudo npm i opusscript -g
+  - npm i discord.js -g
+  - npm i text-to-mp3 -g
+  - npm i ffmpeg-binaries -g
+  - npm i opusscript -g
