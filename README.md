@@ -2,7 +2,7 @@ PMH Studio μBot
 ================
 Official Discord μBot( Version 4.0 ) Github Repository.
 --------------------------------------------------------------
-[![Build Status](https://travis-ci.org/PMHStudio/DiscordMuBot.svg?branch=%CE%BCBot-ver4.dev1)](https://travis-ci.org/PMHStudio/DiscordMuBot)
+[![Build Status](https://travis-ci.org/PMHStudio/DiscordMuBot.svg?branch=%CE%BCBot-ver4)](https://travis-ci.org/PMHStudio/DiscordMuBot)
 [![GitHub license](https://img.shields.io/github/license/PMHStudio/DiscordMuBot.svg)](https://github.com/PMHStudio/DiscordMuBot/blob/%CE%BCBot-ver4/LICENSE)
 [![GitHub forks](https://img.shields.io/github/forks/PMHStudio/DiscordMuBot.svg)](https://github.com/PMHStudio/DiscordMuBot/network)
 [![GitHub issues](https://img.shields.io/github/issues/PMHStudio/DiscordMuBot.svg)](https://github.com/PMHStudio/DiscordMuBot/issues)
