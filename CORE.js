@@ -42,9 +42,25 @@ mu.on('message', input => {
 	console.log(`${input.author.username.toString()} (${input.author.id.toString()})> ${input.content.toString()}`); // input Logging
 	// console.log(`input:${input}, msgAr: ${msgAr}\ni:${i}, pars:${pars}`) // Debug Logging
 
+// Commands....................
+
+	// BadWord Checker
+	if (talk === "fuck" || talk === "ㅗ" || talk === "법규" || talk === "ㅄ" || talk === "ㅂㅅ" || talk === "ㅅㅂ") {
+		input.guild.systemChannel.send(`Hey! Server owner!\n${input.author} used "${talk}"! Plz, Ban!`);
+		input.guild.systemChannel.send(`이봐요! 서버장!\n${input.author}라는 미천한 자가 \n"${talk}"라고 욕을썼다구요! 처벌합시다!!!`)
+		input.channel.send(`ಠ益ಠ) <I Report YOU!) ${input.author}!`);
+		say = `ಠ益ಠ) <신고ㄱ?) ${input.author}!`
+	} else
+
+
+
+
+
 	if (`${input}` === `${i}`) { // Parameter Check
 
-// Commands....................
+
+
+
 
 	// Ping & Pong
 	if (i === 'ping' || i === 'Ping' || i === '.p') {
@@ -474,14 +490,17 @@ mu.on('message', input => {
 			say = `${talk}! 힘쌔고 **강한** 하루!\n만일 내게 물어본다면 나는 **뮤봇**! [${Math.round(mu.ping)}ms]`;
 		} else
 
+		// namu.wiki
 		if (talk === "나무") {
 			say = '위키';
 		} else
 
+		// heroes
 		if (talk === "시공" || talk === "시공은?") {
 			say = '조아';
 		} else
 
+		// jojo
 		if (talk === "나") {
 			say = '니?';
 		} else
@@ -509,7 +528,81 @@ mu.on('message', input => {
 		} else
 
 		if (talk === "심심해") {
-			say = '흐음... [주섬주섬]\n>https://theuselessweb.com/'
+			say = '흐음... [주섬주섬]\n>https://theuselessweb.com/';
+		} else
+
+		// jojo
+		if (talk === "오마에와") {
+			say = "나니? [수컹]";
+		} else
+
+		// loli
+		if (talk === "로리는?") {
+			say = "~~사랑입니다~~ 아.. 아니... 알아서 뭐하게?";
+		} else
+
+		// osu!
+		if (talk === "노라줘" || talk === "놀아줘") {
+			say = "히osu!나 하세요.\n> https://osu.ppy.sh/home";
+		} else
+
+		// hitomi
+		if (talk === "히토미" || talk === "히토미는?") {
+			say = "꺼라.";
+		} else
+
+		if (talk === "그지?" || talk === "그치?" || talk === "그렇지?") {
+			say = "ㅇㅇ 맞음";
+		} else
+
+		if (talk === "그건 쫌..." || talk === "그건...") {
+			say = "그건 아닌듯";
+		} else
+
+		// pepe
+		if (talk === "페페는?" || talk === "개구리는?") {
+			say = "슬픔입니다";
+		} else
+
+		// github!
+		if (talk === "소스는?") {
+			say = "깃헙에서!\n> https://github.com/PMHStudio/DiscordMuBot/";
+		} else
+
+		if (talk === "개발자는?") {
+			say = "``뮤!``입력!";
+		} else
+
+		// kimino nawa.
+		if (talk === "기미노!") {
+			say = "나마에와!";
+		} else
+
+		if (talk === "제인!") {
+			say = "시네!!!!";
+		} else
+
+		// Death Note
+		if (talk === "가루") {
+			say = "바나나!";
+		} else
+
+		// 2 koi
+		if (talk === "베니시민트") {
+			say = "디스 월드!";
+		} else
+
+		// niconico
+		if (talk === "니코니코" || talk === "니코") {
+			say = "동가~~~~\n> http://www.nicovideo.jp/"
+		} else
+
+		if (talk === "뮤!") {
+			say = "뮤! 뮤! 뮤!"
+		} else
+
+		if (talk === "ㅇㅈ?") {
+			say = "ㅇ, ㅇㅈ"
 		} else
 
 		if (talk === "fuck" || talk === "ㅗ" || talk === "법규" || talk === "ㅄ" || talk === "ㅂㅅ" || talk === "ㅅㅂ") {
