@@ -45,7 +45,7 @@ mu.on('message', input => {
 // Commands....................
 
 	// BadWord Checker
-	if (talk === "fuck" || talk === "ㅗ" || talk === "법규" || talk === "ㅄ" || talk === "ㅂㅅ" || talk === "ㅅㅂ") {
+	if (i === "fuck" || i === "ㅗ" || i === "법규" || i === "ㅄ" || i === "ㅂㅅ" || i === "ㅅㅂ") {
 		input.guild.systemChannel.send(`Hey! Server owner!\n${input.author} used "${talk}"! Plz, Ban!`);
 		input.guild.systemChannel.send(`이봐요! 서버장!\n${input.author}라는 미천한 자가 \n"${talk}"라고 욕을썼다구요! 처벌합시다!!!`)
 		input.channel.send(`ಠ益ಠ) <I Report YOU!) ${input.author}!`);
