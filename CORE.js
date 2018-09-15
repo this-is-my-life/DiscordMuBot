@@ -463,7 +463,7 @@ mu.on('message', input => {
 		let talk = pars.join(" ").slice(0);
 		let say;
 		if (talk === "hi" || talk === "hello" || talk === "halo") {
-			say = `↗Hell↘o(w) →and ↗a↘gain ↗wel↗come →to →the ↗PM↘H →Stu↗di↗o mUb▒OT d▒EvL▤o▒Er c▒▒E▒N▒▒te▒R▒ [${Math.round(mu.ping)}ms]`;
+			say = `\`\`↗Hell↘o(w) →and ↗a↘gain ↗wel↗come →to →the ↗PM↘H →Stu↗di↗o mUb▒OT d▒EvL▤o▒Er c▒▒E▒N▒▒te▒R▒\`\` [${Math.round(mu.ping)}ms]`;
 		} else
 
 		if (talk === "안녕" || talk === "안녕!" || talk === "반가워" || talk === "반가워!" || talk === "ㅎㅇ") {
