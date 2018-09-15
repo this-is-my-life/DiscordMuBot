@@ -594,15 +594,15 @@ mu.on('message', input => {
 
 		// niconico
 		if (talk === "니코니코" || talk === "니코") {
-			say = "동가~~~~\n> http://www.nicovideo.jp/"
+			say = "동가~~~~\n> http://www.nicovideo.jp/";
 		} else
 
 		if (talk === "뮤!") {
-			say = "뮤! 뮤! 뮤!"
+			say = "뮤! 뮤! 뮤!";
 		} else
 
 		if (talk === "ㅇㅈ?") {
-			say = "ㅇ, ㅇㅈ"
+			say = "ㅇ, ㅇㅈ";
 		} else
 
 		if (talk === "fuck" || talk === "ㅗ" || talk === "법규" || talk === "ㅄ" || talk === "ㅂㅅ" || talk === "ㅅㅂ") {
