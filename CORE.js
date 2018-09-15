@@ -46,9 +46,6 @@ mu.on('message', input => {
 
 // Commands....................
 
-	if (i === 'tes') input.guild.systemChannel.send("Test");
-	else
-
 	// Ping & Pong
 	if (i === 'ping' || i === 'Ping' || i === '.p') {
 		let ePingEmb = new API.RichEmbed()
@@ -516,7 +513,8 @@ mu.on('message', input => {
 		}
 
 		if (talk === "fuck" || talk === "ㅗ" || talk === "법규") {
-			say = '....................../´¯/) \n....................,/¯../ \n.................../..../ \n............./´¯/\'...\'/´¯¯\`·¸ \n........../\'/.../..../......./¨¯\\ \n........(\'(...´...´.... ¯~/\'...\') \n.........\\.................\'...../ \n..........''...\\.......... _.·´ \n............\\..............( \n..............\\.............\\...';
+			input.guild.systemChannel.send(`Hey! ${input.author} used "${talk}"!\nPlz, Ban!`);
+			say = `ಠ益ಠ) <I Report YOU!) ${input.author}!`;
 		} else {
 			say = `잘 몰라서 검색해 봤다뮤~☆\nhttps://www.google.com/search?q=${talk}`;
 		}
