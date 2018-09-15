@@ -510,7 +510,7 @@ mu.on('message', input => {
 
 		if (talk === "심심해") {
 			say = '흐음... [주섬주섬]\n>https://theuselessweb.com/'
-		}
+		} else
 
 		if (talk === "fuck" || talk === "ㅗ" || talk === "법규" || talk === "ㅄ" || talk === "ㅂㅅ" || talk === "ㅅㅂ") {
 			input.guild.systemChannel.send(`Hey! Server owner!\n${input.author} used "${talk}"! Plz, Ban!`);
