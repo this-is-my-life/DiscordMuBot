@@ -469,14 +469,12 @@ mu.on('message', input => {
 
 		if (talk === "안녕" || talk === "안녕!" || talk === "반가워" || talk === "반가워!" || talk === "ㅎㅇ") {
 			say = `ㅎㅇ! 뮤봇이다뮤우~! [${Math.round(mu.ping)}ms]`;
-		} else {
-			say = `잘 몰라서 검색해 봤다뮤~☆\nhttps://www.google.com/search?q=${talk}`;
-		}
-		let twm = new.API.RichEmbed()
+		} else say = `잘 몰라서 검색해 봤다뮤~☆\nhttps://www.google.com/search?q=${talk}`;
+		let twmEmb = new.API.RichEmbed()
 		.setColor(input.member.displayHexColor)
-		.setThumbnail(ava)
 		.addField(`${say}`, `to.${input.author}`);
-		input.channel.send(twm);
+		.setThumbnail(ava)
+		input.channel.send(twmEmb);
 	}
 
 // ............................
