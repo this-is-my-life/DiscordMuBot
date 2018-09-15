@@ -476,8 +476,7 @@ mu.on('message', input => {
 		.setColor(input.member.displayHexColor)
 		.setThumbnail(ava)
 		.addField(`${say}`, `to.${input.author}`);
-		console.log(twm);
-		input.channel.send(say);
+		input.channel.send(twm);
 	}
 
 // ............................
