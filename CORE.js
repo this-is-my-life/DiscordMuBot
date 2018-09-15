@@ -460,7 +460,6 @@ mu.on('message', input => {
 
 	// Talk with Mu!
 	if (i === "twm!" || i === "TwM!" || i === "mu!" || i === "mu!" || i === "뮤" || i === "뮤!" || i === ".t") {
-		let ava = mu.user.displayAvatarURL;
 		let talk = pars.join(" ").slice(0);
 		let say;
 		if (talk === "HI" || talk === "HELLO" || talk === "HALO") {
@@ -469,12 +468,10 @@ mu.on('message', input => {
 
 		if (talk === "안녕" || talk === "안녕!" || talk === "반가워" || talk === "반가워!" || talk === "ㅎㅇ") {
 			say = `ㅎㅇ! 뮤봇이다뮤우~! [${Math.round(mu.ping)}ms]`;
-		} else say = `잘 몰라서 검색해 봤다뮤~☆\nhttps://www.google.com/search?q=${talk}`;
-		let twmEmb = new.API.RichEmbed()
-		.setColor(input.member.displayHexColor)
-		.addField(`${say}`, `to.${input.author}`);
-		.setThumbnail(ava)
-		input.channel.send(twmEmb);
+		} else {
+			say = `잘 몰라서 검색해 봤다뮤~☆\nhttps://www.google.com/search?q=${talk}`;
+		}
+		input.channel.send(say);
 	}
 
 // ............................
