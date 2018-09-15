@@ -99,7 +99,7 @@ mu.on('message', input => {
 		input.channel.send(eCreditEmb);
 	} else
 
-	if (i === '뮤봇' || i === '뮤정보' || i === '뮤' || i === '뮤봇정보') {
+	if (i === '뮤봇' || i === '뮤정보' || i === '뮤' || i === '뮤봇정보' || i === '뮤!') {
 		let avat = mu.user.displayAvatarURL;
 		let kBotInfoEmb = new API.RichEmbed()
 		.setTitle(`${mu.user.username.toString()}의 정보라뮤~★`)
@@ -459,19 +459,24 @@ mu.on('message', input => {
 	} else
 
 	// Talk with Mu!
-	if (i === "TWM" || i === "MU" || i === "MU!" || i === "뮤" || i === "뮤!" || i === ".t") {
+	if (i === "twm!" || i === "TwM!" || i === "mu!" || i === "mu!" || i === "뮤" || i === "뮤!" || i === ".t") {
+		let ava = mu.user.displayAvatarURL;
 		let talk = pars.join(" ").slice(0);
 		let say;
 		if (talk === "HI" || talk === "HELLO" || talk === "HALO") {
-			say = `Hello! Mu! [${Math.round(mu.ping)}ms]`;
+			say = `Hello! [${Math.round(mu.ping)}ms]`;
 		} else
 
-		if (talk === "안녕" || talk === "안녕!" || talk === "반가워" || talk === "반가워!") {
-			say = `${talk}, 뮤봇이다뮤우~!`;
+		if (talk === "안녕" || talk === "안녕!" || talk === "반가워" || talk === "반가워!" || talk === "ㅎㅇ") {
+			say = `ㅎㅇ! 뮤봇이다뮤우~! [${Math.round(mu.ping)}ms]`;
 		} else {
 			say = `잘 몰라서 검색해 봤다뮤~☆\nhttps://www.google.com/search?q=${talk}`;
 		}
-		console.log(say);
+		let twm = new.API.RichEmbed()
+		.setColor(input.member.displayHexColor)
+		.setThumbnail(ava)
+		.addField(`${say}`, `to.${input.author}`);
+		console.log(twm);
 		input.channel.send(say);
 	}
 
