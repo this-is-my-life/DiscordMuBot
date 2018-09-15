@@ -462,12 +462,12 @@ mu.on('message', input => {
 	if (i === "twm!" || i === "TwM!" || i === "mu!" || i === "mu!" || i === "뮤" || i === "뮤!" || i === ".t") {
 		let talk = pars.join(" ").slice(0);
 		let say;
-		if (talk === "HI" || talk === "HELLO" || talk === "HALO") {
-			say = `Hello! [${Math.round(mu.ping)}ms]`;
+		if (talk === "hi" || talk === "hello" || talk === "halo") {
+			say = `↗Hell↘o(w) →and ↗a↘gain ↗wel↗come →to →the ↗PM↘H →Stu↗di↗o mUb▒OT d▒EvL▤o▒Er c▒▒E▒N▒▒te▒R▒ [${Math.round(mu.ping)}ms]`;
 		} else
 
 		if (talk === "안녕" || talk === "안녕!" || talk === "반가워" || talk === "반가워!" || talk === "ㅎㅇ") {
-			say = `ㅎㅇ! 뮤봇이다뮤우~! [${Math.round(mu.ping)}ms]`;
+			say = `${talk}! 힘쌔고 **강한* 하루!\n만일 내게 물어본다면 나는...\n**뮤봇** [${Math.round(mu.ping)}ms]`;
 		} else {
 			say = `잘 몰라서 검색해 봤다뮤~☆\nhttps://www.google.com/search?q=${talk}`;
 		}
