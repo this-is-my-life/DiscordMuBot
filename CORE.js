@@ -467,7 +467,28 @@ mu.on('message', input => {
 		} else
 
 		if (talk === "안녕" || talk === "안녕!" || talk === "반가워" || talk === "반가워!" || talk === "ㅎㅇ") {
-			say = `${talk}! 힘쌔고 **강한* 하루!\n만일 내게 물어본다면 나는...\n**뮤봇** [${Math.round(mu.ping)}ms]`;
+			say = `${talk}! 힘쌔고 **강한** 하루!\n만일 내게 물어본다면 나는 **뮤봇**! [${Math.round(mu.ping)}ms]`;
+		} else 
+		if (talk === "나무") {
+			say = '위키'
+		} 
+		if (talk === "시공" || talk === "시공은?") {
+			say = '조아'
+		} 
+		if (talk === "나") {
+			say = '니?'
+		} 
+		if (talk === "나는?") {
+			if (`${input.author.id}` === '411381903707471895') {
+				say = '__뮤봇 **갓밸로퍼**__\n(~원래 뮤봇은 이름이 PMH봇 이였다 카더라~)'
+			} else 
+			if (`${input.author.id}` === '403025222921486338') {
+				say = '**뮤봇 포크해간자** (~알고 봤더니 세리봇은 뮤봇에 숨겨진 여동생이였던 거라 카더라~)'
+			} else
+			if (`${input.author.id}` === '453554012353069090') {
+				say = '**히든디밸** (~PMH Studio에서 쫏겨날 처지다 카더라~)'
+			} else 
+			say = 'ㅇ? 먹는건가?'
 		} else {
 			say = `잘 몰라서 검색해 봤다뮤~☆\nhttps://www.google.com/search?q=${talk}`;
 		}
