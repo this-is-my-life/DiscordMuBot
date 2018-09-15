@@ -594,7 +594,10 @@ mu.on('message', input => {
 
 		// niconico
 		if (talk === "니코니코" || talk === "니코 니코") {
-			say = "동가~~~~\n> http://www.nicovideo.jp/";
+			let TwMnico = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
+			if (TwMnico === "1") say = "동가~~~~\n> http://www.nicovideo.jp/";
+			if (TwMnico === "2") say = "틴.";
+			if (TwMnico === "3") say = "니~~\n아나타노 하토니 니코니코니~\n> https://www.youtube.com/watch?v=3oD8tj3eBls"
 		} else
 
 		if (talk === "뮤!") {
@@ -622,7 +625,7 @@ mu.on('message', input => {
 
 	if (i === `<@${mu.user.id}>` || i === `<@!${mu.user.id}>`) { // 맨션당했을때
         input.channel.send(`뮤유~?`);
-        return;
     }
     
+return;
 });
