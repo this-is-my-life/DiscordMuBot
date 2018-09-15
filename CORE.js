@@ -532,7 +532,7 @@ mu.on('message', input => {
 		} else
 
 		// jojo
-		if (talk === "오마에와") {
+		if (talk === "오마에와 모오 신데이루") {
 			say = "나니? [수컹]";
 		} else
 
@@ -593,7 +593,7 @@ mu.on('message', input => {
 		} else
 
 		// niconico
-		if (talk === "니코니코" || talk === "니코") {
+		if (talk === "니코니코" || talk === "니코 니코") {
 			say = "동가~~~~\n> http://www.nicovideo.jp/";
 		} else
 
@@ -611,7 +611,7 @@ mu.on('message', input => {
 			input.channel.send(`ಠ益ಠ) <I Report YOU!) ${input.author}!`);
 			say = `ಠ益ಠ) <신고ㄱ?) ${input.author}!`
 		} else {
-			say = `잘 몰라서 검색해 봤다뮤~☆\nhttps://www.google.com/search?q=${talk}`;
+			say = `잘 몰라서 검색해 봤다뮤~☆\nhttps://www.google.com/search?q=${pars.toString()}`;
 		}
 		input.channel.send(say);
 	}
