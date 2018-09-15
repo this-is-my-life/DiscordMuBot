@@ -527,10 +527,6 @@ mu.on('message', input => {
 			}
 		} else
 
-		if (talk === "심심해") {
-			say = '흐음... [주섬주섬]\n>https://theuselessweb.com/';
-		} else
-
 		// jojo
 		if (talk === "오마에와 모오 신데이루") {
 			say = "나니? [수컹]";
@@ -542,8 +538,12 @@ mu.on('message', input => {
 		} else
 
 		// osu!
-		if (talk === "노라줘" || talk === "놀아줘") {
-			say = "히osu!나 하세요.\n> https://osu.ppy.sh/home";
+		if (talk === "노라줘" || talk === "놀아줘" || talk === "심심해") {
+			let TwMosu = Math.floor(Math.random() * (3 - 0 + 1)) + 0;
+			if (TwMosu === "0") say = "히osu!나 하세요.\n> https://osu.ppy.sh/home";
+			if (TwMosu === "1") say = '흐음... [주섬주섬]\n> https://theuselessweb.com/';
+			if (TwMosu === "2") say = "**시.러.**";
+			if (TwMosu === "3") say = "do you want DDLC?"
 		} else
 
 		// hitomi
@@ -552,7 +552,9 @@ mu.on('message', input => {
 		} else
 
 		if (talk === "그지?" || talk === "그치?" || talk === "그렇지?") {
-			say = "ㅇㅇ 맞음";
+			let TwMright = Math.floor(Math.random() * (1 - 0 + 1)) + 0;
+			if (TwMright === "0") say = "ㅇㅇ 맞음";
+			if (TwMright === "1") say = "뭔개솔?"
 		} else
 
 		if (talk === "그건 쫌..." || talk === "그건...") {
@@ -588,24 +590,30 @@ mu.on('message', input => {
 		} else
 
 		// 2 koi
-		if (talk === "베니시민트") {
-			say = "디스 월드!";
+		if (talk === "베니시민트" || talk === "vanishment!") {
+			let TwMvani = Math.floor(Math.random() * (1 - 0 + 1)) + 0;
+			if (TwMvani === "0") say = "Th!s World!";
+			if (TwMvani === "1") say = "왜... 왜그러시죠? 설마.. 쥬...중2병?"
 		} else
 
 		// niconico
 		if (talk === "니코니코" || talk === "니코 니코") {
-			let TwMnico = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
-			if (TwMnico === "1") say = "동가~~~~\n> http://www.nicovideo.jp/";
-			if (TwMnico === "2") say = "틴.";
-			if (TwMnico === "3") say = "니~~\n아나타노 하토니 니코니코니~\n> https://www.youtube.com/watch?v=3oD8tj3eBls";
+			let TwMnico = Math.floor(Math.random() * (2 - 0 + 1)) + 0;
+			if (TwMnico === "0") say = "동가~~~~\n> http://www.nicovideo.jp/";
+			if (TwMnico === "1") say = "틴.";
+			if (TwMnico === "2") say = "니~~\n아나타노 하토니 니코니코니~\n> https://www.youtube.com/watch?v=3oD8tj3eBls";
 		} else
 
 		if (talk === "뮤!") {
-			say = "뮤! 뮤! 뮤!";
+			let TwMmu = Math.floor(Math.random() * (1 - 0 + 1)) + 0;
+			if (TwMmu === "0") say = "뮤! 뮤! 뮤!";
+			if (TwMmu === "1") say = "왜... 왜저래... [정색]";
 		} else
 
 		if (talk === "ㅇㅈ?") {
-			say = "ㅇ, ㅇㅈ";
+			let TwMokay = Math.floor(Math.random() * (1 - 0 + 1)) + 0;
+			if (TwMokay === "0") say = "ㅇ, ㅇㅈ";
+			if (TwMokay === "1") say = "ㄴㄴ ㄴㅇㅈ";
 		} else
 
 		if (talk === "fuck" || talk === "ㅗ" || talk === "법규" || talk === "ㅄ" || talk === "ㅂㅅ" || talk === "ㅅㅂ") {
