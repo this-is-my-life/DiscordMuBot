@@ -44,10 +44,10 @@ mu.on('message', input => {
 
 // Commands....................
 
-	// 욕설 필터링 By PMH Studio / WSF (https://github.com/whitesnowflakes)
-	if (i === "개새끼" || i === "느금마" || i === "닥쳐" || i === "등신" || i === "또라이" || i === "메갈" || i === "미친놈" || i === "병신" || i === "빠가" || i === "보지" || i === "불알" || i === "섹스" || i === "자지" || i === "새끼" || i === "씨발" || i === "아가리" || i === "애미" || i === "애비" || i === "일베" || i === "좆" || i === "지랄" || i === "창녀" || i === "틀딱충" || i === "후장" || i === "니미씨발" || i === "니비씨발" || i === "ㅗ" || i === "h" || i "개새끼" || i === "개색기" || i === "개색끼" || i === "개자식" || i === "개보지" || i === "개자지" || i === "개년" || i === "개걸래" || i === "개걸레" || i === "씨발" || i === "씨팔" || i === "씨부랄" || i === "씨바랄" || i === "씹창" || i === "씹탱" || i === "씹보지" || i === "씹자지" || i === "씨방세" || i === "씨방새" || i === "씨펄" || i === "시펄" || i === "십탱" || i === "씨박" || i === "썅" || i === "쌍놈" || i === "쌍넘" || i === "싸가지" || i === "쓰벌" || i === "씁얼" || i === "상넘이" || i === "상놈의" || i === "상놈이" || i === "상놈을" || i === "좆" || i === "좃" || i === "존나게" || i === "존만한" || i === "같은년" || i === "넣을년" || i === "버릴년" || i === "부랄년" || i === "바랄년" || i === "미친년" || i === "니기미" || i === "니미씹" || i === "니미씨" || i === "니미럴" || i === "니미랄" || i === "호로" || i === "후레아들" || i === "호로새끼" || i === "후레자식" || i === "후래자식" || i === "후라들년" || i === "후라들넘" || i === "빠구리" || i === "병신") {
+	// BadWord Checker
+	if (i === "fuck" || i === "ㅗ" || i === "법규" || i === "ㅄ" || i === "ㅂㅅ" || i === "ㅅㅂ") {
 		input.guild.systemChannel.send(`Hey! Server owner!\n${input.author} used "${talk}"! Plz, Ban!`);
-		input.guild.systemChannel.send(`이봐요! 서버장!\n${input.author}라는 미천한 자가 \n"${talk}"라고 욕을썼다구요! 처벌합시다!!!`);
+		input.guild.systemChannel.send(`이봐요! 서버장!\n${input.author}라는 미천한 자가 \n"${talk}"라고 욕을썼다구요! 처벌합시다!!!`)
 		input.channel.send(`ಠ益ಠ) <I Report YOU!) ${input.author}!`);
 		say = `ಠ益ಠ) <신고ㄱ?) ${input.author}!`
 	} else
@@ -527,6 +527,10 @@ mu.on('message', input => {
 			}
 		} else
 
+		if (talk === "심심해") {
+			say = '흐음... [주섬주섬]\n>https://theuselessweb.com/';
+		} else
+
 		// jojo
 		if (talk === "오마에와 모오 신데이루") {
 			say = "나니? [수컹]";
@@ -538,13 +542,8 @@ mu.on('message', input => {
 		} else
 
 		// osu!
-		if (talk === "노라줘" || talk === "놀아줘" || talk === "심심해") {
-			let TwMosu;
-			TwMosu = Math.floor(Math.random() * (3 - 0 + 1)) + 0;
-			if (TwMosu === "0") say = "히osu!나 하세요.\n> https://osu.ppy.sh/home";
-			if (TwMosu === "1") say = '흐음... [주섬주섬]\n> https://theuselessweb.com/';
-			if (TwMosu === "2") say = "**시.러.**";
-			if (TwMosu === "3") say = "do you want DDLC?"
+		if (talk === "노라줘" || talk === "놀아줘") {
+			say = "히osu!나 하세요.\n> https://osu.ppy.sh/home";
 		} else
 
 		// hitomi
@@ -553,10 +552,7 @@ mu.on('message', input => {
 		} else
 
 		if (talk === "그지?" || talk === "그치?" || talk === "그렇지?") {
-			let TwMright;
-			TwMright = Math.floor(Math.random() * (1 - 0 + 1)) + 0;
-			if (TwMright === "0") say = "ㅇㅇ 맞음";
-			if (TwMright === "1") say = "뭔개솔?"
+			say = "ㅇㅇ 맞음";
 		} else
 
 		if (talk === "그건 쫌..." || talk === "그건...") {
@@ -592,42 +588,28 @@ mu.on('message', input => {
 		} else
 
 		// 2 koi
-		if (talk === "베니시민트" || talk === "vanishment!") {
-			let TwMvani;
-			TwMvani = Math.floor(Math.random() * (1 - 0 + 1)) + 0;
-			if (TwMvani === "0") say = "Th!s World!";
-			if (TwMvani === "1") say = "왜... 왜그러시죠? 설마.. 쥬...중2병?"
+		if (talk === "베니시민트") {
+			say = "디스 월드!";
 		} else
 
 		// niconico
 		if (talk === "니코니코" || talk === "니코 니코") {
-			let TwMnico;
-			TwMnico = Math.floor(Math.random() * (2 - 0 + 1)) + 0;
-			if (TwMnico === "0") say = "동가~~~~\n> http://www.nicovideo.jp/";
-			if (TwMnico === "1") say = "틴.";
-			if (TwMnico === "2") say = "니~~\n아나타노 하토니 니코니코니~\n> https://www.youtube.com/watch?v=3oD8tj3eBls";
+			say = "동가~~~~\n> http://www.nicovideo.jp/";
 		} else
 
 		if (talk === "뮤!") {
-			let TwMmu;
-			TwMmu = Math.floor(Math.random() * (1 - 0 + 1)) + 0;
-			if (TwMmu === "0") say = "뮤! 뮤! 뮤!";
-			if (TwMmu === "1") say = "왜... 왜저래... [정색]";
+			say = "뮤! 뮤! 뮤!";
 		} else
 
 		if (talk === "ㅇㅈ?") {
-			let TwMokay;
-			TwMokay = Math.floor(Math.random() * (1 - 0 + 1)) + 0;
-			if (TwMokay === "0") say = "ㅇ, ㅇㅈ";
-			if (TwMokay === "1") say = "ㄴㄴ ㄴㅇㅈ";
+			say = "ㅇ, ㅇㅈ";
 		} else
 
-		// 욕설 필터링 By PMH Studio / WSF (https://github.com/whitesnowflakes)
-		if (talk === "개새끼" || talk === "느금마" || talk === "닥쳐" || talk === "등신" || talk === "또라이" || talk === "메갈" || talk === "미친놈" || talk === "병신" || talk === "빠가" || talk === "보지" || talk === "불알" || talk === "섹스" || talk === "자지" || talk === "새끼" || talk === "씨발" || talk === "아가리" || talk === "애미" || talk === "애비" || talk === "일베" || talk === "좆" || talk === "지랄" || talk === "창녀" || talk === "틀딱충" || talk === "후장" || talk === "니미씨발" || talk === "니비씨발" || talk === "ㅗ" || talk === "h" || talk "개새끼" || talk === "개색기" || talk === "개색끼" || talk === "개자식" || talk === "개보지" || talk === "개자지" || talk === "개년" || talk === "개걸래" || talk === "개걸레" || talk === "씨발" || talk === "씨팔" || talk === "씨부랄" || talk === "씨바랄" || talk === "씹창" || talk === "씹탱" || talk === "씹보지" || talk === "씹자지" || talk === "씨방세" || talk === "씨방새" || talk === "씨펄" || talk === "시펄" || talk === "십탱" || talk === "씨박" || talk === "썅" || talk === "쌍놈" || talk === "쌍넘" || talk === "싸가지" || talk === "쓰벌" || talk === "씁얼" || talk === "상넘이" || talk === "상놈의" || talk === "상놈이" || talk === "상놈을" || talk === "좆" || talk === "좃" || talk === "존나게" || talk === "존만한" || talk === "같은년" || talk === "넣을년" || talk === "버릴년" || talk === "부랄년" || talk === "바랄년" || talk === "미친년" || talk === "니기미" || talk === "니미씹" || talk === "니미씨" || talk === "니미럴" || talk === "니미랄" || talk === "호로" || talk === "후레아들" || talk === "호로새끼" || talk === "후레자식" || talk === "후래자식" || talk === "후라들년" || talk === "후라들넘" || talk === "빠구리" || talk === "병신") {
+		if (talk === "fuck" || talk === "ㅗ" || talk === "법규" || talk === "ㅄ" || talk === "ㅂㅅ" || talk === "ㅅㅂ") {
 			input.guild.systemChannel.send(`Hey! Server owner!\n${input.author} used "${talk}"! Plz, Ban!`);
 			input.guild.systemChannel.send(`이봐요! 서버장!\n${input.author}라는 미천한 자가 \n"${talk}"라고 욕을썼다구요! 처벌합시다!!!`)
 			input.channel.send(`ಠ益ಠ) <I Report YOU!) ${input.author}!`);
-			say = `ಠ益)ಠ <신고ㄱ?) ${input.author}!`
+			say = `ಠ益ಠ) <신고ㄱ?) ${input.author}!`
 		} else {
 			say = `잘 몰라서 검색해 봤다뮤~☆\nhttps://www.google.com/search?q=${pars.toString()}`;
 		}
@@ -640,7 +622,7 @@ mu.on('message', input => {
 
 	if (i === `<@${mu.user.id}>` || i === `<@!${mu.user.id}>`) { // 맨션당했을때
         input.channel.send(`뮤유~?`);
+        return;
     }
     
-return;
 });
