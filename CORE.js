@@ -66,8 +66,8 @@ mu.on('message', input => {
 	if (i === 'ping' || i === 'Ping' || i === '.p') {
 		let ePingEmb = new API.RichEmbed()
 		.setTitle(`Pong!`)
-		.setColor("#ffff00")
-		.setDescription(`Here, ${input.author.toString()}...Mu! OㅅO [${Math.round(mu.ping)}ms]`);
+		.setColor(input.member.displayHexColor)
+		.addField(`Here, ``, ${input.author.toString()}...Mu! OㅅO [${Math.round(mu.ping)}ms]`);
 		input.delete().catch(O_o=>{});
 		input.channel.send(ePingEmb);
 	} else
@@ -75,8 +75,8 @@ mu.on('message', input => {
 	if (i === '핑' || i === '핑크') {
 		let kPingEmb = new API.RichEmbed()
 		.setTitle(`Pong!`)
-		.setColor("#ffff00")
-		.setDescription(`${input.author.toString()}뮤! OㅅO [${Math.round(mu.ping)}ms]`);
+		.setColor(input.member.displayHexColor)
+		.addField(`${in, ``put.author.toString()}뮤! OㅅO [${Math.round(mu.ping)}ms]`);
 		input.delete().catch(O_o=>{});
 		input.channel.send(kPingEmb);
 	} else
@@ -86,9 +86,9 @@ mu.on('message', input => {
 		let avat = mu.user.displayAvatarURL;
 		let eBotInfoEmb = new API.RichEmbed()
 		.setTitle(`${mu.user.username.toString()} Infomation!`)
-		.setDescription(`to. ${input.author.toString()}`)
+		.addField(`to. , ``${input.author.toString()}`)
 		.setThumbnail(avat)
-		.setColor("#ffff00")
+		.setColor(input.member.displayHexColor)
 		.addBlankField()
 		.addField("μBot Username & Tag", mu.user.tag)
 		.addField("μBot ID", mu.user.id)
@@ -116,9 +116,9 @@ mu.on('message', input => {
 		let avat = mu.user.displayAvatarURL;
 		let kBotInfoEmb = new API.RichEmbed()
 		.setTitle(`${mu.user.username.toString()}의 정보라뮤~★`)
-		.setDescription(`to. ${input.author.toString()}`)
+		.addField(`to. , ``${input.author.toString()}`)
 		.setThumbnail(avat)
-		.setColor("#ffff00")
+		.setColor(input.member.displayHexColor)
 		.addBlankField()
 		.addField("유저 계정이름", mu.user.tag)
 		.addField("유저 고유 식별번호 (UID)", mu.user.id)
@@ -147,7 +147,7 @@ mu.on('message', input => {
 		let icon = input.guild.iconURL;
 		let eChannelInfo = new API.RichEmbed()
 		.setTitle(`${input.guild.name.toString()} Infomation!`)
-		.setDescription(`to. ${input.author.toString()}`)
+		.addField(`to. , ``${input.author.toString()}`)
 		.setThumbnail(icon)
 		.setColor("#E5748B")
 		.addBlankField()
@@ -162,7 +162,7 @@ mu.on('message', input => {
 		let icon = input.guild.iconURL;
 		let kChannelInfo = new API.RichEmbed()
 		.setTitle(`${input.guild.name.toString()} 정보다뮤~♬`)
-		.setDescription(`to. ${input.author.toString()}`)
+		.addField(`to. , ``${input.author.toString()}`)
 		.setThumbnail(icon)
 		.setColor("#E5748B")
 		.addBlankField()
@@ -178,7 +178,7 @@ mu.on('message', input => {
 		let avata = input.author.displayAvatarURL;
 		let eMyInfo = new API.RichEmbed()
 		.setTitle(`${input.author.username} Infomation!`)
-		.setDescription(`to. Someone!`)
+		.addField(`to. , ``Someone!`)
 		.setThumbnail(avata)
 		.setColor(input.member.displayHexColor)
 		.addBlankField()
@@ -198,7 +198,7 @@ mu.on('message', input => {
 		let avata = input.author.displayAvatarURL;
 		let eMyInfo = new API.RichEmbed()
 		.setTitle(`${input.author.username}님의 정보다뮤유~!`)
-		.setDescription(`누군가는 보겠지뮤...`)
+		.addField(`누군가는, `` 보겠지뮤...`)
 		.setThumbnail(avata)
 		.setColor(input.member.displayHexColor)
 		.addBlankField()
@@ -312,7 +312,7 @@ mu.on('message', input => {
 		let Ricon = input.guild.iconURL;
 		let eReportEmb = new API.RichEmbed()
 		.setTitle(`${input.guild.name.toString()} - REPORTed`)
-		.setDescription(`Reported at ${input.createdAt}`)
+		.addField(`Repo, ``rted at ${input.createdAt}`)
 		.setThumbnail(Ricon)
 		.setColor("#fb3030")
 		.addBlankField()
@@ -335,7 +335,7 @@ mu.on('message', input => {
 		let Ricon = input.guild.iconURL;
 		let kReportEmb = new API.RichEmbed()
 		.setTitle(`${input.guild.name.toString()}에서 리포트 됨`)
-		.setDescription(`${input.createdAt}\n#리폿 @everyone`)
+		.addField(`${in, ``put.createdAt}\n#리폿 @everyone`)
 		.setThumbnail(Ricon)
 		.setColor("#fb3030")
 		.addBlankField()
@@ -362,7 +362,7 @@ mu.on('message', input => {
 		let eKickEmb = new API.RichEmbed()
 		.setTitle(`${input.guild.name.toString()} - KICKed`)
 		.setColor("#fb3030")
-		.setDescription(`${input.createdAt}\n@everyone`)
+		.addField(`${in, ``put.createdAt}\n@everyone`)
 		.setThumbnail(Kicon)
 		.addBlankField()
 		.addField("Kick To", `${kickTo} (ID: ${kickTo.id})`)
@@ -385,7 +385,7 @@ mu.on('message', input => {
 		let kKickEmb = new API.RichEmbed()
 		.setTitle(`${input.guild.name.toString()} - 킥`)
 		.setColor("#fb3030")
-		.setDescription(`${input.createdAt}\n@everyone`)
+		.addField(`${in, ``put.createdAt}\n@everyone`)
 		.setThumbnail(Kicon)
 		.addBlankField()
 		.addField("킥 대상", `${kickTo} (ID: ${kickTo.id})`)
@@ -412,7 +412,7 @@ mu.on('message', input => {
 		let eBanEmb = new API.RichEmbed()
 		.setTitle(`${input.guild.name.toString()} - BANned`)
 		.setColor("#fb3030")
-		.setDescription(`${input.createdAt}\n@everyone`)
+		.addField(`${in, ``put.createdAt}\n@everyone`)
 		.setThumbnail(Bicon)
 		.addBlankField()
 		.addField("Ban To", `${banTo} (ID: ${banTo.id})`)
@@ -435,7 +435,7 @@ mu.on('message', input => {
 		let kBanEmb = new API.RichEmbed()
 		.setTitle(`${input.guild.name.toString()} - BANned`)
 		.setColor("#fb3030")
-		.setDescription(`${input.createdAt}\n@everyone`)
+		.addField(`${in, ``put.createdAt}\n@everyone`)
 		.setThumbnail(Bicon)
 		.addBlankField()
 		.addField("강퇴 대상", `${banTo} (ID: ${banTo.id})`)
@@ -491,13 +491,78 @@ mu.on('message', input => {
 		} else
 
 		// namu.wiki
-		if (talk === "나무") {
-			say = '위키';
+		if (talk === "나무" || talk === "나무위키") {
+			let twmNamu = Math.floor(Math.random() * (3 - 0 + 1)) + 0;
+
+			if (`${twmNamu}` === '0') {
+				let twmNamuEmb = new API.RichEmbed()
+				.setTitle(``)
+				.setColor(input.member.displayHexColor)
+				.addField('위키!', ``);
+				input.channel.send(twmNamuEmb);
+			} else
+
+			if (`${twmNamu}` === '1') {
+				let twmNamuEmb = new API.RichEmbed()
+				.setTitle(``)
+				.setColor(input.member.displayHexColor)
+				.addField('꺼라.', ``);
+				input.channel.send(twmNamuEmb);
+			} else
+
+			if (`${twmNamu}` === '2') {
+			let twmNamuEmb = new API.RichEmbed()
+			.setTitle(``)
+			.setColor(input.member.displayHexColor)
+			.addField('> https://namu.wiki/', ``);
+			input.channel.send(twmNamuEmb);
+			} else
+
+			if (`${twmNamu}` === '3') {
+				let twmNamuEmb = new API.RichEmbed()
+				.setTitle(``)
+				.setColor(input.member.displayHexColor)
+				.addField('나~뮤!!' ``);
+				input.channel.send(twmNamuEmb);
+			}
 		} else
 
 		// heroes
 		if (talk === "시공" || talk === "시공은?") {
-			say = '조아';
+			let twmHeroes = Math.floor(Math.random() * (3 - 0 + 1)) + 0;
+
+			if (`${twmNamu}` === "0") {
+				let twmHeroesEmb = new API.RichEmbed()
+				.setTitle(``)
+				.setColor(input.member.displayHexColor)
+				.addField("시공! 조아!", ``)
+				input.channel.send(twmHeroesEmb);
+			} else
+
+			if (`${twmNamu}` === "1") {
+				let twmHeroesEmb = new API.RichEmbed()
+				.setTitle(``)
+				.setColor(input.member.displayHexColor)
+				.addField("and I also 시공조아", ``)
+				input.channel.send(twmHeroesEmb);
+				input.channel.send("> https://youtu.be/8GSF9Ui16k8?t=32");
+			} else
+
+			if (`${twmNamu}` === "2") {
+				let twmHeroesEmb = new API.RichEmbed()
+				.setTitle(``)
+				.setColor(input.member.displayHexColor)
+				.addField("아싸들이 인싸인척 하기위해 하는 겜", ``)
+				input.channel.send(twmHeroesEmb);
+			} else
+
+			if (`${twmNamu}` === "3") {
+				let twmHeroesEmb = new API.RichEmbed()
+				.setTitle(``)
+				.setColor(input.member.displayHexColor)
+				.addField("음... 그런거 하지 말고 **DDLC**나.. ~~<퍼버벅~~", ``)
+				input.channel.send(twmHeroesEmb);
+			}
 		} else
 
 		// jojo
