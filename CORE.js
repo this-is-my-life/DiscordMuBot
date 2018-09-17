@@ -67,7 +67,7 @@ mu.on('message', input => {
 		let ePingEmb = new API.RichEmbed()
 		.setTitle(`Pong!`)
 		.setColor(input.member.displayHexColor)
-		.addField(`Here, ``, ${input.author.toString()}...Mu! OㅅO [${Math.round(mu.ping)}ms]`);
+		.setDescription(`Here, ${input.author.toString()}...Mu! OㅅO [${Math.round(mu.ping)}ms]`);
 		input.delete().catch(O_o=>{});
 		input.channel.send(ePingEmb);
 	} else
@@ -76,7 +76,7 @@ mu.on('message', input => {
 		let kPingEmb = new API.RichEmbed()
 		.setTitle(`Pong!`)
 		.setColor(input.member.displayHexColor)
-		.addField(`${in, ``put.author.toString()}뮤! OㅅO [${Math.round(mu.ping)}ms]`);
+		.setDescription(`${input.author.toString()}뮤! OㅅO [${Math.round(mu.ping)}ms]`);
 		input.delete().catch(O_o=>{});
 		input.channel.send(kPingEmb);
 	} else
@@ -86,7 +86,7 @@ mu.on('message', input => {
 		let avat = mu.user.displayAvatarURL;
 		let eBotInfoEmb = new API.RichEmbed()
 		.setTitle(`${mu.user.username.toString()} Infomation!`)
-		.addField(`to. , ``${input.author.toString()}`)
+		.setDescription(`to. ${input.author.toString()}`)
 		.setThumbnail(avat)
 		.setColor(input.member.displayHexColor)
 		.addBlankField()
@@ -116,7 +116,7 @@ mu.on('message', input => {
 		let avat = mu.user.displayAvatarURL;
 		let kBotInfoEmb = new API.RichEmbed()
 		.setTitle(`${mu.user.username.toString()}의 정보라뮤~★`)
-		.addField(`to. , ``${input.author.toString()}`)
+		.setDescription(`to. ${input.author.toString()}`)
 		.setThumbnail(avat)
 		.setColor(input.member.displayHexColor)
 		.addBlankField()
@@ -147,7 +147,7 @@ mu.on('message', input => {
 		let icon = input.guild.iconURL;
 		let eChannelInfo = new API.RichEmbed()
 		.setTitle(`${input.guild.name.toString()} Infomation!`)
-		.addField(`to. , ``${input.author.toString()}`)
+		.setDescription(`to. ${input.author.toString()}`)
 		.setThumbnail(icon)
 		.setColor("#E5748B")
 		.addBlankField()
@@ -162,7 +162,7 @@ mu.on('message', input => {
 		let icon = input.guild.iconURL;
 		let kChannelInfo = new API.RichEmbed()
 		.setTitle(`${input.guild.name.toString()} 정보다뮤~♬`)
-		.addField(`to. , ``${input.author.toString()}`)
+		.setDescription(`to. ${input.author.toString()}`)
 		.setThumbnail(icon)
 		.setColor("#E5748B")
 		.addBlankField()
@@ -178,7 +178,7 @@ mu.on('message', input => {
 		let avata = input.author.displayAvatarURL;
 		let eMyInfo = new API.RichEmbed()
 		.setTitle(`${input.author.username} Infomation!`)
-		.addField(`to. , ``Someone!`)
+		.setDescription(`to. Someone!`)
 		.setThumbnail(avata)
 		.setColor(input.member.displayHexColor)
 		.addBlankField()
@@ -198,7 +198,7 @@ mu.on('message', input => {
 		let avata = input.author.displayAvatarURL;
 		let eMyInfo = new API.RichEmbed()
 		.setTitle(`${input.author.username}님의 정보다뮤유~!`)
-		.addField(`누군가는, `` 보겠지뮤...`)
+		.setDescription(`누군가는 보겠지뮤...`)
 		.setThumbnail(avata)
 		.setColor(input.member.displayHexColor)
 		.addBlankField()
@@ -312,7 +312,7 @@ mu.on('message', input => {
 		let Ricon = input.guild.iconURL;
 		let eReportEmb = new API.RichEmbed()
 		.setTitle(`${input.guild.name.toString()} - REPORTed`)
-		.addField(`Repo, ``rted at ${input.createdAt}`)
+		.setDescription(`Reported at ${input.createdAt}`)
 		.setThumbnail(Ricon)
 		.setColor("#fb3030")
 		.addBlankField()
@@ -335,7 +335,7 @@ mu.on('message', input => {
 		let Ricon = input.guild.iconURL;
 		let kReportEmb = new API.RichEmbed()
 		.setTitle(`${input.guild.name.toString()}에서 리포트 됨`)
-		.addField(`${in, ``put.createdAt}\n#리폿 @everyone`)
+		.setDescription(`${input.createdAt}\n#리폿 @everyone`)
 		.setThumbnail(Ricon)
 		.setColor("#fb3030")
 		.addBlankField()
@@ -362,7 +362,7 @@ mu.on('message', input => {
 		let eKickEmb = new API.RichEmbed()
 		.setTitle(`${input.guild.name.toString()} - KICKed`)
 		.setColor("#fb3030")
-		.addField(`${in, ``put.createdAt}\n@everyone`)
+		.setDescription(`${input.createdAt}\n@everyone`)
 		.setThumbnail(Kicon)
 		.addBlankField()
 		.addField("Kick To", `${kickTo} (ID: ${kickTo.id})`)
@@ -385,7 +385,7 @@ mu.on('message', input => {
 		let kKickEmb = new API.RichEmbed()
 		.setTitle(`${input.guild.name.toString()} - 킥`)
 		.setColor("#fb3030")
-		.addField(`${in, ``put.createdAt}\n@everyone`)
+		.setDescription(`${input.createdAt}\n@everyone`)
 		.setThumbnail(Kicon)
 		.addBlankField()
 		.addField("킥 대상", `${kickTo} (ID: ${kickTo.id})`)
@@ -412,7 +412,7 @@ mu.on('message', input => {
 		let eBanEmb = new API.RichEmbed()
 		.setTitle(`${input.guild.name.toString()} - BANned`)
 		.setColor("#fb3030")
-		.addField(`${in, ``put.createdAt}\n@everyone`)
+		.setDescription(`${input.createdAt}\n@everyone`)
 		.setThumbnail(Bicon)
 		.addBlankField()
 		.addField("Ban To", `${banTo} (ID: ${banTo.id})`)
@@ -435,7 +435,7 @@ mu.on('message', input => {
 		let kBanEmb = new API.RichEmbed()
 		.setTitle(`${input.guild.name.toString()} - BANned`)
 		.setColor("#fb3030")
-		.addField(`${in, ``put.createdAt}\n@everyone`)
+		.setDescription(`${input.createdAt}\n@everyone`)
 		.setThumbnail(Bicon)
 		.addBlankField()
 		.addField("강퇴 대상", `${banTo} (ID: ${banTo.id})`)
