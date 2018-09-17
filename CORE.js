@@ -46,10 +46,10 @@ mu.on('message', input => {
 
 	// BadWord Checker
 	if (i === "fuck" || i === "ㅗ" || i === "법규" || i === "ㅄ" || i === "ㅂㅅ" || i === "ㅅㅂ") {
-		input.guild.systemChannel.send(`Hey! Server owner!\n${input.author} used "${talk}"! Plz, Ban!`);
-		input.guild.systemChannel.send(`이봐요! 서버장!\n${input.author}라는 미천한 자가 \n"${talk}"라고 욕을썼다구요! 처벌합시다!!!`)
+		input.guild.owner.send(`Hey! ${input.guild.owner}! ${input.author} said "${i}"\nin ${input.guild.name}/${input.channel.parent.name}/${input.channel.name}! Plz, Ban!`);
+		input.guild.owner.send(`이봐요! ${input.guild.owner}!\n${input.author}라는 미천한 자가 \n${input.guild.name}/${input.channel.parent.name}/${input.channel.name}에서 "${i}"라고 욕을썼다구요! 처벌합시다!!!`)
 		input.channel.send(`ಠ益ಠ) <I Report YOU!) ${input.author}!`);
-		say = `ಠ益ಠ) <신고ㄱ?) ${input.author}!`
+		input.channel.send(`ಠ益ಠ) <신고ㄱ?) ${input.author}!`);
 	} else
 
 
@@ -498,7 +498,7 @@ mu.on('message', input => {
 				let twmNamuEmb = new API.RichEmbed()
 				.setTitle(``)
 				.setColor(input.member.displayHexColor)
-				.addField('위키!', ``);
+				.addField('위키!', `${input.author}`);
 				input.channel.send(twmNamuEmb);
 			} else
 
@@ -506,7 +506,7 @@ mu.on('message', input => {
 				let twmNamuEmb = new API.RichEmbed()
 				.setTitle(``)
 				.setColor(input.member.displayHexColor)
-				.addField('꺼라.', ``);
+				.addField('꺼라.', `${input.author}`);
 				input.channel.send(twmNamuEmb);
 			} else
 
@@ -514,7 +514,7 @@ mu.on('message', input => {
 			let twmNamuEmb = new API.RichEmbed()
 			.setTitle(``)
 			.setColor(input.member.displayHexColor)
-			.addField('> https://namu.wiki/', ``);
+			.addField('> https://namu.wiki/', `${input.author}`);
 			input.channel.send(twmNamuEmb);
 			} else
 
@@ -522,7 +522,7 @@ mu.on('message', input => {
 				let twmNamuEmb = new API.RichEmbed()
 				.setTitle(``)
 				.setColor(input.member.displayHexColor)
-				.addField('나~뮤!!' ``);
+				.addField('나~뮤!!' `${input.author}`);
 				input.channel.send(twmNamuEmb);
 			}
 		} else
@@ -535,7 +535,7 @@ mu.on('message', input => {
 				let twmHeroesEmb = new API.RichEmbed()
 				.setTitle(``)
 				.setColor(input.member.displayHexColor)
-				.addField("시공! 조아!", ``)
+				.addField("시공! 조아!", `to. ${input.author}`)
 				input.channel.send(twmHeroesEmb);
 			} else
 
@@ -543,7 +543,7 @@ mu.on('message', input => {
 				let twmHeroesEmb = new API.RichEmbed()
 				.setTitle(``)
 				.setColor(input.member.displayHexColor)
-				.addField("and I also 시공조아", ``)
+				.addField("and I also 시공조아", `to. ${input.author}`)
 				input.channel.send(twmHeroesEmb);
 				input.channel.send("> https://youtu.be/8GSF9Ui16k8?t=32");
 			} else
@@ -552,7 +552,7 @@ mu.on('message', input => {
 				let twmHeroesEmb = new API.RichEmbed()
 				.setTitle(``)
 				.setColor(input.member.displayHexColor)
-				.addField("아싸들이 인싸인척 하기위해 하는 겜", ``)
+				.addField("아싸들이 인싸인척 하기위해 하는 겜", `${input.author}`)
 				input.channel.send(twmHeroesEmb);
 			} else
 
@@ -560,7 +560,7 @@ mu.on('message', input => {
 				let twmHeroesEmb = new API.RichEmbed()
 				.setTitle(``)
 				.setColor(input.member.displayHexColor)
-				.addField("음... 그런거 하지 말고 **DDLC**나.. ~~<퍼버벅~~", ``)
+				.addField("음... 그런거 하지 말고 **DDLC**나.. ~~<퍼버벅~~", `${input.author}`)
 				input.channel.send(twmHeroesEmb);
 			}
 		} else
@@ -671,9 +671,10 @@ mu.on('message', input => {
 		} else
 
 		if (talk === "fuck" || talk === "ㅗ" || talk === "법규" || talk === "ㅄ" || talk === "ㅂㅅ" || talk === "ㅅㅂ") {
-			input.guild.owner.send(`Hey! Server owner!\n${input.author} used "${talk}"! Plz, Ban!`);
-			input.guild.owner.send(`이봐요! 서버장!\n${input.author}라는 미천한 자가 \n"${talk}"라고 욕을썼다구요! 처벌합시다!!!`)
+			input.guild.owner.send(`Hey! ${input.guild.owner}! ${input.author} said "${talk}"\nin ${input.guild.name}/${input.channel.parent.name}/${input.channel.name}! Plz, Ban!`);
+			input.guild.owner.send(`이봐요! ${input.guild.owner}!\n${input.author}라는 미천한 자가 \n${input.guild.name}/${input.channel.parent.name}/${input.channel.name}에서 "${talk}"라고 욕을썼다구요! 처벌합시다!!!`)
 			input.channel.send(`ಠ益ಠ) <I Report YOU!) ${input.author}!`);
+			input.channel.send(`ಠ益ಠ) <신고ㄱ?) ${input.author}!`);
 			say = `ಠ益ಠ) <신고ㄱ?) ${input.author}!`
 		} else {
 			say = `잘 몰라서 검색해 봤다뮤~☆\nhttps://www.google.com/search?q=${pars.toString()}`;
