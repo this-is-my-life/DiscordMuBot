@@ -29,14 +29,3 @@ Official Discord μBot( Version 4.0 ) Github Repository.
 -------------------------------------------------------------
 
 - Copyright &copy; 2018. PMH Studio. [MIT Licensed.](https://github.com/PMHStudio/DiscordMuBot/LICENSE)
-
--SeriBot -Whitesnowflakes
-=당신의 계정은 해킹당하였다
-수고해라! 너는 나의 속임수에 당했다
-구글에 로그인하니 너의 로그인기록이 다 있더군
-헤헤헤헤헤헤헤헤헤헿 너는 당한것이다
-허하ㅏ하하하하하하ㅘ하하하하하
-하하하ㅏ하하하핳하하하하ㅏ하하핳
-
-흠..... 재미가 없군
-저장해야징!
