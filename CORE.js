@@ -9,7 +9,9 @@
 
 // API Require
 const API = require('discord.js'); // Main API
-const Super = require('superagent'); // SuperAgent API
+
+// jQuery Require
+const request = require('request');
 
 // TTS Require
 const TTS = require("text-to-mp3");
@@ -297,14 +299,16 @@ mu.on('message', input => {
 	} else
 
 	// Dogs!
-	if (i === "dog" || i === "doggy" || i === "woof") {
-		let {body} = Super.get(`https://random.dog/woof.json`);
+	if (i === "dog" || i === "doggy" || i === "woof" || i === "inu" || i === "wwof" || i === "d") {
+		request('https://random.dog/woof', function (e, r, woofurl) {
 		let eDog = new API.RichEmbed()
 		.setColor(input.member.displayHexColor)
-		.addField(`${input.author} said "Woof!"`, "That's dirty.")
-		.setImage(body.url);
+		.setDescription(`${input.author} said " ${i}!"`)
+		.setImage(`https://random.dog/${woofurl}`)
+		.setFooter("Powered by random.dog");
 		input.channel.send(eDog);
-	}
+		});
+	} 
 
 
 
