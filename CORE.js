@@ -303,7 +303,7 @@ mu.on('message', input => {
 		request('https://random.dog/woof', function (e, r, woofurl) {
 		let eDog = new API.RichEmbed()
 		.setColor(input.member.displayHexColor)
-		.setTitle(`https://random.dog/${woofurl}`)
+		.setTitle(`Dogs, HERE!`)
 		.setURL(`https://random.dog/${woofurl}`)
 		.setDescription(`${input.author} said " ${i}!"`)
 		.setImage(`https://random.dog/${woofurl}`)
