@@ -1,9 +1,3 @@
 language: node_js
 node_js:
   - "8"
-install: true
-before_install:
-  - npm i discord.js
-  - npm i text-to-mp3
-  - npm i ffmpeg-binaries
-  - npm i opusscript

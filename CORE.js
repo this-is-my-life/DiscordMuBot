@@ -314,7 +314,7 @@ mu.on('message', input => {
 				.setFooter("Powered by random.dog");
 				input.channel.send(eDog);
 			}
-		});
+		})
 	} 
 
 
