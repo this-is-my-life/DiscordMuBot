@@ -2,10 +2,14 @@ PMH Studio μBot
 ================
 Official Discord μBot( Version 4.0 ) Github Repository.
 --------------------------------------------------------------
+<a href="https://discord.gg/hfUam2F"><img src="https://discordapp.com/api/guilds/458629337264947221/widget.png?style=shield" alt="Discord server" /></a>
 [![Build Status](https://travis-ci.org/PMHStudio/DiscordMuBot.svg?branch=%CE%BCBot-ver4)](https://travis-ci.org/PMHStudio/DiscordMuBot)
 [![GitHub license](https://img.shields.io/github/license/PMHStudio/DiscordMuBot.svg)](https://github.com/PMHStudio/DiscordMuBot/blob/%CE%BCBot-ver4/LICENSE)
 [![GitHub forks](https://img.shields.io/github/forks/PMHStudio/DiscordMuBot.svg)](https://github.com/PMHStudio/DiscordMuBot/network)
 [![GitHub issues](https://img.shields.io/github/issues/PMHStudio/DiscordMuBot.svg)](https://github.com/PMHStudio/DiscordMuBot/issues)
+[![MuBot Language](https://img.shields.io/badge/language-javascript-yellow.svg)](https://www.javascript.com/)
+[![MuBot Using](https://img.shields.io/badge/using-node.js-green.svg)](https://nodejs.org/)
+[![MuBot Request](https://img.shields.io/badge/request-discord.js-blue.svg)](https://discord.js.org/)
 
 
 - 안녕하세요! PMH Studio의 Studio장! PMH입니다! @PMH
@@ -14,6 +18,7 @@ Official Discord μBot( Version 4.0 ) Github Repository.
 
 
 > ## [**Bot Developers' Discord Server!**](https://discord.gg/kEnspqB)
+<a target="_blank" href="https://discord.gg/hfUam2F"><img src="https://discordapp.com/api/guilds/458629337264947221/widget.png?style=banner3"></a>
 
 ### Project Dir
 > PMH Studio
