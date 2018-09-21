@@ -299,12 +299,11 @@ mu.on('message', input => {
 	} else
 
 	// Dogs!
-	if (i === "dog" || i === "doggy" || i === "woof" || i === "inu" || i === "wwof" || i === "d") {
-		dogs:
+	if (i === "dog" || i === "doggy" || i === "woof" || i === "inu" || i === "wwof" || i === ".d") {
 		request('https://random.dog/woof', function (e, r, woofurl) {
 			let wooflast = woofurl[woofurl.length-1];
 			if (wooflast === "4") {
-				break dogs;
+				input.channel.send("Woof!");
 			} else {
 				let eDog = new API.RichEmbed()
 				.setColor(input.member.displayHexColor)
