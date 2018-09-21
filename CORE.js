@@ -301,14 +301,19 @@ mu.on('message', input => {
 	// Dogs!
 	if (i === "dog" || i === "doggy" || i === "woof" || i === "inu" || i === "wwof" || i === "d") {
 		request('https://random.dog/woof', function (e, r, woofurl) {
-		let eDog = new API.RichEmbed()
-		.setColor(input.member.displayHexColor)
-		.setTitle(`Dogs, HERE!`)
-		.setURL(`https://random.dog/${woofurl}`)
-		.setDescription(`${input.author} said " ${i}!"`)
-		.setImage(`https://random.dog/${woofurl}`)
-		.setFooter("Powered by random.dog");
-		input.channel.send(eDog);
+			if (woofurl === *+".mp4") {
+				input.channel.send(`${input.author} said " ${i}!"`);
+				input.channel.send(`https://random.dog/${woofurl}`);
+			} else {
+				let eDog = new API.RichEmbed()
+				.setColor(input.member.displayHexColor)
+				.setTitle(`Dogs, HERE!`)
+				.setURL(`https://random.dog/${woofurl}`)
+				.setDescription(`${input.author} said " ${i}!"`)
+				.setImage(`https://random.dog/${woofurl}`)
+				.setFooter("Powered by random.dog");
+				input.channel.send(eDog);
+			}
 		});
 	} 
 
