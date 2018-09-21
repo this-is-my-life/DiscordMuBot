@@ -300,10 +300,11 @@ mu.on('message', input => {
 
 	// Dogs!
 	if (i === "dog" || i === "doggy" || i === "woof" || i === "inu" || i === "wwof" || i === "d") {
+		dogs:
 		request('https://random.dog/woof', function (e, r, woofurl) {
-			if (woofurl === *+".mp4") {
-				input.channel.send(`${input.author} said " ${i}!"`);
-				input.channel.send(`https://random.dog/${woofurl}`);
+			let wooflast = woofurl[woofurl.length-1];
+			if (wooflast === "4") {
+				continue dogs;
 			} else {
 				let eDog = new API.RichEmbed()
 				.setColor(input.member.displayHexColor)
