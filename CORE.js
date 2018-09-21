@@ -298,7 +298,7 @@ mu.on('message', input => {
 
 	// Dogs!
 	if (i === "dog" || i === "doggy" || i === "woof") {
-		let {body} = SuperAgent.get(`https://random.dog/woof.json`);
+		let {body} = Super.get(`https://random.dog/woof.json`);
 		let eDog = new API.RichEmbed()
 		.setColor(input.member.displayHexColor)
 		.addField(`${input.author} said "Woof!"`, "That's dirty.")
