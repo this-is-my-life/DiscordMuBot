@@ -304,7 +304,7 @@ mu.on('message', input => {
 		request('https://random.dog/woof', function (e, r, woofurl) {
 			let wooflast = woofurl[woofurl.length-1];
 			if (wooflast === "4") {
-				continue dogs;
+				break dogs;
 			} else {
 				let eDog = new API.RichEmbed()
 				.setColor(input.member.displayHexColor)
