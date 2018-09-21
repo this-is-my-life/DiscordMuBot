@@ -6,8 +6,9 @@
   "dependencies": {
     "discord.js": "^11.4.2",
     "ffmpeg-binaries": "^4.0.0",
-    "text-to-mp3": "^1.0.4",
-    "opusscript": "^0.0.6"
+    "opusscript": "^0.0.6",
+    "superagent": "^4.0.0-beta.5",
+    "text-to-mp3": "^1.0.4"
   },
   "devDependencies": {},
   "scripts": {
