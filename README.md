@@ -2,7 +2,7 @@ PMH Studio μBot
 ================
 Official Discord μBot( Version 4.0 ) Github Repository.
 --------------------------------------------------------------
-[![Discord Server](https://discordapp.com/api/guilds/458629337264947221/widget.png?style=shield)](https://discord.gg/hfUam2F)
+[![Discord Server](https://discordapp.com/api/guilds/458629337264947221/widget.png?style=shield)](https://discord.io/PMHStudioBots)
 [![Build Status](https://travis-ci.org/PMHStudio/DiscordMuBot.svg?branch=%CE%BCBot-ver4)](https://travis-ci.org/PMHStudio/DiscordMuBot)
 [![GitHub license](https://img.shields.io/github/license/PMHStudio/DiscordMuBot.svg)](https://github.com/PMHStudio/DiscordMuBot/blob/%CE%BCBot-ver4/LICENSE)
 [![GitHub forks](https://img.shields.io/github/forks/PMHStudio/DiscordMuBot.svg)](https://github.com/PMHStudio/DiscordMuBot/network)
@@ -18,7 +18,7 @@ Official Discord μBot( Version 4.0 ) Github Repository.
 
 
 ## [**Bot Developers' Discord Server!**](https://discord.gg/kEnspqB)
-[![Discord Server Invite](https://discordapp.com/api/guilds/458629337264947221/widget.png?style=banner3)](https://discord.gg/hfUam2F)
+[![Discord Server Invite](https://discordapp.com/api/guilds/458629337264947221/widget.png?style=banner3)](https://discord.io/PMHStudioBots)
 
 ### Project Dir
 > PMH Studio
