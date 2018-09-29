@@ -25,7 +25,7 @@ mu.login(token); // Login! Go, μBot!
 // Start Up....................
 mu.on('ready', () => {
 	console.log(`[nodemon] Started \`CORE.js\` \n\n${mu.user.username.toString()} (${mu.user.id})> 안녕하신가!\n${mu.user.username.toString()} (${mu.user.id})> 힘세고 강한 노드,\n${mu.user.username.toString()} (${mu.user.id})> 만일 내게 물어보면 나는 뮤봇!`);
-	mu.user.setActivity('Your All Messages', { type: 'WATCHING' });
+	mu.user.setActivity('YOU | mu!help', { type: 'WATCHING' });
 });
 
 // Input Check ................
@@ -64,9 +64,21 @@ mu.on('message', input => {
 
 
 
+	// Command Help.
+	if (i === "mu!help") {
+		let avats = mu.user.displayAvatarURL;
+		let eHelpEmb = new API.RichEmbed()
+		.setTitle("μBot v4.0 Helps!")
+		.setURL("http://github.com/PMHStudio/DiscordMuBot")
+		.setThumbnail(avats)
+		.setAuthor(`to. ${input.author}`)
+		.addField("Server Manage", "\`\`\`fix\nserverinfo (no Parameter)\`\`\`\nℹ ↪ Displays Server Information\n\`\`\`fix\nreport <@Mention member> <Reason>\`\`\`\n💬 ↪ Report Member!\n\`\`\`fix\nkick <@Mention member> <Reason>\`\`\`\n🖕 ↪ Kick Member! (Requests Permission)\n\`\`\`fix\nban <@Mention member> <Reason>\`\`\`\n💥 ↪ BAN Member! (Requests Permission)")
+		.setFooter("Thanks For Using Our μBot!", avats);
+		input.channel.send(eHelpEmb);
+	} else
 
 	// Ping & Pong
-	if (i === 'ping' || i === 'Ping' || i === '.p') {
+	if (i === 'mu!ping' || i === 'mu!Ping' || i === '.p') {
 		let ePingEmb = new API.RichEmbed()
 		.setTitle(`Pong!`)
 		.setColor(input.member.displayHexColor)
@@ -85,7 +97,7 @@ mu.on('message', input => {
 	} else
 
 		// Bot Info & Credit
-	if (i === 'mubot' || i === 'muinfo' || i === 'mu' || i === 'μ' || i === '.i') {
+	if (i === 'mubot' || i === 'muinfo' || i === 'mu' || i === 'μ' || i === '.m') {
 		let avat = mu.user.displayAvatarURL;
 		let eBotInfoEmb = new API.RichEmbed()
 		.setTitle(`${mu.user.username.toString()} Infomation!`)
@@ -711,7 +723,7 @@ mu.on('message', input => {
 	}
 
 	if (i === `<@${mu.user.id}>` || i === `<@!${mu.user.id}>`) { // 맨션당했을때
-        input.channel.send(`뮤유~?`);
+		 input.channel.send(`뮤유~?`);
         return;
     }
     
