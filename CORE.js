@@ -66,7 +66,7 @@ mu.on('message', input => {
 
 	// Command Help.
 	if (i === "mu!help" || i === "mu!h") {
-	const helpemb = {
+	const helpemb = new API.RichEmbed({
 		"title": "Do you wanna view μBot's :regional_indicator_c::o2::regional_indicator_d::regional_indicator_e:?　:arrow_left: Click Here!",
   		"description": "Copyright (c) 2018. PMH Studio / PMH & WSF. MIT Licenced.\n\n\n",
   		"url": "https://github.com/PMHStudio/DiscordMuBot",
@@ -102,7 +102,7 @@ mu.on('message', input => {
       			"inline": true
     		}
   		]
-	};
+	});
 	input.channel.send(helpemb);
 	} else
 
