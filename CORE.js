@@ -12,17 +12,20 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 // Basic Requires________________________________
 
 	// Token
-	let muto = require("./Token!.json");
-		muto = muto.Insert_Token_Right_Blank;
+	// If You Using Token, Erase //
+	// let muto = require("./Token!.json");
+	// 	   muto = muto.Insert_Token_Right_Blank;
+	let muto = process.env.muto;
+	
 	console.log("Login Token: Ready(" + muto + ")");
 
 	// Commands
 	const cmds = require("fs");
-	console.log("cmdColletor: Ready")
+	console.log("cmdColletor: Ready(fs)")
 
 	// Discord API
 	const API = require("discord.js");
-	console.log("Discord API: Ready")
+	console.log("Discord API: Ready(Discord.js)")
 
 // Bot Login_____________________________________
 
@@ -58,7 +61,7 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 // Bot Readying__________________________________
 	mu.on("ready", async () => {
 		console.log("-----------------------------------------------------------\n\n	μBot is Running Correctly! | " + mu.status + " | " + mu.guilds.size + " Servers | " + mu.channels.size + " Channels | " + mu.users.size + " Users\n\nInput Log:");
-		mu.user.setActivity("ALL MESSAGES", {type: "WATCHING"});
+		mu.user.setActivity("Messages | mu!help", {type: "WATCHING"});
 	});
 
 // Bot Commanding________________________________

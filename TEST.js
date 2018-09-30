@@ -1,5 +1,5 @@
 /*
-	μBot v4.0 Test. 
+	μBot v5.0 Test. 
 	---------------------
 	PMH Studio / Proj- μBot | Smart & Cute Discord Bot_Mu~☆ 
 	Copyright (c) 2018. PMH Studio / PMH. (kok4575@gmail.com) MIT Licensed.
@@ -29,5 +29,5 @@ console.log("Login Correctly")
 
 console.log("Returning Code: 0");
 
-console.log("	μBot v4.0 Test.\n	---------------------\n	PMH Studio / Proj- μBot | Smart & Cute Discord Bot_Mu~☆ \n Copyright (c) 2018. PMH Studio / PMH. (kok4575@gmail.com) MIT Licensed.\n\n\n");
+console.log("	μBot v5.0 Test.\n	---------------------\n	PMH Studio / Proj- μBot | Smart & Cute Discord Bot_Mu~☆ \n Copyright (c) 2018. PMH Studio / PMH. (kok4575@gmail.com) MIT Licensed.\n\n\n");
 return console.log("----------------------------------------");
