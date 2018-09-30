@@ -65,7 +65,7 @@ mu.on('message', input => {
 
 
 	// Command Help.
-	if (i === "mu!help" || ) {
+	if (i === "mu!help" || i === "mu!h") {
 	const helpemb = {
 		"title": "Do you wanna view μBot's :regional_indicator_c::o2::regional_indicator_d::regional_indicator_e:?　:arrow_left: Click Here!",
   		"description": "Copyright (c) 2018. PMH Studio / PMH & WSF. MIT Licenced.\n\n\n",
@@ -107,7 +107,7 @@ mu.on('message', input => {
 	} else
 
 	// Ping & Pong
-	if (i === 'mu!ping' || i === 'mu!Ping' || i === '.p') {
+	if (i === 'mu!ping' || i === 'mu!p') {
 		let ePingEmb = new API.RichEmbed()
 		.setTitle(`Pong!`)
 		.setColor(input.member.displayHexColor)
@@ -116,7 +116,7 @@ mu.on('message', input => {
 		input.channel.send(ePingEmb);
 	} else
 
-	if (i === '핑' || i === '핑크') {
+	if (i === '뮤!핑') {
 		let kPingEmb = new API.RichEmbed()
 		.setTitle(`Pong!`)
 		.setColor(input.member.displayHexColor)
@@ -126,7 +126,7 @@ mu.on('message', input => {
 	} else
 
 		// Bot Info & Credit
-	if (i === 'mubot' || i === 'muinfo' || i === 'mu' || i === 'μ' || i === '.m') {
+	if (i === 'mubot' || i === 'muinfo' || i === 'mu' || i === 'mu!' || i === 'μ') {
 		let avat = mu.user.displayAvatarURL;
 		let eBotInfoEmb = new API.RichEmbed()
 		.setTitle(`${mu.user.username.toString()} Infomation!`)
@@ -187,7 +187,7 @@ mu.on('message', input => {
 	} else
 
 	// Server Info
-	if (i === "serverinfo" || i === ".s") {
+	if (i === "mu!serverinfo" || i === "mu!s") {
 		let icon = input.guild.iconURL;
 		let eChannelInfo = new API.RichEmbed()
 		.setTitle(`${input.guild.name.toString()} Infomation!`)
@@ -218,7 +218,7 @@ mu.on('message', input => {
 	} else
 
 	// My Info
-	if (i === "myinfo" || i == ".m") {
+	if (i === "mu!myinfo" || i == "mu!m") {
 		let avata = input.author.displayAvatarURL;
 		let eMyInfo = new API.RichEmbed()
 		.setTitle(`${input.author.username} Infomation!`)
@@ -259,7 +259,7 @@ mu.on('message', input => {
 	} else
 
 	// Summon Voice Channel
-	if (i === "summon" || i === "joinVoice" || i === ".j") {
+	if (i === "mu!join" || i === "mu!j") {
 		// Discord.js Official Voice Source
 	    if (input.member.voiceChannel) {
 	      input.member.voiceChannel.join()
@@ -303,7 +303,7 @@ mu.on('message', input => {
     }} else
 
     // Escape Voice Channel
-    if (i === "escapeVoice" || i === "esc" || i === "muesc" || i === ".l") {
+    if (i === "mu!leave" || i === "mu!l") {
     	if (input.member.voiceChannel) {
 	    	input.member.voiceChannel.leave();
 	    	let eEscapeVoice = new API.RichEmbed()
@@ -340,7 +340,7 @@ mu.on('message', input => {
 	} else
 
 	// Dogs!
-	if (i === "dog" || i === "doggy" || i === "woof" || i === "inu" || i === "wwof" || i === ".d") {
+	if (i === "mu!dog" || i === "mu!doggy" || i === "mu!woof" || i === "mu!inu" || i === "wwof" || i === ".d") {
 		request('https://random.dog/woof', function (e, r, woofurl) {
 			let wooflast = woofurl[woofurl.length-1];
 			if (wooflast === "4") {
@@ -368,7 +368,7 @@ mu.on('message', input => {
 
 
 	// Report
-	if (i === "report" || i === ".r") {
+	if (i === "mu!report" || i === "mu!r") {
 		let reportTo = input.guild.member(input.mentions.users.first() || input.guild.members.get(pars[0]));
 		if (!reportTo) {
 			input.channel.send("User Not Found");
@@ -417,7 +417,7 @@ mu.on('message', input => {
 	} else
 
 	// Kick
-	if (i === "kick" || i === ".k") {
+	if (i === "mu!kick" || i === "mu!k") {
 		let kickTo = input.guild.member(input.mentions.users.first() || input.guild.members.get(args[0]));
 		if (!kickTo) { 
 			input.delete().catch(O_o=>{});
@@ -467,7 +467,7 @@ mu.on('message', input => {
 	} else
 
 	// Ban
-	if (i === "ban" || i === ".b") {
+	if (i === "mu!ban" || i === "mu!b") {
 		let banTo = input.guild.member(input.mentions.users.first() || input.guild.members.get(pars[0]));
 		if (!banTo) { 
 			return input.delete().catch(O_o=>{}); 
@@ -517,7 +517,7 @@ mu.on('message', input => {
 	} else 
 
 	// TTS(Text to Speech) Speaker
-	if (i === "musay" || i === "muvoice" || i === "say" || i === ".v") {
+	if (i === "mu!tts" || i === "mu!t") {
 		let sayWhat = pars.join(" ").slice(0);
 		if (input.member.voiceChannel) {
 			TTS.saveMP3(sayWhat, `${input.id}.mp3`, function(err, absoluteFilePath){
