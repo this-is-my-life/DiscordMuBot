@@ -21,7 +21,7 @@ module.exports.run = async (mu, input, pars) => {
     .setTitle(`Hum... ${input.member.displayName} Have....`)
     .setColor(input.member.displayHexColor)
     .setDescription(`${userCoin} MUC(MuteCoin)!`);
-    input.channel.send(ePingEmb);
+    input.channel.send(eCoinEmb);
 }
 
 module.exports.help = {
