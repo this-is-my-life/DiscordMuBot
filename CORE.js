@@ -24,7 +24,7 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 	console.log("cmdColletor: Ready(fs)");
 
 	// User Coins
-	const mute = require("./Saved/UserCoin.json");
+	const mute = require("./Saved/UsersCoin.json");
 
 	// Discord API
 	const API = require("discord.js");
