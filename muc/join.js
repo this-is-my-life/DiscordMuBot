@@ -29,6 +29,7 @@ module.exports.run = async (mu, input, pars) => {
 	    	.setColor(input.member.displayHexColor)
 	    	.addField("Wait!", "You need to join a voice channel first!");
 	    	input.channel.send(eSummonVoiceFail);
+	    }
 }
 
 module.exports.help = {
