@@ -21,11 +21,14 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 
 	// Commands
 	const cmds = require("fs");
-	console.log("cmdColletor: Ready(fs)")
+	console.log("cmdColletor: Ready(fs)");
+
+	// User Coins
+	const mute = require("./Saved/UserCoin.json");
 
 	// Discord API
 	const API = require("discord.js");
-	console.log("Discord API: Ready(Discord.js)")
+	console.log("Discord API: Ready(Discord.js)");
 
 // Bot Login_____________________________________
 
@@ -66,6 +69,70 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 
 // Bot Commanding________________________________
 	mu.on("message", async input => {
+		// MuteCoin
+		if (!mute[input.author.id]) {
+    		mute[input.author.id] = {
+      			mute: 0
+    		};
+  		}
+		let muteAmt = Math.floor(Math.random() * 11) + 1;
+		if (muteAmt = 1) {
+    		mute[input.author.id] = {
+      			mute: mute[input.author.id].mute + 1
+    		};
+		} else
+		if (muteAmt = 2) {
+			mute[input.author.id] = {
+				mute: mute[input.author.id].mute + 2
+			};
+		} else
+		if (muteAmt = 3) {
+    		mute[input.author.id] = {
+      			mute: mute[input.author.id].mute + 4
+    		};
+		} else
+		if (muteAmt = 4) {
+			mute[input.author.id] = {
+				mute: mute[input.author.id].mute + 8
+			};
+		} else
+		if (muteAmt = 5) {
+    		mute[input.author.id] = {
+      			mute: mute[input.author.id].mute + 16
+    		};
+		} else
+		if (muteAmt = 6) {
+			mute[input.author.id] = {
+				mute: mute[input.author.id].mute + 32
+			};
+		} else		
+		if (muteAmt = 7) {
+    		mute[input.author.id] = {
+      			mute: mute[input.author.id].mute + 64
+    		};
+		} else
+		if (muteAmt = 8) {
+			mute[input.author.id] = {
+				mute: mute[input.author.id].mute + 128
+			};
+		} else
+		if (muteAmt = 9) {
+			mute[input.author.id] = {
+				mute: mute[input.author.id].mute + 256
+			};
+		} else
+		if (muteAmt = 10) {
+			mute[input.author.id] = {
+				mute: mute[input.author.id].mute + 512
+			};
+		} else
+		if (muteAmt = 11) {
+			mute[input.author.id] = {
+				mute: mute[input.author.id].mute + 1024
+			};
+		}
+  		cmds.writeFile("./Saved/UserCoin.json", JSON.stringify(mute));
+  		// MuteCoin End.
 		console.log(`${input.author.username.toString()} (${input.author.id.toString()})> ${input.content.toString()}`); // input Logging
 		if (`${input.author.id}` === `${mu.user.id}`) return; // Don't Check Message Itself!
 		if (!input.guild) { // ignore DM
@@ -77,6 +144,37 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
   		let msgAr = input.content.split(" ");
   		let i = msgAr[0];
   		let pars = msgAr.slice(1);
-  		let cmdFile = mu.commands.get(i.slice(prefix.length));
-  		if (cmdFile) cmdFile.run(mu,input,pars);
+  		if (input === "mu!") {
+  			let avat = mu.user.displayAvatarURL;
+			let eBotInfoEmb = new API.RichEmbed()
+			.setTitle(`${mu.user.username.toString()} Infomation!`)
+			.setDescription(`to. ${input.author.toString()}`)
+			.setThumbnail(avat)
+			.setColor(input.member.displayHexColor)
+			.addBlankField()
+			.addField("μBot Username & Tag", mu.user.tag)
+			.addField("μBot ID", mu.user.id)
+			.addField("Total Users", mu.users.size)
+			.addField("Total Channels", mu.channels.size)
+			.addField("Total Servers", mu.guilds.size)
+			.addField("Created At", mu.user.createdAt)
+			.addField("Updated At", mu.readyAt)
+			.addField("Up Time", mu.uptime)
+			.addField("API Ping", mu.pings);
+			input.channel.send(eBotInfoEmb);
+
+			let eCreditEmb = new API.RichEmbed()
+			.setAuthor(`${mu.user.username.toString()} Credit!`)
+			.setTitle("- Made By PMH Studio / PMH & WSF")
+			.setURL("http://pmhstudio.co.nf")
+			.setColor("#E5748B")
+			.addField("PMH Studio / PMH", "```\n『 LIFE IS GAME 』\n- And, I am a FAIR Player\n\n『 인생은 게임이다 』\n- 그리고, 나는 그 게임의 '페어플레이어'이다\n```\n──────────────────────────\n\n- Leader of PMH Studio (PMH Studio의 리더)\n- Project Manager (프로젝트 메니저)\n- Main Programmer (메인 프로그래머)\n- Main Grapher & Designer (메인 그래퍼 & 디자이너)\n- Communicator (커뮤니케이터)")
+			.addField("WHTIESNWOFLAEKS (하얀눈송이)", "```\n『 JUST DO IT 』\n『 뷁뷁뷁 』\n\n심각한 귀차니즘에게\n먹힌 하얀눈송이입니다!!\n```\n──────────────────────────\n\n- Main Programmer (메인 프로그래머)\n- Main Web Publisher (메인 웹퍼블리셔)\n- Sub Grapher & Designer (보조 그래퍼 & 디자이너)")
+			.setFooter("Thanks For Using Our μBot!", avat);
+			input.channel.send(eCreditEmb);
+  		} else {
+	  		let cmdFile = mu.commands.get(i.slice(prefix.length));
+	  		if (cmdFile) cmdFile.run(mu,input,pars);
+  		}
   	});
+  	
