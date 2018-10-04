@@ -184,23 +184,24 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 	  		let cmdFile = mu.commands.get(i.slice(prefix.length));
 	  		if (cmdFile) cmdFile.run(mu,input,pars);
 
-  		if (i === "tmu!") {
-  			let UserSay = pars.join(" ").slice(0);
-  			const dfRequest = {
-  				session: sessionPATH,
-  				queryInput: {
-  					text:{
-  						text: UserSay,
-  						languageCode: dfLanguageCode,
-  					},
-  				},
-  			};
-  			dfClient
-  			.detectIntent(dfRequest)
-  			.then(responses => {
-  				const MuSay = responses[0].queryResult;
-  				input.channel.send("MuSay.fulfillmentText");
-  			})
+	  		if (i === "tmu!") {
+	  			let UserSay = pars.join(" ").slice(0);
+	  			const dfRequest = {
+	  				session: sessionPATH,
+	  				queryInput: {
+	  					text:{
+	  						text: UserSay,
+	  						languageCode: dfLanguageCode,
+	  					},
+	  				},
+	  			};
+	  			dfClient
+	  			.detectIntent(dfRequest)
+	  			.then(responses => {
+	  				const MuSay = responses[0].queryResult;
+	  				input.channel.send("MuSay.fulfillmentText");
+	  			});
+	  		}
   		}
   	});
   	
