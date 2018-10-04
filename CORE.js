@@ -183,7 +183,6 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
   		} else {
 	  		let cmdFile = mu.commands.get(i.slice(prefix.length));
 	  		if (cmdFile) cmdFile.run(mu,input,pars);
-  		} else
 
   		if (i === "tmu!") {
   			let UserSay = pars.join(" ").slice(0);
