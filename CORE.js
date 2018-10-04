@@ -32,7 +32,7 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 	const dfLanguageCode = 'ko-KR';
 	const df = require('dialogflow');
 	const dfClient = new df.SessionsClient();
-	const dfPath = dfClient.sessionPATH(dfProjectId, dfSessionId);
+	const dfPath = dfClient.sessionPath(dfProjectId, dfSessionId);
 
 	// Discord API
 	const API = require("discord.js");
