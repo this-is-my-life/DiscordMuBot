@@ -2,7 +2,7 @@
 #
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
-version: 1
+version: 2
 jobs:
   build:
     docker:
@@ -36,7 +36,3 @@ jobs:
       # run tests!
       - run: node TEST.js
 
-  # Discord Webhook Process
-  notify:
-  webhooks:
-    - url: https://discordapp.com/api/webhooks/462856998002753548/QxYchVb2e3RHI6b2t7EkyVMOTew7Ao3qQ1hheTQ6yHwsXtFHI7KfcX2yTBYJ8TtKZXdP/slack
