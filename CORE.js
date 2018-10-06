@@ -26,6 +26,14 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 	// User Coins
 	const mute = require("./Saved/UsersCoin.json");
 
+	// Dialogflow(API.AI) AI API
+	const dfProjectId = 'pmhstudio-mubot';
+	const dfSessionId = 'quickstart-session-id';
+	const dfLanguageCode = 'ko-KR';
+	const df = require('dialogflow');
+	const dfClient = new df.SessionsClient();
+	const dfPath = dfClient.sessionPath(dfProjectId, dfSessionId);
+
 	// Discord API
 	const API = require("discord.js");
 	console.log("Discord API: Ready(Discord.js)");
@@ -175,6 +183,25 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
   		} else {
 	  		let cmdFile = mu.commands.get(i.slice(prefix.length));
 	  		if (cmdFile) cmdFile.run(mu,input,pars);
+
+	  		if (i === "tmu!") {
+	  			let UserSay = pars.join(" ").slice(0);
+	  			const dfRequest = {
+	  				session: sessionPATH,
+	  				queryInput: {
+	  					text:{
+	  						text: UserSay,
+	  						languageCode: dfLanguageCode,
+	  					},
+	  				},
+	  			};
+	  			dfClient
+	  			.detectIntent(dfRequest)
+	  			.then(responses => {
+	  				const MuSay = responses[0].queryResult;
+	  				input.channel.send("MuSay.fulfillmentText");
+	  			});
+	  		}
   		}
   	});
   	
