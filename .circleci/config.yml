@@ -36,3 +36,9 @@ jobs:
       # run tests!
       - run: node TEST.js
 
+  deployment:
+    staging:
+      branch: μBot-ver5
+      heroku:
+        appname: mubotapi
+        
