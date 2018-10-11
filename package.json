@@ -4,11 +4,13 @@
   "description": "PMH Studio / Proj- μBot | Smart & Cute Discord Bot_Mu~☆ ",
   "main": "CORE.js",
   "dependencies": {
+    "apiai": "^4.0.3",
     "discord.js": "^11.4.2",
     "ffmpeg-binaries": "^4.0.0",
     "opusscript": "^0.0.6",
     "request": "^2.88.0",
-    "text-to-mp3": "^1.0.4"
+    "text-to-mp3": "^1.0.4",
+    "uws": "^99.0.0"
   },
   "devDependencies": {},
   "scripts": {

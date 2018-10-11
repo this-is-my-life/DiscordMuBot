@@ -7,6 +7,7 @@
 	* Requests Node.js & Discord.js
 */
 
+"use strict";
 console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Start Process Start------------------");
 
 // Basic Requires________________________________
@@ -16,6 +17,8 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 	// let muto = require("./Token!.json");
 	// 	   muto = muto.Insert_Token_Right_Blank;
 	let muto = process.env.muto;
+	let muai = process.env.muai;
+	let prefix = process.env.prefix;
 	
 	console.log("Login Token: Ready(" + muto + ")");
 
@@ -26,20 +29,13 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 	// User Coins
 	const mute = require("./Saved/UsersCoin.json");
 
+	// api.ai (Dialogflow v1)
+	const apiai = require('apiai')
+	const ai = apiai(muai);
+
 	// Discord API
 	const API = require("discord.js");
 	console.log("Discord API: Ready(Discord.js)");
-
-// Bot Login_____________________________________
-
-	// Get Bot Client
-	const mu = new API.Client();
-
-	// Bot Login with Token
-	mu.login(muto);
-
-	// Get Bot Command
-	mu.commands = new API.Collection();
 
 // Read Commands_________________________________
 	
@@ -60,6 +56,18 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 		    mu.commands.set(props.help.name, props);
 		});
 	});
+
+// Bot Login_____________________________________
+
+	// Get Bot Client
+	const mu = new API.Client();
+
+	// Bot Login with Token
+	mu.login(muto);
+
+	// Get Bot Command
+	mu.commands = new API.Collection();
+
 
 // Bot Readying__________________________________
 	mu.on("ready", async () => {
@@ -133,6 +141,7 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 		}
   		cmds.writeFile("./Saved/UserCoin.json", JSON.stringify(mute));
   		// MuteCoin End.
+  		if (!input.content.startsWith(prefix)) return; // Don't log Messages Without Prefix
 		console.log(`${input.author.username.toString()} (${input.author.id.toString()})> ${input.content.toString()}`); // input Logging
 		if (`${input.author.id}` === `${mu.user.id}`) return; // Don't Check Message Itself!
 		if (!input.guild) { // ignore DM
@@ -140,10 +149,10 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 			input.reply("**저런!** 뮤봇은 **__서버에서__만** 명령어 실행이 가능합니다! *(DM말구...)*")
 			return;
 		}
-  		let prefix = "mu!";  // <= Change Prefix HERE!
   		let msgAr = input.content.split(" ");
   		let i = msgAr[0];
   		let pars = msgAr.slice(1);
+  		let cmdFile = mu.commands.get(i.slice(prefix.length));
   		if (input === "mu!") {
   			let avat = mu.user.displayAvatarURL;
 			let eBotInfoEmb = new API.RichEmbed()
@@ -172,9 +181,26 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 			.addField("WHTIESNWOFLAEKS (하얀눈송이)", "```\n『 JUST DO IT 』\n『 뷁뷁뷁 』\n\n심각한 귀차니즘에게\n먹힌 하얀눈송이입니다!!\n```\n──────────────────────────\n\n- Main Programmer (메인 프로그래머)\n- Main Web Publisher (메인 웹퍼블리셔)\n- Sub Grapher & Designer (보조 그래퍼 & 디자이너)")
 			.setFooter("Thanks For Using Our μBot!", avat);
 			input.channel.send(eCreditEmb);
+  		} else
+
+	  	if (cmdFile) { 
+	  		cmdFile.run(mu,input,pars);
   		} else {
-	  		let cmdFile = mu.commands.get(i.slice(prefix.length));
-	  		if (cmdFile) cmdFile.run(mu,input,pars);
+	  		// AI(api.ai, Dialogflow v1) Intents
+	  		let aiRequest = ai.textRequest(i.slice(prefix.length), {
+	  			sessionId: input.author.id
+	  		});
+
+    		aiRequest.end();
+
+    		aiRequest.on('response', function(response) {
+        		let aiResponseText = response.result.fulfillment.speech;
+        		let aiEmb = new API.RichEmbed()
+        		.setTitle(aiResponseText)
+   				.setColor(input.member.displayHexColor)
+        		.setDescription("Powered by Google Dialogflow");
+        		input.channel.send(aiEmb);
+    		});
   		}
   	});
   	
