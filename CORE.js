@@ -17,10 +17,11 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 	// let muto = require("./Token!.json");
 	// 	   muto = muto.Insert_Token_Right_Blank;
 	let muto = process.env.muto;
-	let muai = process.env.muai;
-	let prefix = process.env.prefix;
-	
 	console.log("Login Token: Ready(" + muto + ")");
+	let muai = process.env.muai;
+	console.log("apiai Token: Ready("+muai+")");
+	let prefix = process.env.prefix;
+	console.log("Cmds Prefix: Ready("+prefix+")");
 
 	// Commands
 	const cmds = require("fs");
@@ -28,14 +29,16 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 
 	// User Coins
 	const mute = require("./Saved/UsersCoin.json");
+	console.log("MuteCoin v3: Ready(Saved/UsersCoin.json)");
 
 	// api.ai (Dialogflow v1)
 	const apiai = require('apiai')
+	console.log("Dialog1 API: Ready(apiai)")
 	const ai = apiai(muai);
 
 	// Discord API
 	const API = require("discord.js");
-	console.log("Discord API: Ready(Discord.js)");
+	console.log("Discord API: Ready(discord.js)");
 
 // Read Commands_________________________________
 	
@@ -71,6 +74,7 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 
 // Bot Readying__________________________________
 	mu.on("ready", async () => {
+		mu.users.get("411381903707471895").send("mubotapi> Heroku Online Checked...")
 		console.log("-----------------------------------------------------------\n\n	μBot is Running Correctly! | " + mu.status + " | " + mu.guilds.size + " Servers | " + mu.channels.size + " Channels | " + mu.users.size + " Users\n\nInput Log:");
 		mu.user.setActivity("Messages | mu!help", {type: "WATCHING"});
 	});
