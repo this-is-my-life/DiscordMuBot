@@ -195,11 +195,21 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 
     		aiRequest.on('response', function(response) {
         		let aiResponseText = response.result.fulfillment.speech;
-        		let aiEmb = new API.RichEmbed()
-        		.setTitle(aiResponseText)
-   				.setColor(input.member.displayHexColor)
-        		.setDescription("Powered by Google Dialogflow");
-        		input.channel.send(aiEmb);
+        		let aiResponseArr = aiResponseText.split(" ");
+        		if (aiResponseArr[0] === "checkurl") {
+        			let aiEmb = new API.RichEmbed()
+        			.setTitle("흐음... 이 타이틀을 눌러보라뮤!")
+        			.setColor(input.member.displayHexColor)
+        			.setURL(aiResponseArr[1]);
+        			.setDescription("Powered by Google Dialogflow");
+        			input.channel.send(aiEmb);
+        		} else {
+	        		let aiEmb = new API.RichEmbed()
+	        		.setTitle(aiResponseText)
+	   				.setColor(input.member.displayHexColor)
+	        		.setDescription("Powered by Google Dialogflow");
+	        		input.channel.send(aiEmb);
+        		}
     		});
   		}
   	});
