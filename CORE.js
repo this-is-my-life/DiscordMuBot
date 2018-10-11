@@ -200,7 +200,7 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
         			let aiEmb = new API.RichEmbed()
         			.setTitle("흐음... 이 타이틀을 눌러보라뮤!")
         			.setColor(input.member.displayHexColor)
-        			.setURL(aiResponseArr[1]);
+        			.setURL(aiResponseArr[1])
         			.setDescription("Powered by Google Dialogflow");
         			input.channel.send(aiEmb);
         		} else {
