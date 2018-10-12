@@ -3,7 +3,7 @@ PMH Studio μBot
 Official Discord μBot( Version 5.0 ) Github Repository.
 --------------------------------------------------------------
 [![Discord Server](https://discordapp.com/api/guilds/458629337264947221/widget.png?style=shield)](https://discord.io/PMHStudioBots)
-[![TravisCI Status](https://travis-ci.org/PMHStudio/DiscordMuBot.svg?branch=%CE%BCBot-ver5)](https://travis-ci.org/PMHStudio/DiscordMuBot)
+[![AppVeyorCI Status](https://ci.appveyor.com/api/projects/status/h79vw2fwy198c98d/branch/μBot-ver5?svg=true)](https://ci.appveyor.com/project/PMHStudio/discordmubot/branch/μBot-ver5)
 [![CircleCI Status](https://img.shields.io/circleci/project/github/PMHStudio/DiscordMuBot.svg)](https://circleci.com/gh/PMHStudio/DiscordMuBot)
 [![GitHub license](https://img.shields.io/github/license/PMHStudio/DiscordMuBot.svg)](https://github.com/PMHStudio/DiscordMuBot/blob/%CE%BCBot-ver5/LICENSE)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/PMHStudio/DiscordMuBot.svg)
@@ -27,9 +27,6 @@ Official Discord μBot( Version 5.0 ) Github Repository.
 
 ## [**Bot Developers' Discord Server!**](https://discord.gg/kEnspqB)
 [![Discord Server Invite](https://discordapp.com/api/guilds/458629337264947221/widget.png?style=banner3)](https://discord.io/PMHStudioBots)
-
-## MuBot's Dialogflow API! (Training MuBot Now!)
-<iframe width="350" height="430" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/DiscordMuBotAPI"></iframe>
 
 ### Project Dir
 > PMH Studio
