@@ -28,6 +28,9 @@ Official Discord μBot( Version 5.0 ) Github Repository.
 ## [**Bot Developers' Discord Server!**](https://discord.gg/kEnspqB)
 [![Discord Server Invite](https://discordapp.com/api/guilds/458629337264947221/widget.png?style=banner3)](https://discord.io/PMHStudioBots)
 
+## MuBot's Dialogflow API! (Training MuBot Now!)
+<iframe width="350" height="430" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/DiscordMuBotAPI"></iframe>
+
 ### Project Dir
 > PMH Studio
 >> Projects
