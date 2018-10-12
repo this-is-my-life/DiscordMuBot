@@ -13,15 +13,17 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 // Basic Requires________________________________
 
 	// Token
-	// If You Using Token, Erase //
-	// let muto = require("./Token!.json");
-	// 	   muto = muto.Insert_Token_Right_Blank;
+	// If You Using Token File, Erase //
+	// let mutf = require("./Token!.json");
+	// 	   muto = mutf.Insert_Token_Right_Blank;
+	//     muai = mutf.Insert_AI_Token_Right_Blank;
+	//     prefix = mutf.Insert_Bots_Prefix_Right_Blank;
 	let muto = process.env.muto;
 	console.log("Login Token: Ready(" + muto + ")");
 	let muai = process.env.muai;
-	console.log("apiai Token: Ready("+muai+")");
+	console.log("apiai Token: Ready(" + muai + ")");
 	let prefix = process.env.prefix;
-	console.log("Cmds Prefix: Ready("+prefix+")");
+	console.log("Cmds Prefix: Ready(" + prefix + ")");
 
 	// Commands
 	const cmds = require("fs");
