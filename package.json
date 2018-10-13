@@ -9,8 +9,10 @@
     "ffmpeg-binaries": "^4.0.0",
     "opusscript": "^0.0.6",
     "request": "^2.88.0",
+    "simple-youtube-api": "^5.0.2",
     "text-to-mp3": "^1.0.4",
-    "uws": "^99.0.0"
+    "uws": "^99.0.0",
+    "ytdl-core": "^0.26.1"
   },
   "devDependencies": {},
   "scripts": {
