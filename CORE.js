@@ -158,7 +158,7 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
   		let i = msgAr[0];
   		let pars = msgAr.slice(1);
   		let cmdFile = mu.commands.get(i.slice(prefix.length));
-  		if (input === "mu!" && !msgAr[1]) {
+  		if (input === "mu!") {
   			let avat = mu.user.displayAvatarURL;
 			let eBotInfoEmb = new API.RichEmbed()
 			.setTitle(`${mu.user.username.toString()} Infomation!`)
@@ -186,36 +186,36 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 			.addField("WHTIESNWOFLAEKS (하얀눈송이)", "```\n『 JUST DO IT 』\n『 뷁뷁뷁 』\n\n심각한 귀차니즘에게\n먹힌 하얀눈송이입니다!!\n```\n──────────────────────────\n\n- Main Programmer (메인 프로그래머)\n- Main Web Publisher (메인 웹퍼블리셔)\n- Sub Grapher & Designer (보조 그래퍼 & 디자이너)")
 			.setFooter("Thanks For Using Our μBot!", avat);
 			input.channel.send(eCreditEmb);
-  		}
-
-	  	if (cmdFile) { 
-	  		cmdFile.run(mu,input,pars);
   		} else {
-	  		// AI(api.ai, Dialogflow v1) Intents
-	  		let aiRequest = ai.textRequest(i.slice(prefix.length), {
-	  			sessionId: input.author.id
-	  		});
+		  	if (cmdFile) { 
+		  		cmdFile.run(mu,input,pars);
+	  		} else {
+		  		// AI(api.ai, Dialogflow v1) Intents
+		  		let aiRequest = ai.textRequest(i.slice(prefix.length), {
+		  			sessionId: input.author.id
+		  		});
 
-    		aiRequest.end();
+	    		aiRequest.end();
 
-    		aiRequest.on('response', function(response) {
-        		let aiResponseText = response.result.fulfillment.speech;
-        		let aiResponseArr = aiResponseText.split(" ");
-        		if (aiResponseArr[0] === "checkurl") {
-        			let aiEmb = new API.RichEmbed()
-        			.setTitle("흐음... 이 타이틀을 눌러보라뮤!")
-        			.setColor(input.member.displayHexColor)
-        			.setURL(aiResponseArr[1])
-        			.setDescription("Powered by Google Dialogflow");
-        			input.channel.send(aiEmb);
-        		} else {
-	        		let aiEmb = new API.RichEmbed()
-	        		.setTitle(aiResponseText)
-	   				.setColor(input.member.displayHexColor)
-	        		.setDescription("Powered by Google Dialogflow");
-	        		input.channel.send(aiEmb);
-        		}
-    		});
-  		}
+	    		aiRequest.on('response', function(response) {
+	        		let aiResponseText = response.result.fulfillment.speech;
+	        		let aiResponseArr = aiResponseText.split(" ");
+	        		if (aiResponseArr[0] === "checkurl") {
+	        			let aiEmb = new API.RichEmbed()
+	        			.setTitle("흐음... 이 타이틀을 눌러보라뮤!")
+	        			.setColor(input.member.displayHexColor)
+	        			.setURL(aiResponseArr[1])
+	        			.setDescription("Powered by Google Dialogflow");
+	        			input.channel.send(aiEmb);
+	        		} else {
+		        		let aiEmb = new API.RichEmbed()
+		        		.setTitle(aiResponseText)
+		   				.setColor(input.member.displayHexColor)
+		        		.setDescription("Powered by Google Dialogflow");
+		        		input.channel.send(aiEmb);
+	        		}
+	    		});
+			}  		
+  		}	
   	});
   	
