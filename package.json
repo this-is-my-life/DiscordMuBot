@@ -10,7 +10,7 @@
     "opusscript": "^0.0.6",
     "request": "^2.88.0",
     "text-to-mp3": "^1.0.4",
-    "uws": "^99.0.0",
+    "uws": "^99.0.0"
   },
   "devDependencies": {},
   "scripts": {
