@@ -25,5 +25,5 @@ module.exports.run = async (mu, input, pars) => {
 }
 
 module.exports.help = {
-	name: "서버정보"
+	name: "섭정보"
 }

@@ -8,14 +8,14 @@ Copyright (c) 2018. PMH Studio / PMH. MIT Licensed.
 
 ### Todo List
 **ADD Commands! (from ver4)**
-- [ ] mu!
+- [x] mu!
 - [x] mu!help
 - [x] mu!ping
-- [ ] mu!myinfo
+- [x] mu!myinfo
 - [x] mu!serverinfo
-- [ ] mu!report
-- [ ] mu!kick
-- [ ] mu!ban
+- [x] mu!report
+- [x] mu!kick
+- [x] mu!ban
 - [x] mu!join
 - [ ] mu!leave
 - [ ] mu!censor
@@ -27,6 +27,7 @@ Copyright (c) 2018. PMH Studio / PMH. MIT Licensed.
 - [ ] mu!say
 - [ ] mu!sayd
 - [ ] mu!dev
+- [x] mu!mutecoin
 - [ ] and **MORE...**
 
 -------------------------------------------------------

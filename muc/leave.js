@@ -10,14 +10,14 @@
 const API = require("discord.js");
 
 module.exports.run = async (mu, input, pars) => {
-	let kPingEmb = new API.RichEmbed()
-	.setTitle(`Pong!`)
-	.setColor(input.member.displayHexColor)
-	.setDescription(`${input.author.toString()}뮤! OㅅO [${Math.round(mu.ping)}ms]`);
-	input.delete().catch(O_o=>{});
-	input.channel.send(kPingEmb);
+    let ePingEmb = new API.RichEmbed()
+    .setTitle(`Pong!`)
+    .setColor(input.member.displayHexColor)
+    .setDescription(`Here, ${input.author.toString()}...Mu! OㅅO [${Math.round(mu.ping)}ms]`);
+    input.delete().catch(O_o=>{});
+    input.channel.send(ePingEmb);
 }
 
 module.exports.help = {
-	name: "핑크"
+	name: "p"
 }
