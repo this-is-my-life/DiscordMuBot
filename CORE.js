@@ -57,9 +57,11 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 
 		jsfile.forEach((f, i) =>{
 			let props = require(`./muc/${f}`);
-		    mu.commands.set(props.help.command, props);
-		    mu.commands.set(props.help.alias, props);
-		 	console.log(`CommandLoad: Ready(${props.help.command}, ${props.help.alias})`);
+			let filenames = f.split(".");
+			let filename = filenames[0];
+		    mu.commands.set(filename, props);
+		    mu.commands.set(props.help.name, props);
+		 	console.log(`CommandLoad: Ready(${filename}, ${props.help.name})`);
 		});
 	});
 

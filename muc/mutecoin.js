@@ -25,6 +25,5 @@ module.exports.run = async (mu, input, pars) => {
 }
 
 module.exports.help = {
-	name: "mutecoin"
-	alias: "mt"
+	name: "mt"
 }
