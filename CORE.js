@@ -57,8 +57,9 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 
 		jsfile.forEach((f, i) =>{
 			let props = require(`./muc/${f}`);
-		 	console.log(`CommandLoad: Ready(${f})`);
-		    mu.commands.set(props.help.name, props);
+		    mu.commands.set(props.help.command, props);
+		    mu.commands.set(props.help.alias, props);
+		 	console.log(`CommandLoad: Ready(${props.help.command}, ${props.help.alias})`);
 		});
 	});
 
@@ -157,8 +158,9 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
   		let msgAr = input.content.split(" ");
   		let i = msgAr[0];
   		let pars = msgAr.slice(1);
-  		let cmdFile = mu.commands.get(i.slice(prefix.length));
-  		if (input === "mu!") {
+  		let verify = i.slice(prefix.length);
+  		let cmdFile = mu.commands.get(verify);
+  		if (!verify) {
   			let avat = mu.user.displayAvatarURL;
 			let eBotInfoEmb = new API.RichEmbed()
 			.setTitle(`${mu.user.username.toString()} Infomation!`)
@@ -191,7 +193,7 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 		  		cmdFile.run(mu,input,pars);
 	  		} else {
 		  		// AI(api.ai, Dialogflow v1) Intents
-		  		let aiRequest = ai.textRequest(i.slice(prefix.length), {
+		  		let aiRequest = ai.textRequest(verify, {
 		  			sessionId: input.author.id
 		  		});
 
@@ -216,6 +218,6 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 	        		}
 	    		});
 			}  		
-  		}	
+  		}		
   	});
   	
