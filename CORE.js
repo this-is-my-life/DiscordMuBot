@@ -45,8 +45,6 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 // Read Commands_________________________________
 	
 	cmds.readdir("./muc/", (err, files) => {
-		// Error Check
-		if (err) return console.log("\n\nRead Commands Error!______________________________\n\n" + err);
 		
 		// Command Files Exist Check
 		let jsfile = files.filter(f => f.split(".").pop() === "js")
