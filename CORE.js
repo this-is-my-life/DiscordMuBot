@@ -81,16 +81,16 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 		while (true) {
             setTimeout(function() {
                 mu.user.setActivity("Messages | mu!help", {type: "WATCHING"});
-            }, 300)
+            }, 3000)
             setTimeout(function() {
                 mu.user.setActivity(`Message | ${mu.users.size} Users!`, {type: "WATCHING"});
-            }, 300);
+            }, 3000);
             setTimeout(function() {
                 mu.user.setActivity(`Message | [${Math.round(mu.ping)}ms]`, {type: "WATCHING"});
-            }, 300);
+            }, 3000);
             setTimeout(function() {
                 mu.user.setActivity(`You!`, {type: "WATCHING"});
-            }, 300);
+            }, 3000);
         }
 	});
 
