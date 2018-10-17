@@ -78,8 +78,6 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 // Bot Readying__________________________________
 	mu.on("ready", async () => {
 		console.log("-----------------------------------------------------------\n\n	μBot is Running Correctly! | " + mu.status + " | " + mu.guilds.size + " Servers | " + mu.channels.size + " Channels | " + mu.users.size + " Users\n\nInput Log:");
-		while (true) {
-        }
         (function theLoop (data, stuff, i) {
           setTimeout(function () {
             setTimeout(function() {
