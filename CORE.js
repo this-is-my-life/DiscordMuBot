@@ -79,6 +79,9 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 	mu.on("ready", async () => {
 		console.log("-----------------------------------------------------------\n\n	μBot is Running Correctly! | " + mu.status + " | " + mu.guilds.size + " Servers | " + mu.channels.size + " Channels | " + mu.users.size + " Users\n\nInput Log:");
 		while (true) {
+        }
+        (function theLoop (data, stuff, i) {
+          setTimeout(function () {
             setTimeout(function() {
                 mu.user.setActivity("Messages | mu!help", {type: "WATCHING"});
             }, 5000);
@@ -91,7 +94,11 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
             setTimeout(function() {
                 mu.user.setActivity(`You!`, {type: "WATCHING"});
             }, 3000);
-        }
+            if (--i) {                  // If i > 0, keep going
+              theLoop(data, stuff, i);  // Call the loop again
+            }
+          }, 3000);
+        })(data, stuff, i);
 	});
 
 // Bot Commanding________________________________
