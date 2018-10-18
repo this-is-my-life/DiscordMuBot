@@ -8,7 +8,7 @@
 */
 
 const API = require("discord.js");
-let mute = require("../Saved/UsersCoin.json");
+const TTS = require("text-to-mp3");
 
 module.exports.run = async (mu, input, pars) => {
         let sayWhat = pars.join(" ").slice(0);

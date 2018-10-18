@@ -8,7 +8,6 @@
 */
 
 const API = require("discord.js");
-let mute = require("../Saved/UsersCoin.json");
 
 module.exports.run = async (mu, input, pars) => {
     let devcmd = pars.join(" ").slice(22);

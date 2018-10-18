@@ -8,7 +8,7 @@
 */
 
 const API = require("discord.js");
-let mute = require("../Saved/UsersCoin.json");
+const request = require("request");
 
 module.exports.run = async (mu, input, pars) => {
         request('https://random.dog/woof', function (e, r, woofurl) {
