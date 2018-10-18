@@ -78,29 +78,35 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 // Bot Readying__________________________________
 	mu.on("ready", async () => {
 		console.log("-----------------------------------------------------------\n\n	μBot is Running Correctly! | " + mu.status + " | " + mu.guilds.size + " Servers | " + mu.channels.size + " Channels | " + mu.users.size + " Users\n\nInput Log:");
-		let i = 0;
-        while (i === 2) {
+            setTimeout(function() {
+                mu.user.setActivity(`You!`, {type: "WATCHING"});
+            }, 3000);
             setTimeout(function() {
                 mu.user.setActivity("Messages | mu!help", {type: "WATCHING"});
-            }, 5000);
+            }, 3000);
             setTimeout(function() {
                 mu.user.setActivity(`Message | ${mu.users.size} Users!`, {type: "WATCHING"});
             }, 3000);
             setTimeout(function() {
                 mu.user.setActivity(`Message | [${Math.round(mu.ping)}ms]`, {type: "WATCHING"});
             }, 3000);
-            setTimeout(function() {
-                mu.user.setActivity(`You!`, {type: "WATCHING"});
-            }, 3000);
-            i++;
-            if (i === 3) {
-                i = 0;
-            }
-        }
 	});
 
 // Bot Commanding________________________________
 	mu.on("message", async input => {
+            setTimeout(function() {
+                mu.user.setActivity(`You!`, {type: "WATCHING"});
+            }, 3000);
+            setTimeout(function() {
+                mu.user.setActivity("Messages | mu!help", {type: "WATCHING"});
+            }, 3000);
+            setTimeout(function() {
+                mu.user.setActivity(`Message | ${mu.users.size} Users!`, {type: "WATCHING"});
+            }, 3000);
+            setTimeout(function() {
+                mu.user.setActivity(`Message | [${Math.round(mu.ping)}ms]`, {type: "WATCHING"});
+            }, 3000);
+
 		// MuteCoin
 		if (!mute[input.author.id]) {
     		mute[input.author.id] = {
