@@ -21,6 +21,7 @@ module.exports.run = async (mu, input, pars) => {
         .setColor(input.member.displayHexColor)
         .addField("어... 저기...", "뮤가 어디있는지 잘 몰라서 그런데 쫌 들어와서 알려주라뮤 ㅠㅠ");
         input.channel.send(kEscapeVoiceFail);
+    }
 }
 
 module.exports.help = {
