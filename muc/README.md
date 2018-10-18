@@ -17,16 +17,16 @@ Copyright (c) 2018. PMH Studio / PMH. MIT Licensed.
 - [x] mu!kick
 - [x] mu!ban
 - [x] mu!join
-- [ ] mu!leave
-- [ ] mu!censor
-- [ ] mu!woof
-- [ ] mu!tts
-- [ ] mu!mu!
+- [x] mu!leave
+- [x] mu!censor
+- [x] mu!woof
+- [x] mu!tts
+- [x] mu!mu!
 
 **MORE Commands!**
-- [ ] mu!say
-- [ ] mu!sayd
-- [ ] mu!dev
+- [x] mu!say
+- [x] mu!sayd
+- [x] mu!dev
 - [x] mu!mutecoin
 - [ ] and **MORE...**
 
