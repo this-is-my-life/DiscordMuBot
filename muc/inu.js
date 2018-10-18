@@ -20,7 +20,7 @@ module.exports.run = async (mu, input, pars) => {
                 .setColor(input.member.displayHexColor)
                 .setTitle(`Dogs, HERE!`)
                 .setURL(`https://random.dog/${woofurl}`)
-                .setDescription(`${input.author} said " ${i}!"`)
+                .setDescription(`${input.author} said " woof!"`)
                 .setImage(`https://random.dog/${woofurl}`)
                 .setFooter("Powered by random.dog");
                 input.channel.send(eDog);
