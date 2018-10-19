@@ -83,6 +83,14 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 
 // Bot Commanding________________________________
 	mu.on("message", async input => {
+        // React Messages
+        input.react('👍');
+        input.react('👎');
+        input.react('👌');
+        input.react('🖕');
+        input.react('💯');
+        input.react('💥');
+        input.react('🤔');
 
 		// MuteCoin
 		if (!mute[input.author.id]) {
@@ -148,7 +156,7 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 		}
   		cmds.writeFile("./Saved/UserCoin.json", JSON.stringify(mute));
   		// MuteCoin End.
-  		if (!input.content.startsWith(prefix)) return; // Don't log Messages Without Prefix
+  		if (!input.content.startsWith(prefix || "뮤")) return; // Don't log Messages Without Prefix
 		console.log(`${input.author.username.toString()} (${input.author.id.toString()})> ${input.content.toString()}`); // input Logging
 		if (`${input.author.id}` === `${mu.user.id}`) return; // Don't Check Message Itself!
 		if (!input.guild) { // ignore DM
