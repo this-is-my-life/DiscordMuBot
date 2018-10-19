@@ -156,6 +156,9 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 				mute: mute[input.author.id].mute + 1024
 			};
 		}
+        if (input === `<@${mu.user.id}>` || input === `<@!${mu.user.id}>`) { // 맨션당했을때
+            input.channel.send(`뮤유~?`);
+        }
   		cmds.writeFile("./Saved/UserCoin.json", JSON.stringify(mute));
   		// MuteCoin End.
   		if (!input.content.startsWith(prefix || "뮤")) return; // Don't log Messages Without Prefix
@@ -171,6 +174,7 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
   		let pars = msgAr.slice(1);
   		let verify = i.slice(prefix.length);
   		let cmdFile = mu.commands.get(verify);
+
   		if (!verify) {
   			let avat = mu.user.displayAvatarURL;
 			let eBotInfoEmb = new API.RichEmbed()
