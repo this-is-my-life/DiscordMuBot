@@ -10,7 +10,7 @@
 const API = require("discord.js");
 
 module.exports.run = async (mu, input, pars) => {
-    let say = pars.join(" ").slice(22);
+    let say = pars.join(" ").slice(0);
 	input.channel.send(`${say}`);
 }
 
