@@ -22,8 +22,8 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 	console.log("Login Token: Ready(" + muto + ")");
 	let muai = process.env.muai;
 	console.log("apiai Token: Ready(" + muai + ")");
-	// let prefix = process.env.prefix;
-	// console.log("Cmds Prefix: Ready(" + prefix + ")");
+	let defaultPrefix = process.env.defaultPrefix;
+	console.log("Base Prefix: Ready(" + defaultPrefix + ")");
     let prefixes = JSON.parse(fs.readFileSync("./Saved/ServersPrefix.json", "utf8"))
 
 	// Commands
@@ -171,7 +171,7 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
         }
         if (!prefixes[input.guild.id]) {
             prefixes[input.guild.id] = {
-                prefixes: botconfig.prefix;
+                prefixes: defaultPrefix;
             };
         }
         let prefix = prefixes[input.guild.id].prefixes;
