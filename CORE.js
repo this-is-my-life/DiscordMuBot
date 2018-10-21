@@ -83,14 +83,16 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 
 // Bot Commanding________________________________
 	mu.on("message", async input => {
-        // React Messages
-        input.react('👍');
-        input.react('👎');
-        input.react('👌');
-        input.react('🖕');
-        input.react('💯');
-        input.react('💥');
-        input.react('🤔');
+        if (input.author.bot) {
+            // React Messages
+            input.react('👍');
+            input.react('👎');
+            input.react('👌');
+            input.react('🖕');
+            input.react('💯');
+            input.react('💥');
+            input.react('🤔');
+        }
 
 		// MuteCoin
 		if (!mute[input.author.id]) {
@@ -156,6 +158,16 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 		}
   		cmds.writeFile("./Saved/UserCoin.json", JSON.stringify(mute));
   		// MuteCoin End.
+        if (input === `<@${mu.user.id}>` || input === `<@!${mu.user.id}>`) { // 맨션당했을때
+            // React Messages
+            input.react('👍');
+            input.react('👎');
+            input.react('👌');
+            input.react('🖕');
+            input.react('💯');
+            input.react('💥');
+            input.react('🤔');
+        }
   		if (!input.content.startsWith(prefix || "뮤")) return; // Don't log Messages Without Prefix
 		console.log(`${input.author.username.toString()} (${input.author.id.toString()})> ${input.content.toString()}`); // input Logging
 		if (`${input.author.id}` === `${mu.user.id}`) return; // Don't Check Message Itself!
@@ -169,6 +181,7 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
   		let pars = msgAr.slice(1);
   		let verify = i.slice(prefix.length);
   		let cmdFile = mu.commands.get(verify);
+
   		if (!verify) {
   			let avat = mu.user.displayAvatarURL;
 			let eBotInfoEmb = new API.RichEmbed()

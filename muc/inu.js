@@ -9,6 +9,7 @@
 
 const API = require("discord.js");
 const request = require("request");
+const randomHexColor = require('random-hex-color');
 
 module.exports.run = async (mu, input, pars) => {
         request('https://random.dog/woof', function (e, r, woofurl) {
@@ -17,7 +18,7 @@ module.exports.run = async (mu, input, pars) => {
                 input.channel.send("Woof!");
             } else {
                 let eDog = new API.RichEmbed()
-                .setColor(input.member.displayHexColor)
+                .setColor(randomHexColor())
                 .setTitle(`Dogs, HERE!`)
                 .setURL(`https://random.dog/${woofurl}`)
                 .setDescription(`${input.author} said " woof!"`)

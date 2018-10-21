@@ -9,6 +9,7 @@
 
 const API = require("discord.js");
 const TTS = require("text-to-mp3");
+const randomHexColor = require('random-hex-color');
 
 module.exports.run = async (mu, input, pars) => {
         let sayWhat = pars.join(" ").slice(0);
@@ -27,12 +28,12 @@ module.exports.run = async (mu, input, pars) => {
             }, 3000);
             });
             let eSayVoice = new API.RichEmbed()
-            .setColor(input.member.displayHexColor)
+            .setColor(randomHexColor())
             .addField(`Mu said ${sayWhat}!`, `to ${input.author}`);
             input.channel.send(eSayVoice);
         } else {
             let eSayVoiceFail = new API.RichEmbed()
-            .setColor(input.member.displayHexColor)
+            .setColor(randomHexColor())
             .addField("Hey! Wait!", "You need to join a voice channel first!");
             input.channel.send(eSayVoiceFail);
         }

@@ -8,6 +8,7 @@
 */
 
 const API = require("discord.js");
+const randomHexColor = require('random-hex-color');
 
 module.exports.run = async (mu, input, pars) => {
 		let avata = input.author.displayAvatarURL;
@@ -15,7 +16,7 @@ module.exports.run = async (mu, input, pars) => {
 		.setTitle(`${input.author.username} Infomation!`)
 		.setDescription(`to. Someone!`)
 		.setThumbnail(avata)
-		.setColor(input.member.displayHexColor)
+		.setColor(randomHexColor())
 		.addBlankField()
 		.addField("User Name", input.author.username)
 		.addField("User Display Name", input.member.displayName)

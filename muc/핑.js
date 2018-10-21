@@ -8,11 +8,12 @@
 */
 
 const API = require("discord.js");
+const randomHexColor = require('random-hex-color');
 
 module.exports.run = async (mu, input, pars) => {
 	let kPingEmb = new API.RichEmbed()
 	.setTitle(`Pong!`)
-	.setColor(input.member.displayHexColor)
+	.setColor(randomHexColor())
 	.setDescription(`${input.author.toString()}뮤! OㅅO [${Math.round(mu.ping)}ms]`);
 	input.delete().catch(O_o=>{});
 	input.channel.send(kPingEmb);

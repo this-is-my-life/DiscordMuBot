@@ -8,6 +8,7 @@
 */
 
 const API = require("discord.js");
+const randomHexColor = require('random-hex-color');
 
 module.exports.run = async (mu, input, pars) => {
 		// Discord.js Official Voice Source
@@ -17,7 +18,7 @@ module.exports.run = async (mu, input, pars) => {
 	        	let Sicon = input.guild.iconURL;
 	        	let eSummonVoice = new API.RichEmbed()
 	        	.setThumbnail(Sicon)
-	        	.setColor(input.member.displayHexColor)
+	        	.setColor(randomHexColor())
 	        	.addField(`Bam!`, `μBot is ${input.member.voiceChannel}, ${input.author}~♪`);
 	        	input.channel.send(eSummonVoice);
 	        })
@@ -26,7 +27,7 @@ module.exports.run = async (mu, input, pars) => {
 	    	let Seicon = input.guild.iconURL;
 	    	let eSummonVoiceFail = new API.RichEmbed()
 	    	.setThumbnail(Seicon)
-	    	.setColor(input.member.displayHexColor)
+	    	.setColor(randomHexColor())
 	    	.addField("Wait!", "You need to join a voice channel first!");
 	    	input.channel.send(eSummonVoiceFail);
 	    }

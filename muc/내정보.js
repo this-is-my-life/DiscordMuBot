@@ -8,6 +8,7 @@
 */
 
 const API = require("discord.js");
+const randomHexColor = require('random-hex-color');
 
 module.exports.run = async (mu, input, pars) => {
 		let avata = input.author.displayAvatarURL;
@@ -15,7 +16,7 @@ module.exports.run = async (mu, input, pars) => {
 		.setTitle(`${input.author.username}님의 정보다뮤유~!`)
 		.setDescription(`누군가는 보겠지뮤...`)
 		.setThumbnail(avata)
-		.setColor(input.member.displayHexColor)
+		.setColor(randomHexColor())
 		.addBlankField()
 		.addField("유저 이름", input.author.username)
 		.addField("유저 별명", input.member.displayName)
