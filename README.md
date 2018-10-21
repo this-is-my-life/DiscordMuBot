@@ -15,10 +15,6 @@ Official Discord μBot( Version 5.0 ) Github Repository.
 [![MuBot Using](https://img.shields.io/badge/using-node.js-green.svg)](https://nodejs.org)
 [![MuBot Request](https://img.shields.io/badge/request-discord.js-blue.svg)](https://discord.js.org)
 
-잠깐만요!
--------------
-이 버전은 아직 **개발단계**에 있습니다!
-**PMH Studio**는 더 많은 기능을 위해 **Ver4를 사용하시는걸 권장**합니다!
 
 - 안녕하세요! PMH Studio의 Studio장! PMH입니다! @PMH
 - 이 프로젝트는 [**Discord**](https://discordapp.com)에서 제공하는 [**Discord API**](https://discordapp.com/developers)기반으로 다용도 Bot을 만드는것을 목표로 하는 프로젝트입니다!
