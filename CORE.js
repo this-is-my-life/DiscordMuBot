@@ -12,6 +12,10 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 
 // Basic Requires________________________________
 
+    // Commands
+    const cmds = require("fs");
+    console.log("cmdColletor: Ready(fs)");
+
 	// Token
 	// If You Using Token File, Erase //
 	// let mutf = require("./Token!.json");
@@ -24,11 +28,9 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 	console.log("apiai Token: Ready(" + muai + ")");
 	let defaultPrefix = process.env.defaultPrefix;
 	console.log("Base Prefix: Ready(" + defaultPrefix + ")");
-    let prefixes = JSON.parse(fs.readFileSync("./Saved/ServersPrefix.json", "utf8"))
+    let prefixes = JSON.parse(cmds.readFileSync("./Saved/ServersPrefix.json", "utf8"))
 
-	// Commands
-	const cmds = require("fs");
-	console.log("cmdColletor: Ready(fs)");
+
 
 	// User Coins
 	const mute = require("./Saved/UsersCoin.json");
