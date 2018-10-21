@@ -23,7 +23,7 @@ module.exports.run = async (mu, input, pars) => {
 
     fs.writeFile("./Saved/ServersPrefix.json", JSON.stringify(prefixes));
 
-    let prefixEmb = new Discord.RichEmbed()
+    let prefixEmb = new API.RichEmbed()
     .setColor(randomHexColor())
     .setTitle("Prefix Set!")
     .setDescription(`Set to ${pars[0]}`);

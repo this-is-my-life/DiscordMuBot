@@ -23,7 +23,7 @@ module.exports.run = async (mu, input, pars) => {
 
     fs.writeFile("./Saved/ServersPrefix.json", JSON.stringify(prefixes));
 
-    let prefixEmb = new Discord.RichEmbed()
+    let prefixEmb = new API.RichEmbed()
     .setColor(randomHexColor())
     .setTitle("프리픽스 설정완료!")
     .setDescription(`이 서버의 프리픽스: ${pars[0]}`);
