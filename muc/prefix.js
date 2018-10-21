@@ -8,6 +8,7 @@
 */
 
 const API = require("discord.js");
+const fs = require("fs");
 const randomHexColor = require('random-hex-color');
 
 module.exports.run = async (mu, input, pars) => {
