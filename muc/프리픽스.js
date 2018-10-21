@@ -13,7 +13,7 @@ const randomHexColor = require('random-hex-color');
 
 module.exports.run = async (mu, input, pars) => {
     if(!input.member.hasPermission("MANAGE_SERVER")) return input.channel.send(`<@${input.author.id}>! 권한이 부족하다뮤!`);
-    if(!args[0] || args[0 == "help"]) return input.channel.send("Usage: mu!프리픽스 <새 프리픽스>");
+    if(!pars[0] || pars[0 == "help"]) return input.channel.send("Usage: mu!프리픽스 <새 프리픽스>");
 
     let prefixes = JSON.parse(fs.readFileSync("./Saved/ServersPrefix.json", "utf8"));
 
