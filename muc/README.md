@@ -28,6 +28,7 @@ Copyright (c) 2018. PMH Studio / PMH. MIT Licensed.
 - [x] mu!sayd
 - [x] mu!dev
 - [x] mu!mutecoin
+- [x] mu!prefix
 - [ ] and **MORE...**
 
 -------------------------------------------------------

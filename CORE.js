@@ -22,8 +22,9 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 	console.log("Login Token: Ready(" + muto + ")");
 	let muai = process.env.muai;
 	console.log("apiai Token: Ready(" + muai + ")");
-	let prefix = process.env.prefix;
-	console.log("Cmds Prefix: Ready(" + prefix + ")");
+	// let prefix = process.env.prefix;
+	// console.log("Cmds Prefix: Ready(" + prefix + ")");
+    let prefixes = JSON.parse(fs.readFileSync("./Saved/ServersPrefix.json", "utf8"))
 
 	// Commands
 	const cmds = require("fs");
@@ -168,7 +169,15 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
             input.react('💥');
             input.react('🤔');
         }
-  		if (!input.content.startsWith(prefix || "뮤")) return; // Don't log Messages Without Prefix
+        if (!prefixes[input.guild.id]) {
+            prefixes[input.guild.id] = {
+                prefixes: botconfig.prefix;
+            };
+        }
+        let prefix = prefixes[input.guild.id].prefixes;
+        console.log(`Server ${input.guild.id}'s prefix is "${prefix}"!`);
+
+  		if (!input.content.startsWith(prefix)) return; // Don't log Messages Without Prefix
 		console.log(`${input.author.username.toString()} (${input.author.id.toString()})> ${input.content.toString()}`); // input Logging
 		if (`${input.author.id}` === `${mu.user.id}`) return; // Don't Check Message Itself!
 		if (!input.guild) { // ignore DM
