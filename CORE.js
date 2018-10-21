@@ -171,7 +171,7 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
         }
         if (!prefixes[input.guild.id]) {
             prefixes[input.guild.id] = {
-                prefixes: defaultPrefix;
+                prefixes: defaultPrefix
             };
         }
         let prefix = prefixes[input.guild.id].prefixes;
