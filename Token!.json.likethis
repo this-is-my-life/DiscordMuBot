@@ -1,12 +1,5 @@
 {
-	/*
-		μBot v5.0 Token!
-		---------------------
-		PMH Studio / Proj- μBot | Smart & Cute Discord Bot_Mu~☆ 
-		Copyright (c) 2018. PMH Studio / PMH. (kok4575@gmail.com) MIT Licensed.
-		
-		* Requests Node.js & Discord.js
-	*/
-
-	"Insert_Token_Right_Blank" : "  "
+	"discordToken" : "  ", // You Can Get Token at "discordapp.com/developers"
+    "dialogflowToken" : "  ", // You Can Get Token at "dialogflow.com" or Using Our Token (Korean only): "61840c6bb70f4c2baf380086c0cdc785"
+    "defaultPrefix" : "  " // [Optional] MuBot's Default Prefix (Like: !, *, >, $ and mu!)
 }

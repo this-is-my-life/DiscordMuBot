@@ -17,16 +17,12 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
     console.log("cmdColletor: Ready(fs)");
 
 	// Token
-	// If You Using Token File, Erase //
-	// let mutf = require("./Token!.json");
-	// 	   muto = mutf.Insert_Token_Right_Blank;
-	//     muai = mutf.Insert_AI_Token_Right_Blank;
-	//     prefix = mutf.Insert_Bots_Prefix_Right_Blank;
-	let muto = process.env.muto;
+	let mutf = require("./Token!.json");
+	let muto = process.env.muto || mutf.discordToken;
 	console.log("Login Token: Ready(" + muto + ")");
-	let muai = process.env.muai;
+	let muai = process.env.muai || mutf.dialogflowToken;
 	console.log("apiai Token: Ready(" + muai + ")");
-	let defaultPrefix = process.env.defaultPrefix;
+	let defaultPrefix = process.env.defaultPrefix || mutf.defaultPrefix || "mu!";
 	console.log("Base Prefix: Ready(" + defaultPrefix + ")");
     let prefixes = JSON.parse(cmds.readFileSync("./Saved/ServersPrefix.json", "utf8"))
 
@@ -81,7 +77,7 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 // Bot Readying__________________________________
 	mu.on("ready", async () => {
 		console.log("-----------------------------------------------------------\n\n	μBot is Running Correctly! | " + mu.status + " | " + mu.guilds.size + " Servers | " + mu.channels.size + " Channels | " + mu.users.size + " Users\n\nInput Log:");
-        mu.user.setActivity("Messages | mu!help", {type: "WATCHING"});
+        mu.user.setActivity(`Messages | ${defaultPrefix}help`, {type: "WATCHING"});
 	});
 
 // Bot Commanding________________________________
