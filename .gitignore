@@ -62,6 +62,3 @@ typings/
 
 # Packages
 package-lock.json
-
-# DiscordConfigFile
-Token!.json
