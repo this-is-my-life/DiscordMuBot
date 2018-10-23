@@ -9,7 +9,7 @@
 
 const API = require("discord.js");
 
-module.exports.run = async (mu, input, pars) => {
+module.exports.run = async (mu, input, pars, prefix) => {
 	const helpemb = new API.RichEmbed({
 		"title": "Do you wanna view μBot's :regional_indicator_c::o2::regional_indicator_d::regional_indicator_e:?　:arrow_left: Click Here!",
   		"description": "Copyright (c) 2018. PMH Studio / PMH & WSF. MIT Licenced.\n\n\n",
@@ -28,21 +28,21 @@ module.exports.run = async (mu, input, pars) => {
   		"fields": [
     		{
       			"name": "Server(Guild) Manage",
-      			"value": ":information_source:  Server Infomations.```fix\nmu!serverinfo   (or mu!s)```\n\n:speaker: Report Member. (Request Permission: Manage Messages.)\n```fix\nmu!report <@Mention Member> [Reason]   (or mu!r)\n```\n\n:boom:  Kick Member. (Request Permission: Kick Members.)\n```fix\nmu!kick <@Mention Member> [Reason]   (or mu!k)```\n\n:no_entry:  BAN Member. (Request Permission: Ban Members.)\n```fix\nmu!ban <@Mention Memver> [Reason]   (or mu!b)```\n"
+      			"value": `:information_source:  Server Infomations.\`\`\`fix\n${prefix}serverinfo   (or ${prefix}s)\`\`\`\n\n:speaker: Report Member. (Request Permission: Manage Messages.)\n\`\`\`fix\n${prefix}report <@Mention Member> [Reason]   (or ${prefix}r)\n\`\`\`\n\n:boom:  Kick Member. (Request Permission: Kick Members.)\n\`\`\`fix\n${prefix}kick <@Mention Member> [Reason]   (or ${prefix}k)\`\`\`\n\n:no_entry:  BAN Member. (Request Permission: Ban Members.)\n\`\`\`fix\n${prefix}ban <@Mention Memver> [Reason]   (or ${prefix}b)\`\`\`\n`
     		},
     		{
       			"name": "Voice Channel Commands",
-      			"value": ":triangular_flag_on_post:  Join Voice Channel.\n```fix\nmu!join   (or mu!j)```\n\n:speaking_head:  TTS in Voice Channel.\n```fix\nmu!tts <Text>   (or mu!t)\n```\n\n:hand_splayed:   Leave Voice Channel.\n```fix\nmu!leave   (or mu!l)\n```\n",
+      			"value": `:triangular_flag_on_post:  Join Voice Channel.\n\`\`\`fix\n${prefix}join   (or ${prefix}j)\`\`\`\n\n:speaking_head:  TTS in Voice Channel.\n\`\`\`fix\n${prefix}tts <Text>   (or ${prefix}t)\n\`\`\`\n\n:hand_splayed:   Leave Voice Channel.\n\`\`\`fix\n${prefix}leave   (or ${prefix}l)\n\`\`\`\n`,
      		 	"inline": true
     		},
     		{
       			"name": "μBot Info & Credit",
-      			"value": ":raising_hand:  μBot Info & Credit.\n```fix\nmu!(No Parameter)\n```\n\n:question:  μBot Command Book & Bug Report.\n```fix\nmu!help   (or mu!h)\n```\n\n:ping_pong:   Ping!\n```fix\nmu!ping   (or mu!p)\n```",
+      			"value": `:raising_hand:  μBot Info & Credit.\n\`\`\`fix\n${prefix}(No Parameter)\n\`\`\`\n\n:question:  μBot Command Book & Bug Report.\n\`\`\`fix\n${prefix}help   (or ${prefix}h)\n\`\`\`\n\n:ping_pong:   Ping!\n\`\`\`fix\n${prefix}ping   (or ${prefix}p)\n\`\`\``,
       			"inline": true
     		},
     		{
       			"name": "and....?",
-      			"value": "```fix\nmu!woof```",
+      			"value": `\`\`\`fix\n${prefix}woof\`\`\``,
       			"inline": true
     		}
   		]

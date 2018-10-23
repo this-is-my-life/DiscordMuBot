@@ -219,7 +219,7 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 			input.channel.send(eCreditEmb);
   		} else {
 		  	if (cmdFile) { 
-		  		cmdFile.run(mu,input,pars);
+		  		cmdFile.run(mu,input,pars,prefix);
 	  		} else {
 		  		// AI(api.ai, Dialogflow v1) Intents
 		  		let aiRequest = ai.textRequest(verify, {
