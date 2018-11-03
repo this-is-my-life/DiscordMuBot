@@ -3,6 +3,9 @@
   "version": "4.0.1",
   "description": "PMH Studio / Proj- μBot | Smart & Cute Discord Bot_Mu~☆ ",
   "main": "CORE.js",
+  "engines": {
+    "node": "8.12.0"
+  },
   "dependencies": {
     "apiai": "^4.0.3",
     "discord.js": "^11.4.2",
