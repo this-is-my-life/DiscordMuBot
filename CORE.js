@@ -82,6 +82,7 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 
 // Bot Commanding________________________________
 	mu.on("message", async input => {
+		if (input.guild.id === "264445053596991498") return;
         if (input.author.bot) {
             // React Messages
             input.react('👍');
@@ -183,6 +184,7 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 			input.reply("**저런!** 뮤봇은 **__서버에서__만** 명령어 실행이 가능합니다! *(DM말구...)*")
 			return;
 		}
+		input.channel.startTyping();
   		let msgAr = input.content.split(" ");
   		let i = msgAr[0];
   		let pars = msgAr.slice(1);
@@ -217,9 +219,11 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 			.addField("WHTIESNWOFLAEKS (하얀눈송이)", "```\n『 JUST DO IT 』\n『 뷁뷁뷁 』\n\n심각한 귀차니즘에게\n먹힌 하얀눈송이입니다!!\n```\n──────────────────────────\n\n- Main Programmer (메인 프로그래머)\n- Main Web Publisher (메인 웹퍼블리셔)\n- Sub Grapher & Designer (보조 그래퍼 & 디자이너)")
 			.setFooter("Thanks For Using Our μBot!", avat);
 			input.channel.send(eCreditEmb);
+			input.channel.stopTyping();
   		} else {
 		  	if (cmdFile) { 
 		  		cmdFile.run(mu,input,pars,prefix);
+    			input.channel.stopTyping();
 	  		} else {
 		  		// AI(api.ai, Dialogflow v1) Intents
 		  		let aiRequest = ai.textRequest(verify, {
@@ -245,6 +249,7 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 		        		.setDescription("Powered by Google Dialogflow");
 		        		input.channel.send(aiEmb);
 	        		}
+	        		input.channel.stopTyping();
 	    		});
 			}  		
   		}		
