@@ -188,7 +188,7 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
   		let msgAr = input.content.split(" ");
   		let i = msgAr[0];
   		let pars = msgAr.slice(1);
-  		let verify = input.slice(prefix.length);
+  		let verify = i.slice(prefix.length);
   		let cmdFile = mu.commands.get(verify);
 
   		if (!verify) {
