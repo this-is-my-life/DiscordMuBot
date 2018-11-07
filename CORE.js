@@ -188,12 +188,12 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 			return;
 		}
 		input.channel.startTyping();
-		  if(cooldown.has(iinput.author.id)){
+		  if(cooldown.has(input.author.id)){
 		    input.delete();
  		   return
  		 }
 		  if(!input.member.hasPermission("ADMINISTRATOR")){
- 		   cooldown.add(message.author.id);
+ 		   cooldown.add(input.author.id);
  		 }
   		let msgAr = input.content.split(" ");
   		let i = msgAr[0];
