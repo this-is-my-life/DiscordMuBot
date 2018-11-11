@@ -189,7 +189,8 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 		}
 		input.channel.startTyping();
 		  if(cooldown.has(input.author.id)){
-		    input.delete();
+			input.delete();
+			input.channel.send(`CoolDown is Activated (${cdseconds}sec.)\n쿨다운이 활성화 되어있습니다! (${cdseconds}초)`).then(thismsg => thismsg.delete(5000))
  		   return
  		 }
 		  if(!input.member.hasPermission("ADMINISTRATOR")){
