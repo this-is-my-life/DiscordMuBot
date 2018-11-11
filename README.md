@@ -5,6 +5,7 @@ Official Discord μBot( Version 5.0 ) Github Repository.
 [![Discord Server](https://discordapp.com/api/guilds/458629337264947221/widget.png?style=shield)](https://discord.io/PMHStudioBots)
 [![AppVeyorCI Status](https://ci.appveyor.com/api/projects/status/h79vw2fwy198c98d/branch/μBot-ver5?svg=true)](https://ci.appveyor.com/project/PMHStudio/discordmubot/branch/μBot-ver5)
 [![CircleCI Status](https://img.shields.io/circleci/project/github/PMHStudio/DiscordMuBot.svg)](https://circleci.com/gh/PMHStudio/DiscordMuBot)
+[![CodeFactor](https://www.codefactor.io/repository/github/pmhstudio/discordmubot/badge)](https://www.codefactor.io/repository/github/pmhstudio/discordmubot)
 [![GitHub license](https://img.shields.io/github/license/PMHStudio/DiscordMuBot.svg)](https://github.com/PMHStudio/DiscordMuBot/blob/%CE%BCBot-ver5/LICENSE)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/PMHStudio/DiscordMuBot.svg)
 ![GitHub (pre-)release](https://img.shields.io/github/release/PMHStudio/DiscordMuBot/all.svg)
