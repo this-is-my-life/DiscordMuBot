@@ -27,7 +27,7 @@ module.exports.run = async (mu, input, pars) => {
 	    	let kSummonVoiceFail = new API.RichEmbed()
 	    	.setThumbnail(Sekicon)
 	    	.setColor(randomHexColor())
-	    	.addField("어... 저기...", `${input.author}가 어디있는지 찾을수 없다뮤!!`);
+			.addField("어... 저기...", `${input.author}가 어디 있는지 찾을 수 없다뮤!!`);
 	    	input.channel.send(kSummonVoiceFail);
 	    }
 }
