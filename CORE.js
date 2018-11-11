@@ -7,7 +7,6 @@
 	* Requests Node.js & Discord.js
 */
 
-"use strict";
 console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Start Process Start------------------");
 
 // Basic Requires________________________________
