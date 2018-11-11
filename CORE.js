@@ -27,6 +27,9 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
     let prefixes = JSON.parse(cmds.readFileSync("./Saved/ServersPrefix.json", "utf8"))
 
 
+    	// User Cool Down
+    	let cooldown = new Set();
+	let cdseconds = 5;
 
 	// User Coins
 	const mute = require("./Saved/UsersCoin.json");
@@ -185,6 +188,13 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 			return;
 		}
 		input.channel.startTyping();
+		  if(cooldown.has(input.author.id)){
+		    input.delete();
+ 		   return
+ 		 }
+		  if(!input.member.hasPermission("ADMINISTRATOR")){
+ 		   cooldown.add(input.author.id);
+ 		 }
   		let msgAr = input.content.split(" ");
   		let i = msgAr[0];
   		let pars = msgAr.slice(1);
@@ -252,6 +262,11 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 	        		input.channel.stopTyping();
 	    		});
 			}  		
-  		}		
+  		}
+		
+	  setTimeout(() => {
+    cooldown.delete(input.author.id)
+  }, cdseconds * 1000)
+		
   	});
   	
