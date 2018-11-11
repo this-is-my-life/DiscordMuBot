@@ -16,5 +16,5 @@ module.exports.run = async (mu, input, pars) => {
 }
 
 module.exports.help = {
-	name: "따라해/"
+	name: "지우고따라해"
 }
