@@ -6,22 +6,22 @@
 	
 	* Requests Node.js & Discord.js
 */
-console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Start Process Start------------------");
+Console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Start Process Start------------------");
 
 // Basic Requires________________________________
 
     // Commands
     const cmds = require("fs");
-    console.log("cmdColletor: Ready(fs)");
+    Console.log("cmdColletor: Ready(fs)");
 
 	// Token
 	let mutf = require("./Token!.json");
 	let muto = process.env.muto || mutf.discordToken;
-	console.log("Login Token: Ready(" + muto + ")");
+	Console.log("Login Token: Ready(" + muto + ")");
 	let muai = process.env.muai || mutf.dialogflowToken;
-	console.log("apiai Token: Ready(" + muai + ")");
+	Console.log("apiai Token: Ready(" + muai + ")");
 	let defaultPrefix = process.env.defaultPrefix || mutf.defaultPrefix || "mu!";
-	console.log("Base Prefix: Ready(" + defaultPrefix + ")");
+	Console.log("Base Prefix: Ready(" + defaultPrefix + ")");
     let prefixes = JSON.parse(cmds.readFileSync("./Saved/ServersPrefix.json", "utf8"))
 
 
@@ -31,25 +31,25 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 
 	// User Coins
 	const mute = require("./Saved/UsersCoin.json");
-	console.log("MuteCoin v3: Ready(Saved/UsersCoin.json)");
+	Console.log("MuteCoin v3: Ready(Saved/UsersCoin.json)");
 
 	// api.ai (Dialogflow v1)
 	const apiai = require('apiai')
-	console.log("Dialog1 API: Ready(apiai)")
+	Console.log("Dialog1 API: Ready(apiai)")
 	const ai = apiai(muai);
 
 	// Discord API
 	const API = require("discord.js");
-	console.log("Discord API: Ready(discord.js)");
+	Console.log("Discord API: Ready(discord.js)");
 
 // Read Commands_________________________________
 	
 	cmds.readdir("./muc/", (err, files) => {
 		
 		// Command Files Exist Check
-		let jsfile = files.filter(f => f.split(".").pop() === "js")
+		let jsfile = files.filter(f => f.split(".").pop() === "js");
 		if(jsfile.length <= 0){
-			console.log("Error(E404): Couldn't find commands.");
+			Console.log("Error(E404): Couldn't find commands.");
 		    return;
 		}
 
@@ -59,7 +59,7 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 			let filename = filenames[0];
 		    mu.commands.set(filename, props);
 		    mu.commands.set(props.help.name, props);
-		 	console.log(`CommandLoad: Ready(${filename}, ${props.help.name})`);
+		 	Console.log(`CommandLoad: Ready(${filename}, ${props.help.name})`);
 		});
 	});
 
@@ -77,7 +77,7 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 
 // Bot Readying__________________________________
 	mu.on("ready", async () => {
-		console.log("-----------------------------------------------------------\n\n	μBot is Running Correctly! | " + mu.status + " | " + mu.guilds.size + " Servers | " + mu.channels.size + " Channels | " + mu.users.size + " Users\n\nInput Log:");
+		Console.log("-----------------------------------------------------------\n\n	μBot is Running Correctly! | " + mu.status + " | " + mu.guilds.size + " Servers | " + mu.channels.size + " Channels | " + mu.users.size + " Users\n\nInput Log:");
         mu.user.setActivity(`Messages | ${defaultPrefix}help`, {type: "WATCHING"});
 	});
 
@@ -98,61 +98,61 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 		// MuteCoin
 		if (!mute[input.author.id]) {
     		mute[input.author.id] = {
-      			mute: 0
-    		};
+				  mute: 0
+			};
   		}
 		let muteAmt = Math.floor(Math.random() * 11) + 1;
-		if (muteAmt = 1) {
+		if (muteAmt == 1) {
     		mute[input.author.id] = {
       			mute: mute[input.author.id].mute + 1
     		};
 		} else
-		if (muteAmt = 2) {
+		if (muteAmt == 2) {
 			mute[input.author.id] = {
 				mute: mute[input.author.id].mute + 2
 			};
 		} else
-		if (muteAmt = 3) {
+		if (muteAmt == 3) {
     		mute[input.author.id] = {
       			mute: mute[input.author.id].mute + 4
     		};
 		} else
-		if (muteAmt = 4) {
+		if (muteAmt == 4) {
 			mute[input.author.id] = {
 				mute: mute[input.author.id].mute + 8
 			};
 		} else
-		if (muteAmt = 5) {
+		if (muteAmt == 5) {
     		mute[input.author.id] = {
       			mute: mute[input.author.id].mute + 16
     		};
 		} else
-		if (muteAmt = 6) {
+		if (muteAmt == 6) {
 			mute[input.author.id] = {
 				mute: mute[input.author.id].mute + 32
 			};
 		} else		
-		if (muteAmt = 7) {
+		if (muteAmt == 7) {
     		mute[input.author.id] = {
       			mute: mute[input.author.id].mute + 64
     		};
 		} else
-		if (muteAmt = 8) {
+		if (muteAmt == 8) {
 			mute[input.author.id] = {
 				mute: mute[input.author.id].mute + 128
 			};
 		} else
-		if (muteAmt = 9) {
+		if (muteAmt == 9) {
 			mute[input.author.id] = {
 				mute: mute[input.author.id].mute + 256
 			};
 		} else
-		if (muteAmt = 10) {
+		if (muteAmt == 10) {
 			mute[input.author.id] = {
 				mute: mute[input.author.id].mute + 512
 			};
 		} else
-		if (muteAmt = 11) {
+		if (muteAmt == 11) {
 			mute[input.author.id] = {
 				mute: mute[input.author.id].mute + 1024
 			};
@@ -175,10 +175,10 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
             };
         }
         let prefix = prefixes[input.guild.id].prefixes;
-        console.log(`Server ${input.guild.id}'s prefix is "${prefix}"!`);
+        Console.log(`Server ${input.guild.id}'s prefix is "${prefix}"!`);
 
   		if (!input.content.startsWith(prefix)) return; // Don't log Messages Without Prefix
-		console.log(`${input.author.username.toString()} (${input.author.id.toString()})> ${input.content.toString()}`); // input Logging
+		Console.log(`${input.author.username.toString()} (${input.author.id.toString()})> ${input.content.toString()}`); // input Logging
 		if (`${input.author.id}` === `${mu.user.id}`) return; // Don't Check Message Itself!
 		if (!input.guild) { // ignore DM
 			input.reply("**Oops!** μBot Can Run **ONLY** __**in SERVER**__ *(not DM)*!");

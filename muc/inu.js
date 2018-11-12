@@ -12,7 +12,7 @@ const request = require("request");
 const randomHexColor = require('random-hex-color');
 
 module.exports.run = async (mu, input, pars) => {
-        request('https://random.dog/woof', function (e, r, woofurl) {
+        request("https://random.dog/woof", function (e, r, woofurl) {
             let wooflast = woofurl[woofurl.length-1];
             if (wooflast === "4") {
                 input.channel.send("Woof!");

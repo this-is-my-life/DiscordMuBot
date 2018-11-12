@@ -23,7 +23,7 @@ module.exports.run = async (mu, input, pars) => {
 	        	input.channel.send(eSummonVoice);
 	        })
 	        .catch(console.log);
-	    } else {
+		} else {
 	    	let Seicon = input.guild.iconURL;
 	    	let eSummonVoiceFail = new API.RichEmbed()
 	    	.setThumbnail(Seicon)

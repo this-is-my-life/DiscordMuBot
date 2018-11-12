@@ -9,11 +9,11 @@
 
 const API = require("discord.js");
 const fs = require("fs");
-const randomHexColor = require('random-hex-color');
+const randomHexColor = require("random-hex-color");
 
 module.exports.run = async (mu, input, pars) => {
-    if(!input.member.hasPermission("MANAGE_SERVER")) return input.channel.send(`<@${input.author.id}> has NO PERMISSION: MANAGE_SERVER`);
-    if(!pars[0] || par[0 == "help"]) return input.channel.send("Usage: mu!prefix <desired prefix here>");
+    if(!input.member.hasPermission("MANAGE_SERVER")) {return input.channel.send(`<@${input.author.id}> has NO PERMISSION: MANAGE_SERVER`);}
+    if(!pars[0] || par[0 == "help"]) {return input.channel.send("Usage: mu!prefix <desired prefix here>");}
 
     let prefixes = JSON.parse(fs.readFileSync("./Saved/ServersPrefix.json", "utf8"));
 

@@ -9,7 +9,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}\\CORE.js"
+            "program": "${workspaceFolder}\\CORE.js",
             "env": {
                 "muto": "NDcyNjg4ODMyNzM1NjA4ODMy.DsqKbg.WWhcX3XtGux1u81HHUovNPst8RI",
                 "muai": "2cf523a4eae54c94bd85fc978a16e672",
