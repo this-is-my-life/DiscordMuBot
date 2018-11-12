@@ -2,6 +2,7 @@ PMH Studio μBot
 ================
 Official Discord μBot( Version 5.0 ) Github Repository.
 --------------------------------------------------------------
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/943f9f547e1a4ed4b492dcf8037a5e30)](https://app.codacy.com/app/kok4575/DiscordMuBot?utm_source=github.com&utm_medium=referral&utm_content=PMHStudio/DiscordMuBot&utm_campaign=Badge_Grade_Settings)
 [![Discord Server](https://discordapp.com/api/guilds/458629337264947221/widget.png?style=shield)](https://discord.io/PMHStudioBots)
 [![AppVeyorCI Status](https://ci.appveyor.com/api/projects/status/h79vw2fwy198c98d/branch/μBot-ver5?svg=true)](https://ci.appveyor.com/project/PMHStudio/discordmubot/branch/μBot-ver5)
 [![CircleCI Status](https://img.shields.io/circleci/project/github/PMHStudio/DiscordMuBot.svg)](https://circleci.com/gh/PMHStudio/DiscordMuBot)
