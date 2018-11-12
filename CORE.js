@@ -182,13 +182,13 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 		if (`${input.author.id}` === `${mu.user.id}`) return; // Don't Check Message Itself!
 		if (!input.guild) { // ignore DM
 			input.reply("**Oops!** μBot Can Run **ONLY** __**in SERVER**__ *(not DM)*!");
-			input.reply("**저런!** 뮤봇은 **__서버에서__만** 명령어 실행이 가능합니다! *(DM말고...)*")
+			input.reply("**저런!** 뮤봇은 **__서버에서__만** 명령어 실행이 가능합니다! *(DM 말고...)*")
 			return;
 		}
 		input.channel.startTyping();
 		  if(cooldown.has(input.author.id)){
 			input.delete();
-			input.channel.send(`CoolDown is Activated (${cdseconds}sec.)\n쿨다운이 활성화 되어있습니다! (${cdseconds}초)`).then(thismsg => thismsg.delete(5000))
+			input.channel.send(`CoolDown is Activated (${cdseconds} sec.)\n쿨다운이 활성화되어있습니다! (${cdseconds} 초)`).then(thismsg => thismsg.delete(5000))
  		   return
  		 }
 		  if(!input.member.hasPermission("ADMINISTRATOR")){
