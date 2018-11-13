@@ -29,7 +29,7 @@ module.exports.run = async (mu, input, pars) => {
     .setDescription(`Set to ${pars[0]}`);
 
     input.channel.send(prefixEmb);
-}
+};
 
 module.exports.help = {
 	name: "p"

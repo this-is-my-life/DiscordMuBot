@@ -13,12 +13,12 @@ module.exports.run = async (mu, input, pars, prefix) => {
 	const helpemb = new API.RichEmbed({
 		"title": "Do you wanna view μBot's :regional_indicator_c::o2::regional_indicator_d::regional_indicator_e:?　:arrow_left: Click Here!",
   		"description": "Copyright (c) 2018. PMH Studio / PMH & WSF. MIT Licenced.\n\n\n",
-  		"url": "https://github.com/PMHStudio/DiscordMuBot/tree/%CE%BCBot-ver5",
+		"url": "https://github.com/PMHStudio/DiscordMuBot/tree/%CE%BCBot-ver5",
   		"color": 7506394,
   		"timestamp": "2018-06-19T04:33:13.297Z",
   		"footer": {
   		  	"icon_url": "https://images-ext-1.discordapp.net/external/Ptv3hyLB2p7wVWbC7iKUMxBoyhW-g2i__26OzuWFvgo/%3Fsize%3D2048/https/cdn.discordapp.com/avatars/458625370334429184/c0e1149749f9c740de6255432c50a70c.png",
-    		"text": "Thanks for using Our μBot!"
+			"text": "Thanks for using Our μBot!"
   		},
   		"author": {
     		"name": "Discord μBot (v.5) Commands!",
@@ -44,7 +44,7 @@ module.exports.run = async (mu, input, pars, prefix) => {
       			"name": "and....?",
       			"value": `\`\`\`fix\n${prefix}woof\`\`\``,
       			"inline": true
-    		}
+			}
   		]
 	});
 	input.channel.send(helpemb);

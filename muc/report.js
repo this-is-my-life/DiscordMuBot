@@ -16,7 +16,9 @@ module.exports.run = async (mu, input, pars) => {
 			return input.delete().catch(O_o=>{}); }
 		let reportReason = pars.join(" ").slice(22);
    		if (!input.member.hasPermission("MANAGE_MESSAGES")) return input.channel.send(`<@${input.author.id}> has NO PERMISSION: MANAGE_MESSAGES`);
-		if (reportTo.hasPermission("MANAGE_MESSAGES")) return input.channel.send("Error: Target has Same or High PERMISSION");
+		if (reportTo.hasPermission("MANAGE_MESSAGES")) {
+			return input.channel.send("Error: Target has Same or High PERMISSION");
+		}
 		let Ricon = input.guild.iconURL;
 		let eReportEmb = new API.RichEmbed()
 		.setTitle(`${input.guild.name.toString()} - REPORTed`)
@@ -28,7 +30,7 @@ module.exports.run = async (mu, input, pars) => {
 		.addField("Report By", `${input.author} (ID: ${input.author.id})`)
 		.addField("Reported Channel", input.channel)
 		.addField("Report Reason", `${reportReason}.`);
-		input.delete().catch(O_o=>{});
+		input.delete().catch(O_o => {});
 		input.guild.systemChannel.send(eReportEmb);
 }
 

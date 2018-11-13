@@ -23,7 +23,7 @@ module.exports.run = async (mu, input, pars) => {
         .addField("Hey! Wait!", "You need to join a voice channel first!");
         input.channel.send(eEscapeVoiceFail);
     }
-}
+};
 
 module.exports.help = {
 	name: "l"

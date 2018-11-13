@@ -9,7 +9,7 @@
 
 const API = require("discord.js");
 let mute = require("../Saved/UsersCoin.json");
-const randomHexColor = require('random-hex-color');
+const randomHexColor = require("random-hex-color");
 
 module.exports.run = async (mu, input, pars) => {
 	if (!mute[input.author.id]) {

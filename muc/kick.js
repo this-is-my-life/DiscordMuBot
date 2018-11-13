@@ -15,7 +15,7 @@ module.exports.run = async (mu, input, pars) => {
 			input.delete().catch(O_o=>{});
 			return input.channel.send("User Not Found"); }
 		let kickReason = pars.join(" ").slice(22);
-   		if (!input.member.hasPermission("KICK_MEMBERS")) return input.channel.send(`<@${input.author.id}> has NO PERMISSION: KICK_MEMBERS`);
+		if (!input.member.hasPermission("KICK_MEMBERS")) return input.channel.send(`<@${input.author.id}> has NO PERMISSION: KICK_MEMBERS`);
 		if (kickTo.hasPermission("KICK_MEMBERS")) return input.channel.send("Error: Target has Same or High PERMISSION");
 		let Kicon = input.guild.iconURL;
 		let eKickEmb = new API.RichEmbed()
