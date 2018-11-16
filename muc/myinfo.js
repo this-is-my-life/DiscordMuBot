@@ -28,7 +28,7 @@ module.exports.run = async (mu, input, pars) => {
 		.addField("User Avatar URL", input.author.displayAvatarURL)
 		.addField("User Created", input.author.createdAt)
 		input.channel.send(eMyInfo);
-}
+};
 
 module.exports.help = {
 	name: "m"
