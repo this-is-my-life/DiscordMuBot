@@ -237,7 +237,7 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
     			input.channel.stopTyping();
 	  		} else {
 		  		// AI(api.ai, Dialogflow v1) Intents
-				let aiRequest = ai.textRequest(pars.join(" ").slice(0), {
+				let aiRequest = ai.textRequest(verify, {
 		  			sessionId: input.author.id
 		  		});
 
