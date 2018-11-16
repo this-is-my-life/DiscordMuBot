@@ -12,7 +12,7 @@ const API = require("discord.js");
 module.exports.run = async (mu, input, pars) => {
 		let banTo = input.guild.member(input.mentions.users.first() || input.guild.members.get(pars[0]));
 		if (!banTo) { 
-			return input.delete().catch(O_o=>{}); 
+			return input.delete().catch(O_o => {}); 
 			input.channel.send("User Not Found");}
 		let banReason = pars.join(" ").slice(22);
    		if (!input.member.hasPermission("BAN_MEMBERS")) return input.channel.send(`<@${input.author.id}> has NO PERMISSION: BAN_MEMBERS`);
@@ -30,7 +30,7 @@ module.exports.run = async (mu, input, pars) => {
 		.addField("Ban Reason", `${banReason}.`);
 		input.guild.member(banTo).ban(banReason);
 		input.guild.systemChannel.send(eBanEmb);
-}
+};
 
 module.exports.help = {
 	name: "b"

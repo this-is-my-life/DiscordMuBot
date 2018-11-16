@@ -9,7 +9,7 @@
 
 const API = require("discord.js");
 const request = require("request");
-const randomHexColor = require('random-hex-color');
+const randomHexColor = require("random-hex-color");
 
 module.exports.run = async (mu, input, pars) => {
         request("https://random.dog/woof", function (e, r, woofurl) {
