@@ -196,13 +196,14 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 		  if(!input.member.hasPermission("ADMINISTRATOR")){
  		   cooldown.add(input.author.id);
  		 }
-  		let msgAr = input.content.split(" ");
+		let msgAr = input.content.split(" ");
+		let msgc = input.content.slice(prefix.length);
   		let i = msgAr[0];
   		let pars = msgAr.slice(1);
   		let verify = i.slice(prefix.length);
   		let cmdFile = mu.commands.get(verify);
 
-  		if (!verify) {
+  		if (input == verify) {
   			let avat = mu.user.displayAvatarURL;
 			let eBotInfoEmb = new API.RichEmbed()
 			.setTitle(`${mu.user.username.toString()} Infomation!`)
@@ -237,7 +238,7 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
     			input.channel.stopTyping();
 	  		} else {
 		  		// AI(api.ai, Dialogflow v1) Intents
-				let aiRequest = ai.textRequest(verify, {
+				let aiRequest = ai.textRequest(msgc, {
 		  			sessionId: input.author.id
 		  		});
 
