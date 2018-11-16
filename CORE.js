@@ -25,8 +25,8 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
     let prefixes = JSON.parse(cmds.readFileSync("./Saved/ServersPrefix.json", "utf8"))
 
 
-    	// User Cool Down
-    	let cooldown = new Set();
+    // User Cool Down
+    let cooldown = new Set();
 	let cdseconds = 5;
 
 	// User Coins
@@ -42,28 +42,6 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 	const API = require("discord.js");
 	console.log("Discord API: Ready(discord.js)");
 
-// Read Commands_________________________________
-	
-	cmds.readdir("./muc/", (err, files) => {
-		
-		// Command Files Exist Check
-		let jsfile = files.filter(f => {
-			f.split(".").pop() === "js"
-		});
-		if(jsfile.length <= 0){
-			console.log("Error(E404): Couldn't find commands.");
-		    return;
-		}
-
-		jsfile.forEach((f, i) =>{
-			let props = require(`./muc/${f}`);
-			let filenames = f.split(".");
-			let filename = filenames[0];
-			mu.commands.set(filename, props);
-		    mu.commands.set(props.help.name, props);
-		 	console.log(`CommandLoad: Ready(${filename}, ${props.help.name})`);
-		});
-	});
 
 // Bot Login_____________________________________
 
@@ -75,6 +53,28 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 
 	// Get Bot Command
 	mu.commands = new API.Collection();
+
+
+// Read Commands_________________________________
+
+	cmds.readdir("./muc/", (err, files) => {
+
+		// Command Files Exist Check
+		let jsfile = files.filter(f => f.split(".").pop() === "js")
+		if (jsfile.length <= 0) {
+			console.log("Error(E404): Couldn't find commands.");
+			return;
+		}
+
+		jsfile.forEach((f, i) => {
+			let props = require(`./muc/${f}`);
+			let filenames = f.split(".");
+			let filename = filenames[0];
+			mu.commands.set(filename, props);
+			mu.commands.set(props.help.name, props);
+			console.log(`CommandLoad: Ready(${filename}, ${props.help.name})`);
+		});
+	});
 
 
 // Bot Readying__________________________________
