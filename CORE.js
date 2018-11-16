@@ -231,11 +231,9 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 			.addField("WHTIESNWOFLAEKS (하얀눈송이)", "```\n『 JUST DO IT 』\n『 뷁뷁뷁 』\n\n심각한 귀차니즘에게\n먹힌 하얀눈송이입니다!!\n```\n──────────────────────────\n\n- Main Programmer (메인 프로그래머)\n- Main Web Publisher (메인 웹퍼블리셔)\n- Sub Grapher & Designer (보조 그래퍼 & 디자이너)")
 			.setFooter("Thanks For Using Our μBot!", avat);
 			input.channel.send(eCreditEmb);
-			input.channel.stopTyping();
   		} else {
 		  	if (cmdFile) { 
 		  		cmdFile.run(mu,input,pars,prefix);
-    			input.channel.stopTyping();
 	  		} else {
 		  		// AI(api.ai, Dialogflow v1) Intents
 				let aiRequest = ai.textRequest(msgc, {
@@ -261,14 +259,14 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 		        		.setDescription("Powered by Google Dialogflow");
 		        		input.channel.send(aiEmb);
 	        		}
-	        		input.channel.stopTyping();
 	    		});
 			}  		
   		}
 		
 	  setTimeout(() => {
     cooldown.delete(input.author.id)
-  }, cdseconds * 1000)
+		}, cdseconds * 1000)
+	input.channel.stopTyping();
 		
   	});
   	
