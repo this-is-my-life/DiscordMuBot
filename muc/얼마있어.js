@@ -19,12 +19,12 @@ module.exports.run = async (mu, input, pars) => {
 	}
 	let userCoin = mute[input.author.id].mute;
     let eCoinEmb = new API.RichEmbed()
-    .setTitle(`Hum... ${input.member.displayName} Have....`)
+    .setTitle(`Hum... ${input.member.displayName}님의 코인은....`)
     .setColor(randomHexColor())
-    .setDescription(`${userCoin} MUC(MuteCoin)!`);
+    .setDescription(`${userCoin} MUC!`);
     input.channel.send(eCoinEmb);
 }
 
 module.exports.help = {
-	name: "coin"
+	name: "뮤트코인"
 }
