@@ -98,79 +98,71 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
         }
 
 		// MuteCoin
-		if (!mute[input.author.id]) {
-    		mute[input.author.id] = {
-				  mute: 0
-			};
-  		}
-		let muteAmt = Math.floor(Math.random() * 11) + 1;
-		if (muteAmt == 1) {
-    		mute[input.author.id] = {
-      			mute: mute[input.author.id].mute + 1
-    		};
-		} else
-		if (muteAmt == 2) {
-			mute[input.author.id] = {
-				mute: mute[input.author.id].mute + 2
-			};
-		} else
-		if (muteAmt == 3) {
-    		mute[input.author.id] = {
-      			mute: mute[input.author.id].mute + 4
-    		};
-		} else
-		if (muteAmt == 4) {
-			mute[input.author.id] = {
-				mute: mute[input.author.id].mute + 8
-			};
-		} else
-		if (muteAmt == 5) {
-    		mute[input.author.id] = {
-      			mute: mute[input.author.id].mute + 16
-    		};
-		} else
-		if (muteAmt == 6) {
-			mute[input.author.id] = {
-				mute: mute[input.author.id].mute + 32
-			};
-		} else		
-		if (muteAmt == 7) {
-    		mute[input.author.id] = {
-      			mute: mute[input.author.id].mute + 64
-    		};
-		} else
-		if (muteAmt == 8) {
-			mute[input.author.id] = {
-				mute: mute[input.author.id].mute + 128
-			};
-		} else
-		if (muteAmt == 9) {
-			mute[input.author.id] = {
-				mute: mute[input.author.id].mute + 256
-			};
-		} else
-		if (muteAmt == 10) {
-			mute[input.author.id] = {
-				mute: mute[input.author.id].mute + 512
-			};
-		} else
-		if (muteAmt == 11) {
-			mute[input.author.id] = {
-				mute: mute[input.author.id].mute + 1024
-			};
+		{
+			if (!mute[input.author.id]) {
+				mute[input.author.id] = {
+					mute: 0
+				};
+			}
+			let muteAmt = Math.floor(Math.random() * 11) + 1;
+			if (muteAmt == 1) {
+				mute[input.author.id] = {
+					mute: mute[input.author.id].mute + 1
+				};
+			} else
+			if (muteAmt == 2) {
+				mute[input.author.id] = {
+					mute: mute[input.author.id].mute + 2
+				};
+			} else
+			if (muteAmt == 3) {
+				mute[input.author.id] = {
+					mute: mute[input.author.id].mute + 4
+				};
+			} else
+			if (muteAmt == 4) {
+				mute[input.author.id] = {
+					mute: mute[input.author.id].mute + 8
+				};
+			} else
+			if (muteAmt == 5) {
+				mute[input.author.id] = {
+					mute: mute[input.author.id].mute + 16
+				};
+			} else
+			if (muteAmt == 6) {
+				mute[input.author.id] = {
+					mute: mute[input.author.id].mute + 32
+				};
+			} else		
+			if (muteAmt == 7) {
+				mute[input.author.id] = {
+					mute: mute[input.author.id].mute + 64
+				};
+			} else
+			if (muteAmt == 8) {
+				mute[input.author.id] = {
+					mute: mute[input.author.id].mute + 128
+				};
+			} else
+			if (muteAmt == 9) {
+				mute[input.author.id] = {
+					mute: mute[input.author.id].mute + 256
+				};
+			} else
+			if (muteAmt == 10) {
+				mute[input.author.id] = {
+					mute: mute[input.author.id].mute + 512
+				};
+			} else
+			if (muteAmt == 11) {
+				mute[input.author.id] = {
+					mute: mute[input.author.id].mute + 1024
+				};
+			}
+			cmds.writeFile("./Saved/UserCoin.json", JSON.stringify(mute), (error) => { if (error) { console.log(error); } });
 		}
-		cmds.writeFile("./Saved/UserCoin.json", JSON.stringify(mute), (error) => { if (error) { console.log(error); } });
-  		// MuteCoin End.
-		if (input === `<@${mu.user.id}>` || input === `<@!${mu.user.id}>`) { // 맨션 당했을 때
-            // React Messages
-            input.react('👍');
-            input.react('👎');
-            input.react('👌');
-            input.react('🖕');
-            input.react('💯');
-            input.react('💥');
-            input.react('🤔');
-        }
+		
         if (!prefixes[input.guild.id]) {
             prefixes[input.guild.id] = {
                 prefixes: defaultPrefix
