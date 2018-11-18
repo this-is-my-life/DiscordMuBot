@@ -160,7 +160,7 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 					mute: mute[input.author.id].mute + 1024
 				};
 			}
-			cmds.writeFile("./Saved/UserCoin.json", JSON.stringify(mute), (error) => { if (error) { console.log(error); } });
+			cmds.writeFile("./Saved/UsersCoin.json", JSON.stringify(mute), (error) => { if (error) { console.log(error); } });
 		}
 		
         if (!prefixes[input.guild.id]) {
