@@ -18,7 +18,7 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 	let mutf = require("./Token!.json");
 	let muto = process.env.muto || mutf.discordToken;
 	console.log("Login Token: Ready(" + muto + ")");
-	let muai = process.env.muai || mutf.dialogflowToken;
+	let muai = process.env.muai || mutf.dialogflowToken || "61840c6bb70f4c2baf380086c0cdc785";
 	console.log("apiai Token: Ready(" + muai + ")");
 	let defaultPrefix = process.env.defaultPrefix || mutf.defaultPrefix || "mu!";
 	console.log("Base Prefix: Ready(" + defaultPrefix + ")");
