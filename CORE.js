@@ -225,7 +225,7 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
   		} else {
 		  	if (cmdFile) { 
 		  		cmdFile.run(mu,input,pars,prefix);
-	  		} else {
+	  		} else { /*
 		  		// AI(api.ai, Dialogflow v1) Intents
 				let aiRequest = ai.textRequest(msgc, {
 		  			sessionId: input.author.id
@@ -250,7 +250,7 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 		        		.setDescription("Powered by Google Dialogflow");
 		        		input.channel.send(aiEmb);
 	        		}
-	    		});
+	    		}); */
 			}  		
   		}
 		
