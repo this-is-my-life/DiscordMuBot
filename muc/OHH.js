@@ -15,7 +15,7 @@ module.exports.run = async (mu, input, pars) => {
 	    if (input.member.voiceChannel) {
 	      input.member.voiceChannel.join()
 			  .then(connection => {
-				  connection.playArbitraryInput("http://mubotapi.dothome.co.kr/discordapi/efects/Oh.mp3");
+				  connection.playArbitraryInput("https://cdn.discordapp.com/attachments/514420864318701568/514421123623157790/Ohh.mp3");
 	        })
 	    } else {
 	    	let Sekicon = input.guild.iconURL;
@@ -28,5 +28,5 @@ module.exports.run = async (mu, input, pars) => {
 }
 
 module.exports.help = {
-	name: "Ohh"
+	name: "OHH"
 }
