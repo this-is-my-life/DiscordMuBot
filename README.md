@@ -17,6 +17,14 @@ Official Discord μBot( Version 7.0 ) Github Repository.
 [![MuBot Using](https://img.shields.io/badge/using-node.js-green.svg)](https://nodejs.org)
 [![MuBot Request](https://img.shields.io/badge/request-discord.js-blue.svg)](https://discord.js.org)
 
+### Project Dir
+> PMH Studio
+>> Projects
+>>> Programs
+>>>> Discord bot
+>>>>> proj-μBot
+>>>>>> [Branch: Version 7.0](https://github.com/PMHStudio/DiscordMuBot/branches)
+
 ## 주의!
 > 개발중입니다! 에러발생할수있습니다 더욱 안전한 버전을 이용하시는걸 추천드립니다!
 
@@ -3284,13 +3292,6 @@ Library|Licenses
 
 
 
-### Project Dir
-> PMH Studio
->> Projects
->>> Programs
->>>> Discord bot
->>>>> proj-μBot
->>>>>> [Branch: Version 7.0](https://github.com/PMHStudio/DiscordMuBot/branches)
 
 ### Discord.js Included
 ### Node.js Included
