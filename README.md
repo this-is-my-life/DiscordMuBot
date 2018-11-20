@@ -18,7 +18,7 @@ Official Discord μBot( Version 7.0 ) Github Repository.
 [![MuBot Request](https://img.shields.io/badge/request-discord.js-blue.svg)](https://discord.js.org)
 
 ## 주의!
-> 베타버전입니다! 더욱 안전한 정식버전을 이용하시는걸 추천드립니다!
+> 개발중입니다! 에러발생할수있습니다 더욱 안전한 버전을 이용하시는걸 추천드립니다!
 
 - 안녕하세요! PMH Studio의 Studio장! PMH입니다! @PMHStudio
 - 이 프로젝트는 [**Discord**](https://discordapp.com)에서 제공하는 [**Discord API**](https://discordapp.com/developers)기반으로 다용도 Bot을 만드는것을 목표로 하는 프로젝트입니다!
@@ -33,30 +33,30 @@ Official Discord μBot( Version 7.0 ) Github Repository.
 -----------------------------------------------------------
 #### 기본요구값 - 뮤봇의 동작을 위하여 **꼭** 필요한 값들입니다 
 **muto**
-> 디스코드 API에 연결하기 위한 디스코드 에플리케이션 빌트인 봇 토큰입니다
+> DISCORD API에 접속하기위한 코드입니다
 >> https://discordapp.com/developers 에서 발급하실 수 있습니다
 
 **muai**
-> Google에서 제작한 Dialogflow에 인공지능 연결을 위한 토큰입니다
+> DIALOGFLOW를 이용한 채팅 코드입니다
 >> http://dialogflow.com/ 에서 발급하실 수 있습니다
 
 **prefix, defaultPrefix**
-> 프리픽스값과 기본값입니다
->> 프리픽스란, 봇을 호출할때 (프리픽스)(명령어)순으로 호출할때의 프리픽스 값입니다
->> 즉, mu!help에서 mu!는 프리픽스 help는 명령어입니다
+> 호출명과 기본값입니다
+>> 호출명란, 봇을 사용할때 (호출명)(명령어)순으로 사용할때의 호출어 값입니다
+>> 즉, mu!help에서 mu!는 호출명 help는 명령어입니다
 
 #### 저장문서 호출 - 중요한 값을 저장하기위한 저장문서들을 호출합니다
 **prefixes**
-> 서버에서 커스터마이징한 프리픽스를 저장하기 위한 문서입니다
+> 각자 다른 서버에서 저장한 호출명을 저장하기위한 문서입니다
 >> 문서의 경로 기본값은 (/Saved/ServersPrefix.json)입니다
 
 **mute**
-> 뮤트코인 사용자의 코인정보를 저장하기 위한 문서입니다
+> 게임시 유저의 코인을 저장하기위한 문서입니다
 >> 문서의 경로 기본값은 (/Saved/UsersCoin.json)입니다 
 
 #### 모듈호출 - 뮤봇을 동작을 보조하기 위한 모듈을 호출합니다
 **API**
-> 가장 중요한 모듈로서 디스코드 API에 접속하기 위한 모듈입니다
+> 가장 중요한 모듈로서 DISCORD API에 접속하기 위한 모듈입니다
 >> 저희 뮤봇은 API에 접속하기 위하여 Discord.js 모듈을 사용중입니다
 
 **cmds**
@@ -3299,4 +3299,4 @@ Library|Licenses
 
 
 
-- Copyright &copy; 2018. PMH Studio. [MIT Licensed.](https://github.com/PMHStudio/DiscordMuBot/blob/%CE%BCBot-ver5/LICENSE)
+- Copyright &copy; 2018. PMH Studio. [MIT Licensed.](https://github.com/PMHStudio/DiscordMuBot/blob/%CE%BCBot-ver7/LICENSE)
