@@ -1,5 +1,5 @@
 /*
-	μBot v5.0 Core. 
+	μBot v7.0 Core. 
 	---------------------
 	PMH Studio / Proj- μBot | Smart & Cute Discord Bot_Mu~☆ 
 	Copyright (c) 2018. PMH Studio / PMH. (kok4575@gmail.com) MIT Licensed.
@@ -27,7 +27,7 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 
     // User Cool Down
     let cooldown = new Set();
-	let cdseconds = 5;
+	let cdseconds = process.env.defaultCooldown || mutf.defaultCooldown || 3;
 
 	// User Coins
 	const mute = require("./Saved/UsersCoin.json");

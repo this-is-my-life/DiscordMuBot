@@ -10,6 +10,16 @@ Official Discord μBot( Version 7.0 ) Github Repository.
 | Github Repository Info | [![GitHub license](https://img.shields.io/github/license/PMHStudio/DiscordMuBot.svg)](https://github.com/PMHStudio/DiscordMuBot/blob/%CE%BCBot-ver7/LICENSE) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/PMHStudio/DiscordMuBot.svg) ![GitHub (pre-)release](https://img.shields.io/github/release/PMHStudio/DiscordMuBot/all.svg) ![Github All Releases](https://img.shields.io/github/downloads/PMHStudio/DiscordMuBot/total.svg)[ ![GitHub forks](https://img.shields.io/github/forks/PMHStudio/DiscordMuBot.svg)](https://github.com/PMHStudio/DiscordMuBot/network)[ ![GitHub issues](https://img.shields.io/github/issues/PMHStudio/DiscordMuBot.svg)](https://github.com/PMHStudio/DiscordMuBot/issues) |
 | etc | [![Codacy Badge](https://api.codacy.com/project/badge/Grade/6e6865679220427c8504e6ae63d1a0ad)](https://www.codacy.com/app/kok4575/DiscordMuBot?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=PMHStudio/DiscordMuBot&amp;utm_campaign=Badge_Grade) [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FPMHStudio%2FDiscordMuBot.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FPMHStudio%2FDiscordMuBot?ref=badge_shield) |
 
+## 주의!
+> 이 버전은 아직 개발 중인 브렌치입니다! 에러가 발생할 수도 있으니 더욱 안전한 정식버전을 이용하시는 것을 추천드립니다
+
+- 안녕하세요! PMH Studio의 Studio장! PMH입니다! @PMHStudio
+- 이 프로젝트는 [**Discord**](https://discordapp.com)에서 제공하는 [**Discord API**](https://discordapp.com/developers)기반으로 다용도 Bot을 만드는것을 목표로 하는 프로젝트입니다!
+- **모든 Projects의 저작권은 특별히 명시되지 않는한 @PMHStudio에게 있습니다.**
+
+## [**Bot Developers' Discord Server!**](https://discord.io/PMHStudioBots)
+[![Discord Server Invite](https://discordapp.com/api/guilds/458629337264947221/widget.png?style=banner3)](https://discord.io/PMHStudioBots)
+
 ### Project Dir
 > PMH Studio
 >> Projects
@@ -18,25 +28,8 @@ Official Discord μBot( Version 7.0 ) Github Repository.
 >>>>> proj-μBot
 >>>>>> [Branch: Version 7.0](https://github.com/PMHStudio/DiscordMuBot/branches)
 
-## 주의!
-> 개발중입니다! 에러발생할수있습니다 더욱 안전한 버전을 이용하시는걸 추천드립니다!
-
-- 안녕하세요! PMH Studio의 Studio장! PMH입니다! @PMHStudio
-- 이 프로젝트는 [**Discord**](https://discordapp.com)에서 제공하는 [**Discord API**](https://discordapp.com/developers)기반으로 다용도 Bot을 만드는것을 목표로 하는 프로젝트입니다!
-- **모든 Projects의 저작권은 특별히 명시되지 않는한 @PMHStudio에게 있습니다.**
-
-## [**Bot Developers' Discord Server!**](https://discord.gg/kEnspqB)
-[![Discord Server Invite](https://discordapp.com/api/guilds/458629337264947221/widget.png?style=banner3)](https://discord.io/PMHStudioBots)
-
-
-
-### 추가로 참고해야할 문서입니다!
------------------------------------------------------------
-[![Wiki](https://img.shields.io/badge/WIKI-Open-brightgreen.svg)](https://github.com/PMHStudio/DiscordMuBot/wiki)
-[![LICENSE](https://img.shields.io/badge/LICENSE-Software-brightgreen.svg)](https://github.com/PMHStudio/DiscordMuBot/blob/%CE%BCBot-ver7/Software%20LICENSE.md)
 
 --------------------------------------------------------------------------------------
-
 
 
 - Copyright &copy; 2018. PMH Studio. [MIT Licensed.](https://github.com/PMHStudio/DiscordMuBot/blob/%CE%BCBot-ver7/LICENSE)
