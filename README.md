@@ -2,9 +2,9 @@ PMH Studio μBot
 ================
 Official Discord μBot( Version 7.0 ) Github Repository.
 --------------------------------------------------------------
-[![Discord Server](https://discordapp.com/api/guilds/458629337264947221/widget.png?style=shield)](https://discord.io/PMHStudioBots)
-[![AppVeyorCI Status](https://ci.appveyor.com/api/projects/status/h79vw2fwy198c98d/branch/μBot-ver7?svg=true)](https://ci.appveyor.com/project/PMHStudio/discordmubot/branch/μBot-ver7)
-[![CircleCI Status](https://img.shields.io/circleci/project/github/PMHStudio/DiscordMuBot.svg)](https://circleci.com/gh/PMHStudio/DiscordMuBot)
+[![Discord Server](https://img.shields.io/discord/458629337264947221.svg?logo=Discord&style=popout&colorA=7F8FDF&colorB=7289DA)](https://discord.io/PMHStudioBots)
+[![AppVeyorCI Status](https://img.shields.io/appveyor/ci/PMHStudio/discordmubot.svg?logo=appveyor&style=popout)](https://ci.appveyor.com/project/PMHStudio/discordmubot/branch/μBot-ver7)
+[![CircleCI Status](https://img.shields.io/circleci/project/github/PMHStudio/DiscordMuBot.svg?style=popout&logo=CircleCI&colorA=343434)](https://circleci.com/gh/PMHStudio/DiscordMuBot)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/6e6865679220427c8504e6ae63d1a0ad)](https://www.codacy.com/app/kok4575/DiscordMuBot?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=PMHStudio/DiscordMuBot&amp;utm_campaign=Badge_Grade)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FPMHStudio%2FDiscordMuBot.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FPMHStudio%2FDiscordMuBot?ref=badge_shield)
 [![GitHub license](https://img.shields.io/github/license/PMHStudio/DiscordMuBot.svg)](https://github.com/PMHStudio/DiscordMuBot/blob/%CE%BCBot-ver7/LICENSE)
@@ -13,9 +13,9 @@ Official Discord μBot( Version 7.0 ) Github Repository.
 ![Github All Releases](https://img.shields.io/github/downloads/PMHStudio/DiscordMuBot/total.svg)
 [![GitHub forks](https://img.shields.io/github/forks/PMHStudio/DiscordMuBot.svg)](https://github.com/PMHStudio/DiscordMuBot/network)
 [![GitHub issues](https://img.shields.io/github/issues/PMHStudio/DiscordMuBot.svg)](https://github.com/PMHStudio/DiscordMuBot/issues)
-[![MuBot Language](https://img.shields.io/badge/language-javascript-yellow.svg)](https://www.javascript.com)
-[![MuBot Using](https://img.shields.io/badge/using-node.js-green.svg)](https://nodejs.org)
-[![MuBot Request](https://img.shields.io/badge/request-discord.js-blue.svg)](https://discord.js.org)
+[![MuBot Language](https://img.shields.io/badge/language-javascript-F7DF1E.svg?logo=JavaScript)](https://www.javascript.com)
+[![MuBot Using](https://img.shields.io/badge/using-node.js-339933.svg?logo=Node.js)](https://nodejs.org)
+[![MuBot Request](https://img.shields.io/badge/request-discord.js-7289DA.svg?logo=Discord)](https://discord.js.org)
 
 ### Project Dir
 > PMH Studio
