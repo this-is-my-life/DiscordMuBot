@@ -133,11 +133,6 @@ Official Discord μBot( Version 7.0 ) Github Repository.
 
 --------------------------------------------------------------------------------------
 
-### Discord.js Included
-### Node.js Included
-
--------------------------------------------------------------
-
 
 
 - Copyright &copy; 2018. PMH Studio. [MIT Licensed.](https://github.com/PMHStudio/DiscordMuBot/blob/%CE%BCBot-ver7/LICENSE)
