@@ -1,13 +1,13 @@
 PMH Studio μBot
 ================
-Official Discord μBot( Version 5.0 ) Github Repository.
+Official Discord μBot( Version 7.0 ) Github Repository.
 --------------------------------------------------------------
 [![Discord Server](https://discordapp.com/api/guilds/458629337264947221/widget.png?style=shield)](https://discord.io/PMHStudioBots)
-[![AppVeyorCI Status](https://ci.appveyor.com/api/projects/status/h79vw2fwy198c98d/branch/μBot-ver5?svg=true)](https://ci.appveyor.com/project/PMHStudio/discordmubot/branch/μBot-ver5)
+[![AppVeyorCI Status](https://ci.appveyor.com/api/projects/status/h79vw2fwy198c98d/branch/μBot-ver7?svg=true)](https://ci.appveyor.com/project/PMHStudio/discordmubot/branch/μBot-ver7)
 [![CircleCI Status](https://img.shields.io/circleci/project/github/PMHStudio/DiscordMuBot.svg)](https://circleci.com/gh/PMHStudio/DiscordMuBot)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/6e6865679220427c8504e6ae63d1a0ad)](https://www.codacy.com/app/kok4575/DiscordMuBot?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=PMHStudio/DiscordMuBot&amp;utm_campaign=Badge_Grade)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FPMHStudio%2FDiscordMuBot.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FPMHStudio%2FDiscordMuBot?ref=badge_shield)
-[![GitHub license](https://img.shields.io/github/license/PMHStudio/DiscordMuBot.svg)](https://github.com/PMHStudio/DiscordMuBot/blob/%CE%BCBot-ver5/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/PMHStudio/DiscordMuBot.svg)](https://github.com/PMHStudio/DiscordMuBot/blob/%CE%BCBot-ver7/LICENSE)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/PMHStudio/DiscordMuBot.svg)
 ![GitHub (pre-)release](https://img.shields.io/github/release/PMHStudio/DiscordMuBot/all.svg)
 ![Github All Releases](https://img.shields.io/github/downloads/PMHStudio/DiscordMuBot/total.svg)
@@ -17,6 +17,8 @@ Official Discord μBot( Version 5.0 ) Github Repository.
 [![MuBot Using](https://img.shields.io/badge/using-node.js-green.svg)](https://nodejs.org)
 [![MuBot Request](https://img.shields.io/badge/request-discord.js-blue.svg)](https://discord.js.org)
 
+## 주의!
+> 베타버전입니다! 더욱 안전한 정식버전을 이용하시는걸 추천드립니다!
 
 - 안녕하세요! PMH Studio의 Studio장! PMH입니다! @PMHStudio
 - 이 프로젝트는 [**Discord**](https://discordapp.com)에서 제공하는 [**Discord API**](https://discordapp.com/developers)기반으로 다용도 Bot을 만드는것을 목표로 하는 프로젝트입니다!
@@ -3288,7 +3290,7 @@ Library|Licenses
 >>> Programs
 >>>> Discord bot
 >>>>> proj-μBot
->>>>>> [Branch: Version 5.0](https://github.com/PMHStudio/DiscordMuBot/branches)
+>>>>>> [Branch: Version 7.0](https://github.com/PMHStudio/DiscordMuBot/branches)
 
 ### Discord.js Included
 ### Node.js Included
