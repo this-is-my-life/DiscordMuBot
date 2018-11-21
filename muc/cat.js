@@ -18,7 +18,7 @@ module.exports.run = async (mu, input, pars) => {
         if (!error && response.statusCode == 200) {
                 let eDog = new API.RichEmbed()
                 .setColor(randomHexColor())
-                .setTitle(`Dogs, HERE!`)
+                .setTitle(`Cats, HERE!`)
                 .setURL(response.request.uri.href)
                 .setDescription(`${input.author} said " woof!"`)
                 .setImage(response.request.uri.href)
