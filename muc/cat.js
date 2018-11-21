@@ -20,7 +20,7 @@ module.exports.run = async (mu, input, pars) => {
                 .setColor(randomHexColor())
                 .setTitle(`Cats, HERE!`)
                 .setURL(response.request.uri.href)
-                .setDescription(`${input.author} said " woof!"`)
+                .setDescription(`${input.author} said " Cat!!"`)
                 .setImage(response.request.uri.href)
                 .setFooter("Powered by thecatapi.com");
                 input.channel.send(eDog);
