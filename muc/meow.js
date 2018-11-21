@@ -16,14 +16,14 @@ module.exports.run = async (mu, input, pars) => {
 
     }, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-                let eDog = new API.RichEmbed()
+                let eCat = new API.RichEmbed()
                 .setColor(randomHexColor())
                 .setTitle(`Cats, HERE!`)
                 .setURL(response.request.uri.href)
-                .setDescription(`${input.author} said " Cat!!"`)
+                .setDescription(`${input.author} said " meow!"`)
                 .setImage(response.request.uri.href)
                 .setFooter("Powered by thecatapi.com");
-                input.channel.send(eDog);
+                input.channel.send(eCat);
         } else {
             console.log(error);
         }
