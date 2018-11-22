@@ -12,12 +12,8 @@ const API = require("discord.js");
     
 
 module.exports.run = async (mu, input, pars) => {
-	let msgAr = input.content.split(" "); // Check Space
-    let i = msgAr[0]; // input Command
-    let langAr = input.content.split("\"");
-	let li = langAr[0];
 
-if (i === ">echo") {
+if (pars[1] === ">echo") {
     console.log(`-----------Convert: ${input.id}----------`);
     console.log("Check Language: batch file, cmd.exe");
     input.channel.send("Language: Batch file, CMD.exe -----------");
@@ -27,7 +23,7 @@ if (i === ">echo") {
     input.channel.send(buffer);
 } else
 
-if (i === "$echo") {
+if (pars[1] === "$echo") {
     console.log(`-----------Convert: ${input.id}----------`);
     console.log("Check Language: bash");
     input.channel.send("Language: Unix&Linux Bash ---------------");
