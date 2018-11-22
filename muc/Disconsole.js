@@ -11,7 +11,7 @@ const API = require("discord.js");
 
     
 
-module.exports.run = async (mu, input, pars) => {
+module.exports.run = async (mu, input, pars, prefix) => {
     let msgAr = input.content.split(" ");
     let i = msgAr[0];
     let verify = i.slice(prefix.length);
