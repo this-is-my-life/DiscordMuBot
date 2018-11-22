@@ -16,7 +16,7 @@ module.exports.run = async (mu, input, pars, prefix) => {
     let i = msgAr[0];
     let verify = i.slice(prefix.length);
 
-if (verify === "echo") {
+if (pars[1] === "echo") {
     console.log(`-----------Convert: ${input.id}----------`);
     console.log("Check Language: batch file, cmd.exe");
     input.channel.send("Language: Batch file, CMD.exe -----------");
