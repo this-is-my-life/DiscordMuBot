@@ -12,8 +12,12 @@ const API = require("discord.js");
     
 
 module.exports.run = async (mu, input, pars) => {
-let msgAr = input.content.split(" "); // Check Space
-let i = msgAr[0]; // input Command
+	let msgAr = input.content.split(" "); // Check Space
+	let i = msgAr[0]; // input Command
+	let pars = msgAr.slice(1); // input parameter
+	let langAr = input.content.split("\"");
+	let li = langAr[0];
+	let buffer; // Yes, It's Buffer.
 
 if (i === ">echo") {
     console.log(`-----------Convert: ${input.id}----------`);
