@@ -8,11 +8,13 @@
 */
 
 const API = require("discord.js");
-let msgAr = input.content.split(" "); // Check Space
-let i = msgAr[0]; // input Command
+
     
 
 module.exports.run = async (mu, input, pars) => {
+let msgAr = input.content.split(" "); // Check Space
+let i = msgAr[0]; // input Command
+
 if (i === ">echo") {
     console.log(`-----------Convert: ${input.id}----------`);
     console.log("Check Language: batch file, cmd.exe");
