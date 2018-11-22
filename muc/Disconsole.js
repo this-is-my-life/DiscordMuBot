@@ -8,6 +8,13 @@
 */
 
 const API = require("discord.js");
+    let msgAr = input.content.split(" "); // Check Space
+	let i = msgAr[0]; // input Command
+	let pars = msgAr.slice(1); // input parameter
+	let langAr = input.content.split("\"");
+	let li = langAr[0];
+	let buffer; // Yes, It's Buffer.
+    
 
 module.exports.run = async (mu, input, pars) => {
 if (i === ">echo") {
