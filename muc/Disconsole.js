@@ -13,7 +13,8 @@ const API = require("discord.js");
 
 module.exports.run = async (mu, input, pars) => {
 	let msgAr = input.content.split(" "); // Check Space
-	let i = msgAr[0]; // input Command
+    let i = msgAr[0]; // input Command
+    let langAr = input.content.split("\"");
 	let li = langAr[0];
 
 if (i === ">echo") {
