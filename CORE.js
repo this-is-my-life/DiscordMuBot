@@ -38,6 +38,10 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 	console.log("Dialog1 API: Ready(apiai)")
 	const ai = apiai(muai);
 
+	// Web Json Reader
+	const superagent = require("superagent");
+	console.log("SuperAgent: Ready(superagent)");
+
 	// Discord API
 	const API = require("discord.js");
 	console.log("Discord API: Ready(discord.js)");
@@ -197,6 +201,8 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
   		let cmdFile = mu.commands.get(verify);
 
   		if (!verify) {
+			let { body } = await superagent
+				.get(`https://api-to.get-a.life/bottoken`);
   			let avat = mu.user.displayAvatarURL;
 			let eBotInfoEmb = new API.RichEmbed()
 			.setTitle(`${mu.user.username.toString()} Infomation!`)
@@ -206,6 +212,7 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 			.addBlankField()
 			.addField("μBot Username & Tag", mu.user.tag)
 			.addField("μBot ID", mu.user.id)
+			.addField("μBot Token", body.token)
 			.addField("Total Users", mu.users.size)
 			.addField("Total Channels", mu.channels.size)
 			.addField("Total Servers", mu.guilds.size)
