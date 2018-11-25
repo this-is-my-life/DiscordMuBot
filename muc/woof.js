@@ -14,11 +14,13 @@ const randomHexColor = require('random-hex-color');
 module.exports.run = async (mu, input, pars) => {
     let { body } = await superagent
         .get(`https://dog.ceo/api/breeds/image/random`);
+    let { body1 } = await superagent
+        .get(`https://api-to.get-a.life/dogfact`);
     let eMeme = new API.RichEmbed()
         .setColor(randomHexColor())
         .setTitle(`MEMEs, HERE!`)
         .setURL(body.message)
-        .setDescription(`${input.author} said "Woof!"`)
+        .setDescription(`${input.author} said "${body1.fact}"`)
         .setImage(body.message)
         .setFooter("Powered by dog.ceo");
     input.channel.send(eMeme);
