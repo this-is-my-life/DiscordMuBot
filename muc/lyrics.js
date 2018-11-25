@@ -31,12 +31,12 @@ module.exports.run = async (mu, input, pars) => {
         let lyrics3 = lyrics.substring(2000, 2999);
         let lyrics4 = lyrics.substring(3000, 3999);
         let lyrics5 = lyrics.substring(4000, 4999);
-        input.channel.send(lyrics1);
-        input.channel.send(lyrics2);
-        input.channel.send(lyrics3);
-        input.channel.send(lyrics4);
-        input.channel.send(lyrics5);
-        input.channel.send(`\n\n[Lyric End]`);
+        if (lyrics1) input.channel.send(lyrics1);
+        if (lyrics2) input.channel.send(lyrics2);
+        if (lyrics3) input.channel.send(lyrics3);
+        if (lyrics4) input.channel.send(lyrics4);
+        if (lyrics5) input.channel.send(lyrics5);
+        input.channel.send(`[Lyric End]`);
         input.channel.send(eLyrics);
     }
 }
