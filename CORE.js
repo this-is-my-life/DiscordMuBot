@@ -72,7 +72,8 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
 			let filename = filenames[0];
 			mu.commands.set(filename, props);
 			mu.commands.set(props.help.name, props);
-			console.log(`CommandLoad: Ready(${filename}, ${props.help.name})`);
+			mu.commands.set(props.help.description, props);
+			console.log(`CommandLoad: Ready(${filename}, ${props.help.name}, ${props.help.description})`);
 		});
 	});
 
