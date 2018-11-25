@@ -8,6 +8,8 @@
 */
 
 const API = require("discord.js");
+const superagent = require("superagent");
+const randomHexColor = require("random-hex-color");
 
 module.exports.run = async (mu, input, pars) => {
     let songs = pars.join(" ").slice(22);
