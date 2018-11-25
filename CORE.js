@@ -196,7 +196,7 @@ console.log("\n\n\nμBot v5.0 Core Session is Start!\n------------------Bot Star
   		let verify = i.slice(prefix.length);
   		let cmdFile = mu.commands.get(verify);
 
-  		if (input == verify) {
+  		if (!verify) {
   			let avat = mu.user.displayAvatarURL;
 			let eBotInfoEmb = new API.RichEmbed()
 			.setTitle(`${mu.user.username.toString()} Infomation!`)
