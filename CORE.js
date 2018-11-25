@@ -260,7 +260,6 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 		        		input.channel.send(aiEmb);
 	        		}
 				});
-				input.channel.send("MuBot Dev ver7 Error: Command Not Found");
 			}  		
   		}
 		
