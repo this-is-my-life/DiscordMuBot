@@ -12,23 +12,24 @@ const request = require("request");
 const randomHexColor = require('random-hex-color');
 
 module.exports.run = async (mu, input, pars) => {
-        request('https://random.dog/woof', function (e, r, woofurl) {
-            let wooflast = woofurl[woofurl.length-1];
-            if (wooflast === "4") {
-                input.channel.send("Woof!");
-            } else {
-                let eDog = new API.RichEmbed()
+    request.get('https://dog.ceo/api/breeds/image/random', {
+    }, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            let eDog = new API.RichEmbed()
                 .setColor(randomHexColor())
                 .setTitle(`Dogs, HERE!`)
-                .setURL(`https://random.dog/${woofurl}`)
+                .setURL(response.request.uri.href)
                 .setDescription(`${input.author} said " woof!"`)
-                .setImage(`https://random.dog/${woofurl}`)
-                .setFooter("Powered by random.dog");
-                input.channel.send(eDog);
-            }
-        });
+                .setImage(response.request.uri.href)
+                .setFooter("Powered by dog.ceo");
+            input.channel.send(eDog);
+        } else {
+            console.log(error);
+        }
+    })
 }
 
 module.exports.help = {
-	name: "inu"
+    name: "dog",
+    description: "inu"
 }
