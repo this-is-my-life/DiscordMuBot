@@ -8,25 +8,20 @@
 */
 
 const API = require("discord.js");
-const request = require("request");
+const superagent = require("superagent");
 const randomHexColor = require('random-hex-color');
 
 module.exports.run = async (mu, input, pars) => {
-    request.get('https://dog.ceo/api/breeds/image/random', {
-    }, function (error, response, body) {
-        if (!error && response.statusCode == 200) {
-            let eDog = new API.RichEmbed()
-                .setColor(randomHexColor())
-                .setTitle(`Dogs, HERE!`)
-                .setURL(response.request.uri.href)
-                .setDescription(`${input.author} said " woof!"`)
-                .setImage(response.request.uri.href)
-                .setFooter("Powered by dog.ceo");
-            input.channel.send(eDog);
-        } else {
-            console.log(error);
-        }
-    })
+    let { body } = await superagent
+        .get(`https://dog.ceo/api/breeds/image/random`);
+    let eMeme = new API.RichEmbed()
+        .setColor(randomHexColor())
+        .setTitle(`MEMEs, HERE!`)
+        .setURL(body.message)
+        .setDescription(`${input.author} said\n"Woof!"`)
+        .setImage(body.message)
+        .setFooter("Powered by dog.ceo");
+    input.channel.send(eMeme);
 }
 
 module.exports.help = {
