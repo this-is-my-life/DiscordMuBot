@@ -22,8 +22,8 @@ module.exports.run = async (mu, input, pars) => {
         .setDescription(`"${body.title}" -${body.author}`)
         .setThumbnail(`${body.thumbnail.genius}`)
         .setFooter("Powered by some-random-api.ml");
-    input.channel.send(eLyrics);
     input.channel.send(`${body.lyrics}\n[Lyric End]`);
+    input.channel.send(eLyrics);
 }
 
 module.exports.help = {
