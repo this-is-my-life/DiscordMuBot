@@ -16,7 +16,7 @@ module.exports.run = async (mu, input, pars) => {
     let { body } = await superagent
     .get(`https://some-random-api.ml/lyrics?title=${songs}`);
     if (body.error) {
-        input.channel.send(`body.error`);
+        input.channel.send(`${body.error}`);
     } else {
         let eLyrics = new API.RichEmbed()
             .setColor(randomHexColor())
