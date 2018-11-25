@@ -13,7 +13,6 @@ const randomHexColor = require("random-hex-color");
 
 module.exports.run = async (mu, input, pars) => {
     request.get('http://thecatapi.com/api/images/get?format=src&type=png', {
-
     }, function (error, response, body) {
         if (!error && response.statusCode == 200) {
                 let eCat = new API.RichEmbed()
@@ -31,5 +30,6 @@ module.exports.run = async (mu, input, pars) => {
 }
 
 module.exports.help = {
-    name: "neko"
+    name: "cat",
+    description: "meow"
 }
