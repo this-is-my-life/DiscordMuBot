@@ -20,10 +20,10 @@ module.exports.run = async (mu, input, pars) => {
         .setTitle(`Lyrics, HERE!`)
         .setURL(body.links.genius)
         .setDescription(`"${body.title}" -${body.author}`)
-        .addField(`${body.lyrics}`, "[Lyric End]")
         .setThumbnail(`${body.thumbnail.genius}`)
         .setFooter("Powered by some-random-api.ml");
     input.channel.send(eLyrics);
+    input.channel.send(`${body.lyrics}\n[Lyric End]`);
 }
 
 module.exports.help = {
