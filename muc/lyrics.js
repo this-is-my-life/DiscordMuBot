@@ -25,7 +25,18 @@ module.exports.run = async (mu, input, pars) => {
             .setDescription(`"${body.title}" -${body.author}`)
             .setThumbnail(`${body.thumbnail.genius}`)
             .setFooter("Powered by some-random-api.ml");
-        input.channel.send(`${body.lyrics}\n[Lyric End]`);
+        let lyrics = body.lyrics;
+        let lyrics1 = lyrics.substring(0, 999);
+        let lyrics2 = lyrics.substring(1000, 1999);
+        let lyrics3 = lyrics.substring(2000, 2999);
+        let lyrics4 = lyrics.substring(3000, 3999);
+        let lyrics5 = lyrics.substring(4000, 4999);
+        input.channel.send(lyrics1);
+        input.channel.send(lyrics2);
+        input.channel.send(lyrics3);
+        input.channel.send(lyrics4);
+        input.channel.send(lyrics5);
+        input.channel.send(`\n\n[Lyric End]`);
         input.channel.send(eLyrics);
     }
 }
