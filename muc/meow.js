@@ -13,10 +13,10 @@ const superagent = require("superagent");
 const randomHexColor = require("random-hex-color");
 
 module.exports.run = async (mu, input, pars) => {
+    let { body1 } = await superagent
+        .get(`https://api-to.get-a.life/catfact`);
     request.get('http://thecatapi.com/api/images/get?format=src&type=png', {
     }, function (error, response, body) {
-            let { body1 } = await superagent
-                .get(`https://api-to.get-a.life/catfact`);
         if (!error && response.statusCode == 200) {
                 let eCat = new API.RichEmbed()
                 .setColor(randomHexColor())
