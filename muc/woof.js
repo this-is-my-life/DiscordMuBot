@@ -18,7 +18,7 @@ module.exports.run = async (mu, input, pars) => {
         .setColor(randomHexColor())
         .setTitle(`MEMEs, HERE!`)
         .setURL(body.message)
-        .setDescription(`${input.author} said\n"Woof!"`)
+        .setDescription(`${input.author} said "Woof!"`)
         .setImage(body.message)
         .setFooter("Powered by dog.ceo");
     input.channel.send(eMeme);
