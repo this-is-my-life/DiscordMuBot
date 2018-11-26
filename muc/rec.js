@@ -10,12 +10,12 @@
 const API = require("discord.js");
 
 module.exports.run = async (mu, input, pars) => {
+	input.delete().catch(O_o => {});
+	let reactTo = input.guild.member(input.mentions.users.first() || input.guild.members.get(pars[0]));
 	if (!reactTo) { 
 		input.delete().catch(O_o => {});
 		return input.channel.send("User Not Found").then(thismsg => thismsg.delete(5000));
 	}
-	input.delete().catch(O_o => {});
-	let reactTo = input.guild.member(input.mentions.users.first() || input.guild.members.get(pars[0]));
 	reactTo.lastMessage.react('👍');
 	reactTo.lastMessage.react('👎');
 	reactTo.lastMessage.react('👌');
