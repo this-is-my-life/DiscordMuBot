@@ -12,7 +12,7 @@ const API = require("discord.js");
 module.exports.run = async (mu, input, pars) => {
 		let reportTo = input.guild.member(input.mentions.users.first() || input.guild.members.get(pars[0]));
 		if (!reportTo) {
-			input.channel.send("User Not Found");
+			input.channel.send("User Not Found").then(thismsg => thismsg.delete(1000));
 			return input.delete().catch(O_o=>{}); }
 		let reportReason = pars.join(" ").slice(22);
    		if (!input.member.hasPermission("MANAGE_MESSAGES")) return input.channel.send(`<@${input.author.id}> has NO PERMISSION: MANAGE_MESSAGES`);

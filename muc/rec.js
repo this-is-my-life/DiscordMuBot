@@ -27,7 +27,7 @@ module.exports.run = async (mu, input, pars) => {
 	reactTo.lastMessage.react('💯');
 	reactTo.lastMessage.react('💥');
 	reactTo.lastMessage.react('🤔');
-	input.channel.send("Reacted!").then(thismsg => thismsg.delete(5000));
+	input.channel.send("Reacted!").then(thismsg => thismsg.delete(1000));
 };
 
 module.exports.help = {

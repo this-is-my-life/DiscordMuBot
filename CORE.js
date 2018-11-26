@@ -169,13 +169,13 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 		console.log(`${input.author.username.toString()} (${input.author.id.toString()})> ${input.content.toString()}`); // input Logging
 		if (`${input.author.id}` === `${mu.user.id}`) return; // Don't Check Message Itself!
 		if (!input.guild) { // ignore DM
-			input.reply("**Oops!** μBot Can Run **ONLY** __**in SERVER**__ *(not DM)*!");
-			input.reply("**저런!** 뮤봇은 **__서버에서__만** 명령어 실행이 가능합니다! *(DM 말고...)*")
+			input.reply("**Oops!** μBot Can Run **ONLY** __**in SERVER**__ *(not DM)*!").then(thismsg => thismsg.delete(2000));
+			input.reply("**저런!** 뮤봇은 **__서버에서__만** 명령어 실행이 가능합니다! *(DM 말고...)*").then(thismsg => thismsg.delete(2000));
 			return;
 		}
 		  if(cooldown.has(input.author.id)){
 			input.delete();
-			input.channel.send(`CoolDown is Activated (${cdseconds} sec.)\n쿨다운이 활성화되어있습니다! (${cdseconds} 초)`).then(thismsg => thismsg.delete(5000))
+			input.channel.send(`CoolDown is Activated (${cdseconds} sec.)\n쿨다운이 활성화되어있습니다! (${cdseconds} 초)`).then(thismsg => thismsg.delete(2000))
  		   return
  		 }
 		  if(!input.member.hasPermission("ADMINISTRATOR")){
@@ -235,20 +235,12 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 	    		aiRequest.on('response', function(response) {
 	        		let aiResponseText = response.result.fulfillment.speech;
 	        		let aiResponseArr = aiResponseText.split(" ");
-	        		if (aiResponseArr[0] === "checkurl") {
-	        			let aiEmb = new API.RichEmbed()
-	        			.setTitle("흐음... 이 타이틀을 눌러보라뮤!")
-	        			.setColor(input.member.displayHexColor)
-	        			.setURL(aiResponseArr[1])
-	        			.setDescription("Powered by Google Dialogflow");
-	        			input.channel.send(aiEmb);
-	        		} else {
-		        		let aiEmb = new API.RichEmbed()
-		        		.setTitle(aiResponseText)
-		   				.setColor(input.member.displayHexColor)
-		        		.setDescription("Powered by Google Dialogflow");
-		        		input.channel.send(aiEmb);
-	        		}
+	        		if (aiResponseArr[0] === "checkurl");
+		        	let aiEmb = new API.RichEmbed()
+		        	.setTitle(aiResponseText)
+		   			.setColor(input.member.displayHexColor)
+		    		.setDescription("Powered by Google Dialogflow");
+	        		input.channel.send(aiEmb);
 				});
 			}  		
   		}

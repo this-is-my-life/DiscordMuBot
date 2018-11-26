@@ -20,7 +20,7 @@ module.exports.run = async (mu, input, pars) => {
     } else {
         let kEscapeVoiceFail = new API.RichEmbed()
         .setColor(randomHexColor())
-        .addField("어... 저기...", "뮤가 어디있는지 잘 몰라서 그런데 쫌 들어와서 알려주라뮤 ㅠㅠ");
+            .addField("어... 저기...", "뮤가 어디있는지 잘 몰라서 그런데 쫌 들어와서 알려주라뮤 ㅠㅠ").then(thismsg => thismsg.delete(1000));
         input.channel.send(kEscapeVoiceFail);
     }
 }
