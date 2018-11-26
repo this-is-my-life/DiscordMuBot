@@ -15,6 +15,7 @@ module.exports.run = async (mu, input, pars) => {
 		input.delete().catch(O_o => {}); 
 		return input.channel.send("User Not Found");
 	}
+	input.delete().catch(O_o => {}); 
 	reactTo.lastMessage.react('👍');
 	reactTo.lastMessage.react('👎');
 	reactTo.lastMessage.react('👌');
