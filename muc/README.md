@@ -29,6 +29,10 @@ Copyright (c) 2018. PMH Studio / PMH. MIT Licensed.
 - [x] mu!dev
 - [x] mu!mutecoin
 - [x] mu!prefix
+- [x] mu!cat
+- [x] mu!rec
+- [x] mu!dec
+- [x] mu!hex
 - [ ] and **MORE...**
 
 -------------------------------------------------------
