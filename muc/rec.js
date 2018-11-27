@@ -19,7 +19,6 @@ module.exports.run = async (mu, input, pars) => {
 		input.delete().catch(O_o => { });
 		return input.channel.send("Can't React Yourself!").then(thismsg => thismsg.delete(1000));
 	}
-	input.delete().catch(O_o => {});
 	reactTo.lastMessage.react('👍');
 	reactTo.lastMessage.react('👎');
 	reactTo.lastMessage.react('👌');
@@ -27,6 +26,7 @@ module.exports.run = async (mu, input, pars) => {
 	reactTo.lastMessage.react('💯');
 	reactTo.lastMessage.react('💥');
 	reactTo.lastMessage.react('🤔');
+	input.delete().catch(O_o => {});
 	input.channel.send("Reacted!").then(thismsg => thismsg.delete(1000));
 };
 
