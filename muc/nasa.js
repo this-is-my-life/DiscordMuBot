@@ -14,7 +14,7 @@ const randomHexColor = require("random-hex-color");
 
 module.exports.run = async (mu, input, pars, prefix , nasa) => {
     let { body1 } = await superagent
-        .get(`https://api.nasa.gov/planetary/apod?api_key=${nasa}`);
+        .get(`https://api.nasa.gov/planetary/apod?api_key=GpELYI28U6YMlWtNjDcF5IOunjRi9ZIFPJcTHDdo`);
     if (!body1.media_type === "image" && body1.service === "v1") { return input.channel.send("NASA API Error!"); }
     let eNasa = new API.RichEmbed()
         .setColor(randomHexColor())
