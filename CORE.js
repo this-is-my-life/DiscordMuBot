@@ -21,6 +21,8 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 	let muai = process.env.muai || mutf.dialogflowToken || "61840c6bb70f4c2baf380086c0cdc785";
 	console.log("apiai Token: Ready(" + muai + ")");
 	let defaultPrefix = process.env.defaultPrefix || mutf.defaultPrefix || "mu!";
+	console.log("Login Token: Ready(" + nasa + ")");
+	let nasa = process.env.nasa || mutf.nasaToken || "GpELYI28U6YMlWtNjDcF5IOunjRi9ZIFPJcTHDdo";
 	console.log("Base Prefix: Ready(" + defaultPrefix + ")");
     let prefixes = JSON.parse(cmds.readFileSync("./Saved/ServersPrefix.json", "utf8"))
 
@@ -223,7 +225,7 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 			input.channel.send(eCreditEmb);
   		} else {
 		  	if (cmdFile) { 
-		  		cmdFile.run(mu,input,pars,prefix);
+		  		cmdFile.run(mu,input,pars,prefix,nasa);
 	  		} else {
 		  		// AI(api.ai, Dialogflow v1) Intents
 				let aiRequest = ai.textRequest(msgc, {
