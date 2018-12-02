@@ -19,7 +19,7 @@ module.exports.run = async (mu, input, pars, prefix , nasa) => {
         .setColor(randomHexColor())
         .setTitle(`Space, HERE! (Click Here to See HD Image)`)
         .setURL(body.hdurl)
-        .setDescription(`Astronomy Picture of the Day (오늘의 우주)`)
+        .setDescription(`Astronomy Picture of the "${body.date}" (${body.date}, 오늘의 우주)`)
         .addField(body.title, body.explanation)
         .setImage(body.url)
         .setFooter("Powered by nasa.gov - Astronomy Picture of the Day");
