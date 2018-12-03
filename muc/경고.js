@@ -6,7 +6,7 @@ let warns = JSON.parse(fs.readFileSync("./Saved/warn.json", "utf8"));
 module.exports.run = async (mu, input, pars) => {
 
   //!warn @daeshan <reason>
-  if(!input.member.hasPermission("MANAGE_MEMBERS")) return input.reply("No can do pal!");
+  if(!input.member.hasPermission("MANAGE_MESSAGES")) return input.reply("No can do pal!");
   let wUser = input.guild.member(input.mentions.users.first()) || input.guild.members.get(pars[0])
   if(!wUser) return input.reply("Couldn't find them yo");
   if(wUser.hasPermission("MANAGE_MESSAGES")) return input.reply("They waaaay too kewl");
