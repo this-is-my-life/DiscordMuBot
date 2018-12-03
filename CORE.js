@@ -89,7 +89,12 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 		console.log("-----------------------------------------------------------\n\n	μBot is Running Correctly! | " + Math.round(mu.ping) + "ms | " + mu.guilds.size + " Servers | " + mu.channels.size + " Channels | " + mu.users.size + " Users\n\nInput Log:");
         mu.user.setActivity(`Messages | ${defaultPrefix}help`, {type: "WATCHING"});
 	});
-
+	
+// Bot Sense Join________________________________
+	mu.on("guildMemberAdd", async joindmember => {
+		// Here
+	})
+	
 // Bot Commanding________________________________
 	mu.on("message", async input => {
 		if (input.guild.id === "264445053596991498") return;
