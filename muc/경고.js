@@ -31,7 +31,7 @@ module.exports.run = async (mu, input, pars) => {
   .addField("Number of Warnings", warns[wUser.id].warns)
   .addField("Reason", reason);
 
-  let warnchannel = input.guild.channels.find(`name`, "incidents");
+  let warnchannel = input.guild.systemChannel;
   if(!warnchannel) return input.reply("Couldn't find channel");
 
   warnchannel.send(warnEmbed);
