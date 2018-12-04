@@ -21,7 +21,7 @@ module.exports.run = async (mu, input, pars) => {
                     .then(function (url) {
                         input.channel.send(url);
                     });
-                    const dispatcher = connection.playFile(`${absoluteFilePath}`);
+                    const dispatcher = connection.playFile(url);
                     setTimeout(function() {
                         input.member.voiceChannel.leave();
                     }, 3000);

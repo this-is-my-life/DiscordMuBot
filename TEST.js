@@ -16,7 +16,7 @@ console.log("Main API Loaded Correctly");
 
 // TTS Require
 console.log("TTS API(Google TTS Library) Load...");
-const TTS = require("text-to-mp3");
+const TTS = require("google-tts-api");
 console.log("TTS API Loaded Correctly");
 
 // Command Reader Require
@@ -49,5 +49,5 @@ mu.commands.set(props.help.name, props);
 
 console.log("Returning Code: 0");
 
-console.log("	μBot v5.0 Test.\n	---------------------\n	PMH Studio / Proj- μBot | Smart & Cute Discord Bot_Mu~☆ \n Copyright (c) 2018. PMH Studio / PMH. (kok4575@gmail.com) MIT Licensed.\n\n\n");
+console.log("	μBot v7.0 Test.\n	---------------------\n	PMH Studio / Proj- μBot | Smart & Cute Discord Bot_Mu~☆ \n Copyright (c) 2018. PMH Studio. (kok4575@gmail.com) MIT Licensed.\n\n\n");
 return console.log("----------------------------------------");
