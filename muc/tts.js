@@ -8,23 +8,23 @@
 */
 
 const API = require("discord.js");
-const TTS = require("text-to-mp3");
 const randomHexColor = require('random-hex-color');
+const googleTTS = require('google-tts-api');
 
 module.exports.run = async (mu, input, pars) => {
         let sayWhat = pars.join(" ").slice(0);
         if (input.member.voiceChannel) {
-            TTS.saveMP3(sayWhat, `${input.id}.mp3`, function(err, absoluteFilePath){
                 setTimeout(function() {
                 input.member.voiceChannel.join()
                 .then(connection => {
+                    googleTTS(sayWhat, 'ko-KR', 1)   // speed normal = 1 (default), slow = 0.24
+                    .then(function (url) {
+                        input.channel.send(url);
+                    });
                     const dispatcher = connection.playFile(`${absoluteFilePath}`);
-                dispatcher.on('end', () => {
                     setTimeout(function() {
                         input.member.voiceChannel.leave();
                     }, 3000);
-                })
-                })
             }, 3000);
             });
             let eSayVoice = new API.RichEmbed()
