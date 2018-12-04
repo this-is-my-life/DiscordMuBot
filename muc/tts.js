@@ -9,23 +9,25 @@
 
 const API = require("discord.js");
 const randomHexColor = require('random-hex-color');
-const googleTTS = require('google-tts-api');
+const request = require('request');
 
 module.exports.run = async (mu, input, pars) => {
         let sayWhat = pars.join(" ").slice(0);
         if (input.member.voiceChannel) {
-                setTimeout(function() {
                 input.member.voiceChannel.join()
                 .then(connection => {
-                    googleTTS(sayWhat, 'ko-KR', 1)   // speed normal = 1 (default), slow = 0.24
-                    .then(function (url) {
-                        input.channel.send(url);
-                    });
-                    const dispatcher = connection.playFile(url);
-                    setTimeout(function() {
-                        input.member.voiceChannel.leave();
-                    }, 3000);
-            }, 3000);
+                    request.post('https://soundoftext.com/sounds', {
+                        json: {
+                            "engine": "Google",
+                            "data": {
+                                "text": "Hello, world",
+                                "voice": "ko-KR"
+                            }
+                        }
+                    }, (error, res, body) => {
+                        if (error) { return input.channel.send("Error: " + error) }
+                        const dispatcher = connection.playFile("https://soundoftext.nyc3.digitaloceanspaces.com/" + body.id +"/");
+                    })
             });
             let eSayVoice = new API.RichEmbed()
             .setColor(randomHexColor())
