@@ -47,7 +47,7 @@ module.exports.run = async (mu, input, pars, prefix) => {
 			}
   		]
 	});
-    input.channel.send(khelpemb);
+    input.channel.send(helpemb);
 }
 
 module.exports.help = {
