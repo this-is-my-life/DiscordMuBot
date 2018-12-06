@@ -29,7 +29,7 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 
     // User Cool Down
     let cooldown = new Set();
-	let cdseconds = process.env.defaultCooldown || mutf.defaultCooldown || 3;
+	let cdseconds = process.env.defaultCooldown || mutf.defaultCooldown || 5;
 
 	// User Coins
 	const mute = require("./Saved/UsersCoin.json");
