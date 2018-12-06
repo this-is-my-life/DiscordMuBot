@@ -10,7 +10,7 @@
 const API = require("discord.js");
 
 module.exports.run = async (mu, input, pars) => {
-
+	return;
 }
 
 module.exports.help = {
