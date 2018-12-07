@@ -6,51 +6,52 @@ module.exports.run = async (mu, input, pars) => {
     let Random_Number2 = Math.floor(Math.random() * 6);
     let Random_Number3 = Math.floor(Math.random() * 6);
     let kSummonVoice = new API.RichEmbed()
-
+    let N11;
+    let N12;
    
     if (Random_Number1 == 1) {
-        let N11 = "▶:one  :";
+        N11 = "▶:one:";
     };
     
     if (Random_Number1 == 2) {
-        let N11 = "▶:two  :";
+        N11 = "▶:two:";
     };
     
     if (Random_Number1 == 3) {
-        let N11 = "▶:three  :";
+        N11 = "▶:three:";
     };
     
     if (Random_Number1 == 4) {
-        let N11 = "▶:four  :";
+        N11 = "▶:four:";
     };
     
     if (Random_Number1 == 5) {
-        let N11 = "▶:five  :";
+        N11 = "▶:five:";
     };
 
     if (Random_Number2 == 1) {
-        let N12 = "▶:one  :";
+        N12 = "▶:one:";
     };
     
     if (Random_Number2 == 2) {
-        let N12 = "▶:two  :";
+        N12 = "▶:two:";
     };
     
     if (Random_Number2 == 3) {
-        let N12 = "▶:three  :";
+        N12 = "▶:three:";
     };
     
     if (Random_Number2 == 4) {
-        let N12 = "▶:four  :";
+        N12 = "▶:four:";
     };
     
     if (Random_Number2 == 5) {
-        let N12 = "▶:five  :";
+        N12 = "▶:five:";
     };
     
     let dobakEmb = new API.RichEmbed()
-    .setTitle("도박결과  :")
-    .setDiscription(`${N11}`, `${N12}`);
+    .setTitle("도박결과:")
+    .setDescription(`${N11}`, `${N12}`);
     input.channel.send(dobakEmb);
 }
 
