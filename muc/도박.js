@@ -1,6 +1,7 @@
 const API = require("discord.js");
 const mute = require("../Saved/UsersCoin.json");
 const cmds = require("fs");
+const randomHexColor = require("random-hex-color");
 
 module.exports.run = async (mu, input, pars) => {
 
@@ -110,6 +111,8 @@ module.exports.run = async (mu, input, pars) => {
     }
     let dobakEmb = new API.RichEmbed()
     .setTitle("도박결과:")
+    .setAuthor(input.author)
+    .setColor(randomHexColor())
     .setDescription(`▶ ${Slot1} ${Slot2} ${Slot3}`)
     .setFooter(SlotResult);
     input.channel.send(dobakEmb);
