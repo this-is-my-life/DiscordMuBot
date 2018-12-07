@@ -1,4 +1,4 @@
-const API = require("Discord.js");
+const API = require("discord.js");
 
 module.exports.run = async (mu, input, pars) => {
 
