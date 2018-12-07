@@ -9,7 +9,6 @@
 
 const API = require("discord.js");
 const request = require("request");
-const superagent = require("superagent");
 const randomHexColor = require("random-hex-color");
 
 module.exports.run = async (mu, input, pars) => {
