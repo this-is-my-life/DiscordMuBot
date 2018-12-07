@@ -51,7 +51,7 @@ module.exports.run = async (mu, input, pars) => {
     
     let dobakEmb = new API.RichEmbed()
     .setTitle("도박결과:")
-    .setDescription(`${N11}`, `${N12}`);
+    .addField(N11, N12);
     input.channel.send(dobakEmb);
 }
 
