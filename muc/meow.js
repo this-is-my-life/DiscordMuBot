@@ -13,8 +13,6 @@ const superagent = require("superagent");
 const randomHexColor = require("random-hex-color");
 
 module.exports.run = async (mu, input, pars) => {
-    let { body1 } = await superagent
-        .get(`https://api-to.get-a.life/catfact`);
     request.get('http://thecatapi.com/api/images/get?format=src&type=png', {
     }, function (error, response, body) {
         if (!error && response.statusCode == 200) {
@@ -22,7 +20,7 @@ module.exports.run = async (mu, input, pars) => {
                 .setColor(randomHexColor())
                 .setTitle(`Cats, HERE!`)
                 .setURL(response.request.uri.href)
-                .setDescription(`${input.author} said "${body1.fact}"`)
+                .setDescription(`${input.author} said "meow!"`)
                 .setImage(response.request.uri.href)
                 .setFooter("Powered by thecatapi.com");
                 input.channel.send(eCat);
