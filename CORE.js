@@ -92,7 +92,7 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 	
 // Bot Sense Join________________________________
 	mu.on("guildMemberAdd", async joindmember => {
-		// Here
+		joindmember.send("En.\nHey! Welcome To Our Server!\nPlease Read Rules And Have Fun! -μ\n\nkr.\n**여어, 히사시부리! ~~(처음 만나는데..?)~~**\n우리의 서버에 들어온것을 환영한다뮤우~★\n규칙을 자알 읽고 좋은 시간 보내라뮤! -μ")
 	});
 	
 // Bot Typing____________________________________
