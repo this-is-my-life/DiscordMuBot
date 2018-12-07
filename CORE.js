@@ -180,14 +180,11 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 			input.reply("**저런!** 뮤봇은 **__서버에서__만** 명령어 실행이 가능합니다! *(DM 말고...)*").then(thismsg => thismsg.delete(2000));
 			return;
 		}
-		  if(cooldown.has(input.author.id)){
+		if (cooldown.has(input.author.id)) {
 			input.delete();
 			input.channel.send(`CoolDown is Activated (${cdseconds} sec.)\n쿨다운이 활성화되어있습니다! (${cdseconds} 초)`).then(thismsg => thismsg.delete(2000))
- 		   return
- 		 }
-		  if(!input.member.hasPermission("ADMINISTRATOR")){
- 		   cooldown.add(input.author.id);
- 		 }
+ 			return;
+ 		}
 		input.channel.startTyping();
 		mu.user.setStatus("idle");
 		let msgAr = input.content.split(" ");
