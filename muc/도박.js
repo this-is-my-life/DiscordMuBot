@@ -71,31 +71,31 @@ module.exports.run = async (mu, input, pars) => {
     }
     
     // 아래 if문들은 위에서 부터 계산이 중요한 순서대로 정렬되야 정상적으로 뮤트코인이 지급됩니다
-    if (Random_Number1 == Random_Number2 == Random_Number3 && Random_Number1 == 7) {
+    if (Slot1 == Slot2 == Slot3 && Slot1 == ":seven:") {
         SlotResult = "끼이야야야야아악!! 777!!! 잭팟이다뮤!!!!!! (기존 보유량에 777배)";
 		mute[input.author.id] = {
 			mute: mute[input.author.id].mute * 777
         };
         cmds.writeFile("../Saved/UsersCoin.json", JSON.stringify(mute), (error) => { if (error) { console.log(error); } });
-    } else if (Random_Number1 == Random_Number2 == Random_Number3 && Random_Number1 == 0) {
+    } else if (Slot1 == Slot2 == Slot3 && Slot1 == ":zero:") {
         SlotResult = "엌ㅋ 000 실화얔ㅋ (기존 보유량에 0배, ㅅㄱ)";
 		mute[input.author.id] = {
 			mute: mute[input.author.id].mute * 0
         };
         cmds.writeFile("../Saved/UsersCoin.json", JSON.stringify(mute), (error) => { if (error) { console.log(error); } });
-    } else if (Random_Number1 == Random_Number2 == Random_Number3) {
+    } else if (Slot1 == Slot2 == Slot3) {
         SlotResult = "3슬롯을 맞추는데 성공했다뮤! (+8192 MUC)";
 		mute[input.author.id] = {
 			mute: mute[input.author.id].mute + 8192
         };
         cmds.writeFile("../Saved/UsersCoin.json", JSON.stringify(mute), (error) => { if (error) { console.log(error); } });
-    } else if (Random_Number1 == Random_Number2 || Random_Number2 == Random_Number3) {
+    } else if (Slot1 == Slot2 || Slot2 == Slot3) {
         SlotResult = "2슬롯을 연속으로 맞추는데 성공했다뮤! (+2048 MUC)";
 		mute[input.author.id] = {
 			mute: mute[input.author.id].mute + 2048
         };
         cmds.writeFile("../Saved/UsersCoin.json", JSON.stringify(mute), (error) => { if (error) { console.log(error); } });
-    } else if (Random_Number1 == Random_Number3) {
+    } else if (Slot1 == Slot3) {
         SlotResult = "연속으론 아니지만 2슬롯을 맞추는데 성공했다뮤! (1024MUC)";
 		mute[input.author.id] = {
 			mute: mute[input.author.id].mute + 1024
