@@ -93,8 +93,17 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 // Bot Sense Join________________________________
 	mu.on("guildMemberAdd", async joindmember => {
 		// Here
-	})
+	});
 	
+// Bot Typing____________________________________
+	mu.on("typingStart", async typingChannel => {
+		typingChannel.startTyping();
+	});
+
+	mu.on("typingStop", async typingChannel => {
+		typingChannel.stopTyping();
+	});
+
 // Bot Commanding________________________________
 	mu.on("message", async input => {
 		if (input.guild.id === "264445053596991498") return;
@@ -189,7 +198,6 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 		}
 		cooldown.add(input.author.id);
 		
-		input.channel.startTyping();
 		mu.user.setStatus("idle");
 		let msgAr = input.content.split(" ");
 		let msgc = input.content.slice(prefix.length);
@@ -257,7 +265,6 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
     cooldown.delete(input.author.id)
 	  }, cdseconds * 1000)
 		mu.user.setStatus("online");
-	input.channel.stopTyping();
 		
   	});
   	
