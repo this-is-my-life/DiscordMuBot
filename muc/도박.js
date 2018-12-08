@@ -53,21 +53,21 @@ module.exports.run = async (mu, input, pars) => {
     }
     
     // 세번째 슬롯 값의 대한 메세지 스트링
-    if (Ran3 == 0) {
+    if (Ran3 <= 10) {
         Slot3 = ":zero:";
-    } else if (Ran3 == 1) {
+    } else if (Ran3 <= 20) {
         Slot3 = ":one:";
-    } else if (Ran3 == 2) {
+    } else if (Ran3 <= 30) {
         Slot3 = ":two:";
-    } else if (Ran3 == 3) {
+    } else if (Ran3 <= 40) {
         Slot3 = ":three:";
-    } else if (Ran3 == 4) {
+    } else if (Ran3 <= 50) {
         Slot3 = ":four:";
-    } else if (Ran3 == 5) {
+    } else if (Ran3 <= 60) {
         Slot3 = ":five:";
-    } else if (Ran3 == 6) {
+    } else if (Ran3 <= 70) {
         Slot3 = ":six:";
-    } else if (Ran3 == 7) {
+    } else if (Ran3 <= 100) {
         Slot3 = ":seven:";
     }
     
