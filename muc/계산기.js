@@ -34,36 +34,47 @@ module.exports.run = async (mu, input, pars) => {
 						let colinput = collected.first().content;
 						let colresult;
 						if (col1input === "2" || col1input === "2진수" || col1input === "이진수" || col1input === "바이너리") {
+							col1input = 2;
 							if (col2input === "2" || col2input === "2진수" || col2input === "이진수" || col2input === "바이너리"){
+								col2input = 2;
 								colresult = colinput;
 							} else if (col2input === "10" || col2input === "10진수" || col2input === "십진수"){
+								col2input = 10;
 								colresult = parseInt(colinput, 2);
 							} else if (col2input === "16" || col2input === "16진수" || col2input === "십육진수" || col2input === "핵사"){
-	
+								col2input = 16;
+								colresult = parseInt(colinput, 2).toString(16).toUpperCase();
 							} else {
 								colresult = "Error"
 							}
 	
 						} else if (col1input === "10" || col1input === "10진수" || col1input === "십진수") {
+							col1input = 10;
 							if (col2input === "2" || col2input === "2진수" || col2input === "이진수" || col2input === "바이너리"){
+								col2input = 2;
 								if (Number(colinput).toString(2).substring(54)) {
 									colresult = "overflowed";
 								} else {
 									colresult = Number(colinput).toString(2).substring(0, 54);
 								}
-	
 							} else if (col2input === "10" || col2input === "10진수" || col2input === "십진수"){
+								col2input = 10;
 								colresult = colinput;
 							} else if (col2input === "16" || col2input === "16진수" || col2input === "십육진수" || col2input === "핵사"){
-	
+								col2input = 16;
+								colresult = colinput.toString(16).toUpperCase();
 							}
 	
 						} else if (col1input === "16" || col1input === "16진수" || col1input === "십육진수" || col1input === "핵사") {
+							col1input = 16;
 							if (col2input === "2" || col2input === "2진수" || col2input === "이진수" || col2input === "바이너리"){
-	
+								col2input = 2;
+								colresult = parseInt(colinput, 16).toString(10);
 							} else if (col2input === "10" || col2input === "10진수" || col2input === "십진수"){
-	
+								col2input = 10;
+								colresult = parseInt(colinput, 16);
 							} else if (col2input === "16" || col2input === "16진수" || col2input === "십육진수" || col2input === "핵사"){
+								col2input = 16;
 								colresult = colinput;
 							}
 						}
