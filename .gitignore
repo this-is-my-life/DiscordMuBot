@@ -62,3 +62,8 @@ typings/
 
 # Packages
 package-lock.json
+
+.vscode/
+.github/
+.circleci/
+
