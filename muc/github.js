@@ -38,7 +38,7 @@ module.exports.run = async (mu, input, pars) => {
                 .setDescription(`퍼블릭 레포지트리: **${res.body.public_repos}**개, 팔로워: **${res.body.followers}**명, 팔로윙: **${res.body.following}**명`)
                 .addField("자기소개", res.body.bio)
                 .addField("유저 이름 (URL상)", res.body.login, true)
-                .addField("유저 이름 (프로필상)", res.body.name, true)
+                .addField("유저 이름 (프로필상)", res.body.name || "프로필을 생성하지 않음", true)
                 .addField("유저 고유 ID", res.body.id, true)
                 .addField("유저 프로필 URL", res.body.html_url, true)
                 .addField("유저 대표 사이트", res.body.blog || "비공개", true)
