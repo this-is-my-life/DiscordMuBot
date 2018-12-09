@@ -16,7 +16,7 @@ module.exports.run = async (mu, input, pars) => {
         .get(`https://api-to.get-a.life/dogimg`);
     let eMeme = new API.RichEmbed()
         .setColor(randomHexColor())
-        .setTitle(`MEMEs, HERE!`)
+        .setTitle(`Dogs, HERE!`)
         .setURL(body.link)
         .setDescription(`${input.author} said "woof!"`)
         .setImage(body.link)
