@@ -13,7 +13,7 @@ const randomHexColor = require('random-hex-color');
 
 module.exports.run = async (mu, input, pars) => {
     const filter = m => m.author.id === input.author.id;
-    input.channel.send("깃헙 URL상 유저이름을 알려달라뮤~★\n\"취소\"를 입력하거나 30초를 쓸때없이 기다리시면 뮤봇이 빡쳐서 취소할껍니다").then(q => q.delete(3000));
+    input.channel.send("깃헙 URL상 유저이름을 알려달라뮤~★\n\"취소\"를 입력하거나 30초를 쓸때없이 기다리시면 뮤봇이 빡쳐서 취소할껍니다").then(q => q.delete(30000));
     input.channel.awaitMessages(filter, {
 		max: 1,
 		time: 30000
