@@ -18,7 +18,8 @@ module.exports.run = async (mu, input, pars) => {
 		max: 1,
 		time: 30000
     }).then(collected => {
-		let ghinput = collected.first().content;
+        let ghinput = collected.first().content;
+        collected.delete();
 		if (ghinput === "취소") { input.channel.send("취소되었습니다").then(q => q.delete(2000)); } else {
             superagent.get(`https://api.github.com/users/${ghinput}`).then(res => {
                 let kGithub = new API.RichEmbed()
