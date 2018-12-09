@@ -98,10 +98,9 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 // Bot Typing____________________________________
 	mu.on("typingStart", async typingChannel => {
 		typingChannel.startTyping();
-	});
-
-	mu.on("typingStop", async typingChannel => {
-		typingChannel.stopTyping();
+		setTimeout(() => {
+			typingChannel.stopTyping();
+		}, 500);
 	});
 
 // Bot Commanding________________________________
