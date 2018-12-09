@@ -9,10 +9,8 @@
 
 const API = require("discord.js");
 const superagent = require("superagent");
-const randomHexColor = require("random-hex-color");
 
 module.exports.run = async (mu, input, pars) => {
-    input.channel.send("Heroku로부터 빌드 정보를 가져오는데 수많은 시간이 걸릴수있습니다.")
     superagent.get(`https://api.heroku.com/apps/mubotapi/builds`)
     .set("Accept", "application/json;version=3").set("Authorization", `Bearer ${process.env.muhu}`).then(res => {
         let herokuEmb = new API.RichEmbed()
