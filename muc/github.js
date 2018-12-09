@@ -37,7 +37,7 @@ module.exports.run = async (mu, input, pars) => {
                 .setThumbnail(res.body.avatar_url)
                 .setImage("https://cdn.discordapp.com/attachments/521187311761752087/521187414295838730/GitHub_Logo_White.png")
                 .setDescription(`퍼블릭 레포지트리: **${res.body.public_repos}**개, 팔로워: **${res.body.followers}**명, 팔로윙: **${res.body.following}**명`)
-                .addField("자기소개", res.body.bio)
+                .addField("자기소개", res.body.bio || "자기소개를 작성하지 않음")
                 .addField("유저 이름 (URL상)", res.body.login, true)
                 .addField("유저 이름 (프로필상)", res.body.name || "프로필을 생성하지 않음", true)
                 .addField("유저 고유 ID", res.body.id, true)
