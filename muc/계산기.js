@@ -26,7 +26,7 @@ module.exports.run = async (mu, input, pars) => {
 			}).then(collected => {
 				let col2input = collected.first().content;
 				if (col2input === "취소") { input.channel.send("취소되었습니다").then(q => q.delete(2000)); } else {
-					input.channel.send(`${col2input}진수로 변환할 ${col1input}진수 입력!\n\"취소\"를 입력하거나 30초를 쓸때없이 기다리시면 뮤봇이 빡쳐서 취소할껍니다`).then(q => q.delete(30000));
+					input.channel.send(`${col2input}(진수)로 변환할 ${col1input}(진수) 입력!\n\"취소\"를 입력하거나 30초를 쓸때없이 기다리시면 뮤봇이 빡쳐서 취소할껍니다`).then(q => q.delete(30000));
 					input.channel.awaitMessages(filter, {
 						max: 1,
 						time: 30000
