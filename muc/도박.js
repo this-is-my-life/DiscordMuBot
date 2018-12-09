@@ -63,7 +63,7 @@ module.exports.run = async (mu, input, pars) => {
         Slot3 = ":three:";
     } else if (Ran3 <= 50) {
         Slot3 = ":four:";
-    } else if (Ran3 <= 60) {edfgtfgrtdef
+    } else if (Ran3 <= 60) {
         Slot3 = ":five:";
     } else if (Ran3 <= 70) {
         Slot3 = ":six:";
