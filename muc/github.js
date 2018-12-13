@@ -46,7 +46,7 @@ module.exports.run = async (mu, input, pars) => {
                 .addField("유저 위치 주소", res.body.location || "비공개", true)
                 .addField("유저 대표 이메일", res.body.email || "비공개", true)
                 .addField("유저 계정 생성일", res.body.created_at, true)
-                .setFooter("Powered by github.com", avat);
+                .setFooter("Powered by github.com");
                 input.channel.send(kGithub);
             }).catch(err => {
                 if (err) { return input.channel.send(`그 이름을 가진 유저를 찾을 수 없다뮤!\nError: ${err.message}`).then(r => r.delete(2000));}

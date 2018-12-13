@@ -20,7 +20,7 @@ module.exports.run = async (mu, input, pars) => {
             let hentaiEmb = new API.RichEmbed()
             .setImage(res.body.message)
             .setColor(randomHexColor())
-            .setFooter("Powered by nekobot.xyz", avat);
+            .setFooter("Powered by nekobot.xyz");
             input.channel.send(hentaiEmb);
         }).catch(err => { if (err) console.log(err)});
     }
