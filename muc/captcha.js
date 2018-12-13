@@ -17,7 +17,8 @@ module.exports.run = async (mu, input, pars) => {
     .then(res => {
         let CapEmb = new API.RichEmbed()
         .setImage(res.body.message)
-        .setColor(randomHexColor());
+        .setColor(randomHexColor())
+        .setFooter("Powered by nekobot.xyz", avat);
         input.channel.send(CapEmb);
     }).catch(err => { if (err) console.log(err)});
 }
