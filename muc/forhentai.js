@@ -24,7 +24,7 @@ module.exports.run = async (mu, input, pars) => {
             let ghinput = collected.first().content;
             collected.delete();
             if (ghinput === "나는 변태다") {
-                    let RanMax = 3;
+                    let RanMax = 4;
                     let Random = Math.floor(Math.random() * (RanMax)) + 0; // 첫번째 슬롯 값 추출
                     let randomHentai;
                     if (Random == 0) {
