@@ -24,17 +24,16 @@ module.exports.run = async (mu, input, pars) => {
             let ghinput = collected.first().content;
             collected.delete();
             if (ghinput === "나는 변태다") {
-                superagent.get(`https://api.github.com/users/${ghinput}`).then(res => {
                     let RanMax = 3;
                     let Random = Math.floor(Math.random() * (RanMax)) + 0; // 첫번째 슬롯 값 추출
                     let randomHentai;
-                    if (Random = 0) {
+                    if (Random == 0) {
                         randomHentai = "hentai";
-                    } else if (Random = 1) {
+                    } else if (Random == 1) {
                         randomHentai = "lewdneko";
-                    } else if (Random = 2) {
+                    } else if (Random == 2) {
                         randomHentai = "lewdkitsune";
-                    } else if (Random = 3) {
+                    } else if (Random == 3) {
                         randomHentai = "hentai_anal";
                     }
                     superagent.get(`https://nekobot.xyz/api/image?type=${randomHentai}`)
@@ -45,7 +44,6 @@ module.exports.run = async (mu, input, pars) => {
                         .setFooter("Powered by nekobot.xyz");
                         input.channel.send(hentaiEmb);
                     }).catch(err => { if (err) console.log(err)});
-                });
             }
         });
     }
