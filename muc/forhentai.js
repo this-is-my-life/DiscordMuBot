@@ -15,7 +15,19 @@ module.exports.run = async (mu, input, pars) => {
     if (!input.channel.nsfw) {
         input.channel.send("Wait! What? You are Hentai! ~~(Just.. Turn on NSFW..)~~ \n에.. 잠만... 헤에? 넌 변태닷! ~~(NSFW를 틀면 보일지도...?)~~");
     } else {
-        superagent.get(`https://nekobot.xyz/api/image?type=hentai`)
+        let RanMax = 3;
+        let Random = Math.floor(Math.random() * (RanMax)) + 0; // 첫번째 슬롯 값 추출
+        let randomHentai;
+        if (Random = 0) {
+            randomHentai = "hentai";
+        } else if (Random = 1) {
+            randomHentai = "lewdneko";
+        } else if (Random = 2) {
+            randomHentai = "lewdkitsune";
+        } else if (Random = 3) {
+            randomHentai = "hentai_anal";
+        }
+        superagent.get(`https://nekobot.xyz/api/image?type=${randomHentai}`)
         .then(res => {
             let hentaiEmb = new API.RichEmbed()
             .setImage(res.body.message)
