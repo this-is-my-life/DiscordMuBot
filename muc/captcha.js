@@ -12,7 +12,7 @@ const superagent = require("superagent");
 const randomHexColor = require("random-hex-color");
 
 module.exports.run = async (mu, input, pars) => {
-    let capUser = input.mentions.users.first() || input.guild.members.get(pars[0]).user || input.author;
+    let capUser = input.mentions.users.first() || input.guild.members.get(pars[0]) || input.author;
     superagent.get(`https://nekobot.xyz/api/imagegen?type=captcha&url=${capUser.displayAvatarURL}&username=${capUser.username}`)
     .then(res => {
         let CapEmb = new API.RichEmbed()
