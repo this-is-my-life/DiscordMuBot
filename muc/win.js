@@ -13,7 +13,7 @@ const randomHexColor = require("random-hex-color");
 
 module.exports.run = async (mu, input, pars) => {
     let fightFirst = input.mentions.users.first() || input.guild.members.get(pars[0]) || input.author;
-    let fightLast = input.mentions.users.second() || input.author;
+    let fightLast = input.mentions.users.last() || input.author;
     superagent.get(`https://nekobot.xyz/api/imagegen?type=whowouldwin&user1=${fightFirst.displayAvatarURL}&user2=${fightLast.displayAvatarURL}`)
     .then(res => {
         let FigEmb = new API.RichEmbed()
