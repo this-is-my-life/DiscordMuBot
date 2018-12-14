@@ -29,13 +29,13 @@ module.exports.run = async (mu, input, pars) => {
             superagent.get(`http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=${process.env.must}&steamids=${stOid}`).then(res => {
                 let kSteamEmb = new API.RichEmbed()
                 .setColor(randomHexColor())
-                .setTitle(`${res.body.players[0].personaname}`)
-                .setThumbnail(res.body.players[0].avatar)
+                .setTitle(`${res.body.players.personaname}`)
+                .setThumbnail(res.body.players.avatar)
                 .addField("", res.body.bio || "자기소개를 작성하지 않음")
-                .addField("유저 이름", res.body.players[0].personaname, true)
-                .addField("유저 고유 ID", res.body.players[0].steamid, true)
-                .addField("유저 프로필 URL", res.body.players[0].profileurl, true)
-                .addField("유저 위치 국가", res.body.players[0].loccountrycode, true)
+                .addField("유저 이름", res.body.players.personaname, true)
+                .addField("유저 고유 ID", res.body.players.steamid, true)
+                .addField("유저 프로필 URL", res.body.players.profileurl, true)
+                .addField("유저 위치 국가", res.body.players.loccountrycode, true)
                 .setFooter("Powered by steampowered.com");
                 input.channel.send(kSteamEmb);
             }).catch(err => {
