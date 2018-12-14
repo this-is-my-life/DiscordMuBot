@@ -50,6 +50,6 @@ module.exports.run = async (mu, input, pars) => {
 }
 
 module.exports.help = {
-    name: "헨타이",
-    description: "nsfw"
+    name: "야짤",
+    description: "r19"
 }
