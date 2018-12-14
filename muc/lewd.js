@@ -28,9 +28,9 @@ module.exports.run = async (mu, input, pars) => {
                     let Random = Math.floor(Math.random() * (RanMax)) + 0; // 첫번째 슬롯 값 추출
                     let randomHentai;
                     if (Random == 0) {
-                        randomHentai = "hentai";
+                        randomHentai = "lewdneko";
                     } else if (Random == 1) {
-                        randomHentai = "hentai_anal";
+                        randomHentai = "lewdkitsune";
                     }
                     superagent.get(`https://nekobot.xyz/api/image?type=${randomHentai}`)
                     .then(res => {
@@ -46,6 +46,6 @@ module.exports.run = async (mu, input, pars) => {
 }
 
 module.exports.help = {
-    name: "야짤",
-    description: "r19"
+    name: "보일듯말듯",
+    description: "r17"
 }
