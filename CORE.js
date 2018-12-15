@@ -24,7 +24,6 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 	console.log("Login Token: Ready(" + defaultPrefix + ")");
 	let nasa = process.env.nasa || mutf.nasaToken || "GpELYI28U6YMlWtNjDcF5IOunjRi9ZIFPJcTHDdo";
 	console.log("Base Prefix: Ready(" + nasa + ")");
-    let prefixes = JSON.parse(cmds.readFileSync("./Saved/ServersPrefix.json", "utf8"))
 
 
     // User Cool Down
@@ -103,14 +102,8 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 	mu.on("message", async input => {
 		if (input.guild.id === "264445053596991498") return;
 
-		superagent.get(`https://mubotdb.herokuapp.com/action/UserTyped/${input.author.id}/${mu.user.id}`);
+		superagent.get(`https://mubotdb.herokuapp.com/action/UserTyped/${input.author.id}/${mu.user.id}`).catch(err => console.log(err));
 		
-        if (!prefixes[input.guild.id]) {
-            prefixes[input.guild.id] = {
-                prefixes: defaultPrefix
-            };
-        }
-        let prefix = prefixes[input.guild.id].prefixes;
 
   		if (!input.content.startsWith(prefix)) return; // Don't log Messages Without Prefix
 		console.log(`${input.author.username.toString()} (${input.author.id.toString()})> ${input.content.toString()}`); // input Logging
