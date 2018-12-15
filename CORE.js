@@ -82,7 +82,7 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 // Bot Readying__________________________________
 	mu.on("ready", async () => {
 		console.log("-----------------------------------------------------------\n\n	μBot is Running Correctly! | " + mu.commands.size + " Commands | " + mu.guilds.size + " Servers | " + mu.channels.size + " Channels | " + mu.users.size + " Users\n\nInput Log:");
-        mu.user.setActivity(`Messages | ${defaultPrefix}help`, {type: "WATCHING"});
+        mu.user.setActivity(`Messages | ${prefix}help`, {type: "WATCHING"});
 	});
 	
 // Bot Sense Join________________________________
