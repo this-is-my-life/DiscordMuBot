@@ -31,10 +31,6 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
     let cooldown = new Set();
 	let cdseconds = process.env.defaultCooldown || mutf.defaultCooldown || 5;
 
-	// User Coins
-	const mute = require("./Saved/UsersCoin.json");
-	console.log("MuteCoin v3: Ready(Saved/UsersCoin.json)");
-
 	// api.ai (Dialogflow v1)
 	const apiai = require('apiai')
 	console.log("Dialog1 API: Ready(apiai)")
@@ -107,71 +103,7 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 	mu.on("message", async input => {
 		if (input.guild.id === "264445053596991498") return;
 
-		// MuteCoin
-		{
-			if (!mute[input.author.id]) {
-				mute[input.author.id] = {
-					mute: 0
-				};
-			}
-			let muteAmt = Math.floor(Math.random() * 11) + 1;
-			if (muteAmt == 1) {
-				mute[input.author.id] = {
-					mute: mute[input.author.id].mute + 1
-				};
-			} else
-			if (muteAmt == 2) {
-				mute[input.author.id] = {
-					mute: mute[input.author.id].mute + 2
-				};
-			} else
-			if (muteAmt == 3) {
-				mute[input.author.id] = {
-					mute: mute[input.author.id].mute + 4
-				};
-			} else
-			if (muteAmt == 4) {
-				mute[input.author.id] = {
-					mute: mute[input.author.id].mute + 8
-				};
-			} else
-			if (muteAmt == 5) {
-				mute[input.author.id] = {
-					mute: mute[input.author.id].mute + 16
-				};
-			} else
-			if (muteAmt == 6) {
-				mute[input.author.id] = {
-					mute: mute[input.author.id].mute + 32
-				};
-			} else		
-			if (muteAmt == 7) {
-				mute[input.author.id] = {
-					mute: mute[input.author.id].mute + 64
-				};
-			} else
-			if (muteAmt == 8) {
-				mute[input.author.id] = {
-					mute: mute[input.author.id].mute + 128
-				};
-			} else
-			if (muteAmt == 9) {
-				mute[input.author.id] = {
-					mute: mute[input.author.id].mute + 256
-				};
-			} else
-			if (muteAmt == 10) {
-				mute[input.author.id] = {
-					mute: mute[input.author.id].mute + 512
-				};
-			} else
-			if (muteAmt == 11) {
-				mute[input.author.id] = {
-					mute: mute[input.author.id].mute + 1024
-				};
-			}
-			cmds.writeFile("./Saved/UsersCoin.json", JSON.stringify(mute), (error) => { if (error) { console.log(error); } });
-		}
+		superagent.get(`https://mubotdb.herokuapp.com/api/UsersCoin.json/${input.author.id}/${mu.user.id}`);
 		
         if (!prefixes[input.guild.id]) {
             prefixes[input.guild.id] = {

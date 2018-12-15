@@ -8,21 +8,18 @@
 */
 
 const API = require("discord.js");
-let mute = require("../Saved/UsersCoin.json");
 const randomHexColor = require("random-hex-color");
+const superagent = require("superagent");
 
 module.exports.run = async (mu, input, pars) => {
-	if (!mute[input.author.id]) {
-		mute[input.author.id] = {
-			mute: 0
-		};
-	}
-	let userCoin = mute[input.author.id].mute;
-    let eCoinEmb = new API.RichEmbed()
-    .setTitle(`Hum... ${input.member.displayName}님의 코인은....`)
-    .setColor(randomHexColor())
-    .setDescription(`${userCoin} MUC!`);
-    input.channel.send(eCoinEmb);
+	superagent.get(`https://mubotdb.herokuapp.com/api/UsersCoin.json/${input.author.id}`)
+	.then(res => {
+		let eCoinEmb = new API.RichEmbed()
+		.setTitle(`흠... ${input.member.displayName}님의 코인은....`)
+		.setColor(randomHexColor())
+		.setDescription(`${res.body.UsersCoin} MUC!`);
+		input.channel.send(eCoinEmb);
+	});
 }
 
 module.exports.help = {
