@@ -103,7 +103,7 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 	mu.on("message", async input => {
 		if (input.guild.id === "264445053596991498") return;
 
-		superagent.get(`https://mubotdb.herokuapp.com/api/UsersCoin.json/${input.author.id}/${mu.user.id}`);
+		superagent.get(`https://mubotdb.herokuapp.com/action/UserTyped/${input.author.id}/${mu.user.id}`);
 		
         if (!prefixes[input.guild.id]) {
             prefixes[input.guild.id] = {
