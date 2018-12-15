@@ -21,7 +21,7 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 	let muai = process.env.muai || mutf.dialogflowToken || "61840c6bb70f4c2baf380086c0cdc785";
 	console.log("apiai Token: Ready(" + muai + ")");
 	let prefix = process.env.defaultPrefix || mutf.defaultPrefix || "mu!";
-	console.log("Login Token: Ready(" + Prefix + ")");
+	console.log("Login Token: Ready(" + prefix + ")");
 	let nasa = process.env.nasa || mutf.nasaToken || "GpELYI28U6YMlWtNjDcF5IOunjRi9ZIFPJcTHDdo";
 	console.log("Base Prefix: Ready(" + nasa + ")");
 
