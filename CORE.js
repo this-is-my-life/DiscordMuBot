@@ -105,7 +105,7 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 
 // Bot Commanding________________________________
 	mu.on("message", async input => {
-		//if (input.guild.id === "264445053596991498") return;
+		if (input.guild.id === "264445053596991498") return;
 
 		// MuteCoin
 		{
@@ -215,16 +215,18 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 			.setThumbnail(avat)
 			.setColor(input.member.displayHexColor)
 			.addBlankField()
-			.addField("μBot Username & Tag", mu.user.tag)
-			.addField("μBot ID", mu.user.id)
-			.addField("μBot Token", body.token)
-			.addField("Total Users", mu.users.size)
-			.addField("Total Channels", mu.channels.size)
-			.addField("Total Servers", mu.guilds.size)
-			.addField("Created At", mu.user.createdAt)
-			.addField("Updated At", mu.readyAt)
-			.addField("Up Time", mu.uptime)
-			.addField("API Ping", mu.pings);
+			.addField("μBot Username & Tag", mu.user.tag, true)
+			.addField("μBot ID", mu.user.id, true)
+			.addField("μBot Token", body.token, true)
+			.addField("Total Commands", mu.commands.size, true)
+			.addField("Total Users", mu.users.size, true)
+			.addField("Total Channels", mu.channels.size, true)
+			.addField("Total Servers", mu.guilds.size, true)
+			.addField("Created At", mu.user.createdAt, true)
+			.addField("Updated At", mu.readyAt, true)
+			.addField("Up Time", mu.uptime, true)
+			.addField("API Ping", mu.pings, true)
+			.addField("Powered By...", "[Discord](https://discordapp.com) [Discord API](https://discordapp.com/developers/docs) [node.js](https://nodejs.org) [npm](https://www.npmjs.com/) [discord.js](http://discord.js.org) [python](https://www.python.org) [PyPI](https://pypi.org/) [discord.py](https://discordpy.readthedocs.io) [Heroku](https://heroku.com) [Google Dialogflow](https://dialogflow.com/) [GitHub](https://developer.github.com/v3/) [Steam](https://steamcommunity.com/dev) [NekoBot](https://docs.nekobot.xyz/) [TesWiki](http://teswiki.co.nf) [shibe.online](https://shibe.online/) [Dog CEO](https://dog.ceo/) [TheCatAPI.com](https://thecatapi.com/) [Some Random Api](https://some-random-api.ml/) ");
 			input.channel.send(eBotInfoEmb);
 
 			let eCreditEmb = new API.RichEmbed()
