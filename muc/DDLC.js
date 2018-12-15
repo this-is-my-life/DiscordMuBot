@@ -38,8 +38,13 @@ module.exports.run = async (mu, input, pars) => {
                         if (ghinput === "유리") {
                             c = "y"
                         } else {
-                            input.channel.send("존재하지 않는 캐릭터다뮤!")
-                            return;
+                            if (ghinput === "PMH") {
+                                input.channel.send("PMH Studio / WSF가 숨긴 이스터에그를 발견했다뮤!\n내용 : (사실 PMH는 DokiDoki의 사용되지 않은 캐릭터이다...)")
+                                return;
+                            } else {
+                                input.channel.send("존재하지 않는 캐릭터다뮤!")
+                                return;
+                            }
                         }
                     }
                 }
