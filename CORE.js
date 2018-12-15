@@ -105,7 +105,7 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 
 // Bot Commanding________________________________
 	mu.on("message", async input => {
-		if (input.guild.id === "264445053596991498") return;
+		//if (input.guild.id === "264445053596991498") return;
 
 		// MuteCoin
 		{
