@@ -18,6 +18,7 @@ module.exports.run = async (mu, input, pars) => {
 		max: 1,
 		time: 30000
     }).then(collected => {
+    if (collected.first().content == "취소") return;
     let docName = encodeURI(collected.first().content);
     superagent.get(`http://tes.dothome.co.kr/${docName}`)
         .then(res => {
