@@ -16,14 +16,14 @@ module.exports.run = async (mu, input, pars) => {
         let herokuEmb = new API.RichEmbed()
         .setColor("#6762a6")
         .setTitle("Heroku `μBot 빌드정보`")
-        .setTimestamp()
+        .setTimestamp(mu.readyAt)
         .setThumbnail("http://www.stickpng.com/assets/images/58480873cef1014c0b5e48ea.png")
-        .setDescription(`현재 사용중인 μBot은 정식 승인된 개발자인\n${res.body.slice(-1)[0].user.email}으로부터 \n${res.body.slice(-1)[0].updated_at}에 빌드된\n${res.body.slice(-1)[0].source_blob.version}버전을 사용하여\n빌드에 ${res.body.slice(-1)[0].status}된 버전을 사용중입니다`);
+        .setDescription(`현재 사용중인 μBot은 정식 승인된 개발자인\n${res.body.slice(-1)[0].user.email}으로부터 \n${mu.readyAt}에 빌드된\n${res.body.slice(-1)[0].source_blob.version}버전을 사용하여\n빌드에 ${res.body.slice(-1)[0].status}된 버전을 사용중입니다`);
         input.channel.send(herokuEmb);
     }).catch(err => console.log(err));
 }
 
 module.exports.help = {
     name: "빌드",
-    description: "히로쿠"
+    description: "빌드정보"
 }
