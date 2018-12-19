@@ -31,5 +31,5 @@ module.exports.run = async (mu, input, pars) => {
 
 module.exports.help = {
     name: "cat",
-    description: "neko"
+    description: "냥코"
 }
