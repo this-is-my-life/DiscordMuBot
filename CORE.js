@@ -117,7 +117,7 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 		// CoolDown System
 		if (cooldown.has(input.author.id)) {
 			input.delete();
-			input.channel.send(`CoolDown is Activated (${cdseconds} sec.)\n쿨다운이 활성화되어있습니다! (${cdseconds} 초)`).then(thismsg => thismsg.delete(2000))
+			input.channel.send(`CoolDown (${cdseconds} sec.)\n잠시 명상의 시간을 (${cdseconds} 초) 동안 가져보시길 바랍니다`).then(thismsg => thismsg.delete(2000))
  			return;
 		}
 		cooldown.add(input.author.id);
