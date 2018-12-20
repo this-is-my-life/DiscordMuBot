@@ -117,7 +117,7 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 		// CoolDown System
 		if (cooldown.has(input.author.id)) {
 			input.delete();
-			input.channel.send(`CoolDown (${cdseconds} sec.)\n잠시 명상의 시간을 (${cdseconds} 초) 동안 가져보시길 바랍니다`).then(thismsg => thismsg.delete(2000))
+			input.channel.send(`CoolDown (${cdseconds}sec.)\n잠시 명상의 시간을 (${cdseconds}초) 동안 가져보시길 바랍니다`).then(thismsg => thismsg.delete(2000))
  			return;
 		}
 		cooldown.add(input.author.id);
@@ -150,8 +150,7 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 			.addField("Created At", mu.user.createdAt, true)
 			.addField("Updated At", mu.readyAt, true)
 			.addField("Up Time", mu.uptime, true)
-			.addField("API Ping", mu.pings, true)
-			.addField("Powered By...", "[Discord](https://discordapp.com) [Discord API](https://discordapp.com/developers/docs) [node.js](https://nodejs.org) [npm](https://www.npmjs.com/) [discord.js](http://discord.js.org) [python](https://www.python.org) [PyPI](https://pypi.org/) [discord.py](https://discordpy.readthedocs.io) [Heroku](https://heroku.com) [Google Dialogflow](https://dialogflow.com/) [GitHub](https://developer.github.com/v3/) [Steam](https://steamcommunity.com/dev) [NekoBot](https://docs.nekobot.xyz/) [TesWiki](http://teswiki.co.nf) [shibe.online](https://shibe.online/) [Dog CEO](https://dog.ceo/) [TheCatAPI.com](https://thecatapi.com/) [Some Random Api](https://some-random-api.ml/) ");
+			.addField("API Ping", mu.pings, true);
 			input.channel.send(eBotInfoEmb);
 
 			let eCreditEmb = new API.RichEmbed()
