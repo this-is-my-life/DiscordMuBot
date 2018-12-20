@@ -158,5 +158,5 @@ module.exports.run = async (mu, input, pars) => {
 
 module.exports.help = {
     name: "DokiDoki",
-    description: "gh"
+    description: "도키도키"
 }
