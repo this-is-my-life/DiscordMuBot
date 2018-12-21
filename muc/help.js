@@ -22,8 +22,8 @@ module.exports.run = async (mu, input, pars, prefix) => {
 				"url": "https://cdn.discordapp.com/attachments/521187311761752087/525245345849147393/Bot_Profile.png"
 			},
 			"author": {
-				"name": "여기 author자리",
-				"icon_url": "https://cdn.discordapp.com/embed/avatars/0.png"
+				"name": input.author.username,
+				"icon_url": input.author.displayAvatarURL
 			},
 			"fields": [
 				{

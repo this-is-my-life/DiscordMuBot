@@ -15,14 +15,14 @@ module.exports.run = async (mu, input, pars, prefix) => {
 		  "description": "**μ's Sites: **[PMH Studio 방문하기~](http://pmhstudio.co.nf) ● [AI 날뛰는곳~](http://mubotapi.dothome.co.kr) ● [깃!헙! 레포!](https://github.com/PMHStudio/DiscordMuBot)\n\n\n**Commands\n────────────**",
 		  "color": 7506394,
 		  "footer": {
-			"text": "이 명령어 도움창은 당신이 제작하였습니다"
+			"text": "이 커멘드 북은 당신이 제작하였습니다"
 		  },
 		  "thumbnail": {
 			"url": "https://cdn.discordapp.com/attachments/521187311761752087/525245345849147393/Bot_Profile.png"
 		  },
 		  "author": {
-			"name": "여기 author자리",
-			"icon_url": "https://cdn.discordapp.com/embed/avatars/0.png"
+			"name": input.author.username,
+			"icon_url": input.author.displayAvatarURL
 		  },
 		  "fields": [
 			{
@@ -67,7 +67,8 @@ module.exports.run = async (mu, input, pars, prefix) => {
 			}
 		  ]
 		});
-    input.channel.send(helpemb);
+	input.author.send(helpemb);
+	input.channel.send("개인 DM으로 커멘드 북을 전송했습니다!");
 }
 
 module.exports.help = {
