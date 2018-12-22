@@ -23,9 +23,9 @@ module.exports.run = async (mu, input, pars) => {
             let result = res.links[count];
             if (result) {
                 if (!result.title) {
-                    GoogleEmb.addField(`${count}. ${result.href}`, `[Go Direct](${result.href}) ● ${result.description}`);
+                    GoogleEmb.addField(`${count+1}. ${result.href}`, `[Go Direct](${result.href}) ● ${result.description}`);
                 } else {
-                    GoogleEmb.addField(`${count}. ${result.title}`, `[Go Direct](${result.href}) ● ${result.description}`);
+                    GoogleEmb.addField(`${count+1}. ${result.title}`, `[Go Direct](${result.href}) ● ${result.description}`);
                 }
 
             }
