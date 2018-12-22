@@ -22,9 +22,10 @@ module.exports.run = async (mu, input, pars) => {
         for (let count = 0; count < res.links.length; count++) {
             let result = res.links[count];
             if (!result.title) {
-                GoogleEmb.setDescription(`[${result.description}](${result.href})`);
+                GoogleEmb.addField(result.href, `[${result.description}](${result.href})`);
+            } else {
+                GoogleEmb.addField(result.title, `[${result.description}](${result.href})`);
             }
-            GoogleEmb.addField(result.title, `[${result.description}](${result.href})`);
         }
         GoogleEmb.setColor(randomHexColor())
         .setURL(`https://google.com/search?q=${encodeURI(say)}`);
