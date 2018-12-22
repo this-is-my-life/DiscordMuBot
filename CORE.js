@@ -100,6 +100,12 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 
 // Bot Commanding________________________________
 	mu.on("message", async input => {
+		if (!input.guild) { // ignore DM
+			input.reply("**Oops!** μBot Can Run **ONLY** __**in SERVER**__ *(not DM)*!").then(thismsg => thismsg.delete(2000));
+			input.reply("**저런!** 뮤봇은 **__서버에서__만** 명령어 실행이 가능합니다! *(DM 말고...)*").then(thismsg => thismsg.delete(2000));
+			return;
+		}
+		
 		if (input.guild.id === "264445053596991498") return;
 
 		superagent.get(`https://mubotdb.herokuapp.com/action/UserTyped/${input.author.id}/${mu.user.id}`).catch(err => console.log(err));
@@ -108,11 +114,6 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
   		if (!input.content.startsWith(prefix)) return; // Don't log Messages Without Prefix
 		console.log(`${input.author.username.toString()} (${input.author.id.toString()})> ${input.content.toString()}`); // input Logging
 		if (`${input.author.id}` === `${mu.user.id}`) return; // Don't Check Message Itself!
-		if (!input.guild) { // ignore DM
-			input.reply("**Oops!** μBot Can Run **ONLY** __**in SERVER**__ *(not DM)*!").then(thismsg => thismsg.delete(2000));
-			input.reply("**저런!** 뮤봇은 **__서버에서__만** 명령어 실행이 가능합니다! *(DM 말고...)*").then(thismsg => thismsg.delete(2000));
-			return;
-		}
 
 		// CoolDown System
 		if (cooldown.has(input.author.id)) {
