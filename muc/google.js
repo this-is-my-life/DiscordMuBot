@@ -21,7 +21,9 @@ module.exports.run = async (mu, input, pars) => {
         if (err) console.log(err);
         for (let count = 0; count < res.links.length; count++) {
             let result = res.links[count];
-            if (!result.description == null) {
+            if (!result.title) {
+                GoogleEmb.addField(result.href, `[${result.description}](${result.href})`);
+            } else {
                 GoogleEmb.addField(result.title, `[${result.description}](${result.href})`);
             }
         }
