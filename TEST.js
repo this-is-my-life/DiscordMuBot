@@ -11,7 +11,7 @@ console.log("------------------MuBot------------------------");
 
 // API Require
 console.log("Main API Load...");
-const API = require('discord.js'); // Main API
+const API = require("discord.js"); // Main API
 console.log("Main API Loaded Correctly");
 
 // TTS Require
@@ -32,15 +32,15 @@ console.log("Discord API Client Login");
 const mu = new API.Client(); // Take a Bot From Main API
 console.log("Login Correctly");
 console.log("Command Load...");
-mu.commands = new API.Collection()
+mu.commands = new API.Collection();
 cmds.readdir("./muc/", (err, files) => {
 if (err) return console.log("\n\nRead Commands Error!______________________________\n\n" + err);
-let jsfile = files.filter(f => f.split(".").pop() === "js")
+let jsfile = files.filter((f) => f.split(".").pop() === "js");
 if(jsfile.length <= 0){
 console.log("Error(E404): Couldn't find commands.");
 return;
 }
-jsfile.forEach((f, i) =>{
+jsfile.forEach((f, i) => {
 let props = require(`./muc/${f}`);
 console.log(`CommandLoad: Ready(${f})`);
 mu.commands.set(props.help.name, props);

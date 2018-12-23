@@ -25,7 +25,7 @@ module.exports.run = async (mu, input, pars) => {
 		.setDescription("Decimal to Binary\n10진수를 2진수로 변환함");
 		input.channel.send(binEmb);
 	}
-}
+};
 
 module.exports.help = {
     name: "2진수"

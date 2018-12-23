@@ -15,7 +15,7 @@ module.exports.run = async (mu, input, pars) => {
     if (!input.channel.nsfw) {
         input.channel.send("Wait! What? You are Hentai! ~~(Just.. Turn on NSFW..)~~ \n에.. 잠만... 헤에? 넌 변태닷! ~~(NSFW를 틀면 보일지도...?)~~");
     } else {
-        const filter = m => m.author.id === input.author.id;
+        const filter = (m) => m.author.id === input.author.id;
         input.channel.send("r19 콘텐츠가 표시될꺼다뮤~★ 뮤는 책임 안진다뮤~\n(이 작업에 대하여 뮤봇은 책임을 지지 않습니다, 계속하시려면 \"나는 변태다\"를 10초 안에 입력하세요").then((q) => q.delete(10000));
         input.channel.awaitMessages(filter, {
             max: 1,

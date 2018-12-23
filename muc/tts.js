@@ -16,7 +16,7 @@ module.exports.run = async (mu, input, pars) => {
         if (input.member.voiceChannel) {
                 input.member.voiceChannel.join()
                 .then(connection => {
-                    request.post('https://soundoftext.com/sounds', {
+                    request.post("https://soundoftext.com/sounds", {
                         json: {
                             "engine": "Google",
                             "data": {

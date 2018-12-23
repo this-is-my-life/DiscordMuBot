@@ -14,7 +14,7 @@ const randomHexColor = require("random-hex-color");
 module.exports.run = async (mu, input, pars) => {
     let t;
 
-    const filter = m => m.author.id === input.author.id;
+    const filter = (m) => m.author.id === input.author.id;
     input.channel.send(`말할 텍스트를 적어달라뮤! [취소를 원할경우 1분을 기다리라뮤!]\n[한국어는 지원되지 않는다뮤....]`).then((q) => q.delete(60000));
     input.channel.awaitMessages(filter, {
         max: 1,
@@ -37,7 +37,7 @@ module.exports.run = async (mu, input, pars) => {
        }
     });
 
-}
+};
 module.exports.help = {
     name: "cmm"
 };

@@ -15,7 +15,7 @@ module.exports.run = async (mu, input, pars) => {
 			input.delete().catch((O_o) => {}); 
 			return input.channel.send("User Not Found").then((thismsg) => thismsg.delete(1000));}
 		let banReason = pars.join(" ").slice(22);
-   		if (!input.member.hasPermission("BAN_MEMBERS")) return input.channel.send(`<@${input.author.id}> has NO PERMISSION: BAN_MEMBERS`);
+		if (!input.member.hasPermission("BAN_MEMBERS")) return input.channel.send(`<@${input.author.id}> has NO PERMISSION: BAN_MEMBERS`);
 		if (banTo.hasPermission("BAN_MEMBERS")) return input.channel.send("Error: Target has Same or High PERMISSION");
 		let Bicon = input.guild.iconURL;
 		let eBanEmb = new API.RichEmbed()
@@ -30,7 +30,7 @@ module.exports.run = async (mu, input, pars) => {
 		.addField("Ban Reason", `${banReason}.`);
 		input.guild.member(banTo).ban(banReason);
 		input.guild.systemChannel.send(eBanEmb);
-};;
+};
 
 module.exports.help = {
 	name: "b"

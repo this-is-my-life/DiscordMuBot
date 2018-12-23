@@ -12,7 +12,7 @@ const randomHexColor = require("random-hex-color");
 
 module.exports.run = async (mu, input, pars) => {
     let ePingEmb = new API.RichEmbed()
-    .setTitle(`Pong!`)
+    .setTitle("Pong!")
     .setColor(randomHexColor())
     .setDescription(`Here, ${input.author.toString()}...Mu! OㅅO [${Math.round(mu.ping)}ms]`);
     input.delete().catch((O_o) => {});

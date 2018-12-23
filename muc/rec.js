@@ -28,7 +28,7 @@ module.exports.run = async (mu, input, pars) => {
 	reactTo.lastMessage.react("🤔");
 	input.delete().catch((O_o) => {});
 	input.channel.send("Reacted!").then((thismsg) => thismsg.delete(1000));
-};;
+};
 
 module.exports.help = {
 	name: "react",

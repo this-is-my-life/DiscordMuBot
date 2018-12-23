@@ -12,7 +12,7 @@ const superagent = require("superagent");
 const randomHexColor = require("random-hex-color");
 
 module.exports.run = async (mu, input, pars) => {
-    const filter = m => m.author.id === input.author.id;
+    const filter = (m) => m.author.id === input.author.id;
     input.channel.send("깃헙 URL상 유저이름을 알려달라뮤~★\n\"취소\"를 입력하거나 30초를 쓸때없이 기다리시면 뮤봇이 빡쳐서 취소할껍니다").then((q) => q.delete(30000));
     input.channel.awaitMessages(filter, {
 		max: 1,
@@ -23,7 +23,7 @@ module.exports.run = async (mu, input, pars) => {
 		if (ghinput === "취소") { input.channel.send("취소되었습니다").then((q) => q.delete(2000)); } else {
             superagent.get(`https://api.github.com/users/${ghinput}`).then((res) => {
                 let kGithub = new API.RichEmbed()
-                .setColor(randomHexColor())
+                .setColor(randomHexColor());
                 if (res.body.name) {
                     if (res.body.company) {
                         kGithub.setTitle(`**${res.body.company} / ${res.body.name}님의 깃헙정보**`);
@@ -49,7 +49,7 @@ module.exports.run = async (mu, input, pars) => {
                 .setFooter("Powered by github.com");
                 input.channel.send(kGithub);
             }).catch((err) => {
-                if (err) { return input.channel.send(`그 이름을 가진 유저를 찾을 수 없다뮤!\nError: ${err.message}`).then(r => r.delete(2000));}
+                if (err) { return input.channel.send(`그 이름을 가진 유저를 찾을 수 없다뮤!\nError: ${err.message}`).then((r) => r.delete(2000));}
             });
         }
     });

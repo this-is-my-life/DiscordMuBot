@@ -16,14 +16,14 @@ module.exports.run = async (mu, input, pars) => {
     .then((res) => {
         let kanEmb = new API.RichEmbed()
             .setColor(randomHexColor())
-            .setTitle(`Nekos, HERE!`)
+            .setTitle("Nekos, HERE!")
             .setURL(res.body.message)
             .setDescription(`${input.author} said "Nyan?"`)
             .setImage(res.body.message)
             .setFooter("Powered by nekobot.xyz");
         input.channel.send(kanEmb);
-    })
-}
+    });
+};
 
 module.exports.help = {
     name: "네코",

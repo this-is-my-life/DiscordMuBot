@@ -25,7 +25,7 @@ module.exports.run = async (mu, input, pars) => {
 		.setDescription("Decimal to Hexadecimal\n10진수를 16진수로 변환함");
 		input.channel.send(hexEmb);
 	}
-}
+};
 
 module.exports.help = {
     name: "16진수"

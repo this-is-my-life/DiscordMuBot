@@ -12,7 +12,7 @@ const superagent = require("superagent");
 const randomHexColor = require("random-hex-color");
 
 module.exports.run = async (mu, input, pars) => {
-    let body = await superagent
+    let { body } = await superagent
         .get(`https://api-to.get-a.life/dogimg`);
     let eMeme = new API.RichEmbed()
         .setColor(randomHexColor())

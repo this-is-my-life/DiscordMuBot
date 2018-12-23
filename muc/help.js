@@ -94,8 +94,8 @@ module.exports.run = async (mu, input, pars, prefix) => {
 			]
 		});
 	input.author.send(helpemb);
-	input.channel.send("See Your DM")
-}
+	input.channel.send("See Your DM");
+};
 
 module.exports.help = {
 	name: "h"

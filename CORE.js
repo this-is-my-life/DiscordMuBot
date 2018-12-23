@@ -87,7 +87,7 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 	
 // Bot Sense Join________________________________
 	mu.on("guildMemberAdd", async joindmember => {
-		joindmember.send("En.\nHey! Welcome To Our Server!\nPlease Read Rules And Have Fun! -μ\n\nkr.\n**여어, 히사시부리! ~~(처음 만나는데..?)~~**\n우리의 서버에 들어온것을 환영한다뮤우~★\n규칙을 자알 읽고 좋은 시간 보내라뮤! -μ")
+		joindmember.send("En.\nHey! Welcome To Our Server!\nPlease Read Rules And Have Fun! -μ\n\nkr.\n**여어, 히사시부리! ~~(처음 만나는데..?)~~**\n우리의 서버에 들어온것을 환영한다뮤우~★\n규칙을 자알 읽고 좋은 시간 보내라뮤! -μ");
 	});
 	
 // Bot Typing____________________________________
@@ -99,7 +99,7 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 	});
 
 // Bot Commanding________________________________
-	mu.on("message", async input => {
+	mu.on("message", async (input) => {
 		if (`${input.author.id}` === `${mu.user.id}`) { return; } // Don't Check Message Itself!
 		if (!input.guild) { // ignore DM
 			input.reply("**Oops!** μBot Can Run **ONLY** __**in SERVER**__ *(not DM)*!").then((thismsg) => thismsg.delete(2000));
@@ -119,20 +119,20 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 		if (cooldown.has(input.author.id)) {
 			input.delete();
 			input.channel.send(`CoolDown (${cdseconds}sec.)\n잠시 명상의 시간을 (${cdseconds}초) 동안 가져보시길 바랍니다`).then((thismsg) => thismsg.delete(2000))
- 			return;
+			return;
 		}
 		cooldown.add(input.author.id);
 		
 		mu.user.setStatus("idle");
 		let msgAr = input.content.split(" ");
 		let msgc = input.content.slice(prefix.length);
-  		let i = msgAr[0];
+		let i = msgAr[0];
   		let pars = msgAr.slice(1);
-  		let verify = i.slice(prefix.length);
+		let verify = i.slice(prefix.length);
 		let cmdFile = mu.commands.get(verify);
 
 		if (prefix === input) {
-			let body = await superagent
+			let { body } = await superagent
 				.get(`https://api-to.get-a.life/bottoken`);
   			let avat = mu.user.displayAvatarURL;
 			let eBotInfoEmb = new API.RichEmbed()
@@ -165,21 +165,20 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 			.setFooter("Thanks For Using Our μBot!", avat);
 			input.channel.send(eCreditEmb);
   		} else {
-		  	if (cmdFile) { 
+			if (cmdFile) {
 		  		cmdFile.run(mu,input,pars,prefix,nasa);
-	  		} else {
-		  		// AI(api.ai, Dialogflow v1) Intents
+				} else {
+				// AI(api.ai, Dialogflow v1) Intents
 				let aiRequest = ai.textRequest(msgc, {
-		  			sessionId: input.author.id
+					sessionId: input.author.id
 		  		});
 
 	    		aiRequest.end();
 
 	    		aiRequest.on("response", function(response) {
 					let aiResponseText = response.result.fulfillment.speech;
-	        		let aiResponseArr = aiResponseText.split(" ");
-	        		if (aiResponseArr[0] === "checkurl");
-		        	let aiEmb = new API.RichEmbed()
+					let aiResponseArr = aiResponseText.split(" ");
+					let aiEmb = new API.RichEmbed()
 					.setTitle(aiResponseText)
 		   			.setColor(input.member.displayHexColor)
 		    		.setDescription("Powered by Google Dialogflow");
@@ -188,10 +187,8 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 			}  		
 		}
 		
-	  setTimeout(() => {
-    cooldown.delete(input.author.id)
-	  }, cdseconds * 1000)
-		mu.user.setStatus("online");
-		
-  	});
-  	
+	setTimeout(() => {
+    	cooldown.delete(input.author.id)
+	}, cdseconds * 1000);
+	mu.user.setStatus("online");
+});

@@ -17,7 +17,7 @@ module.exports.run = async (mu, input, pars) => {
     let z;
     let t;
 
-    const filter = m => m.author.id === input.author.id;
+    const filter = (m) => m.author.id === input.author.id;
     input.channel.send("캐릭터를 1분 안에 선택해달라뮤! [취소를 원할경우 `취소`라고 말해달라뮤!]\n캐릭터 리스트 : [사유리, 모니카, 나츠키, 유리]").then((q) => q.delete(60000));
     input.channel.awaitMessages(filter, {
 		max: 1,
@@ -39,7 +39,7 @@ module.exports.run = async (mu, input, pars) => {
                             c = "y";
                         } else {
                             if (ghinput === "PMH") {
-                                input.channel.send("PMH Studio / WSF가 숨긴 이스터에그를 발견했다뮤!\n내용 : (사실 PMH는 DokiDoki의 사용되지 않은 캐릭터이다...)")
+                                    input.channel.send("PMH Studio / WSF가 숨긴 이스터에그를 발견했다뮤!\n내용 : (사실 PMH는 DokiDoki의 사용되지 않은 캐릭터이다...)")
                                 return;
                             } else {
                                 input.channel.send("존재하지 않는 캐릭터다뮤!")
@@ -50,7 +50,7 @@ module.exports.run = async (mu, input, pars) => {
                 }
             }
 
-    const filter = m => m.author.id === input.author.id;
+    const filter = (m) => m.author.id === input.author.id;
     input.channel.send("캐릭터 자세를 1분 안에 선택해달라뮤! [취소를 원할경우 `취소`라고 말해달라뮤!]\n[캐릭터가 사유리 일경우: (1b, 1, 2b, 2), 캐릭터가 모니카 일경우: (1, 2), 캐릭터가 나츠키 일경우: (1b, 1, 2b, 2), 캐릭터가 유리 일경우: (1b, 1, 2b, 2)]").then((q) => q.delete(60000));
     input.channel.awaitMessages(filter, {
         max: 1,
@@ -58,7 +58,7 @@ module.exports.run = async (mu, input, pars) => {
     }).then((collected) => {
         let cbody = collected.first().content;
         collected.delete();
-	    if (cbody === "취소") { input.channel.send("취소됬다뮤!").then((q) => q.delete(2000)); } else {
+        if (cbody === "취소") { input.channel.send("취소됬다뮤!").then((q) => q.delete(2000)); } else {
             if (cbody === "1") {
                 b = "1";
             } else {
@@ -71,14 +71,14 @@ module.exports.run = async (mu, input, pars) => {
                         if (cbody === "2b") {
                             b = "2b"
                         } else {
-                            input.channel.send("존재하지 않는 자세다뮤!!")
+                            input.channel.send("존재하지 않는 자세다뮤!!");
                             return;
                         }
                     }
                 }
             }
 
-    const filter = m => m.author.id === input.author.id;
+    const filter = (m) => m.author.id === input.author.id;
     input.channel.send("배경화면을 1분 안에 선택해달라뮤! [취소를 원할경우 `취소`라고 말해달라뮤!]\n[침실, 교실, 책장, 동아리실, 복도, 집, 집앞, 사유리 침실]").then((q) => q.delete(60000));
     input.channel.awaitMessages(filter, {
         max: 1,
@@ -106,7 +106,7 @@ module.exports.run = async (mu, input, pars) => {
                                     z = "house";
                                 } else {
                                     if (backg === "집앞") {
-                                       z = "residential"
+                                        z = "residential";
                                     } else {
                                         if (backg === "사유리 침실") {
                                             z = "sayori_bedroom"
@@ -122,7 +122,7 @@ module.exports.run = async (mu, input, pars) => {
                 }
             }
 
-    const filter = m => m.author.id === input.author.id;
+    const filter = (m) => m.author.id === input.author.id;
     input.channel.send(`${ghinput}가 말할 텍스트를 적어달라뮤! [취소를 원할경우 1분을 기다리라뮤!]\n[한국어는 지원되지 않는다뮤....]`).then((q) => q.delete(60000));
     input.channel.awaitMessages(filter, {
         max: 1,
@@ -133,7 +133,7 @@ module.exports.run = async (mu, input, pars) => {
         if (textinput === "취소") { input.channel.send("취소됬다뮤!").then((q) => q.delete(2000)); } else {
             t = textinput;
 
-            input.channel.send(`이미지가 로딩되는동안 시간이 걸릴수있다뮤!`);
+            input.channel.send("이미지가 로딩되는동안 시간이 걸릴수있다뮤!");
             superagent.get(`https://nekobot.xyz/api/imagegen?type=ddlc&character=${c}&body=${b}&face=${c}&background=${z}&text=${t}`)
                     .then((res) => {
                         let hentaiEmb = new API.RichEmbed()
@@ -154,7 +154,7 @@ module.exports.run = async (mu, input, pars) => {
         }
     });
     
-}
+};
 
 module.exports.help = {
     name: "DokiDoki",

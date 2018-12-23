@@ -16,14 +16,14 @@ module.exports.run = async (mu, input, pars) => {
     .then((res) => {
         let kanEmb = new API.RichEmbed()
             .setColor(randomHexColor())
-            .setTitle(`Loli Dragons, HERE!`)
+            .setTitle("Loli Dragons, HERE!")
             .setURL(res.body.message)
             .setDescription(`${input.author} said "Maji Yabakune?"`)
             .setImage(res.body.message)
             .setFooter("Powered by nekobot.xyz");
         input.channel.send(kanEmb);
-    })
-}
+    });
+};
 
 module.exports.help = {
     name: "카무이",
