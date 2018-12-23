@@ -15,9 +15,9 @@ module.exports.run = async (mu, input, pars) => {
     .setTitle(`Pong!`)
     .setColor(randomHexColor())
     .setDescription(`Here, ${input.author.toString()}...Mu! OㅅO [${Math.round(mu.ping)}ms]`);
-    input.delete().catch(O_o => {});
+    input.delete().catch((O_o) => {});
     input.channel.send(ePingEmb);
-}
+};
 
 module.exports.help = {
 	name: "p"

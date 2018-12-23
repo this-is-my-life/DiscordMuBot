@@ -22,7 +22,7 @@ module.exports.run = async (mu, input, pars) => {
 		.addField("You Joined", input.member.joinedAt)
 		.addField("Total Members", input.guild.memberCount);
 		input.channel.send(eChannelInfo);
-}
+};
 
 module.exports.help = {
 	name: "serverinfo"

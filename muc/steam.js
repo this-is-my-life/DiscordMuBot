@@ -38,12 +38,12 @@ module.exports.run = async (mu, input, pars) => {
                 .addField("유저 위치 국가", res.body.players.loccountrycode, true)
                 .setFooter("Powered by steampowered.com");
                 input.channel.send(kSteamEmb);
-            }).catch(err => {
+            }).catch((err) => {
                 if (err) { return input.channel.send(`그 이름을 가진 유저를 찾을 수 없다뮤!\nError: ${err.message}`).then(r => r.delete(2000));}
             });
         }
     });
-}
+};
 
 module.exports.help = {
     name: "스팀",

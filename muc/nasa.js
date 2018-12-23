@@ -24,7 +24,7 @@ module.exports.run = async (mu, input, pars, prefix , nasa) => {
         .setImage(body.url)
         .setFooter("Powered by nasa.gov - Astronomy Picture of the Day");
     input.channel.send(eNasa);
-}
+};
 
 module.exports.help = {
     name: "space",

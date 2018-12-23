@@ -28,7 +28,7 @@ module.exports.run = async (mu, input, pars) => {
 	    	let eSummonVoiceFail = new API.RichEmbed()
 			.setThumbnail(Seicon)
 	    	.setColor(randomHexColor())
-				.addField("Wait!", "You need to join a voice channel first!").then(thismsg => thismsg.delete(1000));
+				.addField("Wait!", "You need to join a voice channel first!").then((thismsg) => thismsg.delete(1000));
 	    	input.channel.send(eSummonVoiceFail);
 	    }
 }

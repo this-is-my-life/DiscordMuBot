@@ -10,10 +10,10 @@
 const API = require("discord.js");
 
 module.exports.run = async (mu, input, pars) => {
-		let kickTo = input.guild.member(input.mentions.users.first() || input.guild.members.get(args[0]));
+		let kickTo = input.guild.member(input.mentions.users.first() || input.guild.members.get(pars[0]));
 		if (!kickTo) { 
-			input.delete().catch(O_o=>{});
-			return input.channel.send("User Not Found").then(thismsg => thismsg.delete(1000)); }
+			input.delete().catch((O_o)=>{});
+			return input.channel.send("User Not Found").then((thismsg) => thismsg.delete(1000)); }
 		let kickReason = pars.join(" ").slice(22);
 		if (!input.member.hasPermission("KICK_MEMBERS")) return input.channel.send(`<@${input.author.id}> has NO PERMISSION: KICK_MEMBERS`);
 		if (kickTo.hasPermission("KICK_MEMBERS")) return input.channel.send("Error: Target has Same or High PERMISSION");
@@ -30,7 +30,7 @@ module.exports.run = async (mu, input, pars) => {
 		.addField("Kick Reason", `${kickReason}`);
 		input.guild.member(kickTo).kick(kickReason);
 		input.guild.systemChannel.send(eKickEmb);
-}
+};
 
 module.exports.help = {
 	name: "k"

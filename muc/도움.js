@@ -69,7 +69,7 @@ module.exports.run = async (mu, input, pars, prefix) => {
 		});
 	input.author.send(helpemb);
 	input.channel.send("개인 DM으로 커멘드 북을 전송했습니다!\n또한 뮤봇 토스트 기능의 대하여 알아보시려면 'mu!토스트'라고 입력해주세요");
-}
+};
 
 module.exports.help = {
     name: "도움말"

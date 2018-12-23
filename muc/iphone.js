@@ -20,8 +20,8 @@ module.exports.run = async (mu, input, pars) => {
         .setColor(randomHexColor())
         .setFooter("Powered by nekobot.xyz");
         input.channel.send(iPhonEmb);
-    }).catch(err => { if (err) { console.log(err); }});
-}
+    }).catch((err) => { if (err) { console.log(err); }});
+};
 
 module.exports.help = {
     name: "아이폰",

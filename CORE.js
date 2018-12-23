@@ -100,25 +100,25 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 
 // Bot Commanding________________________________
 	mu.on("message", async input => {
-		if (`${input.author.id}` === `${mu.user.id}`) return; // Don't Check Message Itself!
+		if (`${input.author.id}` === `${mu.user.id}`) { return; } // Don't Check Message Itself!
 		if (!input.guild) { // ignore DM
-			input.reply("**Oops!** μBot Can Run **ONLY** __**in SERVER**__ *(not DM)*!").then(thismsg => thismsg.delete(2000));
-			input.reply("**저런!** 뮤봇은 **__서버에서__만** 명령어 실행이 가능합니다! *(DM 말고...)*").then(thismsg => thismsg.delete(2000));
+			input.reply("**Oops!** μBot Can Run **ONLY** __**in SERVER**__ *(not DM)*!").then((thismsg) => thismsg.delete(2000));
+			input.reply("**저런!** 뮤봇은 **__서버에서__만** 명령어 실행이 가능합니다! *(DM 말고...)*").then((thismsg) => thismsg.delete(2000));
 			return;
 		}
 
-		if (input.guild.id === "264445053596991498") return;
+		if (input.guild.id === "264445053596991498") { return; }
 
-		superagent.get(`https://mubotdb.herokuapp.com/action/UserTyped/${input.author.id}/${mu.user.id}`).catch(err => console.log(err));
+		superagent.get(`https://mubotdb.herokuapp.com/action/UserTyped/${input.author.id}/${mu.user.id}`).catch((err) => console.log(err));
 		
 
-		if (!input.content.startsWith(prefix)) return; // Don't log Messages Without Prefix
+		if (!input.content.startsWith(prefix)) { return; } // Don't log Messages Without Prefix
 		console.log(`${input.author.username.toString()} (${input.author.id.toString()})> ${input.content.toString()}`); // input Logging
 
 		// CoolDown System
 		if (cooldown.has(input.author.id)) {
 			input.delete();
-			input.channel.send(`CoolDown (${cdseconds}sec.)\n잠시 명상의 시간을 (${cdseconds}초) 동안 가져보시길 바랍니다`).then(thismsg => thismsg.delete(2000))
+			input.channel.send(`CoolDown (${cdseconds}sec.)\n잠시 명상의 시간을 (${cdseconds}초) 동안 가져보시길 바랍니다`).then((thismsg) => thismsg.delete(2000))
  			return;
 		}
 		cooldown.add(input.author.id);
@@ -129,9 +129,9 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
   		let i = msgAr[0];
   		let pars = msgAr.slice(1);
   		let verify = i.slice(prefix.length);
-  		let cmdFile = mu.commands.get(verify);
+		let cmdFile = mu.commands.get(verify);
 
-  		if (prefix === input) {
+		if (prefix === input) {
 			let body = await superagent
 				.get(`https://api-to.get-a.life/bottoken`);
   			let avat = mu.user.displayAvatarURL;
@@ -175,18 +175,18 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 
 	    		aiRequest.end();
 
-	    		aiRequest.on('response', function(response) {
+	    		aiRequest.on("response", function(response) {
 					let aiResponseText = response.result.fulfillment.speech;
 	        		let aiResponseArr = aiResponseText.split(" ");
 	        		if (aiResponseArr[0] === "checkurl");
 		        	let aiEmb = new API.RichEmbed()
-		        	.setTitle(aiResponseText)
+					.setTitle(aiResponseText)
 		   			.setColor(input.member.displayHexColor)
 		    		.setDescription("Powered by Google Dialogflow");
 	        		input.channel.send(aiEmb);
 				});
 			}  		
-  		}
+		}
 		
 	  setTimeout(() => {
     cooldown.delete(input.author.id)

@@ -18,7 +18,7 @@ module.exports.run = async (mu, input, pars) => {
 		max: 1,
 		time: 30000
     }).then((collected) => {
-    if (collected.first().content === "취소") return;
+    if (collected.first().content === "취소") { return; }
     let docName = encodeURI(collected.first().content);
     superagent.get(`http://tes.dothome.co.kr/${docName}`)
         .then((res) => {
@@ -28,7 +28,7 @@ module.exports.run = async (mu, input, pars) => {
             .setDescription(`[보기](http://tes.dothome.co.kr/index.php?title=${docName}) ● [수정](http://tes.dothome.co.kr/index.php?title=${docName}&action=edit) ● [추가](http://tes.dothome.co.kr/index.php?title=${docName}&action=edit&section=new)`)
             .setThumbnail("http://tes.dothome.co.kr/images/c/cc/%ED%85%8C%EC%8A%A4%EC%9C%84%ED%82%A4%EB%A9%94%EC%9D%B8%EB%A1%9C%EA%B3%A0.png");
             input.channel.send(teswiki);
-        }).catch(err => {
+        }).catch((err) => {
             if (err) {
                 let teswikiErr = new API.RichEmbed()
                 .setTitle("문서가.. 읍서요!")

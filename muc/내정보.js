@@ -28,7 +28,7 @@ module.exports.run = async (mu, input, pars) => {
 		.addField("유저 프로필 사진 URL", input.author.displayAvatarURL)
 		.addField("유저 회원가입 날짜", input.author.createdAt)
 		input.channel.send(eMyInfo);
-}
+};
 
 module.exports.help = {
 	name: "정보"

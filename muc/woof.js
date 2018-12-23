@@ -22,7 +22,7 @@ module.exports.run = async (mu, input, pars) => {
         .setImage(body.link)
         .setFooter("Powered by dog.ceo");
     input.channel.send(eMeme);
-}
+};
 
 module.exports.help = {
     name: "dog",

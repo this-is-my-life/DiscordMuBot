@@ -11,7 +11,7 @@ const API = require("discord.js");
 
 module.exports.run = async (mu, input, pars) => {
 	input.channel.send("뮤!뮤!뮤!");
-}
+};
 
 module.exports.help = {
 	name: "뮤!"

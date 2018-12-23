@@ -17,8 +17,8 @@ module.exports.run = async (mu, input, pars) => {
     .setAuthor(say)
     .setTitle("Google Search Result");
     google.resultsPerPage = 5;
-    google(say, function (err, res) { 
-        if (err) { console.log(err); };
+    google(say, (err, res) => { 
+        if (err) { console.log(err); }
         for (let count = 0; count < res.links.length; count++) {
             let result = res.links[count];
             if (result) {

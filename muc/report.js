@@ -12,8 +12,8 @@ const API = require("discord.js");
 module.exports.run = async (mu, input, pars) => {
 		let reportTo = input.guild.member(input.mentions.users.first() || input.guild.members.get(pars[0]));
 		if (!reportTo) {
-			input.channel.send("User Not Found").then(thismsg => thismsg.delete(1000));
-			return input.delete().catch(O_o=>{}); }
+			input.channel.send("User Not Found").then((thismsg) => thismsg.delete(1000));
+			return input.delete().catch((O_o)=>{}); }
 		let reportReason = pars.join(" ").slice(22);
    		if (!input.member.hasPermission("MANAGE_MESSAGES")) return input.channel.send(`<@${input.author.id}> has NO PERMISSION: MANAGE_MESSAGES`);
 		if (reportTo.hasPermission("MANAGE_MESSAGES")) {
@@ -30,9 +30,9 @@ module.exports.run = async (mu, input, pars) => {
 		.addField("Report By", `${input.author} (ID: ${input.author.id})`)
 		.addField("Reported Channel", input.channel)
 		.addField("Report Reason", `${reportReason}.`);
-		input.delete().catch(O_o => {});
+		input.delete().catch((O_o) => {});
 		input.guild.systemChannel.send(eReportEmb);
-}
+};
 
 module.exports.help = {
 	name: "r"

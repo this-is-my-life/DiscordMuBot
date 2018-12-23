@@ -22,7 +22,7 @@ module.exports.run = async (mu, input, pars) => {
         .setFooter(res.body.SlotResult);
         input.channel.send(dobakEmb);
     });
-}
+};
 
 module.exports.help = {
   name: "도박",

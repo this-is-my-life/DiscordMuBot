@@ -12,8 +12,8 @@ const API = require("discord.js");
 module.exports.run = async (mu, input, pars) => {
 		let kickTo = input.guild.member(input.mentions.users.first() || input.guild.members.get(pars[0]));
 		if (!kickTo) { 
-			input.delete().catch(O_o=>{});
-			return input.channel.send("유저를 찾을수 없다뮤!").then(thismsg => thismsg.delete(1000)); }
+			input.delete().catch((O_o)=>{});
+			return input.channel.send("유저를 찾을수 없다뮤!").then((thismsg) => thismsg.delete(1000)); }
 		let kickReason = pars.join(" ").slice(22);
 		if (!input.member.hasPermission("KICK_MEMBERS")) return input.channel.send(`지금 뭐하려고 했냐뮤! <@${input.author.id}>?\n도로 리폿을 먹을수도 있다뮤!`);
 		if (kickTo.hasPermission("KICK_MEMBERS")) return input.channel.send("뮤! 타깃의 권한이 같거나 더 높은 사람이다 뮤우~!\n도로 리폿을 먹을수도 있다뮤!");
@@ -29,9 +29,9 @@ module.exports.run = async (mu, input, pars) => {
 		.addField("신청된 채널", input.channel)
 		.addField("사유", `${kickReason}.`);
 		input.guild.member(kickTo).kick(kickReason);
-		input.delete().catch(O_o=>{});
+		input.delete().catch((O_o)=>{});
 		input.guild.systemChannel.send(kKickEmb);
-}
+};
 
 module.exports.help = {
 	name: "k"

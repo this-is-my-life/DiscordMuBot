@@ -11,9 +11,9 @@ const API = require("discord.js");
 
 module.exports.run = async (mu, input, pars) => {
     let say = pars.join(" ").slice(0);
-    input.delete().catch(O_o => {});
+    input.delete().catch((O_o) => {});
 	input.channel.send(`${say}`);
-}
+};
 
 module.exports.help = {
 	name: "지우고따라해"

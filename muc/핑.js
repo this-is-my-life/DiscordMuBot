@@ -15,9 +15,9 @@ module.exports.run = async (mu, input, pars) => {
 	.setTitle(`Pong!`)
 	.setColor(randomHexColor())
 	.setDescription(`${input.author.toString()}뮤! OㅅO [${Math.round(mu.ping)}ms]`);
-	input.delete().catch(O_o=>{});
+	input.delete().catch((O_o)=>{});
 	input.channel.send(kPingEmb);
-}
+};
 
 module.exports.help = {
 	name: "핑크"

@@ -22,7 +22,7 @@ module.exports.run = async (mu, input, pars) => {
 		.addField("서버 가입일", input.member.joinedAt)
 		.addField("서버 맴버수", input.guild.memberCount);
 		input.channel.send(kChannelInfo);
-}
+};
 
 module.exports.help = {
 	name: "섭정보"

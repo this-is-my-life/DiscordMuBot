@@ -20,7 +20,7 @@ module.exports.run = async (mu, input, pars) => {
 		.setDescription(`${res.body.UsersCoin} MUC!`);
 		input.channel.send(eCoinEmb);
 	});
-}
+};
 
 module.exports.help = {
 	name: "coin"

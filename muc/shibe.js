@@ -22,7 +22,7 @@ module.exports.run = async (mu, input, pars) => {
             .setImage(body[0])
             .setFooter("Powered by shibe.online");
         input.channel.send(shibEmb);
-}
+};
 
 module.exports.help = {
     name: "시바",

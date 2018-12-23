@@ -26,7 +26,7 @@ module.exports.run = async (mu, input, pars) => {
         } else {
             console.log(error);
         }
-    })
+    });
 }
 
 module.exports.help = {
