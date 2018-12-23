@@ -8,7 +8,7 @@
 */
 
 const API = require("discord.js");
-const randomHexColor = require('random-hex-color');
+const randomHexColor = require("random-hex-color");
 
 module.exports.run = async (mu, input, pars) => {
 // Discord.js Official Voice Source
@@ -34,4 +34,4 @@ module.exports.run = async (mu, input, pars) => {
 
 module.exports.help = {
 	name: "여기야"
-}
+};

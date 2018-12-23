@@ -13,7 +13,7 @@ const superagent = require("superagent");
 const randomHexColor = require("random-hex-color");
 
 module.exports.run = async (mu, input, pars, prefix , nasa) => {
-    let { body } = await superagent
+    let body = await superagent
         .get(`https://api.nasa.gov/planetary/apod?api_key=GpELYI28U6YMlWtNjDcF5IOunjRi9ZIFPJcTHDdo`);
     let eNasa = new API.RichEmbed()
         .setColor(randomHexColor())
@@ -29,4 +29,4 @@ module.exports.run = async (mu, input, pars, prefix , nasa) => {
 module.exports.help = {
     name: "space",
     description: "하늘보기"
-}
+};

@@ -8,7 +8,7 @@
 */
 
 const API = require("discord.js");
-const randomHexColor = require('random-hex-color');
+const randomHexColor = require("random-hex-color");
 const google = require("google");
 
 module.exports.run = async (mu, input, pars) => {
@@ -18,7 +18,7 @@ module.exports.run = async (mu, input, pars) => {
     .setTitle("Google Search Result");
     google.resultsPerPage = 5;
     google(say, function (err, res) { 
-        if (err) console.log(err);
+        if (err) { console.log(err); };
         for (let count = 0; count < res.links.length; count++) {
             let result = res.links[count];
             if (result) {
@@ -39,4 +39,4 @@ module.exports.run = async (mu, input, pars) => {
 module.exports.help = {
     name: "g",
     description: "search"
-}
+};

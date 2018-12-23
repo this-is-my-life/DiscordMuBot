@@ -8,7 +8,7 @@
 */
 
 const API = require("discord.js");
-const randomHexColor = require('random-hex-color');
+const randomHexColor = require("random-hex-color");
 
 module.exports.run = async (mu, input, pars) => {
 		let avata = input.author.displayAvatarURL;
@@ -32,4 +32,4 @@ module.exports.run = async (mu, input, pars) => {
 
 module.exports.help = {
 	name: "정보"
-}
+};

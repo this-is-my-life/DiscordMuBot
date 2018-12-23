@@ -16,4 +16,4 @@ module.exports.run = async (mu, input, pars) => {
 
 module.exports.help = {
 	name: "따라해"
-}
+};

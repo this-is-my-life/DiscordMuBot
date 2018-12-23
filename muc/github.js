@@ -9,19 +9,19 @@
 
 const API = require("discord.js");
 const superagent = require("superagent");
-const randomHexColor = require('random-hex-color');
+const randomHexColor = require("random-hex-color");
 
 module.exports.run = async (mu, input, pars) => {
     const filter = m => m.author.id === input.author.id;
-    input.channel.send("깃헙 URL상 유저이름을 알려달라뮤~★\n\"취소\"를 입력하거나 30초를 쓸때없이 기다리시면 뮤봇이 빡쳐서 취소할껍니다").then(q => q.delete(30000));
+    input.channel.send("깃헙 URL상 유저이름을 알려달라뮤~★\n\"취소\"를 입력하거나 30초를 쓸때없이 기다리시면 뮤봇이 빡쳐서 취소할껍니다").then((q) => q.delete(30000));
     input.channel.awaitMessages(filter, {
 		max: 1,
 		time: 30000
-    }).then(collected => {
+    }).then((collected) => {
         let ghinput = collected.first().content;
         collected.delete();
-		if (ghinput === "취소") { input.channel.send("취소되었습니다").then(q => q.delete(2000)); } else {
-            superagent.get(`https://api.github.com/users/${ghinput}`).then(res => {
+		if (ghinput === "취소") { input.channel.send("취소되었습니다").then((q) => q.delete(2000)); } else {
+            superagent.get(`https://api.github.com/users/${ghinput}`).then((res) => {
                 let kGithub = new API.RichEmbed()
                 .setColor(randomHexColor())
                 if (res.body.name) {
@@ -58,4 +58,4 @@ module.exports.run = async (mu, input, pars) => {
 module.exports.help = {
     name: "깃헙",
     description: "gh"
-}
+};

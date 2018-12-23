@@ -28,7 +28,7 @@ module.exports.run = async (mu, input, pars) => {
   warns[wUser.id].warns++;
 
   fs.writeFile("./Saved/warn.json", JSON.stringify(warns), (err) => {
-    if (err) console.log(err)
+    if (err) { console.log(err); }
   });
 
   let warnEmbed = new API.RichEmbed()
@@ -45,7 +45,7 @@ module.exports.run = async (mu, input, pars) => {
 
   warnchannel.send(warnEmbed);
 
-  if (warns[wUser.id].warns == 3){
+  if (warns[wUser.id].warns === 3){
     let muterole = input.guild.roles.find(`name`, "muted");
     if (!muterole) return input.reply("You should create that role dude.");
 
@@ -58,7 +58,7 @@ module.exports.run = async (mu, input, pars) => {
       input.reply(`<@${wUser.id}> has been unmuted.`)
     }, ms(mutetime))
   }
-  if (warns[wUser.id].warns == 5){
+  if (warns[wUser.id].warns === 5){
     input.guild.member(wUser).ban(reason);
     input.reply(`<@${wUser.id}> has been banned.`)
   }
@@ -67,4 +67,4 @@ module.exports.run = async (mu, input, pars) => {
 
 module.exports.help = {
   name: "warn"
-}
+};

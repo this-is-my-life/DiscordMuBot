@@ -12,7 +12,7 @@ const superagent = require("superagent");
 const randomHexColor = require("random-hex-color");
 
 module.exports.run = async (mu, input, pars) => {
-    let { body } = await superagent
+    let body = await superagent
         .get(`http://shibe.online/api/shibes?count=1`);
         let shibEmb = new API.RichEmbed()
             .setColor(randomHexColor())
@@ -27,4 +27,4 @@ module.exports.run = async (mu, input, pars) => {
 module.exports.help = {
     name: "시바",
     description: "shiba"
-}
+};

@@ -14,10 +14,10 @@ const randomHexColor = require("random-hex-color");
 module.exports.run = async (mu, input, pars) => {
     request.get('http://thecatapi.com/api/images/get?format=src&type=png', {
     }, function (error, response, body) {
-        if (!error && response.statusCode == 200) {
+        if (!error && response.statusCode === 200) {
                 let eCat = new API.RichEmbed()
                 .setColor(randomHexColor())
-                .setTitle(`Cats, HERE!`)
+                .setTitle("Cats, HERE!")
                 .setURL(response.request.uri.href)
                 .setDescription(`${input.author} said "meow!"`)
                 .setImage(response.request.uri.href)
@@ -32,4 +32,4 @@ module.exports.run = async (mu, input, pars) => {
 module.exports.help = {
     name: "cat",
     description: "냥코"
-}
+};

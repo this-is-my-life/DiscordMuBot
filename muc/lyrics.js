@@ -13,7 +13,7 @@ const randomHexColor = require("random-hex-color");
 
 module.exports.run = async (mu, input, pars) => {
     let songs = pars.join(" ").slice(0);
-    let { body } = await superagent
+    let body = await superagent
     .get(`https://some-random-api.ml/lyrics?title=${songs}`);
     if (body.error) {
         input.channel.send(`${body.error}`);
@@ -44,4 +44,4 @@ module.exports.run = async (mu, input, pars) => {
 module.exports.help = {
     name: "ly",
     description: "가사"
-}
+};

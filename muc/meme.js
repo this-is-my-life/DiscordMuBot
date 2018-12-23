@@ -8,11 +8,11 @@
 */
 
 const API = require("discord.js");
-const randomHexColor = require('random-hex-color');
+const randomHexColor = require("random-hex-color");
 const superagent = require("superagent");
 
 module.exports.run = async (mu, input, pars) => {
-    let { body } = await superagent
+    let body = await superagent
     .get(`https://api-to.get-a.life/meme`);
     let eMeme = new API.RichEmbed()
     .setColor(randomHexColor())
@@ -27,4 +27,4 @@ module.exports.run = async (mu, input, pars) => {
 module.exports.help = {
     name: "dog",
     description: "woof"
-}
+};

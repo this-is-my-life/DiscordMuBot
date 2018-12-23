@@ -16,4 +16,4 @@ module.exports.run = async (mu, input, pars) => {
 module.exports.help = {
 	name: "빵굽기",
 	description: "투자"
-}
+};

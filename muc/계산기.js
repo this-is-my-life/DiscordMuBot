@@ -8,29 +8,29 @@
 */
 
 const API = require("discord.js");
-const randomHexColor = require('random-hex-color');
+const randomHexColor = require("random-hex-color");
 
 module.exports.run = async (mu, input, pars) => {
 	const filter = m => m.author.id === input.author.id
-	input.channel.send("입력 받을 값의 진수를 입력하세요 (2진수, 10진수, 16진수 지원)\n\"취소\"를 입력하거나 30초를 쓸때없이 기다리시면 뮤봇이 빡쳐서 취소할껍니다").then(q => q.delete(30000));
+	input.channel.send("입력 받을 값의 진수를 입력하세요 (2진수, 10진수, 16진수 지원)\n\"취소\"를 입력하거나 30초를 쓸때없이 기다리시면 뮤봇이 빡쳐서 취소할껍니다").then((q) => q.delete(30000));
 	input.channel.awaitMessages(filter, {
 		max: 1,
 		time: 30000
-	}).then(collected => {
+	}).then((collected) => {
 		let col1input = collected.first().content;
-		if (col1input === "취소") { input.channel.send("취소되었습니다").then(q => q.delete(2000)); } else {
-			input.channel.send("출력할 값의 진수를 입력하세요 (2진수, 10진수, 16진수 지원)\n\"취소\"를 입력하거나 30초를 쓸때없이 기다리시면 뮤봇이 빡쳐서 취소할껍니다").then(q => q.delete(30000));
+		if (col1input === "취소") { input.channel.send("취소되었습니다").then((q) => q.delete(2000)); } else {
+			input.channel.send("출력할 값의 진수를 입력하세요 (2진수, 10진수, 16진수 지원)\n\"취소\"를 입력하거나 30초를 쓸때없이 기다리시면 뮤봇이 빡쳐서 취소할껍니다").then((q) => q.delete(30000));
 			input.channel.awaitMessages(filter, {
 				max: 1,
 				time: 30000
-			}).then(collected => {
+			}).then((collected) => {
 				let col2input = collected.first().content;
-				if (col2input === "취소") { input.channel.send("취소되었습니다").then(q => q.delete(2000)); } else {
-					input.channel.send(`${col2input}(진수)로 변환할 ${col1input}(진수) 입력!\n\"취소\"를 입력하거나 30초를 쓸때없이 기다리시면 뮤봇이 빡쳐서 취소할껍니다`).then(q => q.delete(30000));
+				if (col2input === "취소") { input.channel.send("취소되었습니다").then((q) => q.delete(2000)); } else {
+					input.channel.send(`${col2input}(진수)로 변환할 ${col1input}(진수) 입력!\n\"취소\"를 입력하거나 30초를 쓸때없이 기다리시면 뮤봇이 빡쳐서 취소할껍니다`).then((q) => q.delete(30000));
 					input.channel.awaitMessages(filter, {
 						max: 1,
 						time: 30000
-					}).then(collected => {
+					}).then((collected) => {
 						let colinput = collected.first().content;
 						let colresult;
 						if (col1input === "2" || col1input === "2진수" || col1input === "이진수" || col1input === "바이너리") {
@@ -89,4 +89,4 @@ module.exports.run = async (mu, input, pars) => {
 module.exports.help = {
 	name: "계산",
 	description: "cacu"
-}
+};

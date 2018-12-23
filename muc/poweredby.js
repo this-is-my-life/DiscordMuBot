@@ -21,4 +21,4 @@ module.exports.run = async (mu, input, pars) => {
 module.exports.help = {
     name: "powered",
     description: "파워드"
-}
+};

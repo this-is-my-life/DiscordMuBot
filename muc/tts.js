@@ -8,8 +8,8 @@
 */
 
 const API = require("discord.js");
-const randomHexColor = require('random-hex-color');
-const request = require('request');
+const randomHexColor = require("random-hex-color");
+const request = require("request");
 
 module.exports.run = async (mu, input, pars) => {
         let sayWhat = pars.join(" ").slice(0);
@@ -25,7 +25,7 @@ module.exports.run = async (mu, input, pars) => {
                             }
                         }
                     }, (error, res, body) => {
-                        if (error) { return input.channel.send("Error: " + error) }
+                        if (error) { return input.channel.send("Error: " + error); }
                         const dispatcher = connection.playFile("https://soundoftext.nyc3.digitaloceanspaces.com/" + body.id +"/");
                     })
             });
@@ -43,4 +43,4 @@ module.exports.run = async (mu, input, pars) => {
 
 module.exports.help = {
 	name: "t"
-}
+};

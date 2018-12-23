@@ -9,24 +9,24 @@
 
 const API = require("discord.js");
 const superagent = require("superagent");
-const randomHexColor = require('random-hex-color');
+const randomHexColor = require("random-hex-color");
 
 module.exports.run = async (mu, input, pars) => {
     const filter = m => m.author.id === input.author.id;
-    input.channel.send("스팀 URL상 유저이름을 알려달라뮤~★\n스팀 URL상의 유저이름이란, https://steamcommunity.com/id/**PMH_only** 의 PMH_only부분이나 https://steamcommunity.com/profiles/**76561198316939606** 의 76561198316939606부분을 말합니다\n(\"취소\"를 입력하거나 30초를 쓸때없이 기다리시면 뮤봇이 빡쳐서 취소할껍니다").then(q => q.delete(30000));
+    input.channel.send("스팀 URL상 유저이름을 알려달라뮤~★\n스팀 URL상의 유저이름이란, https://steamcommunity.com/id/**PMH_only** 의 PMH_only부분이나 https://steamcommunity.com/profiles/**76561198316939606** 의 76561198316939606부분을 말합니다\n(\"취소\"를 입력하거나 30초를 쓸때없이 기다리시면 뮤봇이 빡쳐서 취소할껍니다").then((q) => q.delete(30000));
     input.channel.awaitMessages(filter, {
 		max: 1,
 		time: 30000
-    }).then(collected => {
+    }).then((collected) => {
         let stInput = collected.first().content;
         collected.delete();
-		if (stInput == "취소") { input.channel.send("취소되었습니다").then(q => q.delete(2000)); } else {
+		if (stInput === "취소") { input.channel.send("취소되었습니다").then((q) => q.delete(2000)); } else {
             let stOid = Number(stInput);
             if (!stOid) {
                 superagent.get(`http://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001/?key=${process.env.must}&vanityurl=${stInput}`)
-                .then(res => stOid = res.body.steamid);
+                .then((res) => stOid = res.body.steamid);
             }
-            superagent.get(`http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=${process.env.must}&steamids=${stOid}`).then(res => {
+            superagent.get(`http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=${process.env.must}&steamids=${stOid}`).then((res) => {
                 let kSteamEmb = new API.RichEmbed()
                 .setColor(randomHexColor())
                 .setTitle(`${res.body.players.personaname}`)
@@ -48,4 +48,4 @@ module.exports.run = async (mu, input, pars) => {
 module.exports.help = {
     name: "스팀",
     description: "st"
-}
+};

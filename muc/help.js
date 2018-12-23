@@ -99,4 +99,4 @@ module.exports.run = async (mu, input, pars, prefix) => {
 
 module.exports.help = {
 	name: "h"
-}
+};

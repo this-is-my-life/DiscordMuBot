@@ -13,7 +13,7 @@ const superagent = require("superagent");
 
 module.exports.run = async (mu, input, pars) => {
 	superagent.get(`https://mubotdb.herokuapp.com/api/UsersCoin.json/${input.author.id}`)
-	.then(res => {
+	.then((res) => {
 		let eCoinEmb = new API.RichEmbed()
 		.setTitle(`흠... ${input.member.displayName}님의 코인은....`)
 		.setColor(randomHexColor())
@@ -24,4 +24,4 @@ module.exports.run = async (mu, input, pars) => {
 
 module.exports.help = {
 	name: "뮤트코인"
-}
+};

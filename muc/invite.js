@@ -30,4 +30,4 @@ module.exports.run = async (mu, input, pars) => {
 
 module.exports.help = {
     name: "inv"
-}
+};

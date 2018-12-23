@@ -16,4 +16,4 @@ module.exports.run = async (mu, input, pars) => {
 module.exports.help = {
 	name: "삭제",
 	description: "d"
-}
+};

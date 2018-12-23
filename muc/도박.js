@@ -13,7 +13,7 @@ const superagent = require("superagent");
 
 module.exports.run = async (mu, input, pars) => {
     superagent.get(`https://mubotdb.herokuapp.com/action/DoBak/${input.author.id}/${mu.user.id}`)
-    .then(res => {
+    .then((res) => {
         let dobakEmb = new API.RichEmbed()
         .setTitle("도박결과:")
         .setAuthor(input.author.username)
@@ -27,4 +27,4 @@ module.exports.run = async (mu, input, pars) => {
 module.exports.help = {
   name: "도박",
   description: "가즈아"
-}
+};

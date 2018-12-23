@@ -14,16 +14,16 @@ const randomHexColor = require("random-hex-color");
 module.exports.run = async (mu, input, pars) => {
     let iphoneUser = input.mentions.users.first() || input.guild.members.get(pars[0]) || input.author;
     superagent.get(`https://nekobot.xyz/api/imagegen?type=iphonex&url=${iphoneUser.displayAvatarURL}`)
-    .then(res => {
+    .then((res) => {
         let iPhonEmb = new API.RichEmbed()
         .setImage(res.body.message)
         .setColor(randomHexColor())
         .setFooter("Powered by nekobot.xyz");
         input.channel.send(iPhonEmb);
-    }).catch(err => { if (err) console.log(err)});
+    }).catch(err => { if (err) { console.log(err); }});
 }
 
 module.exports.help = {
     name: "아이폰",
     description: "iph"
-}
+};

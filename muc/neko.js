@@ -13,7 +13,7 @@ const randomHexColor = require("random-hex-color");
 
 module.exports.run = async (mu, input, pars) => {
     superagent.get("https://nekobot.xyz/api/image?type=neko")
-    .then(res => {
+    .then((res) => {
         let kanEmb = new API.RichEmbed()
             .setColor(randomHexColor())
             .setTitle(`Nekos, HERE!`)
@@ -28,4 +28,4 @@ module.exports.run = async (mu, input, pars) => {
 module.exports.help = {
     name: "네코",
     description: "nk"
-}
+};

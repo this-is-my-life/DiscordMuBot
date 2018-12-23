@@ -112,7 +112,7 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 		superagent.get(`https://mubotdb.herokuapp.com/action/UserTyped/${input.author.id}/${mu.user.id}`).catch(err => console.log(err));
 		
 
-  		if (!input.content.startsWith(prefix)) return; // Don't log Messages Without Prefix
+		if (!input.content.startsWith(prefix)) return; // Don't log Messages Without Prefix
 		console.log(`${input.author.username.toString()} (${input.author.id.toString()})> ${input.content.toString()}`); // input Logging
 
 		// CoolDown System
@@ -131,8 +131,8 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
   		let verify = i.slice(prefix.length);
   		let cmdFile = mu.commands.get(verify);
 
-  		if (prefix == input) {
-			let { body } = await superagent
+  		if (prefix === input) {
+			let body = await superagent
 				.get(`https://api-to.get-a.life/bottoken`);
   			let avat = mu.user.displayAvatarURL;
 			let eBotInfoEmb = new API.RichEmbed()
@@ -176,7 +176,7 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 	    		aiRequest.end();
 
 	    		aiRequest.on('response', function(response) {
-	        		let aiResponseText = response.result.fulfillment.speech;
+					let aiResponseText = response.result.fulfillment.speech;
 	        		let aiResponseArr = aiResponseText.split(" ");
 	        		if (aiResponseArr[0] === "checkurl");
 		        	let aiEmb = new API.RichEmbed()
