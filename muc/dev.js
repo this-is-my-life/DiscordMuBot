@@ -11,7 +11,7 @@ const API = require("discord.js");
 const randomHexColor = require("random-hex-color");
 const superagent = require("superagent");
 
-module.exports.run = async (mu, input, pars) => {
+module.exports.run = async (mu, input, pars, prefix) => {
     if (input.author.id === process.env.owner) {
         const filter = (m) => m.author.id === input.author.id;
 		let say = pars.slice(1).join(" ");
