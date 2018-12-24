@@ -32,6 +32,9 @@ module.exports.run = async (mu, input, pars) => {
 				}
 			});
 		} else if (cmd === "이벤트") {
+			if (!say) {
+				mu.user.setActivity(`Messages | ${prefix}help`, {type: "WATCHING"});
+			}
 			mu.user.setActivity(say, { url: "https://www.twitch.tv/pmhstudio", type: "STREAMING" });
 		} else if (cmd === "그린") {
 			mu.user.setStatus("online");
