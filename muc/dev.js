@@ -14,7 +14,7 @@ const superagent = require("superagent");
 module.exports.run = async (mu, input, pars) => {
     if (input.author.id === process.env.owner) {
         const filter = (m) => m.author.id === input.author.id;
-		let say = pars.join(" ").slice(1);
+		let say = pars.slice(1).join(" ");
 		let cmd = pars[0];
 		if (cmd === "강종") {
 			input.channel.send("이 명령어를 사용시 뮤봇이 순식간에 완전종료되며 사람들에게 민폐를 끼칠 수 있습니다\n관리자로서 이를 감수하고도 수행하겠습니까?\n(히로쿠를 재시작하거나 깃헙 코미트를 하는것으로 다시 실행 할 수 있습니다 ~~잘 선택해라...~~) [Y/N]")
