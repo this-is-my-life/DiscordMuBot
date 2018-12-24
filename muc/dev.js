@@ -31,7 +31,7 @@ module.exports.run = async (mu, input, pars) => {
 					input.channel.send("역시, 아닐쭐 알았지...");
 				}
 			});
-		} else if (cmd === "이밴트") {
+		} else if (cmd === "이벤트") {
 			mu.user.setActivity(say, { url: "https://www.twitch.tv/pmhstudio", type: "STREAMING" });
 		} else if (cmd === "그린") {
 			mu.user.setStatus("online");
