@@ -14,8 +14,9 @@ const randomHexColor = require("random-hex-color");
 module.exports.run = async (mu, input, pars) => {
     let say = pars.join(" ").slice(0);
     superagent.get("https://discordemoji.com/api/").then((res) => {
-        let picked = res.body.findIndex(o => o.title === say);
-        let emojiUrl = res.body[picked].image;
+        let emojis = res.body.slice();
+        let picked = emojis.findIndex(o => o.title === say);
+        let emojiUrl = emojis[picked].image;
         let emoji = new API.Attachment(emojiUrl);
         input.channel.send(emoji)
     });
