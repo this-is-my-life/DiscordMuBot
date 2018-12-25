@@ -11,23 +11,23 @@ const API = require("discord.js");
 const randomHexColor = require("random-hex-color");
 
 module.exports.run = async (mu, input, pars) => {
-		let user = input.guild.member(input.mentions.users.first() || input.guild.members.get(pars[0]));
-		let avata = user.displayAvatarURL;
+		let pickedUser = input.guild.member(input.mentions.users.first() || input.guild.members.get(pars[0]));
+		let avata = pickedUser.displayAvatarURL;
 		let eMyInfo = new API.RichEmbed()
-		.setTitle(`${user.username} Infomation!`)
+		.setTitle(`${pickedUser.user.username} Infomation!`)
 		.setDescription(`to. Someone!`)
 		.setThumbnail(avata)
 		.setColor(randomHexColor())
 		.addBlankField()
-		.addField("User Name", user.username)
-		.addField("User Display Name", user.displayName)
-		.addField("User Discriminator", user.discriminator)
-		.addField("User Tag", user.tag)
-		.addField("User ID", user.id)
-		.addField("User Status", user.presence.status)
-		.addField("User Playing...", user.presence.game)
-		.addField("User Avatar URL", user.displayAvatarURL)
-		.addField("User Created", user.createdAt)
+		.addField("User Name", pickedUser.user.username)
+		.addField("User Display Name", pickedUser.displayName)
+		.addField("User Discriminator", pickedUser.user.discriminator)
+		.addField("User Tag", pickedUser.user.tag)
+		.addField("User ID", pickedUser.id)
+		.addField("User Status", pickedUser.presence.status)
+		.addField("User Playing...", pickedUser.presence.game)
+		.addField("User Avatar URL", pickedUser.user.displayAvatarURL)
+		.addField("User Created", pickedUser.user.createdAt)
 		input.channel.send(eMyInfo);
 };
 
