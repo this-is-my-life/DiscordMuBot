@@ -16,9 +16,13 @@ module.exports.run = async (mu, input, pars) => {
     superagent.get("https://discordemoji.com/api/").then((res) => {
         let emojis = res.body.slice();
         let picked = emojis.findIndex(o => o.title === say);
-        let emojiUrl = emojis[picked].image;
-        let emoji = new API.Attachment(emojiUrl);
-        input.channel.send(emoji)
+        if (!emojis[picked]) {
+            input.channel.send("Error 404: Emoji not found!");
+        } else {
+            let emojiUrl = emojis[picked].image;
+            let emoji = new API.Attachment(emojiUrl);
+            input.channel.send(emoji);
+        }
     });
 };
 
