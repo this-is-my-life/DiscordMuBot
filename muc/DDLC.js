@@ -89,23 +89,36 @@ module.exports.run = async (mu, input, pars) => {
         if (backg === "취소") { input.channel.send("취소됬다뮤!").then((q) => q.delete(2000)); } else {
             if (backg === "침실") {
                 z = "bedroom";
-            } else if (backg === "교실") {
-                z = "class";
-            } else if (backg === "책장") {
-                z = "closet";
-            } else if (backg === "동아리실") {
-                z = "club";
-            } else if (backg === "복도") {
-                z = "corridor";
-            } else if (backg === "집") {
-                z = "house";
-            } else if (backg === "집앞") {
-                z = "residential";
-            } else if (backg === "사유리 침실") {
-                z = "sayori_bedroom";
             } else {
-                input.channel.send("존재하지 않는 배경화면이다뮤!");
-                return;
+                if (backg === "교실") {
+                    z = "class";
+                } else {
+                    if (backg === "책장") {
+                        z = "closet";
+                    } else {
+                        if (backg === "동아리실") {
+                            z = "club";
+                        } else {
+                            if (backg === "복도") {
+                                z = "corridor";
+                            } else {
+                                if (backg === "집") {
+                                    z = "house";
+                                } else {
+                                    if (backg === "집앞") {
+                                        z = "residential";
+                                    } else {
+                                        if (backg === "사유리 침실") {
+                                            z = "sayori_bedroom";
+                                        } else {
+                                            input.channel.send("존재하지 않는 배경화면이다뮤!");
+                                            return;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
 

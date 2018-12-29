@@ -132,7 +132,7 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 
 		if (prefix === input) {
 			let { body } = await superagent
-				.get(`https://api-to.get-a.life/bottoken`);
+				.get("https://api-to.get-a.life/bottoken");
 			let avat = mu.user.displayAvatarURL;
 			let eBotInfoEmb = new API.RichEmbed()
 			.setTitle(`${mu.user.username.toString()} Infomation!`)
@@ -187,6 +187,6 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 		}
 		
 	setTimeout(() => {
-    	cooldown.delete(input.author.id);
+		cooldown.delete(input.author.id);
 	}, cdseconds * 1000);
 });
