@@ -39,7 +39,7 @@ module.exports.run = async (mu, input, pars) => {
         input.channel.send("[Lyric End]");
         input.channel.send(eLyrics);
     }
-}
+};
 
 module.exports.help = {
     name: "ly",

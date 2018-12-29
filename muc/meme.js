@@ -13,7 +13,7 @@ const superagent = require("superagent");
 
 module.exports.run = async (mu, input, pars) => {
     let { body } = await superagent
-    .get(`https://api-to.get-a.life/meme`);
+    .get("https://api-to.get-a.life/meme");
     let eMeme = new API.RichEmbed()
     .setColor(randomHexColor())
     .setTitle(`MEMEs, HERE!`)

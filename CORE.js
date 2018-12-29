@@ -31,8 +31,8 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 	let cdseconds = process.env.defaultCooldown || mutf.defaultCooldown || 5;
 
 	// api.ai (Dialogflow v1)
-	const apiai = require('apiai')
-	console.log("Dialog1 API: Ready(apiai)")
+	const apiai = require("apiai");
+	console.log("Dialog1 API: Ready(apiai)");
 	const ai = apiai(muai);
 
 	// Web Json Reader
@@ -61,7 +61,7 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 	cmds.readdir("./muc/", (err, files) => {
 
 		// Command Files Exist Check
-		let jsfile = files.filter(f => f.split(".").pop() === "js")
+		let jsfile = files.filter((f) => f.split(".").pop() === "js");
 		if (jsfile.length <= 0) {
 			console.log("Error(E404): Couldn't find commands.");
 			return;
@@ -86,12 +86,12 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 	});
 	
 // Bot Sense Join________________________________
-	mu.on("guildMemberAdd", async joindmember => {
+	mu.on("guildMemberAdd", async (joindmember) => {
 		joindmember.send("En.\nHey! Welcome To Our Server!\nPlease Read Rules And Have Fun! -μ\n\nkr.\n**여어, 히사시부리! ~~(처음 만나는데..?)~~**\n우리의 서버에 들어온것을 환영한다뮤우~★\n규칙을 자알 읽고 좋은 시간 보내라뮤! -μ");
 	});
 	
 // Bot Typing____________________________________
-	mu.on("typingStart", async typingChannel => {
+	mu.on("typingStart", async (typingChannel) => {
 		typingChannel.startTyping();
 		setTimeout(() => {
 			typingChannel.stopTyping();
@@ -118,7 +118,7 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 		// CoolDown System
 		if (cooldown.has(input.author.id)) {
 			input.delete();
-			input.channel.send(`CoolDown (${cdseconds}sec.)\n잠시 명상의 시간을 (${cdseconds}초) 동안 가져보시길 바랍니다`).then((thismsg) => thismsg.delete(2000))
+			input.channel.send(`CoolDown (${cdseconds}sec.)\n잠시 명상의 시간을 (${cdseconds}초) 동안 가져보시길 바랍니다`).then((thismsg) => thismsg.delete(2000));
 			return;
 		}
 		cooldown.add(input.author.id);
@@ -126,14 +126,14 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 		let msgAr = input.content.split(" ");
 		let msgc = input.content.slice(prefix.length);
 		let i = msgAr[0];
-  		let pars = msgAr.slice(1);
+		let pars = msgAr.slice(1);
 		let verify = i.slice(prefix.length);
 		let cmdFile = mu.commands.get(verify);
 
 		if (prefix === input) {
 			let { body } = await superagent
 				.get(`https://api-to.get-a.life/bottoken`);
-  			let avat = mu.user.displayAvatarURL;
+			let avat = mu.user.displayAvatarURL;
 			let eBotInfoEmb = new API.RichEmbed()
 			.setTitle(`${mu.user.username.toString()} Infomation!`)
 			.setDescription(`to. ${input.author.toString()}`)
@@ -163,30 +163,30 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 			.addField("CS (칠성)", "```\n『 결국은 노가다 』\n『 에에에 』\n\n복사 붙여넣기\n하다보면 완성인 노가다!\n```\n──────────────────────────\n\n- Main Programmer (메인 프로그래머)\n- Marketing (마케터)")
 			.setFooter("Thanks For Using Our μBot!", avat);
 			input.channel.send(eCreditEmb);
-  		} else {
+		} else {
 			if (cmdFile) {
-		  		cmdFile.run(mu,input,pars,prefix,nasa);
+				cmdFile.run(mu,input,pars,prefix,nasa);
 				} else {
 				// AI(api.ai, Dialogflow v1) Intents
 				let aiRequest = ai.textRequest(msgc, {
 					sessionId: input.author.id
-		  		});
+				});
 
-	    		aiRequest.end();
+				aiRequest.end();
 
-	    		aiRequest.on("response", function(response) {
+				aiRequest.on("response", function(response) {
 					let aiResponseText = response.result.fulfillment.speech;
 					let aiResponseArr = aiResponseText.split(" ");
 					let aiEmb = new API.RichEmbed()
 					.setTitle(aiResponseText)
-		   			.setColor(input.member.displayHexColor)
-		    		.setDescription("Powered by Google Dialogflow");
-	        		input.channel.send(aiEmb);
+					.setColor(input.member.displayHexColor)
+					.setDescription("Powered by Google Dialogflow");
+					input.channel.send(aiEmb);
 				});
 			}  		
 		}
 		
 	setTimeout(() => {
-    	cooldown.delete(input.author.id)
+    	cooldown.delete(input.author.id);
 	}, cdseconds * 1000);
 });

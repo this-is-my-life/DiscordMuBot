@@ -33,8 +33,8 @@ module.exports.run = async (mu, input, pars) => {
         GoogleEmb.setColor(randomHexColor())
         .setURL(`https://google.com/search?q=${encodeURI(say)}`);
         input.channel.send(GoogleEmb);
-    })
-}
+    });
+};
 
 module.exports.help = {
     name: "g",

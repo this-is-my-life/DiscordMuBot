@@ -15,7 +15,7 @@ module.exports.run = async (mu, input, pars) => {
         let sayWhat = pars.join(" ").slice(0);
         if (input.member.voiceChannel) {
                 input.member.voiceChannel.join()
-                .then(connection => {
+                .then((connection) => {
                     request.post("https://soundoftext.com/sounds", {
                         json: {
                             "engine": "Google",
@@ -27,7 +27,7 @@ module.exports.run = async (mu, input, pars) => {
                     }, (error, res, body) => {
                         if (error) { return input.channel.send("Error: " + error); }
                         const dispatcher = connection.playFile("https://soundoftext.nyc3.digitaloceanspaces.com/" + body.id +"/");
-                    })
+                    });
             });
             let eSayVoice = new API.RichEmbed()
             .setColor(randomHexColor())
@@ -39,7 +39,7 @@ module.exports.run = async (mu, input, pars) => {
             .addField("Hey! Wait!", "You need to join a voice channel first!");
             input.channel.send(eSayVoiceFail);
         }
-}
+};
 
 module.exports.help = {
 	name: "t"

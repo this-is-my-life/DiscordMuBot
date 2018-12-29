@@ -13,10 +13,10 @@ const randomHexColor = require("random-hex-color");
 
 module.exports.run = async (mu, input, pars) => {
     let { body } = await superagent
-        .get(`http://shibe.online/api/shibes?count=1`);
+        .get("http://shibe.online/api/shibes?count=1");
         let shibEmb = new API.RichEmbed()
             .setColor(randomHexColor())
-            .setTitle(`Dogs, HERE!`)
+            .setTitle("Dogs, HERE!")
             .setURL(body[0])
             .setDescription(`${input.author} said "cuteeeeeeee!"`)
             .setImage(body[0])

@@ -15,7 +15,7 @@ module.exports.run = async (mu, input, pars) => {
 			input.channel.send("User Not Found").then((thismsg) => thismsg.delete(1000));
 			return input.delete().catch((O_o) => {}); }
 		let reportReason = pars.join(" ").slice(22);
-   		if (!input.member.hasPermission("MANAGE_MESSAGES")) return input.channel.send(`<@${input.author.id}> has NO PERMISSION: MANAGE_MESSAGES`);
+		if (!input.member.hasPermission("MANAGE_MESSAGES")) { return input.channel.send(`<@${input.author.id}> has NO PERMISSION: MANAGE_MESSAGES`); }
 		if (reportTo.hasPermission("MANAGE_MESSAGES")) {
 			return input.channel.send("Error: Target has Same or High PERMISSION");
 		}

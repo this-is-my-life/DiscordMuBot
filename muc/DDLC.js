@@ -39,10 +39,10 @@ module.exports.run = async (mu, input, pars) => {
                             c = "y";
                         } else {
                             if (ghinput === "PMH") {
-                                    input.channel.send("PMH Studio / WSF가 숨긴 이스터에그를 발견했다뮤!\n내용 : (사실 PMH는 DokiDoki의 사용되지 않은 캐릭터이다...)")
+                                    input.channel.send("PMH Studio / WSF가 숨긴 이스터에그를 발견했다뮤!\n내용 : (사실 PMH는 DokiDoki의 사용되지 않은 캐릭터이다...)");
                                 return;
                             } else {
-                                input.channel.send("존재하지 않는 캐릭터다뮤!")
+                                input.channel.send("존재하지 않는 캐릭터다뮤!");
                                 return;
                             }
                         }
@@ -69,7 +69,7 @@ module.exports.run = async (mu, input, pars) => {
                         b = "2";
                     } else {
                         if (cbody === "2b") {
-                            b = "2b"
+                            b = "2b";
                         } else {
                             input.channel.send("존재하지 않는 자세다뮤!!");
                             return;
@@ -89,36 +89,23 @@ module.exports.run = async (mu, input, pars) => {
         if (backg === "취소") { input.channel.send("취소됬다뮤!").then((q) => q.delete(2000)); } else {
             if (backg === "침실") {
                 z = "bedroom";
+            } else if (backg === "교실") {
+                z = "class";
+            } else if (backg === "책장") {
+                z = "closet";
+            } else if (backg === "동아리실") {
+                z = "club";
+            } else if (backg === "복도") {
+                z = "corridor";
+            } else if (backg === "집") {
+                z = "house";
+            } else if (backg === "집앞") {
+                z = "residential";
+            } else if (backg === "사유리 침실") {
+                z = "sayori_bedroom";
             } else {
-                if (backg === "교실") {
-                    z = "class";
-                } else {
-                    if (backg === "책장") {
-                        z = "closet";
-                    } else {
-                        if (backg === "동아리실") {
-                            z = "club"
-                        } else {
-                            if (backg === "복도") {
-                                z = "corridor";
-                            } else {
-                                if (backg === "집") {
-                                    z = "house";
-                                } else {
-                                    if (backg === "집앞") {
-                                        z = "residential";
-                                    } else {
-                                        if (backg === "사유리 침실") {
-                                            z = "sayori_bedroom"
-                                        } else {
-                                            input.channel.send("존재하지 않는 배경화면이다뮤!")
-                                            return;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
+                input.channel.send("존재하지 않는 배경화면이다뮤!");
+                return;
                 }
             }
 

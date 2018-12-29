@@ -37,9 +37,9 @@ module.exports.run = async (mu, input, pars) => {
                 .setThumbnail("http://tes.dothome.co.kr/images/c/cc/%ED%85%8C%EC%8A%A4%EC%9C%84%ED%82%A4%EB%A9%94%EC%9D%B8%EB%A1%9C%EA%B3%A0.png");
                 input.channel.send(teswikiErr);
             }
-        })
+        });
     });  
-}
+};
 
 module.exports.help = {
     name: "문서",

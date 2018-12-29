@@ -34,11 +34,10 @@ console.log("Login Correctly");
 console.log("Command Load...");
 mu.commands = new API.Collection();
 cmds.readdir("./muc/", (err, files) => {
-if (err) return console.log("\n\nRead Commands Error!______________________________\n\n" + err);
+if (err) { console.log("\n\nRead Commands Error!______________________________\n\n" + err); }
 let jsfile = files.filter((f) => f.split(".").pop() === "js");
 if(jsfile.length <= 0){
-console.log("Error(E404): Couldn't find commands.");
-return;
+console.log("Error( E404): Couldn't find commands.");
 }
 jsfile.forEach((f, i) => {
 let props = require(`./muc/${f}`);

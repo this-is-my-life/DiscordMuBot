@@ -14,10 +14,10 @@ const randomHexColor = require("random-hex-color");
 
 module.exports.run = async (mu, input, pars, prefix , nasa) => {
     let { body } = await superagent
-        .get(`https://api.nasa.gov/planetary/apod?api_key=GpELYI28U6YMlWtNjDcF5IOunjRi9ZIFPJcTHDdo`);
+        .get("https://api.nasa.gov/planetary/apod?api_key=GpELYI28U6YMlWtNjDcF5IOunjRi9ZIFPJcTHDdo");
     let eNasa = new API.RichEmbed()
         .setColor(randomHexColor())
-        .setTitle(`Space, HERE! (Click Here to See HD Image)`)
+        .setTitle("Space, HERE! (Click Here to See HD Image)")
         .setURL(body.hdurl)
         .setDescription(`Astronomy Picture of the "${body.date}" (${body.date}, 오늘의 우주)`)
         .addField(body.title, body.explanation)

@@ -15,7 +15,7 @@ module.exports.run = async (mu, input, pars) => {
 		let avata = pickedUser.displayAvatarURL;
 		let eMyInfo = new API.RichEmbed()
 		.setTitle(`${pickedUser.user.username} Infomation!`)
-		.setDescription(`to. Someone!`)
+		.setDescription("to. Someone!")
 		.setThumbnail(avata)
 		.setColor(randomHexColor())
 		.addBlankField()
@@ -27,7 +27,7 @@ module.exports.run = async (mu, input, pars) => {
 		.addField("User Status", pickedUser.presence.status)
 		.addField("User Playing...", pickedUser.presence.game)
 		.addField("User Avatar URL", pickedUser.user.displayAvatarURL)
-		.addField("User Created", pickedUser.user.createdAt)
+		.addField("User Created", pickedUser.user.createdAt);
 		input.channel.send(eMyInfo);
 };
 
