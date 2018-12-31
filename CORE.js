@@ -130,7 +130,7 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 		let verify = i.slice(prefix.length);
 		let cmdFile = mu.commands.get(verify);
 
-		if (prefix === input) {
+		if (prefix === input.content) {
 			let { body } = await superagent
 				.get("https://api-to.get-a.life/bottoken");
 			let avat = mu.user.displayAvatarURL;
