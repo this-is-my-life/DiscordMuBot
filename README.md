@@ -18,8 +18,8 @@ Official Discord μBot( Version 7.0 ) Github Repository.
 - 이 프로젝트는 [**Discord**](https://discordapp.com)에서 제공하는 [**Discord API**](https://discordapp.com/developers)기반으로 다용도 Bot을 만드는것을 목표로 하는 프로젝트입니다!
 - **모든 Projects의 저작권은 특별히 명시되지 않는한 @PMHStudio에게 있습니다.**
 
-## [**Bot Developers' Discord Server!**](https://discord.io/PMHStudioBots)
-[![Discord Server Invite](https://discordapp.com/api/guilds/458629337264947221/widget.png?style=banner3)](https://discord.io/PMHStudioBots)
+## [**Bot Developers' Discord Server!**](https://discord.gg/5cEQQxc)
+[![Discord Server Invite](https://discordapp.com/api/guilds/458629337264947221/widget.png?style=banner3)](https://discord.gg/5cEQQxc)
 
 ### Project Dir
 > PMH Studio
