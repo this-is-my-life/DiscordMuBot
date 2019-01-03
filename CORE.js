@@ -113,7 +113,7 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 		superagent.get(`https://mubotdb.herokuapp.com/action/UserTyped/${input.author.id}/${mu.user.id}`).catch((err) => console.log(err));
 		
 
-		if (!input.content.startsWith(prefix) || !input.content.startsWith(prefix2)) { return; } // Don't log Messages Without Prefix
+		if (!input.content.startsWith(prefix) && !input.content.startsWith(prefix2)) { return; } // Don't log Messages Without Prefix
 		console.log(`${input.author.username.toString()} (${input.author.id.toString()})> ${input.content.toString()}`); // input Logging
 
 		// CoolDown System
