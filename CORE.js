@@ -21,10 +21,9 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 	let muai = process.env.muai || mutf.dialogflowToken || "61840c6bb70f4c2baf380086c0cdc785";
 	console.log("apiai Token: Ready(" + muai + ")");
 	let prefix = process.env.defaultPrefix || mutf.defaultPrefix || "mu!";
-	console.log("Base Prefix: Ready(" + prefix + ")");
-	let prefix2 = process.env.secondPrefix || mutf.secondPrefix || "뮤!";
+	console.log("Login Token: Ready(" + prefix + ")");
 	let nasa = process.env.nasa || mutf.nasaToken || "GpELYI28U6YMlWtNjDcF5IOunjRi9ZIFPJcTHDdo";
-	console.log("NASAs Token: Ready(" + nasa + ")");
+	console.log("Base Prefix: Ready(" + nasa + ")");
 
 
     // User Cool Down
@@ -113,7 +112,7 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 		superagent.get(`https://mubotdb.herokuapp.com/action/UserTyped/${input.author.id}/${mu.user.id}`).catch((err) => console.log(err));
 		
 
-		if (!input.content.startsWith(prefix) && !input.content.startsWith(prefix2)) { return; } // Don't log Messages Without Prefix
+		if (!input.content.startsWith(prefix)) { return; } // Don't log Messages Without Prefix
 		console.log(`${input.author.username.toString()} (${input.author.id.toString()})> ${input.content.toString()}`); // input Logging
 
 		// CoolDown System
@@ -124,13 +123,14 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 		}
 		cooldown.add(input.author.id);
 		
-		let msgAr = input.content.split(" ")
-		let msgc = input.content.split("!");
-		let msg = msgc[1];
+		let msgAr = input.content.split(" ");
+		let msgc = input.content.slice(prefix.length);
+		let i = msgAr[0];
 		let pars = msgAr.slice(1);
-		let cmdFile = mu.commands.get(msg);
+		let verify = i.slice(prefix.length);
+		let cmdFile = mu.commands.get(verify);
 
-		if (prefix === input.content || prefix2 === input.content) {
+		if (prefix === input.content) {
 			let { body } = await superagent
 				.get("https://api-to.get-a.life/bottoken");
 			let avat = mu.user.displayAvatarURL;
@@ -168,7 +168,7 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 				cmdFile.run(mu,input,pars,prefix,nasa);
 				} else {
 				// AI(api.ai, Dialogflow v1) Intents
-				let aiRequest = ai.textRequest(msg, {
+				let aiRequest = ai.textRequest(msgc, {
 					sessionId: input.author.id
 				});
 
