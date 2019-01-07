@@ -40,7 +40,17 @@ module.exports.run = async (mu, input, pars) => {
                                 setTimeout(() => {
                                     q4.edit(Emb5).then((q5) => {
                                         setTimeout(() => {
-                                            q5.edit(Emb6);
+                                            q5.edit(Emb6).then((qR) => {
+                                                setTimeout(() => {
+                                                    let ranNum = Math.floor(Math.random() * (5) + 0);
+                                                    if (ranNum = 0) { qR.edit(Emb1); }
+                                                    if (ranNum = 1) { qR.edit(Emb2); }
+                                                    if (ranNum = 2) { qR.edit(Emb3); }
+                                                    if (ranNum = 3) { qR.edit(Emb4); }
+                                                    if (ranNum = 4) { qR.edit(Emb5); }
+                                                    if (ranNum = 5) { qR.edit(Emb6); }
+                                                }, 100)
+                                            })
                                         }, 100);
                                     })
                                 }, 100);
