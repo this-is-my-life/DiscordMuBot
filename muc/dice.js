@@ -30,17 +30,17 @@ module.exports.run = async (mu, input, pars) => {
     let Emb6 = new API.RichEmbed()
     .setImage("https://cdn.discordapp.com/attachments/530043751901429762/531827706107658241/6.png")
     .setColor(randomHexColor());
-    input.channel.send(Emb1).then((q) => {
+    input.channel.send(Emb1).then((q1) => {
         setTimeout(() => {
-            input.channel.send(Emb2).then((q) => {
+            q1.edit(Emb2).then((q2) => {
                 setTimeout(() => {
-                    input.channel.send(Emb3).then((q) => {
+                    q2.edit(Emb3).then((q3) => {
                         setTimeout(() => {
-                            input.channel.send(Emb4).then((q) => {
+                            q3.edit(Emb4).then((q4) => {
                                 setTimeout(() => {
-                                    input.channel.send(Emb5).then((q) => {
+                                    q4.edit(Emb5).then((q5) => {
                                         setTimeout(() => {
-                                            input.channel.send(Emb6);
+                                            q5.edit(Emb6);
                                         }, 100);
                                     })
                                 }, 100);
