@@ -42,17 +42,17 @@ module.exports.run = async (mu, input, pars) => {
                                     q4.edit(Emb5).then((q5) => {
                                         setTimeout(() => {
                                                 if (ranNum === 0) {
-                                                    qR.edit(Emb1);
+                                                    q5.edit(Emb1);
                                                 } else if (ranNum === 1) {
-                                                    qR.edit(Emb2);
+                                                    q5.edit(Emb2);
                                                 } else if (ranNum === 2) {
-                                                    qR.edit(Emb3);
+                                                    q5.edit(Emb3);
                                                 } else if (ranNum === 3) {
-                                                    qR.edit(Emb4);
+                                                    q5.edit(Emb4);
                                                 } else if (ranNum === 4) {
-                                                    qR.edit(Emb5);
+                                                    q5.edit(Emb5);
                                                 } else if (ranNum === 5) {
-                                                    qR.edit(Emb6);
+                                                    q5.edit(Emb6);
                                                 }
                                             })
                                     })
