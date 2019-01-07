@@ -12,6 +12,7 @@ const superagent = require("superagent");
 const randomHexColor = require("random-hex-color");
 
 module.exports.run = async (mu, input, pars) => {
+    let ranNum = Math.floor(Math.random() * (5) + 0);
     let Emb1 = new API.RichEmbed()
     .setImage("https://cdn.discordapp.com/attachments/530043751901429762/531827699585515530/1.png")
     .setColor(randomHexColor());
@@ -42,13 +43,19 @@ module.exports.run = async (mu, input, pars) => {
                                         setTimeout(() => {
                                             q5.edit(Emb6).then((qR) => {
                                                 setTimeout(() => {
-                                                    let ranNum = Math.floor(Math.random() * (5) + 0);
-                                                    if (ranNum === 0) { qR.edit(Emb1); }
-                                                    if (ranNum === 1) { qR.edit(Emb2); }
-                                                    if (ranNum === 2) { qR.edit(Emb3); }
-                                                    if (ranNum === 3) { qR.edit(Emb4); }
-                                                    if (ranNum === 4) { qR.edit(Emb5); }
-                                                    if (ranNum === 5) { qR.edit(Emb6); }
+                                                    if (ranNum === 0) {
+                                                        qR.edit(Emb1);
+                                                    } else if (ranNum === 1) {
+                                                        qR.edit(Emb2);
+                                                    } else if (ranNum === 2) {
+                                                        qR.edit(Emb3);
+                                                    } else if (ranNum === 3) {
+                                                        qR.edit(Emb4);
+                                                    } else if (ranNum === 4) {
+                                                        qR.edit(Emb5);
+                                                    } else if (ranNum === 5) {
+                                                        qR.edit(Emb6);
+                                                    }
                                                 }, 100)
                                             })
                                         }, 100);
