@@ -41,20 +41,20 @@ module.exports.run = async (mu, input, pars) => {
                                 setTimeout(() => {
                                     q4.edit(Emb5).then((q5) => {
                                         setTimeout(() => {
-                                                if (ranNum === 0) {
-                                                    q5.edit(Emb1);
-                                                } else if (ranNum === 1) {
-                                                    q5.edit(Emb2);
-                                                } else if (ranNum === 2) {
-                                                    q5.edit(Emb3);
-                                                } else if (ranNum === 3) {
-                                                    q5.edit(Emb4);
-                                                } else if (ranNum === 4) {
-                                                    q5.edit(Emb5);
-                                                } else if (ranNum === 5) {
-                                                    q5.edit(Emb6);
-                                                }
-                                            })
+                                            if (ranNum === 0) {
+                                                q5.edit(Emb1);
+                                            } else if (ranNum === 1) {
+                                                q5.edit(Emb2);
+                                            } else if (ranNum === 2) {
+                                                q5.edit(Emb3);
+                                            } else if (ranNum === 3) {
+                                                q5.edit(Emb4);
+                                            } else if (ranNum === 4) {
+                                                q5.edit(Emb5);
+                                            } else if (ranNum === 5) {
+                                                q5.edit(Emb6);
+                                            }
+                                        }, 100);
                                     })
                                 }, 100);
                             })
