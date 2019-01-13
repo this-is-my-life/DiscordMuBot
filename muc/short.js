@@ -14,7 +14,10 @@ const randomHexColor = require("random-hex-color");
 module.exports.run = async (mu, input, pars) => {
     let say = pars.join(" ").slice(0);
     superagent.post("https://api-ssl.bitly.com/v4/bitlinks")
-    .send(`{"long_url" : "${say}"}`)
+    .set('Content-Type', 'application/json')
+    .send({
+        "long_url" : say
+    })
     .then((res) => {
         let shortEmb = new API.RichEmbed()
         .setTitle(res.body.link)
