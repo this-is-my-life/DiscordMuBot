@@ -24,6 +24,8 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 	console.log("Login Token: Ready(" + prefix + ")");
 	let nasa = process.env.nasa || mutf.nasaToken || "GpELYI28U6YMlWtNjDcF5IOunjRi9ZIFPJcTHDdo";
 	console.log("Base Prefix: Ready(" + nasa + ")");
+	let dblto = process.env.dblto || mutf.dblToken;
+	console.log("BList Token: Ready(" + dblto + ")");
 
 
     // User Cool Down
@@ -43,6 +45,9 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 	const API = require("discord.js");
 	console.log("Discord API: Ready(discord.js)");
 
+	// DBL API
+	const DBL = require("dblapi.js");
+
 
 // Bot Login_____________________________________
 
@@ -54,6 +59,9 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 
 	// Get Bot Command
 	mu.commands = new API.Collection();
+
+	// DBL Login with Token
+	const dbl = new DBL(dblto, mu);
 
 
 // Read Commands_________________________________
@@ -82,7 +90,10 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 // Bot Readying__________________________________
 	mu.on("ready", async () => {
 		console.log("-----------------------------------------------------------\n\n	μBot is Running Correctly! | " + mu.commands.size + " Commands | " + mu.guilds.size + " Servers | " + mu.channels.size + " Channels | " + mu.users.size + " Users\n\nInput Log:");
-        mu.user.setActivity(`Messages | ${prefix}help`, {type: "WATCHING"});
+		mu.user.setActivity(`Messages | ${prefix}help`, {type: "WATCHING"});
+    setInterval(() => {
+			dbl.postStats(mu.guilds.size, mu.shards.id, mu.shards.count);
+		}, 1800000);
 	});
 	
 // Bot Sense Join________________________________
