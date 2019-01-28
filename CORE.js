@@ -94,6 +94,9 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
     setInterval(() => {
 			dbl.postStats(mu.guilds.size, mu.shards.id, mu.shards.count);
 		}, 1800000);
+		setInterval(() => {
+			superagent.get("https://mubotdb.herokuapp.com/"); // heartBeat
+		}, 1000);
 	});
 	
 // Bot Sense Join________________________________
@@ -107,6 +110,10 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 		setTimeout(() => {
 			typingChannel.stopTyping();
 		}, 500);
+	});
+
+	mu.on("typingStop", async (typingChannel) => {
+		typingChannel.stopTyping();
 	});
 
 // Bot Commanding________________________________
