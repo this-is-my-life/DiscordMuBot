@@ -107,8 +107,6 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 			return;
 		}
 
-		if (input.guild.id === "264445053596991498") { return; }
-
 		superagent.get(`https://mubotdb.herokuapp.com/action/UserTyped/${input.author.id}/${mu.user.id}`).catch((err) => console.log(err));
 		
 
