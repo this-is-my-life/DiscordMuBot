@@ -15,13 +15,13 @@ module.exports.run = async (mu, input, pars) => {
     let emb1 = new API.RichEmbed()
         .setColor(randomHexColor())
         .setTitle("μBot Invite Link!")
-        .setURL("https://discordapp.com/api/oauth2/authorize?client_id=458625370334429184&permissions=2146958839&redirect_uri=http%3A%2F%2Fmubotapi.dothome.co.kr%2F%23discord&scope=bot")
+        .setURL("https://discordapp.com/api/oauth2/authorize?client_id=532801455187558420&permissions=8&redirect_uri=http%3A%2F%2Fmubotapi.dothome.co.kr&scope=bot")
         .setDescription("Click the Link for invite μBot!")
         .setThumbnail(avat);
     let emb2 = new API.RichEmbed()
         .setColor(randomHexColor())
         .setTitle("Bot Developers' Discord Server!")
-        .setURL("https://discord.gg/73rVVz5")
+        .setURL("https://discord.gg/5cEQQxc")
         .setDescription("Click the Link for Get Support!")
         .setFooter("Thanks For Using Our μBot!", avat);
     input.channel.send(emb1);
