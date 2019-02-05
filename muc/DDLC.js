@@ -157,6 +157,6 @@ module.exports.run = async (mu, input, pars) => {
 };
 
 module.exports.help = {
-    name: "DokiDoki",
+    name: "ddlc",
     description: "도키도키"
 };
