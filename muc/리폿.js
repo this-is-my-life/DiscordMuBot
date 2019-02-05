@@ -27,7 +27,7 @@ module.exports.run = async (mu, input, pars) => {
 		.addField("당사자", `${reportTo} (ID: ${reportTo.id})`)
 		.addField("신고자", `${input.author} (ID: ${input.author.id})`)
 		.addField("위치", input.channel)
-		.addField("킥 사유", `${reportReason}.`);
+		.addField("리폿 사유", `${reportReason}.`);
 		input.delete().catch((O_o)=>{});
 		input.guild.systemChannel.send(kReportEmb);	
 }
