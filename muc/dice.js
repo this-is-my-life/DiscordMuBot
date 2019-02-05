@@ -63,7 +63,7 @@ module.exports.run = async (mu, input, pars) => {
                 }, 100);
             })
         }, 100);
-    })
+    });
 };
 
 module.exports.help = {

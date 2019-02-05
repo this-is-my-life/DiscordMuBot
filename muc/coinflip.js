@@ -18,7 +18,7 @@ module.exports.run = async (mu, input, pars) => {
         .setTitle(res.body.coinMent1)
         .setAuthor(input.author.username)
         .setColor(randomHexColor())
-        .setDescription(res.body.coinMent2)
+        .setDescription(res.body.coinMent2);
         input.channel.send(coinFlipEmb);
     });
 };
