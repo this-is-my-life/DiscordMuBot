@@ -152,10 +152,11 @@ module.exports.run = async (mu, input, pars) => {
         description = "뮤봇 개발자가 귀찮아서 기능을 안넣었나 봅니다";
     }
 
-    let rcp = new API.RichEmbed()
+    let rcpEmb = new API.RichEmbed()
     .setAuthor(playerEmoji + input.author.username + " vs " + mu.user.username + muEmoji, input.author.displayAvatarURL)
     .setTitle(result)
-    .setDescription(description)
+    .setDescription(description);
+    input.channel.send(rcpEmb)
 }
 
 module.exports.help = {
