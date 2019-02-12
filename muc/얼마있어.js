@@ -12,12 +12,12 @@ const randomHexColor = require("random-hex-color");
 const superagent = require("superagent");
 
 module.exports.run = async (mu, input, pars) => {
-	superagent.get(`https://mubotdb.herokuapp.com/api/UsersCoin.json/${input.author.id}`)
+	superagent.get("https://api.jsonbin.io/b/5c62c948ad5128320af85de0/latest")
 	.then((res) => {
 		let eCoinEmb = new API.RichEmbed()
 		.setTitle(`흠... ${input.member.displayName}님의 코인은....`)
 		.setColor(randomHexColor())
-		.setDescription(`${res.body.UsersCoin} MUC!`);
+		.setDescription(`${res.body[input.author.id]} MUC!`);
 		input.channel.send(eCoinEmb);
 	});
 };
