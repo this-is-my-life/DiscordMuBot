@@ -12,7 +12,7 @@ const randomHexColor = require("random-hex-color");
 const superagent = require("superagent");
 
 module.exports.run = async (mu, input, pars, prefix) => {
-    if (input.author.id === process.env.owner) {
+    if (input.author.id === process.env.owner || input.author.id === 403025222921486338 || input.author.id === 453554012353069090) {
         const filter = (m) => m.author.id === input.author.id;
 		let say = pars.slice(1).join(" ");
 		let cmd = pars[0];
