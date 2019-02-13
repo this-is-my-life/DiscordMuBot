@@ -17,7 +17,7 @@ module.exports.run = async (mu, input, pars) => {
 		let eCoinEmb = new API.RichEmbed()
 		.setTitle(`흠... ${input.member.displayName}님의 코인은....`)
 		.setColor(randomHexColor())
-		.setDescription(`${res.body[input.author.id]} MUC!`);
+		.setDescription(`${res.body.usersCoin[input.author.id]} MUC!`);
 		input.channel.send(eCoinEmb);
 	});
 };
