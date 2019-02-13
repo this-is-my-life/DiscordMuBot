@@ -17,12 +17,6 @@ module.exports.run = async (mu, input, pars) => {
 	superagent.get("https://api.jsonbin.io/b/5c62c948ad5128320af85de0/latest").then((res) => {
 		UsersCoin = res.body;
   });
-  
-  if (!UsersCoin[input.author.id]) {
-    UsersCoin[input.author.id] = {
-      UsersCoin: 0
-    };
-  }
 
   let coinAmt = Math.floor(Math.random() * (3)) + 0; // 코인 종류
   let coinResult = Math.floor(Math.random() * (3)) + 0; // 동전던지기 결과
