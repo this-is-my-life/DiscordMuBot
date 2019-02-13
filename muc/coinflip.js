@@ -12,11 +12,8 @@ const randomHexColor = require("random-hex-color");
 const superagent = require("superagent");
 
 module.exports.run = async (mu, input, pars) => {
-  	// MuteCoin Json
-	let UsersCoin;
 	superagent.get("https://api.jsonbin.io/b/5c62c948ad5128320af85de0/latest").then((res) => {
-		UsersCoin = res.body;
-  });
+		let UsersCoin = res.body;
 
   let coinAmt = Math.floor(Math.random() * (3)) + 0; // 코인 종류
   let coinResult = Math.floor(Math.random() * (3)) + 0; // 동전던지기 결과
@@ -60,7 +57,9 @@ module.exports.run = async (mu, input, pars) => {
   .setAuthor(input.author.username)
   .setColor(randomHexColor())
   .setDescription(res.body.coinMent2);
-  input.channel.send(coinFlipEmb);  
+  input.channel.send(coinFlipEmb);
+
+});
 };
 
 module.exports.help = {
