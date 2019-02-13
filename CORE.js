@@ -156,7 +156,7 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 			};
 		}
 
-		superagent.put("https://api.jsonbin.io/b/5c62c948ad5128320af85de0/latest").send(UsersCoin).catch((err) => console.log(err));
+		superagent.put("https://api.jsonbin.io/b/5c62c948ad5128320af85de0").send(UsersCoin).catch((err) => console.log(err));
 		
 
 		if (!input.content.startsWith(prefix)) { return; } // Don't log Messages Without Prefix
