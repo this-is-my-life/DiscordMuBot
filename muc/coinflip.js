@@ -18,8 +18,8 @@ module.exports.run = async (mu, input, pars) => {
 		UsersCoin = res.body;
   });
   
-  if (!UsersCoin[id]) {
-    UsersCoin[id] = {
+  if (!UsersCoin[input.author.id]) {
+    UsersCoin[input.author.id] = {
       UsersCoin: 0
     };
   }
@@ -44,18 +44,18 @@ module.exports.run = async (mu, input, pars) => {
 
   if (coinResult === 0) {
       coinMent2 =`결과는.... 앞이였다뮤! [+${coinAmtMent * 2} MUC]`;
-      UsersCoin[id] = {
-          UsersCoin: UsersCoin[id].UsersCoin + (coinAmtMent * 2)
+      UsersCoin[input.author.id] = {
+          UsersCoin: UsersCoin[input.author.id].UsersCoin + (coinAmtMent * 2)
       };
   } else if (coinResult === 1) {
       coinMent2 = `결과는... 뒷면이였다뮤... [-${coinAmtMent / 2} MUC]`;
-      UsersCoin[id] = {
-          UsersCoin: UsersCoin[id].UsersCoin - (coinAmtMent / 2)
+      UsersCoin[input.author.id] = {
+          UsersCoin: UsersCoin[input.author.id].UsersCoin - (coinAmtMent / 2)
       };
   } else if (coinResult === 2) {
       coinMent2 = `결과는... 어어엇! 하수구에 빠트렸다뮤.... [-${coinAmtMent} MUC]`;
-      UsersCoin[id] = {
-          UsersCoin: UsersCoin[id].UsersCoin - coinAmtMent
+      UsersCoin[input.author.id] = {
+          UsersCoin: UsersCoin[input.author.id].UsersCoin - coinAmtMent
       };
   } else if (coinResult === 3) {
       coinMent2 = `결과는... 에엣? 섯다뮤~! [+0 MUC, -0 MUC]`;
