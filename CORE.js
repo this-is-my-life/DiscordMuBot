@@ -178,27 +178,27 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 		let cmdFile = mu.commands.get(verify);
 
 		if (prefix === input.content) {
-			let { body } = await superagent
-				.get("https://api-to.get-a.life/bottoken");
-			let avat = mu.user.displayAvatarURL;
-			let eBotInfoEmb = new API.RichEmbed()
-			.setTitle(`${mu.user.username.toString()} Infomation!`)
-			.setDescription(`to. ${input.author.toString()}`)
-			.setThumbnail(avat)
-			.setColor(input.member.displayHexColor)
-			.addBlankField()
-			.addField("μBot Username & Tag", mu.user.tag, true)
-			.addField("μBot ID", mu.user.id, true)
-			.addField("μBot Token", body.token, true)
-			.addField("Total Commands", mu.commands.size, true)
-			.addField("Total Users", mu.users.size, true)
-			.addField("Total Channels", mu.channels.size, true)
-			.addField("Total Servers", mu.guilds.size, true)
-			.addField("Created At", mu.user.createdAt, true)
-			.addField("Updated At", mu.readyAt, true)
-			.addField("Up Time", mu.uptime, true)
-			.addField("API Ping", mu.pings, true);
-			input.channel.send(eBotInfoEmb);
+			superagent.get("https://api-to.get-a.life/bottoken").then((res) => {
+				let avat = mu.user.displayAvatarURL;
+				let eBotInfoEmb = new API.RichEmbed()
+				.setTitle(`${mu.user.username.toString()} Infomation!`)
+				.setDescription(`to. ${input.author.toString()}`)
+				.setThumbnail(avat)
+				.setColor(input.member.displayHexColor)
+				.addBlankField()
+				.addField("μBot Username & Tag", mu.user.tag, true)
+				.addField("μBot ID", mu.user.id, true)
+				.addField("μBot Token", res.body.token, true)
+				.addField("Total Commands", mu.commands.size, true)
+				.addField("Total Users", mu.users.size, true)
+				.addField("Total Channels", mu.channels.size, true)
+				.addField("Total Servers", mu.guilds.size, true)
+				.addField("Created At", mu.user.createdAt, true)
+				.addField("Updated At", mu.readyAt, true)
+				.addField("Up Time", mu.uptime, true)
+				.addField("API Ping", mu.pings, true);
+				input.channel.send(eBotInfoEmb);
+			});
 
 			let eCreditEmb = new API.RichEmbed()
 			.setAuthor(`${mu.user.username.toString()} Credit!`)
