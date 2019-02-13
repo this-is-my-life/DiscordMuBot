@@ -14,10 +14,11 @@ const superagent = require("superagent");
 module.exports.run = async (mu, input, pars) => {
 	superagent.get("https://api.jsonbin.io/b/5c62c948ad5128320af85de0/latest")
 	.then((res) => {
+		let UsersCoin = res.body;
 		let eCoinEmb = new API.RichEmbed()
 		.setTitle(`흠... ${input.member.displayName}님의 코인은....`)
 		.setColor(randomHexColor())
-		.setDescription(`${res.body.usersCoin[input.author.id]} MUC!`);
+		.setDescription(`${UsersCoin[input.author.id].UsersCoin} MUC!`);
 		input.channel.send(eCoinEmb);
 	});
 };
