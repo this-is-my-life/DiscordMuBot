@@ -128,31 +128,31 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 			return;
 		}
 
-		if (!UsersCoin[id]) {
-			UsersCoin[id] = {
+		if (!UsersCoin[input.author.id]) {
+			UsersCoin[input.author.id] = {
 				UsersCoin: 0
 			};
 		}
 		let muteAmt = Math.floor(Math.random() * 5) + 1;
 		if (muteAmt === 1) {
-			UsersCoin[id] = {
-				UsersCoin: UsersCoin[id].UsersCoin + 1
+			UsersCoin[input.author.id] = {
+				UsersCoin: UsersCoin[input.author.id].UsersCoin + 1
 			};
 		} else if (muteAmt === 2) {
-			UsersCoin[id] = {
-				UsersCoin: UsersCoin[id].UsersCoin + 2
+			UsersCoin[input.author.id] = {
+				UsersCoin: UsersCoin[input.author.id].UsersCoin + 2
 			};
 		} else if (muteAmt === 3) {
-			UsersCoin[id] = {
-				UsersCoin: UsersCoin[id].UsersCoin + 4
+			UsersCoin[input.author.id] = {
+				UsersCoin: UsersCoin[input.author.id].UsersCoin + 4
 			};
 		} else if (muteAmt === 4) {
-			UsersCoin[id] = {
-				UsersCoin: UsersCoin[id].UsersCoin + 8
+			UsersCoin[input.author.id] = {
+				UsersCoin: UsersCoin[input.author.id].UsersCoin + 8
 			};
 		} else if (muteAmt === 5) {
-			UsersCoin[id] = {
-				UsersCoin: UsersCoin[id].UsersCoin - 16
+			UsersCoin[input.author.id] = {
+				UsersCoin: UsersCoin[input.author.id].UsersCoin - 16
 			};
 		}
 
