@@ -48,6 +48,12 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 	// DBL API
 	const DBL = require("dblapi.js");
 
+	// MuteCoin Json
+	let UsersCoin;
+	superagent.get("https://api.jsonbin.io/b/5c62c948ad5128320af85de0/latest").then((res) => {
+		UsersCoin = res.body;
+	});
+
 
 // Bot Login_____________________________________
 
@@ -94,9 +100,6 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
     setInterval(() => {
 			dbl.postStats(mu.guilds.size, mu.shards.id, mu.shards.count);
 		}, 1800000);
-		setInterval(() => {
-			superagent.get("https://mubotdb.herokuapp.com/"); // heartBeat
-		}, 1000);
 	});
 	
 // Bot Sense Join________________________________
@@ -117,7 +120,7 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 	});
 
 // Bot Commanding________________________________
-	mu.on("message", async (input) => {
+	mu.on("message", (input) => {
 		if (`${input.author.id}` === `${mu.user.id}`) { return; } // Don't Check Message Itself!
 		if (!input.guild) { // ignore DM
 			input.reply("**Oops!** μBot Can Run **ONLY** __**in SERVER**__ *(not DM)*!").then((thismsg) => thismsg.delete(2000));
@@ -125,7 +128,35 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 			return;
 		}
 
-		superagent.get(`https://mubotdb.herokuapp.com/action/UserTyped/${input.author.id}/${mu.user.id}`).catch((err) => console.log(err));
+		if (!UsersCoin[id]) {
+			UsersCoin[id] = {
+				UsersCoin: 0
+			};
+		}
+		let muteAmt = Math.floor(Math.random() * 5) + 1;
+		if (muteAmt === 1) {
+			UsersCoin[id] = {
+				UsersCoin: UsersCoin[id].UsersCoin + 1
+			};
+		} else if (muteAmt === 2) {
+			UsersCoin[id] = {
+				UsersCoin: UsersCoin[id].UsersCoin + 2
+			};
+		} else if (muteAmt === 3) {
+			UsersCoin[id] = {
+				UsersCoin: UsersCoin[id].UsersCoin + 4
+			};
+		} else if (muteAmt === 4) {
+			UsersCoin[id] = {
+				UsersCoin: UsersCoin[id].UsersCoin + 8
+			};
+		} else if (muteAmt === 5) {
+			UsersCoin[id] = {
+				UsersCoin: UsersCoin[id].UsersCoin - 16
+			};
+		}
+
+		superagent.put("https://api.jsonbin.io/b/5c62c948ad5128320af85de0/latest").send(UsersCoin).catch((err) => console.log(err));
 		
 
 		if (!input.content.startsWith(prefix)) { return; } // Don't log Messages Without Prefix
@@ -190,7 +221,7 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 
 				aiRequest.end();
 
-				aiRequest.on("response", function(response) {
+				aiRequest.on("response", (response) => {
 					let aiResponseText = response.result.fulfillment.speech;
 					let aiResponseArr = aiResponseText.split(" ");
 					let aiEmb = new API.RichEmbed()
