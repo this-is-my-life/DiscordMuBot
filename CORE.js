@@ -158,7 +158,12 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 
 		superagent.put("https://api.jsonbin.io/b/5c62c948ad5128320af85de0").send(UsersCoin).catch((err) => console.log(err));
 		
-
+		if (input.content.includes("ㅋ")) {
+			let howManyLol = Math.floor(Math.random() * 10 ) + 1;
+			let lols = "ㅋ";
+			let lolStr = lols.repeat(howManyLol);
+			input.channel.send(lolStr);
+		}
 		if (!input.content.startsWith(prefix)) { return; } // Don't log Messages Without Prefix
 		console.log(`${input.author.username.toString()} (${input.author.id.toString()})> ${input.content.toString()}`); // input Logging
 
