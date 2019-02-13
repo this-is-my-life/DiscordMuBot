@@ -30,7 +30,7 @@ module.exports.run = async (mu, input, pars) => {
       coinAmtMent = 10;
   } else if (coinAmt === 2) {
       coinAmtMent = 100;
-  } else if (coinAmt = 3) {
+  } else if (coinAmt === 3) {
       coinAmtMent = 1000;
   }
 
