@@ -11,7 +11,7 @@
             "name": "Launch Program",
             "program": "${workspaceFolder}\\CORE.js",
             "env": {
-                "muto": "NDcyNjg4ODMyNzM1NjA4ODMy.DsqKbg.WWhcX3XtGux1u81HHUovNPst8RI",
+                "muto": "NTMyODAxNDU1MTg3NTU4NDIw.D0QC5A.eN5JdEspV0E5IZtPMMPyiuJparg",
                 "muai": "2cf523a4eae54c94bd85fc978a16e672",
                 "defaultPrefix": "dev!"
             }

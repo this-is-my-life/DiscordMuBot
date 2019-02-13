@@ -10,14 +10,15 @@
 const API = require("discord.js");
 const randomHexColor = require("random-hex-color");
 
-const bullets = ["가위", "바위", "보", "폭탄", "엿", "엄지", "OK", "파티!"]
-const bulletsEmoji = [":v:", ":fist:", ":hand_splayed:", ":bomb:", ":middle_finger:", ":thumbsup:", ":okhand:", ":party:"]
+const bullets = ["가위", "바위", "보", "폭탄", "엿", "엄지", "OK", "파티!"];
+const bulletsEmoji = [":v:", ":fist:", ":hand_splayed:", ":bomb:", ":middle_finger:", ":thumbsup:", ":okhand:", ":party:"];
 
 module.exports.run = async (mu, input, pars) => {
     // 플레이어가 내민것은?
     let playerChose = Math.floor(Math.random * (bullets.length - 1));
     let playerSay = bullets[playerChose];
     let playerEmoji = bulletsEmoji[playerChose];
+    console.log(playerChose)
     // 뮤봇이 내민것은?
     let muChose = Math.floor(Math.random * (bullets.length - 1));
     let muSay = bullets[muChose];
@@ -156,7 +157,7 @@ module.exports.run = async (mu, input, pars) => {
     .setAuthor(playerEmoji + input.author.username + " vs " + mu.user.username + muEmoji, input.author.displayAvatarURL)
     .setTitle(result)
     .setDescription(description);
-    input.channel.send(rcpEmb)
+    input.channel.send(rcpEmb);
 }
 
 module.exports.help = {
