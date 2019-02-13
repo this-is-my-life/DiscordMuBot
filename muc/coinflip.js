@@ -53,10 +53,10 @@ module.exports.run = async (mu, input, pars) => {
   }
   superagent.put("https://api.jsonbin.io/b/5c62c948ad5128320af85de0").send(UsersCoin).catch((err) => console.log(err));
   let coinFlipEmb = new API.RichEmbed()
-  .setTitle(res.body.coinMent1)
+  .setTitle(coinMent1)
   .setAuthor(input.author.username)
   .setColor(randomHexColor())
-  .setDescription(res.body.coinMent2);
+  .setDescription(coinMent2);
   input.channel.send(coinFlipEmb);
 
 });
