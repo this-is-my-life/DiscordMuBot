@@ -23,7 +23,7 @@
     "request": "^2.88.0",
     "sodium": "^2.0.3",
     "superagent": "^4.0.0",
-    "uws": "^9.148.0"
+    "uws": "^100.0.1"
   },
   "devDependencies": {},
   "scripts": {
