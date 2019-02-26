@@ -133,34 +133,6 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 				UsersCoin: 0
 			};
 		}
-		let muteAmt = Math.floor(Math.random() * 5) + 1;
-		if (muteAmt === 1) {
-			UsersCoin[input.author.id] = {
-				UsersCoin: UsersCoin[input.author.id].UsersCoin + 1
-			};
-		} else if (muteAmt === 2) {
-			UsersCoin[input.author.id] = {
-				UsersCoin: UsersCoin[input.author.id].UsersCoin + 2
-			};
-		} else if (muteAmt === 3) {
-			UsersCoin[input.author.id] = {
-				UsersCoin: UsersCoin[input.author.id].UsersCoin + 4
-			};
-		} else if (muteAmt === 4) {
-			UsersCoin[input.author.id] = {
-				UsersCoin: UsersCoin[input.author.id].UsersCoin + 8
-			};
-		} else if (muteAmt === 5) {
-			if (UsersCoin[input.author.id].UsersCoin - 16 >= 0) {
-				UsersCoin[input.author.id] = {
-					UsersCoin: UsersCoin[input.author.id].UsersCoin - 16
-				};
-			} else {
-				UsersCoin[input.author.id] = {
-					UsersCoin: UsersCoin[input.author.id].UsersCoin + 16
-				};
-			}
-		}
 
 		superagent.put("https://api.jsonbin.io/b/5c62c948ad5128320af85de0").send(UsersCoin).catch((err) => console.log(err));
 		

@@ -18,7 +18,6 @@ module.exports.run = async (mu, input, pars) => {
       UsersCoin[input.author.id] = {
         UsersCoin: 0
       };
-      superagent.put("https://api.jsonbin.io/b/5c62c948ad5128320af85de0").send(UsersCoin).catch((err) => console.log(err));
     }
 
       let Slot1; // 첫번째 슬롯 값의 대한 메세지 스트링
@@ -92,31 +91,26 @@ module.exports.run = async (mu, input, pars) => {
           UsersCoin[input.author.id] = {
               UsersCoin: UsersCoin[input.author.id].UsersCoin * 777
           };
-  superagent.put("https://api.jsonbin.io/b/5c62c948ad5128320af85de0").send(UsersCoin).catch((err) => console.log(err));
       } else if (Slot1 == Slot2 && Slot2 == Slot3 && Slot1 == ":zero:") {
           SlotResult = "엌ㅋ 000 실화얔ㅋ [기존 보유량에 0배, ㅅㄱ]";
           UsersCoin[input.author.id] = {
               UsersCoin: UsersCoin[input.author.id].UsersCoin * 0
           };
-  superagent.put("https://api.jsonbin.io/b/5c62c948ad5128320af85de0").send(UsersCoin).catch((err) => console.log(err));
       } else if (Slot1 == Slot2 && Slot2 == Slot3) {
           SlotResult = "3슬롯을 맞추는데 성공했다뮤! [+8192 MUC]";
           UsersCoin[input.author.id] = {
               UsersCoin: UsersCoin[input.author.id].UsersCoin + 8192
           };
-  superagent.put("https://api.jsonbin.io/b/5c62c948ad5128320af85de0").send(UsersCoin).catch((err) => console.log(err));
       } else if (Slot1 == Slot2 || Slot2 == Slot3) {
           SlotResult = "2슬롯을 연속으로 맞추는데 성공했다뮤! [+2048 MUC]";
           UsersCoin[input.author.id] = {
               UsersCoin: UsersCoin[input.author.id].UsersCoin + 2048
           };
-  superagent.put("https://api.jsonbin.io/b/5c62c948ad5128320af85de0").send(UsersCoin).catch((err) => console.log(err));
       } else if (Slot1 == Slot3) {
           SlotResult = "연속으론 아니지만 2슬롯을 맞추는데 성공했다뮤! [+1024MUC]";
           UsersCoin[input.author.id] = {
               UsersCoin: UsersCoin[input.author.id].UsersCoin + 1024
           };
-  superagent.put("https://api.jsonbin.io/b/5c62c948ad5128320af85de0").send(UsersCoin).catch((err) => console.log(err));
       } else {
           let Ran4 = Math.floor(Math.random() * (2)) + 0;
           if (Ran4 == 2) {
@@ -124,17 +118,15 @@ module.exports.run = async (mu, input, pars) => {
               UsersCoin[input.author.id] = {
                   UsersCoin: UsersCoin[input.author.id].UsersCoin - 4444
               };
-              
-  superagent.put("https://api.jsonbin.io/b/5c62c948ad5128320af85de0").send(UsersCoin).catch((err) => console.log(err));
           } else {
               SlotResult = "히익, 운이 없네뮤... 국세청에서 세금을 들고갔다뮤.. [-100 MUC(세금)]";
               UsersCoin[input.author.id] = {
                   UsersCoin: UsersCoin[input.author.id].UsersCoin - 100
               };
-              
-  superagent.put("https://api.jsonbin.io/b/5c62c948ad5128320af85de0").send(UsersCoin).catch((err) => console.log(err));
           }
       }
+      
+      superagent.put("https://api.jsonbin.io/b/5c62c948ad5128320af85de0").send(UsersCoin).catch((err) => console.log(err));
         let dobakEmb = new API.RichEmbed()
         .setTitle("도박결과:")
         .setAuthor(input.author.username)
