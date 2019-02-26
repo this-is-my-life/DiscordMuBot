@@ -12,8 +12,10 @@ const randomHexColor = require("random-hex-color");
 const superagent = require("superagent");
 
 module.exports.run = async (mu, input, pars) => {
+  let UsersCoin;
 	superagent.get("https://api.jsonbin.io/b/5c62c948ad5128320af85de0/latest").then((res) => {
-		let UsersCoin = res.body;
+		UsersCoin = res.body;
+	});
     if (!UsersCoin[input.author.id]) {
       UsersCoin[input.author.id] = {
         UsersCoin: 0
@@ -134,8 +136,7 @@ module.exports.run = async (mu, input, pars) => {
         .setDescription(`▶ ${Slot1} ${Slot2} ${Slot3}`)
         .setFooter(SlotResult);
         input.channel.send(dobakEmb);
-  });
-};
+    };
 
 module.exports.help = {
   name: "도박",
