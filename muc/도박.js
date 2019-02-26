@@ -140,7 +140,7 @@ module.exports.run = async (mu, input, pars) => {
         .setAuthor(input.author.username)
         .setColor(randomHexColor())
         .setDescription(`▶ ${Slot1} ${Slot2} ${Slot3}`)
-        .setFooter(res.body.SlotResult);
+        .setFooter(SlotResult);
         input.channel.send(dobakEmb);
   });
 };
