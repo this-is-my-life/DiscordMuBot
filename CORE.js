@@ -48,6 +48,12 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 	// DBL API
 	const DBL = require("dblapi.js");
 
+	// MuteCoin Json
+	let UsersCoin;
+	superagent.get("https://api.jsonbin.io/b/5c62c948ad5128320af85de0/latest").then((res) => {
+		UsersCoin = res.body;
+	});
+
 
 // Bot Login_____________________________________
 
@@ -85,6 +91,8 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 			console.log(`CommandLoad: Ready(${filename}, ${props.help.name}, ${props.help.description})`);
 		});
 	});
+
+// MuteCo
 
 
 // Bot Readying__________________________________
