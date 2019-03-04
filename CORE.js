@@ -108,7 +108,7 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 	let cycleRandom 	
      setInterval(() => {
         cycleRandom = Math.floor(Math.random() * (statusCycle.length - 1) + 1);
-        mu.user.setActivity(statusCycle[statusCycle]);
+        mu.user.setActivity(statusCycle[cycleRandom]);
     }, 5000);
 	});
 	
