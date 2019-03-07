@@ -219,11 +219,13 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 
 				let aiResponse = ai.detectIntent(aiRequest).then(() => {
 					while (aiResponse) {
-						let aiEmb = new API.RichEmbed()
-						.setTitle(aiResponse[0].queryResult.fulfillmentMessages)
-						.setColor(input.member.displayHexColor)
-						.setDescription("Powered by Google Dialogflow");
-						input.channel.send(aiEmb)
+						if (aiResponse) {
+							let aiEmb = new API.RichEmbed()
+							.setTitle(aiResponse[0].queryResult.fulfillmentMessages)
+							.setColor(input.member.displayHexColor)
+							.setDescription("Powered by Google Dialogflow");
+							input.channel.send(aiEmb)
+						}
 					}
 				})
 
