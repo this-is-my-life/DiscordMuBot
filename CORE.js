@@ -28,17 +28,14 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 	console.log("BList Token: Ready(" + dblto + ")");
 
 
-   	// User Cool Down
+    // User Cool Down
     let cooldown = new Set();
-		let cdseconds = process.env.defaultCooldown || mutf.defaultCooldown || 5;
-
-	// Status Cycler
-	const statusCycle = ['mu!도움 | 한쿸어 지원!', 'mu!토스트 | 빵굽자!' , 'Type mu!help to HELP', 'Discord.js 정상운영중!', 'Discord.Net 시범운영중!', 'Node.js + .net Version', 'mu!도박 | 도박 시스탬!', '띠꺼우면 PMH Studio / PMH#0309', 'Open Source', 'github.com/PMHStudio/', 'mubotapi.dothome.co.kr/', 'pmhstudio.co.nf/', 'Created By PMH Studio', ' AI탑제! | mu!(하고싶은말)']
+	let cdseconds = process.env.defaultCooldown || mutf.defaultCooldown || 5;
 
 	// api.ai (Dialogflow v1)
-	const dialogflow = require("dialogflow");
+	const apiai = require("apiai");
 	console.log("Dialog1 API: Ready(apiai)");
-	const ai = new dialogflow.SessionsClient()
+	const ai = apiai(muai);
 
 	// Web Json Reader
 	const superagent = require("superagent");
@@ -95,15 +92,10 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 // Bot Readying__________________________________
 	mu.on("ready", async () => {
 		console.log("-----------------------------------------------------------\n\n	μBot is Running Correctly! | " + mu.commands.size + " Commands | " + mu.guilds.size + " Servers | " + mu.channels.size + " Channels | " + mu.users.size + " Users\n\nInput Log:");
-		
+		mu.user.setActivity(`Messages | ${prefix}help`, {type: "WATCHING"});
     setInterval(() => {
 			dbl.postStats(mu.guilds.size, mu.shards.id, mu.shards.count);
 		}, 1800000);
-	let cycleRandom 	
-     setInterval(() => {
-        cycleRandom = Math.floor(Math.random() * (statusCycle.length - 1) + 1);
-        mu.user.setActivity(statusCycle[cycleRandom]);
-    }, 5000);
 	});
 	
 // Bot Sense Join________________________________
@@ -207,26 +199,21 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 				cmdFile.run(mu,input,pars,prefix,nasa);
 				} else {
 				// AI(api.ai, Dialogflow v1) Intents
-				let aiRequest = {
-					session: ai.sessionPath('pmhstudio-mubot', input.author.id),
-					queryInput: {
-						text: {
-							text: msgc,
-							languageCode: 'ko-KR'
-						}
-					}
-				}
+				let aiRequest = ai.textRequest(msgc, {
+					sessionId: input.author.id
+				});
 
-				let aiResponse = ai.detectIntent(aiRequest).then(() => {
-						let aiEmb = new API.RichEmbed()
-						.setTitle(aiResponse[0].queryResult.fulfillmentMessages)
-						.setColor(input.member.displayHexColor)
-						.setDescription("Powered by Google Dialogflow");
-						input.channel.send(aiEmb)
-				}).catch((err) => {
-					console.log(err)
-				})
+				aiRequest.end();
 
+				aiRequest.on("response", (response) => {
+					let aiResponseText = response.result.fulfillment.speech;
+					let aiResponseArr = aiResponseText.split(" ");
+					let aiEmb = new API.RichEmbed()
+					.setTitle(aiResponseText)
+					.setColor(input.member.displayHexColor)
+					.setDescription("Powered by Google Dialogflow");
+					input.channel.send(aiEmb);
+				});
 			}  		
 		}
 		
