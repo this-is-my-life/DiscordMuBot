@@ -1,5 +1,0 @@
-{
-	"discordToken" : "  ", // You Can Get Token at "discordapp.com/developers"
-    "dialogflowToken" : "  ", // You Can Get Token at "dialogflow.com" or Using Our Token (Korean only): "61840c6bb70f4c2baf380086c0cdc785"
-    "defaultPrefix" : "  " // [Optional] MuBot's Default Prefix (Like: !, *, >, $ and mu!)
-}

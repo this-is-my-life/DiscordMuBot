@@ -27,7 +27,7 @@ Official Discord μBot( Version 8.0 ) Github Repository.
 >>> Programs
 >>>> Discord bot
 >>>>> proj-μBot
->>>>>> [Branch: Version 78.0](https://github.com/PMHStudio/DiscordMuBot/branches)
+>>>>>> [Branch: Version 8.0](https://github.com/PMHStudio/DiscordMuBot/branches)
 
 
 --------------------------------------------------------------------------------------

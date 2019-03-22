@@ -11,9 +11,10 @@
             "name": "Launch Program",
             "program": "${workspaceFolder}\\CORE.js",
             "env": {
-                "muto": "NTMyODAxNDU1MTg3NTU4NDIw.D0QC5A.eN5JdEspV0E5IZtPMMPyiuJparg",
-                "muai": "2cf523a4eae54c94bd85fc978a16e672",
-                "defaultPrefix": "dev!"
+                "muto": "NTUzMTUwNjU2MTYxMjUxMzI4.D3Zm6A.fFOMQWU9u5MqzdQEPE2RsWw5MK8",
+                "muai": "discordmubot-2f336",
+                "defaultPrefix": "dev!",
+                "GOOGLE_APPLICATION_CREDENTIALS": "./Saved/DiscordMuBot-4d3d57a2426e.json"
             }
         }
     ]

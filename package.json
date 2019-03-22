@@ -3,29 +3,28 @@
   "version": "4.0.1",
   "description": "PMH Studio / Proj- μBot | Smart & Cute Discord Bot_Mu~☆ ",
   "main": "CORE.js",
-  "engines": {
-    "node": "8.12.0"
-  },
   "dependencies": {
-    "apiai": "^4.0.3",
-    "bufferutil": "^3.0.5",
     "dblapi.js": "^2.3.0",
+    "dialogflow": "^0.8.2",
     "discord.js": "^11.4.2",
-    "erlpack": "github:discordapp/erlpack",
-    "ffmpeg-binaries": "^4.0.0",
     "google": "^2.1.0",
+    "google-gax": "^0.25.5",
     "google-tts-api": "^0.0.4",
     "libsodium-wrappers": "^0.7.4",
-    "lzma-native": "^4.0.3",
-    "node-opus": "^0.2.9",
     "opusscript": "0.0.6",
     "random-hex-color": "^1.0.1",
     "request": "^2.88.0",
-    "sodium": "^2.0.3",
     "superagent": "^4.0.0",
     "uws": "^9.148.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^5.15.3",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0"
+  },
   "scripts": {
     "test": "node TEST"
   },
