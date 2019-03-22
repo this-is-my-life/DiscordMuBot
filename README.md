@@ -1,9 +1,9 @@
 PMH Studio μBot
 ================
-Official Discord μBot( Version 8.0 ) Github Repository.
+Official Discord μBot( Version 7.0 ) Github Repository.
 --------------------------------------------------------------
 
-|  | Official Discord μBot( Version 8.0 ) Github Repository Shields |
+|  | Official Discord μBot( Version 7.0 ) Github Repository Shields |
 |:-----------------------:|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Basic requirements |  [![MuBot Language](https://img.shields.io/badge/language-javascript-F7DF1E.svg?logo=JavaScript)](https://www.javascript.com) [![MuBot Using](https://img.shields.io/badge/using-node.js-339933.svg?logo=Node.js)](https://nodejs.org) [![MuBot Request](https://img.shields.io/badge/request-discord.js-7289DA.svg?logo=Discord)](https://discord.js.org) |
 | Continuous Integrations | [![AppVeyorCI Status](https://img.shields.io/appveyor/ci/PMHStudio/discordmubot.svg?logo=appveyor&logoColor=white&style=popout)](https://ci.appveyor.com/project/PMHStudio/discordmubot/branch/μBot-ver7) [![CircleCI Status](https://img.shields.io/circleci/project/github/PMHStudio/DiscordMuBot.svg?style=popout&logo=CircleCI&colorA=343434)](https://circleci.com/gh/PMHStudio/DiscordMuBot) ![Azure DevOps builds](https://img.shields.io/azure-devops/build/PMHStudio/e725b62a-99f6-4c6e-88bd-dc413da7a185/1/μBot-ver7.svg?logo=microsoft&logoColor=white&style=popout) |
@@ -27,7 +27,7 @@ Official Discord μBot( Version 8.0 ) Github Repository.
 >>> Programs
 >>>> Discord bot
 >>>>> proj-μBot
->>>>>> [Branch: Version 78.0](https://github.com/PMHStudio/DiscordMuBot/branches)
+>>>>>> [Branch: Version 7.0](https://github.com/PMHStudio/DiscordMuBot/branches)
 
 
 --------------------------------------------------------------------------------------
