@@ -213,7 +213,7 @@ mu.on('message', (input) => {
         } else if (aiResponseArr[0] === 'say') {
           let aiEmbed = new API.RichEmbed()
             .setColor(randomHexColor())
-            .setAuthor(input.author.username, input.author.displayAvatarURL)
+            // .setAuthor(input.author.username, input.author.displayAvatarURL)
             .addField(aiResponseArr[1], 'Powered by Google Dialogflow v2')
           input.channel.send(aiEmbed)
         }
