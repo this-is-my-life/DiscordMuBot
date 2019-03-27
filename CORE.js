@@ -6,7 +6,7 @@ Copyright (c) 2018. PMH Studio / PMH. (kok4575@gmail.com) MIT Licensed.
 
 * Requests Node.js & Discord.js
 */
-console.log('\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Start Process Start------------------')
+console.log('\n\n\nμBot v8.0 Core Session is Start!\n------------------Bot Start Process Start------------------')
 
 // Basic Requires________________________________
 
@@ -44,8 +44,11 @@ console.log('SuperAgent: Ready(superagent)')
 const API = require('discord.js')
 console.log('Discord API: Ready(discord.js)')
 
+// Random Hex Color
+const randomHexColor = require('random-hex-color')
+
 // DBL API
-const DBL = require('dblapi.js')
+// const DBL = require('dblapi.js')
 
 // Bot Login_____________________________________
 
@@ -59,7 +62,7 @@ mu.login(muto)
 mu.commands = new API.Collection()
 
 // DBL Login with Token
-const dbl = new DBL(dblto, mu)
+// const dbl = new DBL(dblto, mu)
 
 // Read Commands_________________________________
 
@@ -88,9 +91,9 @@ cmds.readdir('./muc/', (_err, files) => {
 mu.on('ready', async () => {
   console.log('-----------------------------------------------------------\n\n  μBot is Running Correctly! | ' + mu.commands.size + ' Commands | ' + mu.guilds.size + ' Servers | ' + mu.channels.size + ' Channels | ' + mu.users.size + ' Users\n\nInput Log:')
   mu.user.setActivity(`Messages | ${prefix}help`, { type: 'WATCHING' })
-  setInterval(() => {
+  /* setInterval(() => {
     dbl.postStats(mu.guilds.size, mu.shards.id, mu.shards.count)
-  }, 1800000)
+  }, 1800000) */
 })
 
 // Bot Sense Join________________________________
@@ -208,7 +211,11 @@ mu.on('message', (input) => {
             cmdFile.run(mu, input, pars, prefix, nasa)
           }
         } else if (aiResponseArr[0] === 'say') {
-          input.channel.send(aiResponseArr[1])
+          let aiEmbed = new API.RichEmbed()
+            .setColor(randomHexColor())
+            .setAuthor(input.author.username, input.author.displayAvatarURL)
+            .addField(aiResponseArr[1], 'Powered by Google Dialogflow v2')
+          input.channel.send(aiEmbed)
         }
       })
     }
