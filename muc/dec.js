@@ -1,5 +1,5 @@
 /*
-  μBot v7.0 Command.
+  μBot v8.0 Command.
   ---------------------
 PMH Studio / Proj- μBot | Smart & Cute Discord Bot_Mu~☆
 Copyright (c) 2018. PMH Studio / PMH. (kok4575@gmail.com) MIT Licensed.
