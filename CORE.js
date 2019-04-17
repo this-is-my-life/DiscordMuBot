@@ -127,7 +127,7 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 		
 	// MuteCoin Json
 	let UsersCoin;
-	superagent.get("https://api.jsonbin.io/b/5c62c948ad5128320af85de0/latest").then((res) => {
+	superagent.get("https://api.myjson.com/bins/183xhk/latest").then((res) => {
 		UsersCoin = res.body;
 		if (!UsersCoin[input.author.id]) {
 			UsersCoin[input.author.id] = {
@@ -135,7 +135,7 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 			};
 		}
 
-		superagent.put("https://api.jsonbin.io/b/5c62c948ad5128320af85de0").send(UsersCoin).catch((err) => console.log(err));
+		superagent.put("https://api.myjson.com/bins/183xhk").send(UsersCoin).catch((err) => console.log(err));
 		
 		if (input.content.includes("ㅋ")) {
 			let howManyLol = Math.floor(Math.random() * 10 ) + 1;

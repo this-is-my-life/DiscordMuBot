@@ -13,7 +13,7 @@ const superagent = require("superagent");
 
 module.exports.run = async (mu, input, pars) => {
   let UsersCoin;
-	superagent.get("https://api.jsonbin.io/b/5c62c948ad5128320af85de0/latest").then((res) => {
+	superagent.get("https://api.myjson.com/bins/183xhk/latest").then((res) => {
 		UsersCoin = res.body;
     if (!UsersCoin[input.author.id]) {
       UsersCoin[input.author.id] = {
@@ -127,7 +127,7 @@ module.exports.run = async (mu, input, pars) => {
           }
       }
       
-      superagent.put("https://api.jsonbin.io/b/5c62c948ad5128320af85de0").send(UsersCoin).catch((err) => console.log(err));
+      superagent.put("https://api.myjson.com/bins/183xhk").send(UsersCoin).catch((err) => console.log(err));
         let dobakEmb = new API.RichEmbed()
         .setTitle("도박결과:")
         .setAuthor(input.author.username)

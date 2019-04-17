@@ -12,7 +12,7 @@ const randomHexColor = require("random-hex-color");
 const superagent = require("superagent");
 
 module.exports.run = async (mu, input, pars) => {
-	superagent.get("https://api.jsonbin.io/b/5c62c948ad5128320af85de0/latest").then((res) => {
+	superagent.get("https://api.myjson.com/bins/183xhk/latest").then((res) => {
 		let UsersCoin = res.body;
 
   let coinAmt = Math.floor(Math.random() * (3)) + 0; // 코인 종류
@@ -51,7 +51,7 @@ module.exports.run = async (mu, input, pars) => {
   } else if (coinResult === 3) {
       coinMent2 = `결과는... 에엣? 섯다뮤~! [+0 MUC, -0 MUC]`;
   }
-  superagent.put("https://api.jsonbin.io/b/5c62c948ad5128320af85de0").send(UsersCoin).catch((err) => console.log(err));
+  superagent.put("https://api.myjson.com/bins/183xhk").send(UsersCoin).catch((err) => console.log(err));
   let coinFlipEmb = new API.RichEmbed()
   .setTitle(coinMent1)
   .setAuthor(input.author.username)
