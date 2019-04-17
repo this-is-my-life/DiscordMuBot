@@ -13,7 +13,7 @@ const superagent = require("superagent");
 
 module.exports.run = async (mu, input, pars) => {
   let UsersCoin;
-	superagent.get("https://api.myjson.com/bins/183xhk/latest").then((res) => {
+	superagent.get("https://api.myjson.com/bins/183xhk").then((res) => {
 		UsersCoin = res.body;
     if (!UsersCoin[input.author.id]) {
       UsersCoin[input.author.id] = {

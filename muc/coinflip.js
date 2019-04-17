@@ -12,7 +12,7 @@ const randomHexColor = require("random-hex-color");
 const superagent = require("superagent");
 
 module.exports.run = async (mu, input, pars) => {
-	superagent.get("https://api.myjson.com/bins/183xhk/latest").then((res) => {
+	superagent.get("https://api.myjson.com/bins/183xhk").then((res) => {
 		let UsersCoin = res.body;
 
   let coinAmt = Math.floor(Math.random() * (3)) + 0; // 코인 종류

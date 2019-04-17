@@ -127,7 +127,7 @@ console.log("\n\n\nμBot v7.0 Core Session is Start!\n------------------Bot Star
 		
 	// MuteCoin Json
 	let UsersCoin;
-	superagent.get("https://api.myjson.com/bins/183xhk/latest").then((res) => {
+	superagent.get("https://api.myjson.com/bins/183xhk").then((res) => {
 		UsersCoin = res.body;
 		if (!UsersCoin[input.author.id]) {
 			UsersCoin[input.author.id] = {
