@@ -12,7 +12,7 @@ const randomHexColor = require('random-hex-color')
 const superagent = require('superagent')
 
 module.exports.run = async (mu, input, pars) => {
-  superagent.get('https://api.jsonbin.io/b/5c62c948ad5128320af85de0/latest')
+  superagent.get('https://api.myjson.com/bins/183xhk')
     .then((res) => {
       let UsersCoin = res.body
       let eCoinEmb = new API.RichEmbed()
