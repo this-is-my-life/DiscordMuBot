@@ -9,7 +9,7 @@
 
 const API = require('discord.js')
 const randomHexColor = require('random-hex-color')
-const reactions = ['🖐', '🤞', '✌', '👊', '✋']
+const reactions = ['🖐', '🤞', '✌', '👊', '✋', '🤘', '🎉', '🍕', '💯', '👍', '👎']
 
 module.exports.run = async (mu, input, pars) => {
   let startEmb = new API.RichEmbed()
