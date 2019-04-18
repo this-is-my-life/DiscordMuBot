@@ -18,6 +18,9 @@ module.exports.run = async (mu, input, pars) => {
     .setDescription('1. 5초뒤에 이 메세지에 반응(리엑션)이 달립니다\n2. 리엑션이 달리면 빠르게 리엑션을 누릅니다\n3. 가장 먼저 리엑션을 누른사람이 승리!')
     .setFooter('5초뒤 리엑션!')
   input.channel.send(startEmb).then((thi) => {
+    for (let countter = 0; countter < reactions.length; countter++) {
+      thi.react(reactions[countter])
+    }
     let time = 5
     for (let counter = 0; counter < 5; counter++) {
       setTimeout(() => {
@@ -33,9 +36,6 @@ module.exports.run = async (mu, input, pars) => {
         .setTitle('짜잔')
         .setDescription('빨리 ' + reacting + '를 리엑션하세요!')
       thi.edit(ingameEmb)
-      for (let countter = 0; countter < reactions.length; countter++) {
-        thi.react(reactions[countter])
-      }
       const filter = (reaction, user) => reaction.emoji.name === reacting && user.id !== mu.user.id
       thi.awaitReactions(filter, {
         maxUsers: 1
