@@ -9,7 +9,6 @@
 
 const API = require('discord.js')
 const randomHexColor = require('random-hex-color')
-const words = ['나', '낫', '레', '닓', '뉂', '갏', '값', '닳', '뒹', '랑', '뢍', '뢊', '멸', '뭽', '몲', '뷁', '뾇', '븤', '쉢', '쉃', '쉶', '쒏', '쒰', '앎', '않', '았', '웳', '줞', '줣', '찋', '촯', '췠', '퀋', '퀢', '퉔', '퉸', '퓀', '펢', '퐸', '핧', '햛', '혉']
 
 module.exports.run = async (mu, input, pars) => {
   let startEmb = new API.RichEmbed()
@@ -29,12 +28,13 @@ module.exports.run = async (mu, input, pars) => {
     setTimeout(() => {
       let sentence = ''
       for (let countter = 0; countter < 10; countter++) {
-        sentence += words[Math.floor(Math.random() * words.length)]
+        sentence += String.fromCharCode(Math.floor(Math.random() * (0xD7AF - 0xAC00 + 1)) + 0xAC00)
       }
       let ingameEmb = new API.RichEmbed()
         .setColor(randomHexColor())
         .setTitle('짜잔')
         .setDescription('\'' + sentence + '\'를 입력하세요!')
+        .setFooter('가끔씩, 칠 수 없는 문자들이 나오던데 님 운빨 탓이니 자괴감을 가지시길')
       thi.edit(ingameEmb)
       const filter = (message) => message.content === sentence
       input.channel.awaitMessages((filter), {
