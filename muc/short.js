@@ -21,11 +21,13 @@ module.exports.run = async (mu, input, pars) => {
       .addField(process.env.defaultPrefix + '단축URL <도착점: URL> [시작점: 키워드]', 'ex) ' + process.env.defaultPrefix + '단축URL http://codeshare.kro.kr/example\nor) ' + process.env.defaultPrefix + '단축URL http://codeshare.kro.kr/example 코드셰어')
     input.channel.send(shortEmb)
   } else {
-    if (!short) {
+    if (short === 'undefined') {
       let max = Math.floor(Math.random() * 3) + 5
+      let result = ''
       for (let counter = 0; counter < max; counter++) {
-        short += String.fromCharCode(Math.floor(Math.random() * (0xD7AF - 0xAC00 + 1)) + 0xAC00)
+        result += String.fromCharCode(Math.floor(Math.random() * (0xD7AF - 0xAC00 + 1)) + 0xAC00)
       }
+      short = encodeURI(result)
     }
     superagent.get('https://api.myjson.com/bins/1cpw6g').then((res) => {
       if (!res.body[short]) {
