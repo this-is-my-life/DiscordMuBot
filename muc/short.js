@@ -12,19 +12,42 @@ const superagent = require('superagent')
 const randomHexColor = require('random-hex-color')
 
 module.exports.run = async (mu, input, pars) => {
-  let say = pars.join(' ').slice(0)
-  superagent.post('https://api-ssl.bitly.com/v4/shorten')
-    .set('Content-Type', 'application/json')
-    .send({
-      'long_url': say
+  let long = input.content.split(' ')[1]
+  let short = encodeURI(input.content.split(' ')[2])
+  if (!long || !long.startsWith('http')) {
+    let shortEmb = new API.RichEmbed()
+      .setColor(randomHexColor())
+      .setTitle('사용방법')
+      .addField(process.env.defaultPrefix + '단축URL <도착점: URL> [시작점: 키워드]', 'ex) ' + process.env.defaultPrefix + '단축URL http://codeshare.kro.kr/example\nor) ' + process.env.defaultPrefix + '단축URL http://codeshare.kro.kr/example 코드셰어')
+    input.channel.send(shortEmb)
+  } else {
+    if (!short) {
+      let max = Math.floor(Math.random() * 3) + 5
+      for (let counter = 0; counter < max; counter++) {
+        short += String.fromCharCode(Math.floor(Math.random() * (0xD7AF - 0xAC00 + 1)) + 0xAC00)
+      }
+    }
+    superagent.get('https://api.myjson.com/bins/1cpw6g').then((res) => {
+      if (!res.body[short]) {
+        res.body[short] = long
+        superagent.put('https://api.myjson.com/bins/1cpw6g')
+          .send(res.body)
+          .then((res) => console.log(res))
+        let shortEmb = new API.RichEmbed()
+          .setColor(0x00ff00)
+          .setTitle('완성! 여기를 눌러 테스트!')
+          .setURL('http://short.kro.kr/' + decodeURI(short))
+          .addField('단축한 URL (시작점)', 'http://short.kro.kr/' + decodeURI(short))
+          .addField('단축된 URL (도착점)', long)
+        input.channel.send(shortEmb)
+      } else {
+        let shortEmb = new API.RichEmbed()
+          .setColor(0xff0000)
+          .addField('삐빅, 오류다뮤!', '이미 사용된 시작점 키워드를 사용했다뮤!')
+        input.channel.send(shortEmb)
+      }
     })
-    .then((res) => {
-      let shortEmb = new API.RichEmbed()
-        .setTitle(res.body.link)
-        .setColor(randomHexColor())
-        .setFooter('Powered by bitly.com')
-      input.channel.send(shortEmb)
-    }).catch((err) => { if (err) { console.log(err) } })
+  }
 }
 
 module.exports.help = {
