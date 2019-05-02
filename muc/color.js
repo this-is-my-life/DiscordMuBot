@@ -7,24 +7,24 @@
   * Requests Node.js & Discord.js
 */
 
-const svgToImg = require('svg-to-img')
+const sharp = require('sharp')
 
 module.exports.run = async (mu, input, pars) => {
   let say = pars.join(' ').slice(0)
   if (!say) {
     input.channel.send('nu!컬러 <16진수 색상>')
   } else {
-    let temp = '<?xml version="1.0" standalone="no"?>\n<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" \n"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">\n<svg width="1080px" height="1080px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink= "http://www.w3.org/1999/xlink"><rect x="0" y="0" width="1080" height="1080" fill="' + say + '"/></svg>'
-    svgToImg.from(temp).toJpeg({
-      path: './temp.jpg'
-    }).then((img) => {
-      input.channel.send({
-        files: [{
-          attachment: './temp.jpg',
-          name: 'temp.jpg'
-        }]
+    let temp = Buffer.from('<?xml version="1.0" standalone="no"?>\n<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" \n"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">\n<svg width="1080px" height="1080px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink= "http://www.w3.org/1999/xlink"><rect x="0" y="0" width="1080" height="1080" fill="' + say + '"/></svg>')
+    sharp(temp)
+      .toFile('./temp.png')
+      .then(() => {
+        input.channel.send({
+          files: [{
+            attachment: './temp.png',
+            name: 'temp.jpg'
+          }]
+        })
       })
-    })
   }
 }
 

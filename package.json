@@ -14,8 +14,8 @@
     "opusscript": "0.0.6",
     "random-hex-color": "^1.0.1",
     "request": "^2.88.0",
+    "sharp": "^0.22.1",
     "superagent": "^4.0.0",
-    "svg-to-img": "^2.0.9",
     "uws": "^9.148.0"
   },
   "devDependencies": {
