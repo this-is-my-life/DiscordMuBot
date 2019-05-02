@@ -15,6 +15,7 @@
     "random-hex-color": "^1.0.1",
     "request": "^2.88.0",
     "superagent": "^4.0.0",
+    "svg-to-img": "^2.0.9",
     "uws": "^9.148.0"
   },
   "devDependencies": {
