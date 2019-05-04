@@ -14,7 +14,8 @@
                 "muto": "NTUzMTUwNjU2MTYxMjUxMzI4.D3Zm6A.fFOMQWU9u5MqzdQEPE2RsWw5MK8",
                 "muai": "discordmubot-2f336",
                 "defaultPrefix": "dev!",
-                "GOOGLE_APPLICATION_CREDENTIALS": "./Saved/DiscordMuBot-4d3d57a2426e.json"
+                "GOOGLE_APPLICATION_CREDENTIALS": "./Saved/DiscordMuBot-4d3d57a2426e.json",
+                "dicToken": "012F4A48E61E4CDA277F9D765C5F45A3"
             }
         }
     ]
